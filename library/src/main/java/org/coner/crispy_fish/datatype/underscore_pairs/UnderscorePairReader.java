@@ -1,8 +1,8 @@
 package org.coner.crispy_fish.datatype.underscore_pairs;
 
-public class UnderscorePairReader {
+import static org.coner.crispy_fish.datatype.underscore_pairs.Constants.*;
 
-    private static final char UNDERSCORE = '_';
+public class UnderscorePairReader {
 
     private String pairs;
 
