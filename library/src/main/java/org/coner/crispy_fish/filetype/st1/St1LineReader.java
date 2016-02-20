@@ -1,66 +1,30 @@
 package org.coner.crispy_fish.filetype.st1;
 
-import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
+public interface St1LineReader<L> {
 
-import static org.coner.crispy_fish.filetype.st1.St1Keys.*;
+    void setSt1Line(L st1Line);
 
-public class St1LineReader {
+    String getRun();
 
-    private final UnderscorePairReader underscorePairReader;
+    String getClazz();
 
-    public St1LineReader(UnderscorePairReader underscorePairReader) {
-        this.underscorePairReader = underscorePairReader;
-    }
+    String getNumber();
 
-    public void setSt1Line(String st1Line) {
-        underscorePairReader.setPairs(st1Line);
-    }
+    String getTm();
 
-    public String getRun() {
-        return underscorePairReader.get(RUN);
-    }
+    String getPenalty();
 
-    public String getClazz() {
-        return underscorePairReader.get(CLASS);
-    }
+    String getDriver();
 
-    public String getNumber() {
-        return underscorePairReader.get(NUMBER);
-    }
+    String getCar();
 
-    public String getTm() {
-        return underscorePairReader.get(TM);
-    }
+    String getCc();
 
-    public String getPenalty() {
-        return underscorePairReader.get(PENALTY);
-    }
+    String getPos();
 
-    public String getDriver() {
-        return underscorePairReader.get(DRIVER);
-    }
+    String getBestTime();
 
-    public String getCar() {
-        return underscorePairReader.get(CAR);
-    }
+    String getPaxed();
 
-    public String getCc() {
-        return underscorePairReader.get(CC);
-    }
-
-    public String getPos() {
-        return underscorePairReader.get(POS);
-    }
-
-    public String getBestTime() {
-        return underscorePairReader.get(BESTTIME);
-    }
-
-    public String getPaxed() {
-        return underscorePairReader.get(PAXED);
-    }
-
-    public String getTod() {
-        return underscorePairReader.get(TOD);
-    }
+    String getTod();
 }

@@ -4,15 +4,15 @@ import org.junit.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UnderscorePairReaderTest {
+public class SimpleUnderscorePairReaderTest {
 
     private static final String PAIRS_EXAMPLE_BASIC = "key1_value1_key2_value2_key3_value3";
 
-    private UnderscorePairReader reader;
+    private SimpleUnderscorePairReader reader;
 
     @Before
     public void setup() {
-        reader = new UnderscorePairReader();
+        reader = new SimpleUnderscorePairReader();
     }
 
     @Test(expected = AssertionError.class)
