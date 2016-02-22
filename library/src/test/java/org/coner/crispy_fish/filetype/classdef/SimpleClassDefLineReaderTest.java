@@ -1,6 +1,7 @@
 package org.coner.crispy_fish.filetype.classdef;
 
-import java.util.List;
+import java.util.*;
+import org.assertj.core.data.Index;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -21,6 +22,21 @@ public class SimpleClassDefLineReaderTest {
     @Before
     public void setup() {
         simpleClassDefLineReader = new SimpleClassDefLineReader(fields);
+    }
+
+    @Test
+    public void whenSetClassDefLineValidItShouldSplit() {
+        ArrayList<String> fields = new ArrayList<String>();
+        simpleClassDefLineReader = new SimpleClassDefLineReader(fields);
+        String line = "CS\t0.814\t1\tC Street\t\t\t\tStreet\t\t";
+
+        simpleClassDefLineReader.setClassDefLine(line);
+
+        assertThat(fields)
+                .contains("CS", Index.atIndex(0))
+                .contains("0.814", Index.atIndex(1))
+                .contains("C Street", Index.atIndex(3))
+                .contains("Street", Index.atIndex(7));
     }
 
     @Test
