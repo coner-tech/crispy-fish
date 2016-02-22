@@ -1,0 +1,70 @@
+package org.coner.crispy_fish.filetype.classdef;
+
+import java.util.List;
+import org.junit.*;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+@RunWith(MockitoJUnitRunner.class)
+public class SimpleClassDefLineReaderTest {
+
+    private SimpleClassDefLineReader simpleClassDefLineReader;
+
+    @Mock
+    List<String> fields;
+
+    @Before
+    public void setup() {
+        simpleClassDefLineReader = new SimpleClassDefLineReader(fields);
+    }
+
+    @Test
+    public void whenGetClassAbbreviationItShouldGetIt() throws Exception {
+        String classAbbreviation = "CS";
+        when(fields.get(0)).thenReturn(classAbbreviation);
+
+        String actual = simpleClassDefLineReader.getClassAbbreviation();
+
+        verify(fields).get(0);
+        assertThat(actual).isSameAs(classAbbreviation);
+    }
+
+    @Test
+    public void whenGetPaxItShouldGetIt() throws Exception {
+        String pax = "0.814";
+        when(fields.get(1)).thenReturn(pax);
+
+        String actual = simpleClassDefLineReader.getPax();
+
+        verify(fields).get(1);
+        assertThat(actual).isSameAs(pax);
+    }
+
+    @Test
+    public void whenGetClassNameItShouldGetIt() throws Exception {
+        String className = "C Street";
+        when(fields.get(3)).thenReturn(className);
+
+        String actual = simpleClassDefLineReader.getClassName();
+
+        verify(fields).get(3);
+        assertThat(actual).isSameAs(className);
+    }
+
+    @Test
+    public void whenGetCategoryItShouldGetIt() throws Exception {
+        String category = "Street";
+        when(fields.get(7)).thenReturn(category);
+
+        String actual = simpleClassDefLineReader.getCategory();
+
+        verify(fields).get(7);
+        assertThat(actual).isSameAs(category);
+    }
+
+}
