@@ -22,6 +22,19 @@ public class Run {
         this.timestamp = timestamp;
     }
 
+    private Run(Builder builder) {
+        index = builder.index;
+        number = builder.number;
+        driver = builder.driver;
+        timeRaw = builder.timeRaw;
+        timePax = builder.timePax;
+        timestamp = builder.timestamp;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public int getIndex() {
         return index;
     }
@@ -44,5 +57,51 @@ public class Run {
 
     public Instant getTimestamp() {
         return timestamp;
+    }
+
+    public static final class Builder {
+        private int index;
+        private int number;
+        private Driver driver;
+        private Duration timeRaw;
+        private Duration timePax;
+        private Instant timestamp;
+
+        private Builder() {
+        }
+
+        public Builder index(int val) {
+            index = val;
+            return this;
+        }
+
+        public Builder number(int val) {
+            number = val;
+            return this;
+        }
+
+        public Builder driver(Driver val) {
+            driver = val;
+            return this;
+        }
+
+        public Builder timeRaw(Duration val) {
+            timeRaw = val;
+            return this;
+        }
+
+        public Builder timePax(Duration val) {
+            timePax = val;
+            return this;
+        }
+
+        public Builder timestamp(Instant val) {
+            timestamp = val;
+            return this;
+        }
+
+        public Run build() {
+            return new Run(this);
+        }
     }
 }

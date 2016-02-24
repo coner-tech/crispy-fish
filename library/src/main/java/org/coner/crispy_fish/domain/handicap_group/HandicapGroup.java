@@ -16,6 +16,17 @@ public class HandicapGroup {
         this.competitionGroup = competitionGroup;
     }
 
+    private HandicapGroup(Builder builder) {
+        abbreviation = builder.abbreviation;
+        name = builder.name;
+        pax = builder.pax;
+        competitionGroup = builder.competitionGroup;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public String getAbbreviation() {
         return abbreviation;
     }
@@ -30,5 +41,39 @@ public class HandicapGroup {
 
     public CompetitionGroup getCompetitionGroup() {
         return competitionGroup;
+    }
+
+    public static final class Builder {
+        private String abbreviation;
+        private String name;
+        private float pax;
+        private CompetitionGroup competitionGroup;
+
+        private Builder() {
+        }
+
+        public Builder abbreviation(String val) {
+            abbreviation = val;
+            return this;
+        }
+
+        public Builder name(String val) {
+            name = val;
+            return this;
+        }
+
+        public Builder pax(float val) {
+            pax = val;
+            return this;
+        }
+
+        public Builder competitionGroup(CompetitionGroup val) {
+            competitionGroup = val;
+            return this;
+        }
+
+        public HandicapGroup build() {
+            return new HandicapGroup(this);
+        }
     }
 }
