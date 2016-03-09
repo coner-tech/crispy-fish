@@ -62,13 +62,13 @@ public class St1FileLocator {
 
         String leftFileName = left.getName();
         String rightFileName = right.getName();
-        Matcher leftOriginalFileMatcher = St1Filenames.ORIGINAL_FILE_MATCHER.matcher(leftFileName);
+        Matcher leftOriginalFileMatcher = St1Filenames.ORIGINAL_FILE_PATTERN.matcher(leftFileName);
         boolean leftOriginal = leftOriginalFileMatcher.matches();
-        Matcher rightOriginalFileMatcher = St1Filenames.ORIGINAL_FILE_MATCHER.matcher(rightFileName);
+        Matcher rightOriginalFileMatcher = St1Filenames.ORIGINAL_FILE_PATTERN.matcher(rightFileName);
         boolean rightOriginal = rightOriginalFileMatcher.matches();
-        Matcher leftReacceptedFileMatcher = St1Filenames.REACCEPTED_FILE_MATCHER.matcher(leftFileName);
+        Matcher leftReacceptedFileMatcher = St1Filenames.REACCEPTED_FILE_PATTERN.matcher(leftFileName);
         boolean leftReaccpeted = leftReacceptedFileMatcher.matches();
-        Matcher rightReacceptedFileMatcher = St1Filenames.REACCEPTED_FILE_MATCHER.matcher(rightFileName);
+        Matcher rightReacceptedFileMatcher = St1Filenames.REACCEPTED_FILE_PATTERN.matcher(rightFileName);
         boolean rightReaccepted = rightReacceptedFileMatcher.matches();
 
         if ((leftOriginal || leftReaccpeted) && !(rightOriginal || rightReaccepted)) {

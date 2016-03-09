@@ -26,14 +26,14 @@ public class St1FilenameFilter implements FilenameFilter {
             return false;
         }
 
-        if (St1Filenames.ORIGINAL_FILE_MATCHER.matcher(name).matches()) {
+        if (St1Filenames.ORIGINAL_FILE_PATTERN.matcher(name).matches()) {
             if (eventFileOriginalSt1BaseName.equalsIgnoreCase(baseName)) {
                 return true;
             }
             return false;
         }
 
-        if (St1Filenames.REACCEPTED_FILE_MATCHER.matcher(name).matches()) {
+        if (St1Filenames.REACCEPTED_FILE_PATTERN.matcher(name).matches()) {
             if (eventFileReacceptedSt1BaseName.equalsIgnoreCase(baseName)) {
                 return true;
             }
