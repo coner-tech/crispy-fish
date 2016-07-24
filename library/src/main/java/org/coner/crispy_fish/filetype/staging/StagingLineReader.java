@@ -1,8 +1,8 @@
-package org.coner.crispy_fish.filetype.st1;
+package org.coner.crispy_fish.filetype.staging;
 
-public interface St1LineReader<L> {
+public interface StagingLineReader<L> {
 
-    void setSt1Line(L st1Line);
+    void setStagingLine(L stagingLine);
 
     String getRun();
 

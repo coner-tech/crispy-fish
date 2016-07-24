@@ -1,6 +1,6 @@
-package org.coner.crispy_fish.filetype.st1;
+package org.coner.crispy_fish.filetype.staging;
 
-public class St1Keys {
+public class StagingLineKeys {
 
     public static final String RUN = "run";
     public static final String CLASS = "class";
