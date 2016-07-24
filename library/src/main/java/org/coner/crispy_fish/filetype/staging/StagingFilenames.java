@@ -1,8 +1,8 @@
-package org.coner.crispy_fish.filetype.st1;
+package org.coner.crispy_fish.filetype.staging;
 
 import java.util.regex.Pattern;
 
-public class St1Filenames {
+public class StagingFilenames {
 
     static final Pattern ORIGINAL_FILE_PATTERN = Pattern.compile(".*.st1$");
     static final Pattern REACCEPTED_FILE_PATTERN = Pattern.compile(".*.st1.\\d{3}$");

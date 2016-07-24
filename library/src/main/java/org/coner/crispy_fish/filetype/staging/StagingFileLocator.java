@@ -1,4 +1,4 @@
-package org.coner.crispy_fish.filetype.st1;
+package org.coner.crispy_fish.filetype.staging;
 
 import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
 
@@ -8,12 +8,12 @@ import java.util.*;
 import java.util.regex.Matcher;
 import org.apache.commons.io.FilenameUtils;
 
-public class St1FileLocator {
+public class StagingFileLocator {
 
     private final EcfAssistant ecfAssistant;
 
 
-    public St1FileLocator(EcfAssistant ecfAssistant) {
+    public StagingFileLocator(EcfAssistant ecfAssistant) {
         this.ecfAssistant = ecfAssistant;
     }
 
@@ -25,9 +25,9 @@ public class St1FileLocator {
             throw new IllegalArgumentException("Invalid event control file");
         }
         File eventControlFileParent = eventControlFile.getParent().toFile();
-        St1FilenameFilter st1FilenameFilter = ecfAssistant.buildSt1FilenameFilter(eventControlFile);
+        StagingFilenameFilter stagingFilenameFilter = ecfAssistant.buildStagingFilenameFilter(eventControlFile);
 
-        File[] files = eventControlFileParent.listFiles(st1FilenameFilter);
+        File[] files = eventControlFileParent.listFiles(stagingFilenameFilter);
         File selectedFile = selectFile(files);
         if (selectedFile != null) {
             return selectedFile.toPath();
@@ -62,13 +62,13 @@ public class St1FileLocator {
 
         String leftFileName = left.getName();
         String rightFileName = right.getName();
-        Matcher leftOriginalFileMatcher = St1Filenames.ORIGINAL_FILE_PATTERN.matcher(leftFileName);
+        Matcher leftOriginalFileMatcher = StagingFilenames.ORIGINAL_FILE_PATTERN.matcher(leftFileName);
         boolean leftOriginal = leftOriginalFileMatcher.matches();
-        Matcher rightOriginalFileMatcher = St1Filenames.ORIGINAL_FILE_PATTERN.matcher(rightFileName);
+        Matcher rightOriginalFileMatcher = StagingFilenames.ORIGINAL_FILE_PATTERN.matcher(rightFileName);
         boolean rightOriginal = rightOriginalFileMatcher.matches();
-        Matcher leftReacceptedFileMatcher = St1Filenames.REACCEPTED_FILE_PATTERN.matcher(leftFileName);
+        Matcher leftReacceptedFileMatcher = StagingFilenames.REACCEPTED_FILE_PATTERN.matcher(leftFileName);
         boolean leftReaccpeted = leftReacceptedFileMatcher.matches();
-        Matcher rightReacceptedFileMatcher = St1Filenames.REACCEPTED_FILE_PATTERN.matcher(rightFileName);
+        Matcher rightReacceptedFileMatcher = StagingFilenames.REACCEPTED_FILE_PATTERN.matcher(rightFileName);
         boolean rightReaccepted = rightReacceptedFileMatcher.matches();
 
         if ((leftOriginal || leftReaccpeted) && !(rightOriginal || rightReaccepted)) {

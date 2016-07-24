@@ -1,4 +1,4 @@
-package org.coner.crispy_fish.filetype.st1;
+package org.coner.crispy_fish.filetype.staging;
 
 import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
 
@@ -15,9 +15,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class St1FileLocatorTest {
+public class StagingFileLocatorTest {
 
-    private St1FileLocator st1FileLocator;
+    private StagingFileLocator stagingFileLocator;
 
     @Mock
     EcfAssistant ecfAssistant;
@@ -26,11 +26,11 @@ public class St1FileLocatorTest {
     @Mock
     File eventControlFileParentAsFile;
     @Mock
-    St1FilenameFilter st1FilenameFilter;
+    StagingFilenameFilter stagingFilenameFilter;
 
     @Before
     public void setup() {
-        st1FileLocator = new St1FileLocator(ecfAssistant);
+        stagingFileLocator = new StagingFileLocator(ecfAssistant);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class St1FileLocatorTest {
         when(ecfAssistant.isEcf(eventControlFile)).thenReturn(false);
 
         try {
-            st1FileLocator.locate(eventControlFile);
+            stagingFileLocator.locate(eventControlFile);
             failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
         } catch (Exception e) {
             assertThat(e).isInstanceOf(IllegalArgumentException.class);
@@ -48,39 +48,39 @@ public class St1FileLocatorTest {
 
     @Test(expected = IllegalStateException.class)
     public void whenLocateWithoutEventControlFileItShouldThrow() throws Exception {
-        st1FileLocator.locate(null);
+        stagingFileLocator.locate(null);
     }
 
     @Test
-    public void whenLocateWithSimpleSt1ItShouldLocateSt1() {
+    public void whenLocateWithSimpleStagingItShouldLocateStaging() {
         when(ecfAssistant.isEcf(eventControlFile)).thenReturn(true);
         Path ecfParent = mock(Path.class);
         when(eventControlFile.getParent()).thenReturn(ecfParent);
         when(ecfParent.toFile()).thenReturn(eventControlFileParentAsFile);
-        when(ecfAssistant.buildSt1FilenameFilter(eventControlFile)).thenReturn(st1FilenameFilter);
+        when(ecfAssistant.buildStagingFilenameFilter(eventControlFile)).thenReturn(stagingFilenameFilter);
         Path ecfPath = Paths.get("foo.ecf");
         File[] files = new File[]{ecfPath.toFile()};
-        when(eventControlFileParentAsFile.listFiles(st1FilenameFilter)).thenReturn(files);
+        when(eventControlFileParentAsFile.listFiles(stagingFilenameFilter)).thenReturn(files);
 
-        Path actual = st1FileLocator.locate(eventControlFile);
+        Path actual = stagingFileLocator.locate(eventControlFile);
 
         assertThat(actual).isEqualTo(ecfPath);
     }
 
     @Test
-    public void whenSelectFileWithSimpleSt1ItShouldSelectIt() {
+    public void whenSelectFileWithSimpleStagingItShouldSelectIt() {
         File expected = Paths.get("foo.st1").toFile();
         File[] files = new File[]{
                 expected
         };
 
-        File actual = st1FileLocator.selectFile(files);
+        File actual = stagingFileLocator.selectFile(files);
 
         assertThat(actual).isEqualTo(expected);
     }
 
     @Test
-    public void whenSelectFileWithSimpleSt1AndSomeGarbageItShouldSelectExpected() {
+    public void whenSelectFileWithSimpleStagingAndSomeGarbageItShouldSelectExpected() {
         File expected = Paths.get("foo.st1").toFile();
         File[] files = new File[]{
                 Paths.get("foo.txt").toFile(),
@@ -89,7 +89,7 @@ public class St1FileLocatorTest {
                 Paths.get("foo.st1_log").toFile(),
         };
 
-        File actual = st1FileLocator.selectFile(files);
+        File actual = stagingFileLocator.selectFile(files);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -102,7 +102,7 @@ public class St1FileLocatorTest {
                 expected
         };
 
-        File actual = st1FileLocator.selectFile(files);
+        File actual = stagingFileLocator.selectFile(files);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -119,7 +119,7 @@ public class St1FileLocatorTest {
                 Paths.get("foo_st1.002").toFile()
         };
 
-        File actual = st1FileLocator.selectFile(files);
+        File actual = stagingFileLocator.selectFile(files);
 
         assertThat(actual).isEqualTo(expected);
     }
