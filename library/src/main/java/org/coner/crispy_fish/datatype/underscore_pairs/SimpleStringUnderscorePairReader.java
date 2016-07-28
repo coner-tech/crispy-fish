@@ -2,15 +2,9 @@ package org.coner.crispy_fish.datatype.underscore_pairs;
 
 import static org.coner.crispy_fish.datatype.underscore_pairs.Constants.*;
 
-public class SimpleUnderscorePairReader implements UnderscorePairReader<String> {
+public class SimpleStringUnderscorePairReader implements UnderscorePairReader<String> {
 
-    private String pairs;
-
-    public void setPairs(String pairs) {
-        this.pairs = pairs;
-    }
-
-    public String get(String key) {
+    public String get(String pairs, String key) {
         assert pairs != null;
 
         final int keyStartPosition = pairs.indexOf(key);

@@ -2,29 +2,27 @@ package org.coner.crispy_fish.filetype.staging;
 
 public interface StagingLineReader<L> {
 
-    void setStagingLine(L stagingLine);
+    String getRegisteredClass(L line);
 
-    String getRun();
+    String getRegisteredNumber(L line);
 
-    String getClazz();
+    String getRegisteredDriverName(L line);
 
-    String getNumber();
+    String getRegisteredDriverCar(L line);
 
-    String getTm();
+    String getRegisteredDriverCarColor(L line);
 
-    String getPenalty();
+    String getRunNumber(L line);
 
-    String getDriver();
+    String getRunRawTime(L line);
 
-    String getCar();
+    String getRunPaxTime(L line);
 
-    String getCc();
+    String getRunPenalty(L line);
 
-    String getPos();
+    String getRunTimestamp(L line);
 
-    String getBestTime();
+    String getDriverPositionInClassForDay(L line);
 
-    String getPaxed();
-
-    String getTod();
+    String getDriverBestTimeOfDay(L line);
 }

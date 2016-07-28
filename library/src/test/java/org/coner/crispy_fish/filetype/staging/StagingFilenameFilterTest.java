@@ -1,13 +1,14 @@
 package org.coner.crispy_fish.filetype.staging;
 
-import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
-
-import java.io.File;
-import java.nio.file.*;
-import org.junit.*;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.io.File;
+import java.nio.file.Paths;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -18,16 +19,15 @@ public class StagingFilenameFilterTest {
     private StagingFilenameFilter stagingFilenameFilter;
 
     @Mock
-    EcfAssistant ecfAssistant;
-
-    Path eventControlFile;
+    StagingFileAssistant stagingFileAssistant;
+    @Mock
+    EventControlFile eventControlFile;
 
     @Before
     public void setup() {
-        eventControlFile = Paths.get("test", "foo", "bar.ecf");
-        when(ecfAssistant.isEcf(eventControlFile)).thenReturn(true);
+        when(eventControlFile.getPath()).thenReturn(Paths.get("test", "foo", "bar.ecf"));
 
-        stagingFilenameFilter = new StagingFilenameFilter(ecfAssistant, eventControlFile);
+        stagingFilenameFilter = new StagingFilenameFilter(eventControlFile, stagingFileAssistant);
     }
 
     @Test
@@ -62,6 +62,7 @@ public class StagingFilenameFilterTest {
 
     @Test
     public void whenExtensionIsReacceptedStagingItShouldAccept() {
+        stagingFilenameFilter = new StagingFilenameFilter("bar", "bar_st1");
         File dir = null;
         String name = "bar_st1.003";
 
@@ -82,6 +83,7 @@ public class StagingFilenameFilterTest {
 
     @Test
     public void whenPathContainsMultipleEventsWithReacceptedFileItShouldOnlyAcceptForEvent() {
+        stagingFilenameFilter = new StagingFilenameFilter("bar", "bar_st1");
         File dir = null;
         String name = "bas_st1.000";
 

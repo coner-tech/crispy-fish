@@ -1,22 +1,24 @@
 package org.coner.crispy_fish.filetype.staging;
 
-import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
-
-import java.io.*;
-import java.nio.file.Path;
 import org.apache.commons.io.FilenameUtils;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
+
+import java.io.File;
+import java.io.FilenameFilter;
 
 public class StagingFilenameFilter implements FilenameFilter {
 
     private final String eventFileOriginalStagingBaseName;
     private final String eventFileReacceptedStagingBaseName;
 
-    public StagingFilenameFilter(EcfAssistant ecfAssistant, Path eventControlFile) {
-        if (!ecfAssistant.isEcf(eventControlFile)) {
-            throw new IllegalArgumentException("eventControlFile is not an ecf");
-        }
-        this.eventFileOriginalStagingBaseName = FilenameUtils.getBaseName(eventControlFile.toString());
-        this.eventFileReacceptedStagingBaseName = StagingFilenames.getReacceptedFileBaseName(eventFileOriginalStagingBaseName);
+    public StagingFilenameFilter(EventControlFile eventControlFile, StagingFileAssistant stagingFileAssistant) {
+        this.eventFileOriginalStagingBaseName = FilenameUtils.getBaseName(eventControlFile.getPath().toString());
+        this.eventFileReacceptedStagingBaseName = stagingFileAssistant.getReacceptedFileBaseName(eventFileOriginalStagingBaseName);
+    }
+
+    StagingFilenameFilter(String eventFileOriginalStagingBaseName, String eventFileReacceptedStagingBaseName) {
+        this.eventFileOriginalStagingBaseName = eventFileOriginalStagingBaseName;
+        this.eventFileReacceptedStagingBaseName = eventFileReacceptedStagingBaseName;
     }
 
     public boolean accept(File dir, String name) {

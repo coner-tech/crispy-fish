@@ -1,31 +1,30 @@
 package org.coner.crispy_fish.filetype.staging;
 
-import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
+import org.apache.commons.io.FilenameUtils;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.regex.Matcher;
-import org.apache.commons.io.FilenameUtils;
 
 public class StagingFileLocator {
 
-    private final EcfAssistant ecfAssistant;
+    private final StagingFileAssistant stagingFileAssistant;
 
-
-    public StagingFileLocator(EcfAssistant ecfAssistant) {
-        this.ecfAssistant = ecfAssistant;
+    public StagingFileLocator(StagingFileAssistant stagingFileAssistant) {
+        this.stagingFileAssistant = stagingFileAssistant;
     }
 
-    public Path locate(Path eventControlFile) {
+
+    public Path locate(EventControlFile eventControlFile) {
         if (eventControlFile == null) {
-            throw new IllegalStateException("Programmer error: eventControlFile is null");
+            throw new IllegalArgumentException("Programmer error: eventControlFile is null");
         }
-        if (!ecfAssistant.isEcf(eventControlFile)) {
-            throw new IllegalArgumentException("Invalid event control file");
-        }
-        File eventControlFileParent = eventControlFile.getParent().toFile();
-        StagingFilenameFilter stagingFilenameFilter = ecfAssistant.buildStagingFilenameFilter(eventControlFile);
+
+        File eventControlFileParent = eventControlFile.getPath().getParent().toFile();
+        StagingFilenameFilter stagingFilenameFilter = stagingFileAssistant.buildStagingFilenameFilter(eventControlFile);
 
         File[] files = eventControlFileParent.listFiles(stagingFilenameFilter);
         File selectedFile = selectFile(files);

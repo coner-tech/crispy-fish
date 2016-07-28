@@ -1,13 +1,15 @@
 package org.coner.crispy_fish.filetype.staging;
 
-import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
-
-import java.io.File;
-import java.nio.file.*;
-import org.junit.*;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
@@ -20,9 +22,11 @@ public class StagingFileLocatorTest {
     private StagingFileLocator stagingFileLocator;
 
     @Mock
-    EcfAssistant ecfAssistant;
+    StagingFileAssistant stagingFileAssistant;
     @Mock
-    Path eventControlFile;
+    EventControlFile eventControlFile;
+    @Mock
+    Path eventControlFilePath;
     @Mock
     File eventControlFileParentAsFile;
     @Mock
@@ -30,34 +34,31 @@ public class StagingFileLocatorTest {
 
     @Before
     public void setup() {
-        stagingFileLocator = new StagingFileLocator(ecfAssistant);
+        stagingFileLocator = new StagingFileLocator(stagingFileAssistant);
+        when(eventControlFile.getPath()).thenReturn(eventControlFilePath);
     }
 
     @Test
-    public void whenLocateInvalidEventControlFileItShouldThrow() throws Exception {
-        eventControlFile = mock(Path.class);
-        when(ecfAssistant.isEcf(eventControlFile)).thenReturn(false);
-
+    public void whenLocateNullEventControlFileItShouldThrow() throws Exception {
         try {
-            stagingFileLocator.locate(eventControlFile);
+            stagingFileLocator.locate(null);
             failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
         } catch (Exception e) {
             assertThat(e).isInstanceOf(IllegalArgumentException.class);
         }
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void whenLocateWithoutEventControlFileItShouldThrow() throws Exception {
         stagingFileLocator.locate(null);
     }
 
     @Test
     public void whenLocateWithSimpleStagingItShouldLocateStaging() {
-        when(ecfAssistant.isEcf(eventControlFile)).thenReturn(true);
         Path ecfParent = mock(Path.class);
-        when(eventControlFile.getParent()).thenReturn(ecfParent);
+        when(eventControlFilePath.getParent()).thenReturn(ecfParent);
         when(ecfParent.toFile()).thenReturn(eventControlFileParentAsFile);
-        when(ecfAssistant.buildStagingFilenameFilter(eventControlFile)).thenReturn(stagingFilenameFilter);
+        when(stagingFileAssistant.buildStagingFilenameFilter(eventControlFile)).thenReturn(stagingFilenameFilter);
         Path ecfPath = Paths.get("foo.ecf");
         File[] files = new File[]{ecfPath.toFile()};
         when(eventControlFileParentAsFile.listFiles(stagingFilenameFilter)).thenReturn(files);

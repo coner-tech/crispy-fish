@@ -7,15 +7,15 @@ import static org.coner.crispy_fish.filetype.classdef.ClassDefIndices.CLASS_ABBR
 import static org.coner.crispy_fish.filetype.classdef.ClassDefIndices.CLASS_NAME;
 import static org.coner.crispy_fish.filetype.classdef.ClassDefIndices.PAX;
 
-public class SimpleClassDefLineReader implements ClassDefLineReader<String> {
+public class SimpleStringSplittingClassDefLineReader implements ClassDefLineReader<String> {
 
     private final List<String> fields;
 
-    public SimpleClassDefLineReader() {
-        this.fields = new ArrayList<String>();
+    public SimpleStringSplittingClassDefLineReader() {
+        this.fields = new ArrayList<>();
     }
 
-    SimpleClassDefLineReader(List<String> fields) {
+    SimpleStringSplittingClassDefLineReader(List<String> fields) {
         this.fields = fields;
     }
 

@@ -4,20 +4,20 @@ import java.nio.file.*;
 import org.assertj.core.api.Assertions;
 import org.junit.*;
 
-public class EcfAssistantTest {
+public class EventControlFileAssistantTest {
 
-    private EcfAssistant ecfAssistant;
+    private EventControlFileAssistant eventControlFileAssistant;
 
     @Before
     public void setup() {
-        ecfAssistant = new EcfAssistant();
+        eventControlFileAssistant = new EventControlFileAssistant();
     }
 
     @Test
     public void whenIsEcfWithValidPathItShouldReturnTrue() {
         Path path = Paths.get("foo.ecf");
 
-        boolean actual = ecfAssistant.isEcf(path);
+        boolean actual = eventControlFileAssistant.isEventControlFilePath(path);
 
         Assertions.assertThat(actual).isTrue();
     }
@@ -26,7 +26,7 @@ public class EcfAssistantTest {
     public void whenIsEcfWithInvalidPathItShouldReturnFalse() {
         Path path = Paths.get("foo.wrong");
 
-        boolean actual = ecfAssistant.isEcf(path);
+        boolean actual = eventControlFileAssistant.isEventControlFilePath(path);
 
         Assertions.assertThat(actual).isFalse();
     }

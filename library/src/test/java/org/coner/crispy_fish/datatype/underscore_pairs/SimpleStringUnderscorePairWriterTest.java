@@ -4,13 +4,13 @@ import org.junit.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UnderscorePairWriterTest {
+public class SimpleStringUnderscorePairWriterTest {
 
-    private UnderscorePairWriter writer;
+    private SimpleStringUnderscorePairWriter writer;
 
     @Before
     public void setup() {
-        writer = new UnderscorePairWriter();
+        writer = new SimpleStringUnderscorePairWriter();
     }
 
     @Test(expected = AssertionError.class)
