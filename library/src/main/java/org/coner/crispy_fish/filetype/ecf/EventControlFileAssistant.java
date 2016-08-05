@@ -1,18 +1,18 @@
 package org.coner.crispy_fish.filetype.ecf;
 
-import org.coner.crispy_fish.filetype.staging.StagingFilenameFilter;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 
-import java.nio.file.*;
-
-public class EcfAssistant {
+public class EventControlFileAssistant {
 
     private PathMatcher eventControlFileMatcher;
 
-    public EcfAssistant() {
+    public EventControlFileAssistant() {
         // no-op
     }
 
-    public boolean isEcf(Path path) {
+    public boolean isEventControlFilePath(Path path) {
         return getEventControlFileMatcher().matches(path)
                 && !path.toFile().isDirectory();
     }
@@ -26,9 +26,5 @@ public class EcfAssistant {
 
     PathMatcher buildEventControlFileMatcher() {
         return FileSystems.getDefault().getPathMatcher("glob:*.ecf");
-    }
-
-    public StagingFilenameFilter buildStagingFilenameFilter(Path eventControlFile) {
-        return new StagingFilenameFilter(this, eventControlFile);
     }
 }

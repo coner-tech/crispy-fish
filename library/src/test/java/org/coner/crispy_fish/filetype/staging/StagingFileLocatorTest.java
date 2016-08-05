@@ -1,16 +1,21 @@
 package org.coner.crispy_fish.filetype.staging;
 
-import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
+import org.coner.crispy_fish.domain.EventDay;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
-import java.io.File;
-import java.nio.file.*;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
+import org.mockito.*;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.same;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -20,9 +25,11 @@ public class StagingFileLocatorTest {
     private StagingFileLocator stagingFileLocator;
 
     @Mock
-    EcfAssistant ecfAssistant;
+    StagingFileAssistant stagingFileAssistant;
     @Mock
-    Path eventControlFile;
+    EventControlFile eventControlFile;
+    @Mock
+    Path eventControlFilePath;
     @Mock
     File eventControlFileParentAsFile;
     @Mock
@@ -30,39 +37,39 @@ public class StagingFileLocatorTest {
 
     @Before
     public void setup() {
-        stagingFileLocator = new StagingFileLocator(ecfAssistant);
+        stagingFileLocator = new StagingFileLocator(stagingFileAssistant);
+        when(eventControlFile.getPath()).thenReturn(eventControlFilePath);
     }
 
-    @Test
-    public void whenLocateInvalidEventControlFileItShouldThrow() throws Exception {
-        eventControlFile = mock(Path.class);
-        when(ecfAssistant.isEcf(eventControlFile)).thenReturn(false);
-
-        try {
-            stagingFileLocator.locate(eventControlFile);
-            failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
-        } catch (Exception e) {
-            assertThat(e).isInstanceOf(IllegalArgumentException.class);
-        }
-    }
-
-    @Test(expected = IllegalStateException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void whenLocateWithoutEventControlFileItShouldThrow() throws Exception {
-        stagingFileLocator.locate(null);
+        stagingFileLocator.locate(null, EventDay.ONE);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenLocateWithEventButWithoutEventDayItShouldThrow() throws Exception {
+        stagingFileLocator.locate(eventControlFile, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenLocateWithOneDayEventForEventDayTwoItShouldThrow() throws Exception {
+        when(eventControlFile.isTwoDayEvent()).thenReturn(false);
+
+        stagingFileLocator.locate(eventControlFile, EventDay.TWO);
     }
 
     @Test
     public void whenLocateWithSimpleStagingItShouldLocateStaging() {
-        when(ecfAssistant.isEcf(eventControlFile)).thenReturn(true);
         Path ecfParent = mock(Path.class);
-        when(eventControlFile.getParent()).thenReturn(ecfParent);
+        when(eventControlFilePath.getParent()).thenReturn(ecfParent);
         when(ecfParent.toFile()).thenReturn(eventControlFileParentAsFile);
-        when(ecfAssistant.buildStagingFilenameFilter(eventControlFile)).thenReturn(stagingFilenameFilter);
+        when(stagingFileAssistant.buildStagingFilenameFilter(same(eventControlFile), any(EventDay.class)))
+                .thenReturn(stagingFilenameFilter);
         Path ecfPath = Paths.get("foo.ecf");
         File[] files = new File[]{ecfPath.toFile()};
         when(eventControlFileParentAsFile.listFiles(stagingFilenameFilter)).thenReturn(files);
 
-        Path actual = stagingFileLocator.locate(eventControlFile);
+        Path actual = stagingFileLocator.locate(eventControlFile, EventDay.ONE);
 
         assertThat(actual).isEqualTo(ecfPath);
     }
@@ -87,36 +94,6 @@ public class StagingFileLocatorTest {
                 Paths.get("foo.html").toFile(),
                 expected,
                 Paths.get("foo.st1_log").toFile(),
-        };
-
-        File actual = stagingFileLocator.selectFile(files);
-
-        assertThat(actual).isEqualTo(expected);
-    }
-
-    @Test
-    public void whenSelectFileWithOriginalAndReacceptedItShouldSelectExpected() {
-        File expected = Paths.get("foo_st1.000").toFile();
-        File[] files = new File[]{
-                Paths.get("foo.st1").toFile(),
-                expected
-        };
-
-        File actual = stagingFileLocator.selectFile(files);
-
-        assertThat(actual).isEqualTo(expected);
-    }
-
-    @Test
-    public void whenSelectFileWithOriginalAndSeveralReacceptedItShouldSelectExpected() {
-        File expected = Paths.get("foo_st1.004").toFile();
-        File[] files = new File[]{
-                Paths.get("foo.st1").toFile(),
-                Paths.get("foo_st1.000").toFile(),
-                expected, // in a funny spot to prove the Comparator works
-                Paths.get("foo_st1.001").toFile(),
-                Paths.get("foo_st1.003").toFile(),
-                Paths.get("foo_st1.002").toFile()
         };
 
         File actual = stagingFileLocator.selectFile(files);

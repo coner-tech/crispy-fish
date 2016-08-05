@@ -1,22 +1,17 @@
 package org.coner.crispy_fish.filetype.staging;
 
-import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
-
 import java.io.*;
-import java.nio.file.Path;
+import java.util.regex.Pattern;
 import org.apache.commons.io.FilenameUtils;
 
 public class StagingFilenameFilter implements FilenameFilter {
 
     private final String eventFileOriginalStagingBaseName;
-    private final String eventFileReacceptedStagingBaseName;
+    private final Pattern originalFilePattern;
 
-    public StagingFilenameFilter(EcfAssistant ecfAssistant, Path eventControlFile) {
-        if (!ecfAssistant.isEcf(eventControlFile)) {
-            throw new IllegalArgumentException("eventControlFile is not an ecf");
-        }
-        this.eventFileOriginalStagingBaseName = FilenameUtils.getBaseName(eventControlFile.toString());
-        this.eventFileReacceptedStagingBaseName = StagingFilenames.getReacceptedFileBaseName(eventFileOriginalStagingBaseName);
+    public StagingFilenameFilter(String eventControlFileOriginalStagingBaseName, Pattern stagingOriginalFilePattern) {
+        this.eventFileOriginalStagingBaseName = eventControlFileOriginalStagingBaseName;
+        this.originalFilePattern = stagingOriginalFilePattern;
     }
 
     public boolean accept(File dir, String name) {
@@ -26,20 +21,21 @@ public class StagingFilenameFilter implements FilenameFilter {
             return false;
         }
 
-        if (StagingFilenames.ORIGINAL_FILE_PATTERN.matcher(name).matches()) {
+        if (originalFilePattern.matcher(name).matches()) {
             if (eventFileOriginalStagingBaseName.equalsIgnoreCase(baseName)) {
                 return true;
             }
             return false;
         }
 
-        if (StagingFilenames.REACCEPTED_FILE_PATTERN.matcher(name).matches()) {
-            if (eventFileReacceptedStagingBaseName.equalsIgnoreCase(baseName)) {
-                return true;
-            }
-            return false;
-        }
-
         return false;
+    }
+
+    String getEventFileOriginalStagingBaseName() {
+        return eventFileOriginalStagingBaseName;
+    }
+
+    Pattern getOriginalFilePattern() {
+        return originalFilePattern;
     }
 }

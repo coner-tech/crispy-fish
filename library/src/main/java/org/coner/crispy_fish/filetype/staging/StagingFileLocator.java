@@ -1,31 +1,38 @@
 package org.coner.crispy_fish.filetype.staging;
 
-import org.coner.crispy_fish.filetype.ecf.EcfAssistant;
+import org.coner.crispy_fish.domain.EventDay;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.util.*;
 import java.util.regex.Matcher;
-import org.apache.commons.io.FilenameUtils;
 
 public class StagingFileLocator {
 
-    private final EcfAssistant ecfAssistant;
+    private final StagingFileAssistant stagingFileAssistant;
 
-
-    public StagingFileLocator(EcfAssistant ecfAssistant) {
-        this.ecfAssistant = ecfAssistant;
+    public StagingFileLocator(StagingFileAssistant stagingFileAssistant) {
+        this.stagingFileAssistant = stagingFileAssistant;
     }
 
-    public Path locate(Path eventControlFile) {
+
+    public Path locate(EventControlFile eventControlFile, EventDay eventDay) {
         if (eventControlFile == null) {
-            throw new IllegalStateException("Programmer error: eventControlFile is null");
+            throw new IllegalArgumentException("Programmer error: eventControlFile is null");
         }
-        if (!ecfAssistant.isEcf(eventControlFile)) {
-            throw new IllegalArgumentException("Invalid event control file");
+        if (eventDay == null) {
+            throw new IllegalArgumentException("Programmer error: eventDay is null");
         }
-        File eventControlFileParent = eventControlFile.getParent().toFile();
-        StagingFilenameFilter stagingFilenameFilter = ecfAssistant.buildStagingFilenameFilter(eventControlFile);
+        if (!eventControlFile.isTwoDayEvent() && eventDay == EventDay.TWO) {
+            throw new IllegalArgumentException("Cannot locate Path for StagingFile for Day 2 of 1-Day event");
+        }
+
+        File eventControlFileParent = eventControlFile.getPath().getParent().toFile();
+        StagingFilenameFilter stagingFilenameFilter = stagingFileAssistant.buildStagingFilenameFilter(
+                eventControlFile,
+                eventDay
+        );
 
         File[] files = eventControlFileParent.listFiles(stagingFilenameFilter);
         File selectedFile = selectFile(files);
@@ -62,51 +69,25 @@ public class StagingFileLocator {
 
         String leftFileName = left.getName();
         String rightFileName = right.getName();
-        Matcher leftOriginalFileMatcher = StagingFilenames.ORIGINAL_FILE_PATTERN.matcher(leftFileName);
+        Matcher leftOriginalFileMatcher = StagingFilenames.ORIGINAL_FILE_DAY_1.matcher(leftFileName);
         boolean leftOriginal = leftOriginalFileMatcher.matches();
-        Matcher rightOriginalFileMatcher = StagingFilenames.ORIGINAL_FILE_PATTERN.matcher(rightFileName);
+        Matcher rightOriginalFileMatcher = StagingFilenames.ORIGINAL_FILE_DAY_1.matcher(rightFileName);
         boolean rightOriginal = rightOriginalFileMatcher.matches();
-        Matcher leftReacceptedFileMatcher = StagingFilenames.REACCEPTED_FILE_PATTERN.matcher(leftFileName);
-        boolean leftReaccpeted = leftReacceptedFileMatcher.matches();
-        Matcher rightReacceptedFileMatcher = StagingFilenames.REACCEPTED_FILE_PATTERN.matcher(rightFileName);
-        boolean rightReaccepted = rightReacceptedFileMatcher.matches();
 
-        if ((leftOriginal || leftReaccpeted) && !(rightOriginal || rightReaccepted)) {
+        if ((leftOriginal) && !(rightOriginal)) {
             return -1;
         }
-        if ((rightOriginal || rightReaccepted) && !(leftOriginal || leftReaccpeted)) {
+        if ((rightOriginal) && !(leftOriginal)) {
             return 1;
         }
         if (leftOriginal && rightOriginal) {
             return 0;
-        } else if (leftOriginal && rightReaccepted) {
+        } else if (leftOriginal) {
             return 1;
-        } else if (leftReaccpeted && rightOriginal) {
+        } else if (rightOriginal) {
             return -1;
         }
-        if (leftReaccpeted && rightReaccepted) {
-            String leftGroup = leftReacceptedFileMatcher.group();
-            String rightGroup = rightReacceptedFileMatcher.group();
-            String leftExtension = FilenameUtils.getExtension(leftGroup);
-            String rightExtension = FilenameUtils.getExtension(rightGroup);
-            if (leftExtension != null && rightExtension != null) {
-                int comparison = leftExtension.compareTo(rightExtension);
-                if (comparison >= 1) {
-                    return -1;
-                } else if (comparison <= -1) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            } else if (leftExtension != null) {
-                return -1;
-            } else if (rightExtension != null) {
-                return 1;
-            }
-        }
-
         return 0;
     };
-
 
 }

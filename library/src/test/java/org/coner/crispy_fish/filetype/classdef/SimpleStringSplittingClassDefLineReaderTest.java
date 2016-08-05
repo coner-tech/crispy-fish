@@ -1,36 +1,39 @@
 package org.coner.crispy_fish.filetype.classdef;
 
-import java.util.*;
 import org.assertj.core.data.Index;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class SimpleClassDefLineReaderTest {
+public class SimpleStringSplittingClassDefLineReaderTest {
 
-    private SimpleClassDefLineReader simpleClassDefLineReader;
+    private SimpleStringSplittingClassDefLineReader simpleStringSplittingClassDefLineReader;
 
     @Mock
     List<String> fields;
 
     @Before
     public void setup() {
-        simpleClassDefLineReader = new SimpleClassDefLineReader(fields);
+        simpleStringSplittingClassDefLineReader = new SimpleStringSplittingClassDefLineReader(fields);
     }
 
     @Test
     public void whenSetClassDefLineValidItShouldSplit() {
         ArrayList<String> fields = new ArrayList<String>();
-        simpleClassDefLineReader = new SimpleClassDefLineReader(fields);
+        simpleStringSplittingClassDefLineReader = new SimpleStringSplittingClassDefLineReader(fields);
         String line = "CS\t0.814\t1\tC Street\t\t\t\tStreet\t\t";
 
-        simpleClassDefLineReader.setClassDefLine(line);
+        simpleStringSplittingClassDefLineReader.setClassDefLine(line);
 
         assertThat(fields)
                 .contains("CS", Index.atIndex(0))
@@ -44,7 +47,7 @@ public class SimpleClassDefLineReaderTest {
         String classAbbreviation = "CS";
         when(fields.get(0)).thenReturn(classAbbreviation);
 
-        String actual = simpleClassDefLineReader.getClassAbbreviation();
+        String actual = simpleStringSplittingClassDefLineReader.getClassAbbreviation();
 
         verify(fields).get(0);
         assertThat(actual).isSameAs(classAbbreviation);
@@ -55,7 +58,7 @@ public class SimpleClassDefLineReaderTest {
         String pax = "0.814";
         when(fields.get(1)).thenReturn(pax);
 
-        String actual = simpleClassDefLineReader.getPax();
+        String actual = simpleStringSplittingClassDefLineReader.getPax();
 
         verify(fields).get(1);
         assertThat(actual).isSameAs(pax);
@@ -66,7 +69,7 @@ public class SimpleClassDefLineReaderTest {
         String className = "C Street";
         when(fields.get(3)).thenReturn(className);
 
-        String actual = simpleClassDefLineReader.getClassName();
+        String actual = simpleStringSplittingClassDefLineReader.getClassName();
 
         verify(fields).get(3);
         assertThat(actual).isSameAs(className);
@@ -77,7 +80,7 @@ public class SimpleClassDefLineReaderTest {
         String category = "Street";
         when(fields.get(7)).thenReturn(category);
 
-        String actual = simpleClassDefLineReader.getCategory();
+        String actual = simpleStringSplittingClassDefLineReader.getCategory();
 
         verify(fields).get(7);
         assertThat(actual).isSameAs(category);

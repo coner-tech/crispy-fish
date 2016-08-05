@@ -4,10 +4,7 @@ import java.util.regex.Pattern;
 
 public class StagingFilenames {
 
-    static final Pattern ORIGINAL_FILE_PATTERN = Pattern.compile(".*.st1$");
-    static final Pattern REACCEPTED_FILE_PATTERN = Pattern.compile(".*.st1.\\d{3}$");
+    static final Pattern ORIGINAL_FILE_DAY_1 = Pattern.compile(".*.st1$");
+    static final Pattern ORIGINAL_FILE_DAY_2 = Pattern.compile(".*.st2$");
 
-    static String getReacceptedFileBaseName(String originalFileBaseName) {
-        return originalFileBaseName + "_st1";
-    }
 }
