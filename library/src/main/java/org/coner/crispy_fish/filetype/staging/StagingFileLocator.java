@@ -1,10 +1,10 @@
 package org.coner.crispy_fish.filetype.staging;
 
 import com.google.common.base.Preconditions;
-import com.sun.istack.internal.NotNull;
 import org.coner.crispy_fish.domain.EventDay;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
+import javax.annotation.Nonnull;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.*;
@@ -19,7 +19,7 @@ public class StagingFileLocator {
     }
 
 
-    public Path locate(@NotNull EventControlFile eventControlFile, @NotNull EventDay eventDay) {
+    public Path locate(@Nonnull EventControlFile eventControlFile, @Nonnull EventDay eventDay) {
         Preconditions.checkNotNull(eventControlFile, "eventControlFile must not be null");
         Preconditions.checkNotNull(eventDay, "eventDay must not be null");
         Preconditions.checkArgument(
