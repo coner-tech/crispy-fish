@@ -1,0 +1,4 @@
+rootProject.name = 'parent'
+include ':library'
+
+project(':library').projectDir = "$rootDir/library" as File
