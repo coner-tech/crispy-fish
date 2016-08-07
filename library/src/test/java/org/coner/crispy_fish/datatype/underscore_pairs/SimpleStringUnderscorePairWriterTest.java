@@ -13,7 +13,7 @@ public class SimpleStringUnderscorePairWriterTest {
         writer = new SimpleStringUnderscorePairWriter();
     }
 
-    @Test(expected = AssertionError.class)
+    @Test(expected = NullPointerException.class)
     public void whenPairKeyIsNullItShouldThrow() throws Exception {
         writer.pair(null, "foo");
     }

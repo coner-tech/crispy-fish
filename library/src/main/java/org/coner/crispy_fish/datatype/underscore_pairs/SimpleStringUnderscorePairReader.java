@@ -1,11 +1,15 @@
 package org.coner.crispy_fish.datatype.underscore_pairs;
 
+import com.google.common.base.Preconditions;
+import com.sun.istack.internal.NotNull;
+import com.sun.istack.internal.Nullable;
+
 import static org.coner.crispy_fish.datatype.underscore_pairs.Constants.*;
 
 public class SimpleStringUnderscorePairReader implements UnderscorePairReader<String> {
 
-    public String get(String pairs, String key) {
-        assert pairs != null;
+    public String get(@NotNull String pairs, @Nullable String key) {
+        Preconditions.checkNotNull(pairs, "pairs must not be null");
 
         final int keyStartPosition = pairs.indexOf(key);
         if (keyStartPosition < 0) {
