@@ -15,7 +15,7 @@ public class SimpleStringUnderscorePairReaderTest {
         reader = new SimpleStringUnderscorePairReader();
     }
 
-    @Test(expected = AssertionError.class)
+    @Test(expected = NullPointerException.class)
     public void whenGetWithNullPairsItShouldThrow() throws Exception {
         reader.get(null, "irrelevant");
     }

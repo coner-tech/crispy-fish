@@ -41,13 +41,13 @@ public class StagingFileLocatorTest {
         when(eventControlFile.getPath()).thenReturn(eventControlFilePath);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void whenLocateWithoutEventControlFileItShouldThrow() throws Exception {
+    @Test(expected = NullPointerException.class)
+    public void whenLocateWithNullEventControlFileItShouldThrow() throws Exception {
         stagingFileLocator.locate(null, EventDay.ONE);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void whenLocateWithEventButWithoutEventDayItShouldThrow() throws Exception {
+    @Test(expected = NullPointerException.class)
+    public void whenLocateWithEventButNullEventDayItShouldThrow() throws Exception {
         stagingFileLocator.locate(eventControlFile, null);
     }
 

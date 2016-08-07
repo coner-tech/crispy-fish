@@ -1,11 +1,16 @@
 package org.coner.crispy_fish.datatype.underscore_pairs;
 
-import static org.coner.crispy_fish.datatype.underscore_pairs.Constants.*;
+import com.google.common.base.Preconditions;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import static org.coner.crispy_fish.datatype.underscore_pairs.Constants.UNDERSCORE;
 
 public class SimpleStringUnderscorePairWriter implements UnderscorePairWriter<String> {
 
-    public String pair(String key, String value) {
-        assert key != null;
+    public String pair(@Nonnull String key, @Nullable String value) {
+        Preconditions.checkNotNull(key, "key must not be null");
 
         if (value == null) {
             value = "";

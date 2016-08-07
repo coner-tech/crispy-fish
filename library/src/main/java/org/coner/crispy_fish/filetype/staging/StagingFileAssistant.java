@@ -1,20 +1,23 @@
 package org.coner.crispy_fish.filetype.staging;
 
+import com.google.common.base.Preconditions;
+import org.apache.commons.io.FilenameUtils;
 import org.coner.crispy_fish.domain.EventDay;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
+import javax.annotation.Nonnull;
 import java.util.regex.Pattern;
-import org.apache.commons.io.FilenameUtils;
 
 
 class StagingFileAssistant {
-    StagingFilenameFilter buildStagingFilenameFilter(EventControlFile eventControlFile, EventDay eventDay) {
-        if (eventControlFile == null) {
-            throw new IllegalArgumentException("eventControlFile is null");
-        }
-        if (!eventControlFile.isTwoDayEvent() && eventDay == EventDay.TWO) {
-            throw new IllegalArgumentException("eventControlFile is a one-day event, cannot build for EventDay.TWO");
-        }
+    StagingFilenameFilter buildStagingFilenameFilter(@Nonnull EventControlFile eventControlFile, @Nonnull EventDay eventDay) {
+        Preconditions.checkNotNull(eventControlFile, "eventControlFile must not be null");
+        Preconditions.checkNotNull(eventDay, "eventDay must not be null");
+        Preconditions.checkArgument(
+                eventControlFile.isTwoDayEvent() || eventDay == EventDay.ONE,
+                "eventControlFile is a one-day event, won't build StagingFilenameFilter for eventDay == %s",
+                eventDay.toString()
+        );
         Pattern originalFilePattern;
         String originalFileBaseName = getOriginalFileBaseName(eventControlFile);
         switch (eventDay) {

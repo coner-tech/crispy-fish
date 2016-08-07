@@ -21,10 +21,16 @@ public class StagingFileAssistantTest {
         assistant = new StagingFileAssistant();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = NullPointerException.class)
     public void whenBuildStagingFilenameFilterWithNullEventControlFileItShouldThrow() {
         assistant.buildStagingFilenameFilter(null, EventDay.ONE);
     }
+
+    @Test(expected = NullPointerException.class)
+    public void whenBuildStagingFilenameFilterNullEventDayItShouldThrow() {
+        assistant.buildStagingFilenameFilter(mock(EventControlFile.class), null);
+    }
+
 
     @Test(expected = IllegalArgumentException.class)
     public void whenBuildStagingFilenameFilterWithOneDayEventForDayTwoItShouldThrow() {

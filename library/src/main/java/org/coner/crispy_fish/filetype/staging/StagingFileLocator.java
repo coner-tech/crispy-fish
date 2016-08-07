@@ -1,8 +1,10 @@
 package org.coner.crispy_fish.filetype.staging;
 
+import com.google.common.base.Preconditions;
 import org.coner.crispy_fish.domain.EventDay;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
+import javax.annotation.Nonnull;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.*;
@@ -17,16 +19,14 @@ public class StagingFileLocator {
     }
 
 
-    public Path locate(EventControlFile eventControlFile, EventDay eventDay) {
-        if (eventControlFile == null) {
-            throw new IllegalArgumentException("Programmer error: eventControlFile is null");
-        }
-        if (eventDay == null) {
-            throw new IllegalArgumentException("Programmer error: eventDay is null");
-        }
-        if (!eventControlFile.isTwoDayEvent() && eventDay == EventDay.TWO) {
-            throw new IllegalArgumentException("Cannot locate Path for StagingFile for Day 2 of 1-Day event");
-        }
+    public Path locate(@Nonnull EventControlFile eventControlFile, @Nonnull EventDay eventDay) {
+        Preconditions.checkNotNull(eventControlFile, "eventControlFile must not be null");
+        Preconditions.checkNotNull(eventDay, "eventDay must not be null");
+        Preconditions.checkArgument(
+                eventControlFile.isTwoDayEvent() || eventDay == EventDay.ONE,
+                "eventControlFile is a one-day event, won't locate Path for eventDay == %s",
+                eventDay.toString()
+        );
 
         File eventControlFileParent = eventControlFile.getPath().getParent().toFile();
         StagingFilenameFilter stagingFilenameFilter = stagingFileAssistant.buildStagingFilenameFilter(
