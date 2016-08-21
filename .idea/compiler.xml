@@ -29,6 +29,8 @@
       <module name="library_main" target="1.8" />
       <module name="library_test" target="1.8" />
       <module name="parent" target="1.8" />
+      <module name="sample_main" target="1.8" />
+      <module name="sample_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

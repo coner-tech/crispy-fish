@@ -9,7 +9,7 @@ import javax.annotation.Nonnull;
 import java.util.regex.Pattern;
 
 
-class StagingFileAssistant {
+public class StagingFileAssistant {
     StagingFilenameFilter buildStagingFilenameFilter(@Nonnull EventControlFile eventControlFile, @Nonnull EventDay eventDay) {
         Preconditions.checkNotNull(eventControlFile, "eventControlFile must not be null");
         Preconditions.checkNotNull(eventDay, "eventDay must not be null");
