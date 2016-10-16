@@ -1,8 +1,9 @@
-package org.crispy_fish.query;
+package org.crispy_fish.domain;
 
 public enum PenaltyType {
     CONE,
     DID_NOT_FINISH,
     DISQUALIFIED,
-    RERUN
+    RERUN,
+    CLEAN
 }

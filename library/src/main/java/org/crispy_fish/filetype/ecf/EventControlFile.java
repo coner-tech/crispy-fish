@@ -7,14 +7,16 @@ public class EventControlFile {
     private final EventControlFileAssistant ecfAssistant;
     private final Path path;
     private final boolean twoDayEvent;
+    private final int conePenalty;
 
-    public EventControlFile(Path path, boolean twoDayEvent) {
+    public EventControlFile(Path path, boolean twoDayEvent, int conePenalty) {
         ecfAssistant = new EventControlFileAssistant();
         if (!ecfAssistant.isEventControlFilePath(path)) {
             throw new NotEventControlFilePathException(path);
         }
         this.path = path;
         this.twoDayEvent = twoDayEvent;
+        this.conePenalty = conePenalty;
     }
 
     public Path getPath() {
@@ -23,5 +25,9 @@ public class EventControlFile {
 
     public boolean isTwoDayEvent() {
         return twoDayEvent;
+    }
+
+    public int getConePenalty() {
+        return conePenalty;
     }
 }

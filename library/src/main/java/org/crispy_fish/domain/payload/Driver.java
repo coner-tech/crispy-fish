@@ -1,4 +1,4 @@
-package org.crispy_fish.query;
+package org.crispy_fish.domain.payload;
 
 import java.util.Objects;
 

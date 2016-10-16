@@ -2,9 +2,9 @@ package org.crispy_fish.filetype.staging;
 
 public interface StagingLineReader<L> {
 
-    String getRegisteredClass(L line);
+    String getRegisteredDriverClass(L line);
 
-    String getRegisteredNumber(L line);
+    String getRegisteredDriverNumber(L line);
 
     String getRegisteredDriverName(L line);
 

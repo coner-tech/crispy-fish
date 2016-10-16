@@ -40,9 +40,9 @@ public class SimpleStringStagingLineReaderTest {
     @Test
     public void whenGetRegisteredClassItShouldGetClass() throws Exception {
         String clazz = "cs";
-        when(simpleStringStagingLineReader.getRegisteredClass(STAGING_LINE_NORMAL)).thenReturn(clazz);
+        when(simpleStringStagingLineReader.getRegisteredDriverClass(STAGING_LINE_NORMAL)).thenReturn(clazz);
 
-        String actual = simpleStringStagingLineReader.getRegisteredClass(STAGING_LINE_NORMAL);
+        String actual = simpleStringStagingLineReader.getRegisteredDriverClass(STAGING_LINE_NORMAL);
 
         verify(underscorePairReader).get(STAGING_LINE_NORMAL, "class");
         assertThat(actual).isSameAs(clazz);
@@ -51,9 +51,9 @@ public class SimpleStringStagingLineReaderTest {
     @Test
     public void whenGetRegisteredNumberItShouldGetNumber() throws Exception {
         String number = "12";
-        when(simpleStringStagingLineReader.getRegisteredNumber(STAGING_LINE_NORMAL)).thenReturn(number);
+        when(simpleStringStagingLineReader.getRegisteredDriverNumber(STAGING_LINE_NORMAL)).thenReturn(number);
 
-        String actual = simpleStringStagingLineReader.getRegisteredNumber(STAGING_LINE_NORMAL);
+        String actual = simpleStringStagingLineReader.getRegisteredDriverNumber(STAGING_LINE_NORMAL);
 
         verify(underscorePairReader).get(STAGING_LINE_NORMAL, "number");
         assertThat(actual).isSameAs(number);
