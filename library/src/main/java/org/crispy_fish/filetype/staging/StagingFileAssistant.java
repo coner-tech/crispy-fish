@@ -65,16 +65,9 @@ public class StagingFileAssistant {
                 case "RRN":
                     return PenaltyType.RERUN;
             }
-            try {
-                int cones = Integer.parseUnsignedInt(penalty);
-                if (cones > 0) {
-                    return PenaltyType.CONE;
-                }
-            } catch (NumberFormatException e) {
-                throw new StagingLineException(
-                        "Unable to convert staging penalty " + penalty + " to PenaltyType",
-                        e
-                );
+            int cones = convertStagingRunPenaltyStringToConeCount(penalty);
+            if (cones > 0) {
+                return PenaltyType.CONE;
             }
         }
         return PenaltyType.CLEAN;
