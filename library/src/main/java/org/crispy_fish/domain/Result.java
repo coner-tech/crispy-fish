@@ -8,4 +8,13 @@ public class Result {
     public int position;
     public Driver driver;
     public Run run;
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "position=" + position +
+                ", driver=" + driver +
+                ", run=" + run +
+                '}';
+    }
 }

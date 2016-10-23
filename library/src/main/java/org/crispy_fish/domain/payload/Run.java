@@ -15,4 +15,6 @@ public class Run {
     public Duration timeScored;
     public String timeScratchAsString;
     public Duration timeScratchAsDuration;
+
+
 }

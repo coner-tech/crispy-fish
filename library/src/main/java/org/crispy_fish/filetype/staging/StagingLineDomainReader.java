@@ -30,8 +30,14 @@ public class StagingLineDomainReader<L> {
         String penalty = stagingLineReader.getRunPenalty(stagingFileLine);
         try {
             run.rawTime = stagingFileAssistant.convertStagingTimeStringToDuration(raw);
-            run.paxTime = stagingFileAssistant.convertStagingTimeStringToDuration(pax);
             run.penaltyType = stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty);
+            try {
+                run.paxTime = stagingFileAssistant.convertStagingTimeStringToDuration(pax);
+            } catch (StagingLineException e) {
+                if (run.penaltyType == PenaltyType.CLEAN) {
+                    throw new StagingLineException("Unable to parse pax time from clean run", e);
+                }
+            }
             if (run.penaltyType == PenaltyType.CONE) {
                 run.cones = stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(penalty);
             } else if (run.penaltyType == PenaltyType.CLEAN) {

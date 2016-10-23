@@ -5,8 +5,10 @@
     <output-test url="file://$MODULE_DIR$/../../../library/build/classes/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../library">
+      <sourceFolder url="file://$MODULE_DIR$/../../../library/src/integrationTest/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../library/src/integrationTest/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../../library/.gradle" />
@@ -22,5 +24,8 @@
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:19.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.assertj:assertj-core:3.5.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.assertj:assertj-core:3.5.2" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:1.10.17" level="project" />
   </component>
 </module>

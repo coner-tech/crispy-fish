@@ -22,4 +22,14 @@ public class Driver {
     public int hashCode() {
         return Objects.hash(classing, number);
     }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "classing='" + classing + '\'' +
+                ", number='" + number + '\'' +
+                ", name='" + name + '\'' +
+                ", car='" + car + '\'' +
+                '}';
+    }
 }

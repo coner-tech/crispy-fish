@@ -117,14 +117,31 @@ public class StagingLineDomainReaderTest {
     }
 
     @Test
-    public void whenReadRunConvertPaxTimeThrowsItShouldReturnNull() throws Exception {
+    public void whenReadRunConvertPaxTimeThrowsOnCleanRunItShouldReturnNull() throws Exception {
         final String pax = "pax";
+        final String penalty = "penalty";
         when(stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK)).thenReturn(pax);
+        when(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty);
+        when(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(PenaltyType.CLEAN);
         when(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenThrow(StagingLineException.class);
 
         final Run actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK);
 
         assertThat(actual).isNull();
+    }
+
+    @Test
+    public void whenReadRunConvertPaxTimeThrowsOnDnfRunItShouldReturnRun() throws Exception {
+        final String pax = "pax";
+        final String penalty = "penalty";
+        when(stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK)).thenReturn(pax);
+        when(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty);
+        when(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(PenaltyType.DID_NOT_FINISH);
+        when(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenThrow(StagingLineException.class);
+
+        final Run actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK);
+
+        assertThat(actual).isNotNull();
     }
 
     @Test
