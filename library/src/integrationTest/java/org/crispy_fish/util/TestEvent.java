@@ -24,6 +24,10 @@ public enum TestEvent {
     THSCC_2016_POINTS_3(
             "2016 Points Event 3 Danville.st1",
             false
+    ),
+    THSCC_2016_POINTS_9(
+            "2016-09-17 points autox 9 cary.st1",
+            false
     );
 
     private static final String RESOURCES_PREFIX = (TestEvent.class.getCanonicalName() + "/").replace(".", "/");

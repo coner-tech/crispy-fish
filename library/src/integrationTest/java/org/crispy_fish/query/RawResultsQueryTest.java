@@ -10,12 +10,14 @@ import org.crispy_fish.filetype.staging.StagingLineDomainReader;
 import org.crispy_fish.filetype.staging.StagingLineReader;
 import org.crispy_fish.util.TestEvent;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
 
 import static org.assertj.core.data.Index.atIndex;
 import static org.crispy_fish.util.ResultConditions.driverFinished;
+import static org.crispy_fish.util.ResultConditions.driverNameNotNullOrEmpty;
 
 public class RawResultsQueryTest {
 
@@ -144,7 +146,65 @@ public class RawResultsQueryTest {
                 .has(driverFinished(93, "hs", "93"), atIndex(92))
                 .has(driverFinished(92, "novhs", "44"), atIndex(91))
                 .has(driverFinished(91, "novcsp", "26"), atIndex(90));
+        softly.assertAll();
     }
 
+    @Test
+    public void testWithThscc2016Points9() throws QueryException {
+        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_9;
+        List<String> lines = testEvent.getStagingFileLines();
+        rawResultsQuery = new RawResultsQuery(
+                testEvent.buildEventControlFileMock(),
+                stagingLineReader,
+                stagingLineDomainReader
+        );
 
+        List<Result> rawResults = rawResultsQuery.query(lines);
+
+        SoftAssertions softly = new SoftAssertions();
+        softly.assertThat(rawResults)
+                .hasSize(128)
+                .has(driverFinished(1, "XP", "58"), atIndex(0))
+                .has(driverFinished(2, "ASP", "41"), atIndex(1))
+                .has(driverFinished(3, "STR", "8"), atIndex(2))
+                .has(driverFinished(4, "GS", "78"), atIndex(3))
+                .has(driverFinished(5, "CS", "78"), atIndex(4))
+                .has(driverFinished(6, "STR", "73"), atIndex(5))
+                .has(driverFinished(7, "CS", "15"), atIndex(6))
+                .has(driverFinished(8, "CS", "5"), atIndex(7))
+                .has(driverFinished(9, "STR", "32"), atIndex(8))
+                .has(driverFinished(10, "CS", "116"), atIndex(9))
+                .has(driverFinished(128, "NOVSM", "333"), atIndex(127))
+                .has(driverFinished(127, "SM", "51"), atIndex(126))
+                .has(driverFinished(126, "NOVXP", "45"), atIndex(125))
+                .has(driverFinished(125, "CS", "11"), atIndex(124))
+                .has(driverFinished(124, "NOVGS", "347"), atIndex(123))
+                .has(driverFinished(123, "OFES", "62"), atIndex(122))
+                .has(driverFinished(122, "NOVCAM", "41"), atIndex(121))
+                .has(driverFinished(121, "NOVDS", "35"), atIndex(120))
+                .has(driverFinished(120, "NOVES", "21"), atIndex(119))
+                .has(driverFinished(119, "NOVSTR", "56"), atIndex(118))
+                .has(driverFinished(118, "NOVSTF", "98"), atIndex(117));
+        softly.assertAll();
+    }
+
+    @Test
+    @Ignore(value = "Relatively minor issue, ignore until #23 is resolved")
+    public void testIssue23IsFixed() throws QueryException {
+        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_9;
+        List<String> lines = testEvent.getStagingFileLines();
+        rawResultsQuery = new RawResultsQuery(
+                testEvent.buildEventControlFileMock(),
+                stagingLineReader,
+                stagingLineDomainReader
+        );
+
+        List<Result> rawResults = rawResultsQuery.query(lines);
+
+        SoftAssertions softly = new SoftAssertions();
+        softly.assertThat(rawResults)
+                .has(driverNameNotNullOrEmpty(), atIndex(7)) // position 8, CS 15
+                .has(driverNameNotNullOrEmpty(), atIndex(99)); // position 100, ES 11
+        softly.assertAll();
+    }
 }

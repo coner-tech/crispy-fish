@@ -2,6 +2,7 @@ package org.crispy_fish.util;
 
 import org.assertj.core.api.Condition;
 import org.assertj.core.condition.AllOf;
+import org.assertj.core.util.Strings;
 import org.crispy_fish.domain.Result;
 import org.crispy_fish.domain.payload.Driver;
 
@@ -20,6 +21,10 @@ public class ResultConditions {
         driver.classing = classing;
         driver.number = number;
         return driverEquals(driver);
+    }
+
+    public static Condition<Result> driverNameNotNullOrEmpty() {
+        return new Condition<>(result -> !Strings.isNullOrEmpty(result.driver.name), "result.driver is not null or empty");
     }
 
     public static Condition<Result> driverFinished(final int position, final String classing, final String number) {
