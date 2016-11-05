@@ -27,11 +27,11 @@ public class SimpleStringStagingLineReader implements StagingLineReader<String> 
         return underscorePairReader.get(line, RUN);
     }
 
-    public String getRegisteredClass(String line) {
+    public String getRegisteredDriverClass(String line) {
         return underscorePairReader.get(line, CLASS);
     }
 
-    public String getRegisteredNumber(String line) {
+    public String getRegisteredDriverNumber(String line) {
         return underscorePairReader.get(line, NUMBER);
     }
 

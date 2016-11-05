@@ -13,7 +13,7 @@ public class EventControlFileAssistant {
     }
 
     public boolean isEventControlFilePath(Path path) {
-        return getEventControlFileMatcher().matches(path)
+        return getEventControlFileMatcher().matches(path.getFileName())
                 && !path.toFile().isDirectory();
     }
 
