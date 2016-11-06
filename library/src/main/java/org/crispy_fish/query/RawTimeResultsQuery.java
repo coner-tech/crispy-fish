@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class RawResultsQuery {
+public class RawTimeResultsQuery {
 
     private final EventControlFile eventControlFile;
     private final StagingLineReader<String> stagingLineReader;
     private final StagingLineDomainReader<String> stagingLineDomainReader;
 
-    public RawResultsQuery(EventControlFile eventControlFile, StagingLineReader<String> stagingLineReader, StagingLineDomainReader<String> stagingLineDomainReader) {
+    public RawTimeResultsQuery(EventControlFile eventControlFile, StagingLineReader<String> stagingLineReader, StagingLineDomainReader<String> stagingLineDomainReader) {
         this.eventControlFile = eventControlFile;
         this.stagingLineReader = stagingLineReader;
         this.stagingLineDomainReader = stagingLineDomainReader;

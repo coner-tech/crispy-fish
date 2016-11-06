@@ -5,12 +5,12 @@
     <output-test url="file://$MODULE_DIR$/../../../library/build/classes/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../library">
-      <sourceFolder url="file://$MODULE_DIR$/../../../library/src/integrationTest/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/integrationTest/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../library/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../library/src/integrationTest/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../../library/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../library/build" />
     </content>

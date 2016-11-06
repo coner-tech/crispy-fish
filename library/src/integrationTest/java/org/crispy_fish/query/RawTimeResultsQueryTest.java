@@ -19,9 +19,9 @@ import static org.assertj.core.data.Index.atIndex;
 import static org.crispy_fish.util.ResultConditions.driverFinished;
 import static org.crispy_fish.util.ResultConditions.driverNameNotNullOrEmpty;
 
-public class RawResultsQueryTest {
+public class RawTimeResultsQueryTest {
 
-    private RawResultsQuery rawResultsQuery;
+    private RawTimeResultsQuery rawTimeResultsQuery;
 
     private UnderscorePairReader<String> underscorePairReader;
     private StagingLineReader<String> stagingLineReader;
@@ -38,13 +38,13 @@ public class RawResultsQueryTest {
     public void testWithThscc2016Points1() throws QueryException {
         final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_1;
         List<String> lines = testEvent.getStagingFileLines();
-        rawResultsQuery = new RawResultsQuery(
+        rawTimeResultsQuery = new RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
         );
 
-        List<Result> rawResults = rawResultsQuery.query(lines);
+        List<Result> rawResults = rawTimeResultsQuery.query(lines);
 
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(rawResults)
@@ -77,13 +77,13 @@ public class RawResultsQueryTest {
     public void testWithThscc2016Points2() throws QueryException {
         final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_2;
         List<String> lines = testEvent.getStagingFileLines();
-        rawResultsQuery = new RawResultsQuery(
+        rawTimeResultsQuery = new RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
         );
 
-        List<Result> rawResults = rawResultsQuery.query(lines);
+        List<Result> rawResults = rawTimeResultsQuery.query(lines);
 
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(rawResults)
@@ -115,13 +115,13 @@ public class RawResultsQueryTest {
     public void testWithThscc2016Points3() throws QueryException {
         final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_3;
         List<String> lines = testEvent.getStagingFileLines();
-        rawResultsQuery = new RawResultsQuery(
+        rawTimeResultsQuery = new RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
         );
 
-        List<Result> rawResults = rawResultsQuery.query(lines);
+        List<Result> rawResults = rawTimeResultsQuery.query(lines);
 
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(rawResults)
@@ -153,13 +153,13 @@ public class RawResultsQueryTest {
     public void testWithThscc2016Points9() throws QueryException {
         final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_9;
         List<String> lines = testEvent.getStagingFileLines();
-        rawResultsQuery = new RawResultsQuery(
+        rawTimeResultsQuery = new RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
         );
 
-        List<Result> rawResults = rawResultsQuery.query(lines);
+        List<Result> rawResults = rawTimeResultsQuery.query(lines);
 
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(rawResults)
@@ -193,13 +193,13 @@ public class RawResultsQueryTest {
     public void testIssue23IsFixed() throws QueryException {
         final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_9;
         List<String> lines = testEvent.getStagingFileLines();
-        rawResultsQuery = new RawResultsQuery(
+        rawTimeResultsQuery = new RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
         );
 
-        List<Result> rawResults = rawResultsQuery.query(lines);
+        List<Result> rawResults = rawTimeResultsQuery.query(lines);
 
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(rawResults)
