@@ -5,8 +5,8 @@ import org.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReade
 import org.crispy_fish.domain.Result;
 import org.crispy_fish.filetype.ecf.EventControlFile;
 import org.crispy_fish.filetype.staging.*;
+import org.crispy_fish.query.PaxTimeResultsQuery;
 import org.crispy_fish.query.QueryException;
-import org.crispy_fish.query.RawResultsQuery;
 import org.crispy_fish.sample.ui.DisplayResult;
 
 import java.io.IOException;
@@ -16,8 +16,8 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Command(name = "raw", description = "Prints the raw results")
-public class RawResultsCommand extends BaseResultsCommand implements Runnable {
+@Command(name = "pax", description = "Prints the pax time results")
+public class PaxTimeResultsCommand extends BaseResultsCommand implements Runnable {
 
     @Override
     public void run() {
@@ -34,14 +34,14 @@ public class RawResultsCommand extends BaseResultsCommand implements Runnable {
             return;
         }
         StagingLineReader<String> reader = new SimpleStringStagingLineReader(new SimpleStringUnderscorePairReader());
-        RawResultsQuery rawResultsQuery = new RawResultsQuery(
+        PaxTimeResultsQuery paxTimeResultsQuery = new PaxTimeResultsQuery(
                 eventControlFile,
                 reader,
                 new StagingLineDomainReader<>(stagingFileAssistant, reader)
         );
         List<Result> domainResults;
         try {
-            domainResults = rawResultsQuery.query(stagingFileLines);
+            domainResults = paxTimeResultsQuery.query(stagingFileLines);
         } catch (QueryException e) {
             e.printStackTrace();
             return;
