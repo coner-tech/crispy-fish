@@ -9,15 +9,13 @@ class SimpleStringUnderscorePairReader : UnderscorePairReader<String> {
             return null
         }
 
-        val value: String
         val keyLength = key.length
         val valueStartPosition = keyStartPosition + keyLength + 1 // +1 to account for the trailing _
         val valueStopPosition = pairs.indexOf('_', valueStartPosition)
-        value = if (valueStopPosition >= 0) {
+        return if (valueStopPosition >= 0) {
             pairs.substring(valueStartPosition, valueStopPosition)
         } else {
             pairs.substring(valueStartPosition)
         }
-        return value
     }
 }
