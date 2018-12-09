@@ -1,6 +1,7 @@
 package org.crispy_fish.datatype.underscore_pairs;
 
 import com.google.common.base.Preconditions;
+import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

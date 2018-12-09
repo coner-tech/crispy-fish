@@ -1,6 +1,6 @@
 package org.crispy_fish.filetype.staging;
 
-import org.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
+import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
 
 import static org.crispy_fish.filetype.staging.StagingLineKeys.BESTTIME;
 import static org.crispy_fish.filetype.staging.StagingLineKeys.CAR;

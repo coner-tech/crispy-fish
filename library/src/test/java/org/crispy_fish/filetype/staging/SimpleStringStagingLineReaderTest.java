@@ -1,6 +1,6 @@
 package org.crispy_fish.filetype.staging;
 
-import org.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
+import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

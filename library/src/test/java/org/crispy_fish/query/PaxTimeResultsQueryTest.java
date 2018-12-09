@@ -2,7 +2,7 @@ package org.crispy_fish.query;
 
 import org.assertj.core.api.SoftAssertions;
 import org.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReader;
-import org.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
+import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
 import org.crispy_fish.domain.Result;
 import org.crispy_fish.filetype.staging.SimpleStringStagingLineReader;
 import org.crispy_fish.filetype.staging.StagingFileAssistant;
