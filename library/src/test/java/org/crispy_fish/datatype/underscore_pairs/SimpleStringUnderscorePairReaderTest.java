@@ -1,5 +1,6 @@
 package org.crispy_fish.datatype.underscore_pairs;
 
+import org.coner.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReader;
 import org.junit.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -13,11 +14,6 @@ public class SimpleStringUnderscorePairReaderTest {
     @Before
     public void setup() {
         reader = new SimpleStringUnderscorePairReader();
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void whenGetWithNullPairsItShouldThrow() throws Exception {
-        reader.get(null, "irrelevant");
     }
 
     @Test
@@ -39,11 +35,6 @@ public class SimpleStringUnderscorePairReaderTest {
         String actual = reader.get(PAIRS_EXAMPLE_BASIC, "key3");
 
         assertThat(actual).isEqualTo("value3");
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void whenGetNullKeyItShouldThrow() throws Exception {
-        reader.get(PAIRS_EXAMPLE_BASIC, null);
     }
 
     @Test

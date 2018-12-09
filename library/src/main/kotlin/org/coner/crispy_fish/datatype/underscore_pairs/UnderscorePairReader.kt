@@ -1,6 +1,6 @@
 package org.coner.crispy_fish.datatype.underscore_pairs
 
-interface UnderscorePairReader<P> {
+interface UnderscorePairReader<P : Any> {
 
-    operator fun get(pairs: P, key: String): String
+    fun get(pairs: P, key: String): String?
 }
