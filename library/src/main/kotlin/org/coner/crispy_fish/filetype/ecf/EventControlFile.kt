@@ -1,6 +1,5 @@
 package org.coner.crispy_fish.filetype.ecf
 
-import org.crispy_fish.filetype.ecf.EventControlFileAssistant
 import org.crispy_fish.filetype.ecf.NotEventControlFilePathException
 import java.nio.file.Path
 

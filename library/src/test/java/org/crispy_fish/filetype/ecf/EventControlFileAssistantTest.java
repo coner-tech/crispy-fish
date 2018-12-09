@@ -1,6 +1,7 @@
 package org.crispy_fish.filetype.ecf;
 
 import org.assertj.core.api.Assertions;
+import org.coner.crispy_fish.filetype.ecf.EventControlFileAssistant;
 import org.junit.Before;
 import org.junit.Test;
 
