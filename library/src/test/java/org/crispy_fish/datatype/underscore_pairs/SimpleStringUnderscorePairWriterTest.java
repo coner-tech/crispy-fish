@@ -1,5 +1,6 @@
 package org.crispy_fish.datatype.underscore_pairs;
 
+import org.coner.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairWriter;
 import org.junit.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,11 +12,6 @@ public class SimpleStringUnderscorePairWriterTest {
     @Before
     public void setup() {
         writer = new SimpleStringUnderscorePairWriter();
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void whenPairKeyIsNullItShouldThrow() throws Exception {
-        writer.pair(null, "foo");
     }
 
     @Test
