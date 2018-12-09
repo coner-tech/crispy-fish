@@ -1,6 +1,6 @@
 package org.crispy_fish.filetype.staging;
 
-import org.crispy_fish.domain.EventDay;
+import org.coner.crispy_fish.domain.EventDay;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
 import org.junit.Before;

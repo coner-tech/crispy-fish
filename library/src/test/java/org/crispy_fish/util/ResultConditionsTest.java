@@ -1,7 +1,7 @@
 package org.crispy_fish.util;
 
 import org.assertj.core.api.Assertions;
-import org.crispy_fish.domain.Result;
+import org.coner.crispy_fish.domain.Result;
 import org.junit.Test;
 
 public class ResultConditionsTest {
@@ -9,7 +9,7 @@ public class ResultConditionsTest {
     @Test
     public void whenPositionMatches() {
         Result result = new Result();
-        result.position = 1;
+        result.setPosition(1);
 
         boolean actual = ResultConditions.positionEquals(1).matches(result);
 
@@ -19,7 +19,7 @@ public class ResultConditionsTest {
     @Test
     public void whenPositionDoesntMatch() {
         Result result = new Result();
-        result.position = 1;
+        result.setPosition(1);
 
         boolean actual = ResultConditions.positionEquals(Integer.MAX_VALUE).matches(result);
 

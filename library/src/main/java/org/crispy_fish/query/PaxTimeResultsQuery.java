@@ -1,6 +1,6 @@
 package org.crispy_fish.query;
 
-import org.crispy_fish.domain.Result;
+import org.coner.crispy_fish.domain.Result;
 import org.crispy_fish.domain.payload.Driver;
 import org.crispy_fish.domain.payload.Run;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
@@ -59,7 +59,7 @@ public class PaxTimeResultsQuery {
             boolean shouldPutResult;
             if (driverBestPaxResults.containsKey(driver)) {
                 Result bestResult = driverBestPaxResults.get(driver);
-                shouldPutResult = run.timeScored.compareTo(bestResult.run.timeScored) < 0;
+                shouldPutResult = run.timeScored.compareTo(bestResult.getRun().timeScored) < 0;
             } else {
                 shouldPutResult = true;
             }
@@ -67,16 +67,16 @@ public class PaxTimeResultsQuery {
                 continue;
             }
             Result result = new Result();
-            result.driver = driver;
-            result.run = run;
+            result.setDriver(driver);
+            result.setRun(run);
             driverBestPaxResults.put(driver, result);
         }
         List<Result> results = driverBestPaxResults.values().stream()
-                .sorted((result1, result2) -> result1.run.timeScored.compareTo(result2.run.timeScored))
+                .sorted((result1, result2) -> result1.getRun().timeScored.compareTo(result2.getRun().timeScored))
                 .collect(Collectors.toList());
         int position = 1;
         for (Result result : results) {
-            result.position = position++;
+            result.setPosition(position++);
         }
         return results;
     }

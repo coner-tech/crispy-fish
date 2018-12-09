@@ -1,6 +1,6 @@
 package org.crispy_fish.domain.payload;
 
-import org.crispy_fish.domain.PenaltyType;
+import org.coner.crispy_fish.domain.PenaltyType;
 
 import java.time.Duration;
 

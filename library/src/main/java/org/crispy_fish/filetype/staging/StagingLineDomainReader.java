@@ -1,6 +1,6 @@
 package org.crispy_fish.filetype.staging;
 
-import org.crispy_fish.domain.PenaltyType;
+import org.coner.crispy_fish.domain.PenaltyType;
 import org.crispy_fish.domain.payload.Driver;
 import org.crispy_fish.domain.payload.Run;
 

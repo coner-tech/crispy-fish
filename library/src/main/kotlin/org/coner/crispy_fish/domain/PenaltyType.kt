@@ -1,6 +1,6 @@
-package org.crispy_fish.domain;
+package org.coner.crispy_fish.domain
 
-public enum PenaltyType {
+enum class PenaltyType {
     CONE,
     DID_NOT_FINISH,
     DISQUALIFIED,

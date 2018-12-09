@@ -3,8 +3,8 @@ package org.crispy_fish.filetype.staging;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import org.apache.commons.io.FilenameUtils;
-import org.crispy_fish.domain.EventDay;
-import org.crispy_fish.domain.PenaltyType;
+import org.coner.crispy_fish.domain.EventDay;
+import org.coner.crispy_fish.domain.PenaltyType;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
 import javax.annotation.Nonnull;
