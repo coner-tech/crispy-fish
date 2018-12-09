@@ -3,7 +3,7 @@ package org.crispy_fish.query;
 import org.crispy_fish.domain.Result;
 import org.crispy_fish.domain.payload.Driver;
 import org.crispy_fish.domain.payload.Run;
-import org.crispy_fish.filetype.ecf.EventControlFile;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 import org.crispy_fish.filetype.staging.StagingLineDomainReader;
 import org.crispy_fish.filetype.staging.StagingLineReader;
 

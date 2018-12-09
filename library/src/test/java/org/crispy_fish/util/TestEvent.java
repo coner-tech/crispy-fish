@@ -2,7 +2,7 @@ package org.crispy_fish.util;
 
 import com.google.common.io.Resources;
 import org.apache.commons.io.FileUtils;
-import org.crispy_fish.filetype.ecf.EventControlFile;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
 import java.io.File;
 import java.net.URL;

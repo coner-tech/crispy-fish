@@ -2,7 +2,7 @@ package org.crispy_fish.filetype.staging;
 
 import com.google.common.base.Preconditions;
 import org.crispy_fish.domain.EventDay;
-import org.crispy_fish.filetype.ecf.EventControlFile;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
 import javax.annotation.Nonnull;
 import java.io.File;

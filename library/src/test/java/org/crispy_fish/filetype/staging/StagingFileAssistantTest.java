@@ -3,7 +3,7 @@ package org.crispy_fish.filetype.staging;
 import org.assertj.core.api.Assertions;
 import org.crispy_fish.domain.EventDay;
 import org.crispy_fish.domain.PenaltyType;
-import org.crispy_fish.filetype.ecf.EventControlFile;
+import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 import org.junit.Before;
 import org.junit.Test;
 
