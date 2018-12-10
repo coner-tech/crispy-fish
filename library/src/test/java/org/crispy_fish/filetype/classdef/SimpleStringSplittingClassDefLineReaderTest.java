@@ -1,6 +1,7 @@
 package org.crispy_fish.filetype.classdef;
 
 import org.assertj.core.data.Index;
+import org.coner.crispy_fish.filetype.classdef.SimpleStringSplittingClassDefLineReader;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,7 +34,7 @@ public class SimpleStringSplittingClassDefLineReaderTest {
         simpleStringSplittingClassDefLineReader = new SimpleStringSplittingClassDefLineReader(fields);
         String line = "CS\t0.814\t1\tC Street\t\t\t\tStreet\t\t";
 
-        simpleStringSplittingClassDefLineReader.setClassDefLine(line);
+        simpleStringSplittingClassDefLineReader.setLine(line);
 
         assertThat(fields)
                 .contains("CS", Index.atIndex(0))
