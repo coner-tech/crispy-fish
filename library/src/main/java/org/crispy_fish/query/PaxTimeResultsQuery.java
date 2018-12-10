@@ -1,8 +1,9 @@
 package org.crispy_fish.query;
 
 import org.coner.crispy_fish.domain.Result;
-import org.crispy_fish.domain.payload.Driver;
-import org.crispy_fish.domain.payload.Run;
+import org.coner.crispy_fish.domain.Driver;
+import org.coner.crispy_fish.domain.Numbers;
+import org.coner.crispy_fish.domain.Run;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 import org.crispy_fish.filetype.staging.StagingLineDomainReader;
 import org.crispy_fish.filetype.staging.StagingLineReader;
@@ -26,17 +27,17 @@ public class PaxTimeResultsQuery {
     }
 
     public List<Result> query(List<String> stagingFileLines) throws QueryException {
-        Map<Driver, Result> driverBestPaxResults = new HashMap<>();
+        Map<Numbers, Result> driverBestPaxResults = new HashMap<>();
         for (String stagingFileLine : stagingFileLines) {
             Driver driver = stagingLineDomainReader.readDriver(stagingFileLine);
             Run run = stagingLineDomainReader.readRun(stagingFileLine);
             if (driver == null || run == null) {
                 continue;
             }
-            run.timeScratchAsString = stagingLineReader.getRunPaxTime(stagingFileLine);
-            run.timeScratchAsDuration = run.paxTime;
+            run.setTimeScratchAsString(stagingLineReader.getRunPaxTime(stagingFileLine));
+            run.setTimeScratchAsDuration(run.getPaxTime());
             Duration penaltyDuration = Duration.ZERO;
-            switch (run.penaltyType) {
+            switch (run.getPenaltyType()) {
                 case DID_NOT_FINISH:
                     penaltyDuration = Duration.ofDays(1);
                     break;
@@ -50,16 +51,16 @@ public class PaxTimeResultsQuery {
                     // cone penalties already included in pax time
                     break;
                 default:
-                    throw new IllegalStateException("Unrecognized penalty type: " + run.penaltyType);
+                    throw new IllegalStateException("Unrecognized penalty type: " + run.getPenaltyType());
             }
-            if (run.paxTime == null && penaltyDuration != Duration.ZERO) {
-                run.paxTime = Duration.ZERO;
+            if (run.getPaxTime() == null && penaltyDuration != Duration.ZERO) {
+                run.setPaxTime(Duration.ZERO);
             }
-            run.timeScored = run.paxTime.plus(penaltyDuration);
+            run.setTimeScored(run.getPaxTime().plus(penaltyDuration));
             boolean shouldPutResult;
-            if (driverBestPaxResults.containsKey(driver)) {
-                Result bestResult = driverBestPaxResults.get(driver);
-                shouldPutResult = run.timeScored.compareTo(bestResult.getRun().timeScored) < 0;
+            if (driverBestPaxResults.containsKey(driver.getNumbers())) {
+                Result bestResult = driverBestPaxResults.get(driver.getNumbers());
+                shouldPutResult = run.getTimeScored().compareTo(bestResult.getRun().getTimeScored()) < 0;
             } else {
                 shouldPutResult = true;
             }
@@ -69,10 +70,10 @@ public class PaxTimeResultsQuery {
             Result result = new Result();
             result.setDriver(driver);
             result.setRun(run);
-            driverBestPaxResults.put(driver, result);
+            driverBestPaxResults.put(driver.getNumbers(), result);
         }
         List<Result> results = driverBestPaxResults.values().stream()
-                .sorted((result1, result2) -> result1.getRun().timeScored.compareTo(result2.getRun().timeScored))
+                .sorted((result1, result2) -> result1.getRun().getTimeScored().compareTo(result2.getRun().getTimeScored()))
                 .collect(Collectors.toList());
         int position = 1;
         for (Result result : results) {

@@ -1,13 +1,15 @@
 package org.crispy_fish.query;
 
 import org.coner.crispy_fish.domain.Result;
-import org.crispy_fish.domain.payload.Driver;
-import org.crispy_fish.domain.payload.Run;
+import org.coner.crispy_fish.domain.Driver;
+import org.coner.crispy_fish.domain.Numbers;
+import org.coner.crispy_fish.domain.Run;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 import org.crispy_fish.filetype.staging.StagingLineDomainReader;
 import org.crispy_fish.filetype.staging.StagingLineReader;
 
 import java.time.Duration;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,19 +28,19 @@ public class RawTimeResultsQuery {
     }
 
     public List<Result> query(List<String> stagingFileLines) throws QueryException {
-        Map<Driver, Result> driverBestRawResults = new HashMap<>();
+        Map<Numbers, Result> driverBestRawResults = new HashMap<>();
         for (String stagingFileLine : stagingFileLines) {
             Driver driver = stagingLineDomainReader.readDriver(stagingFileLine);
             Run run = stagingLineDomainReader.readRun(stagingFileLine);
             if (driver == null || run == null) {
                 continue;
             }
-            run.timeScratchAsString = stagingLineReader.getRunRawTime(stagingFileLine);
-            run.timeScratchAsDuration = run.rawTime;
+            run.setTimeScratchAsString(stagingLineReader.getRunRawTime(stagingFileLine));
+            run.setTimeScratchAsDuration(run.getRawTime());
             Duration penaltyDuration = Duration.ZERO;
-            switch (run.penaltyType) {
+            switch (run.getPenaltyType()) {
                 case CONE:
-                     penaltyDuration = Duration.ofSeconds(run.cones * eventControlFile.getConePenalty());
+                     penaltyDuration = Duration.ofSeconds(run.getCones() * eventControlFile.getConePenalty());
                     break;
                 case DID_NOT_FINISH:
                     penaltyDuration = Duration.ofDays(1);
@@ -51,13 +53,13 @@ public class RawTimeResultsQuery {
                 case CLEAN:
                     break;
                 default:
-                    throw new IllegalStateException("Unrecognized penalty type: " + run.penaltyType);
+                    throw new IllegalStateException("Unrecognized penalty type: " + run.getPenaltyType());
             }
-            run.timeScored = run.rawTime.plus(penaltyDuration);
+            run.setTimeScored(run.getRawTime().plus(penaltyDuration));
             boolean shouldPutResult;
-            if (driverBestRawResults.containsKey(driver)) {
-                Result bestResult = driverBestRawResults.get(driver);
-                shouldPutResult = run.timeScored.compareTo(bestResult.getRun().timeScored) < 0;
+            if (driverBestRawResults.containsKey(driver.getNumbers())) {
+                Result bestResult = driverBestRawResults.get(driver.getNumbers());
+                shouldPutResult = run.getTimeScored().compareTo(bestResult.getRun().getTimeScored()) < 0;
             } else {
                 shouldPutResult = true;
             }
@@ -67,10 +69,10 @@ public class RawTimeResultsQuery {
             Result result = new Result();
             result.setDriver(driver);
             result.setRun(run);
-            driverBestRawResults.put(driver, result);
+            driverBestRawResults.put(driver.getNumbers(), result);
         }
         List<Result> results = driverBestRawResults.values().stream()
-                .sorted((result1, result2) -> result1.getRun().timeScored.compareTo(result2.getRun().timeScored))
+                .sorted(Comparator.comparing(result -> result.getRun().getTimeScored()))
                 .collect(Collectors.toList());
         int position = 1;
         for (Result result : results) {

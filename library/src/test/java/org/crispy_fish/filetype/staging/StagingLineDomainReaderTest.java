@@ -1,8 +1,8 @@
 package org.crispy_fish.filetype.staging;
 
 import org.coner.crispy_fish.domain.PenaltyType;
-import org.crispy_fish.domain.payload.Driver;
-import org.crispy_fish.domain.payload.Run;
+import org.coner.crispy_fish.domain.Driver;
+import org.coner.crispy_fish.domain.Run;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,10 +45,10 @@ public class StagingLineDomainReaderTest {
         final Driver actual = stagingLineDomainReader.readDriver(STAGING_LINE_MOCK);
 
         assertThat(actual).isNotNull();
-        assertThat(actual.name).isSameAs(driverName);
-        assertThat(actual.car).isSameAs(driverCar);
-        assertThat(actual.classing).isSameAs(driverClassing);
-        assertThat(actual.number).isSameAs(driverNumber);
+        assertThat(actual.getName()).isSameAs(driverName);
+        assertThat(actual.getCar()).isSameAs(driverCar);
+        assertThat(actual.getNumbers().getClassing()).isSameAs(driverClassing);
+        assertThat(actual.getNumbers().getNumber()).isSameAs(driverNumber);
     }
 
     @Test
@@ -69,10 +69,10 @@ public class StagingLineDomainReaderTest {
         final Run actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK);
 
         assertThat(actual).isNotNull();
-        assertThat(actual.rawTime).isSameAs(rawTime);
-        assertThat(actual.paxTime).isSameAs(paxTime);
-        assertThat(actual.penaltyType).isSameAs(penaltyType);
-        assertThat(actual.cones).isEqualTo(0);
+        assertThat(actual.getRawTime()).isSameAs(rawTime);
+        assertThat(actual.getPaxTime()).isSameAs(paxTime);
+        assertThat(actual.getPenaltyType()).isSameAs(penaltyType);
+        assertThat(actual.getCones()).isEqualTo(0);
     }
 
     @Test
@@ -87,8 +87,8 @@ public class StagingLineDomainReaderTest {
         final Run actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK);
 
         assertThat(actual).isNotNull();
-        assertThat(actual.penaltyType).isSameAs(penaltyType);
-        assertThat(actual.cones).isEqualTo(cones);
+        assertThat(actual.getPenaltyType()).isSameAs(penaltyType);
+        assertThat(actual.getCones()).isEqualTo(cones);
     }
 
     @Test
@@ -101,8 +101,8 @@ public class StagingLineDomainReaderTest {
         final Run actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK);
 
         assertThat(actual).isNotNull();
-        assertThat(actual.penaltyType).isSameAs(penaltyType);
-        assertThat(actual.cones).isEqualTo(Run.CONES_UNKNOWN);
+        assertThat(actual.getPenaltyType()).isSameAs(penaltyType);
+        assertThat(actual.getCones()).isEqualTo(null);
     }
 
     @Test

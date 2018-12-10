@@ -1,8 +1,9 @@
 package org.crispy_fish.filetype.staging;
 
 import org.coner.crispy_fish.domain.PenaltyType;
-import org.crispy_fish.domain.payload.Driver;
-import org.crispy_fish.domain.payload.Run;
+import org.coner.crispy_fish.domain.Driver;
+import org.coner.crispy_fish.domain.Numbers;
+import org.coner.crispy_fish.domain.Run;
 
 public class StagingLineDomainReader<L> {
 
@@ -16,10 +17,12 @@ public class StagingLineDomainReader<L> {
 
     public Driver readDriver(L stagingLine) {
         Driver driver = new Driver();
-        driver.name = stagingLineReader.getRegisteredDriverName(stagingLine);
-        driver.car = stagingLineReader.getRegisteredDriverCar(stagingLine);
-        driver.classing = stagingLineReader.getRegisteredDriverClass(stagingLine);
-        driver.number = stagingLineReader.getRegisteredDriverNumber(stagingLine);
+        driver.setName(stagingLineReader.getRegisteredDriverName(stagingLine));
+        driver.setCar(stagingLineReader.getRegisteredDriverCar(stagingLine));
+        Numbers numbers = new Numbers();
+        numbers.setClassing(stagingLineReader.getRegisteredDriverClass(stagingLine));
+        numbers.setNumber(stagingLineReader.getRegisteredDriverNumber(stagingLine));
+        driver.setNumbers(numbers);
         return driver;
     }
 
@@ -29,12 +32,12 @@ public class StagingLineDomainReader<L> {
         String pax = stagingLineReader.getRunPaxTime(stagingFileLine);
         String penalty = stagingLineReader.getRunPenalty(stagingFileLine);
         try {
-            run.rawTime = stagingFileAssistant.convertStagingTimeStringToDuration(raw);
-            run.penaltyType = stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty);
+            run.setRawTime(stagingFileAssistant.convertStagingTimeStringToDuration(raw));
+            run.setPenaltyType(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty));
             try {
-                run.paxTime = stagingFileAssistant.convertStagingTimeStringToDuration(pax);
+                run.setPaxTime(stagingFileAssistant.convertStagingTimeStringToDuration(pax));
             } catch (StagingLineException e) {
-                switch (run.penaltyType) {
+                switch (run.getPenaltyType()) {
                     case CONE:
                         throw new StagingLineException("Unable to parse pax time from coned run", e);
                     case DID_NOT_FINISH:
@@ -46,15 +49,15 @@ public class StagingLineDomainReader<L> {
                     case CLEAN:
                         throw new StagingLineException("Unable to parse pax time from clean run", e);
                     default:
-                        throw new IllegalStateException("Unrecognized run.penaltyType: " + run.penaltyType, e);
+                        throw new IllegalStateException("Unrecognized run.penaltyType: " + run.getPenaltyType(), e);
                 }
             }
-            if (run.penaltyType == PenaltyType.CONE) {
-                run.cones = stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(penalty);
-            } else if (run.penaltyType == PenaltyType.CLEAN) {
-                run.cones = 0;
+            if (run.getPenaltyType() == PenaltyType.CONE) {
+                run.setCones(stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(penalty));
+            } else if (run.getPenaltyType() == PenaltyType.CLEAN) {
+                run.setCones(0);
             } else {
-                run.cones = Run.CONES_UNKNOWN;
+                run.setCones(null);
             }
         } catch (StagingLineException e) {
             return null;
