@@ -1,9 +1,9 @@
 package org.coner.crispy_fish.domain
 
-enum class PenaltyType {
+enum class PenaltyType(val shouldOmitRunFromResults: Boolean = false) {
     CONE,
     DID_NOT_FINISH,
     DISQUALIFIED,
-    RERUN,
+    RERUN(shouldOmitRunFromResults = true),
     CLEAN
 }
