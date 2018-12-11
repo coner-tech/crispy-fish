@@ -1,6 +1,7 @@
 package org.crispy_fish.filetype.staging;
 
 import org.assertj.core.api.JUnitSoftAssertions;
+import org.coner.crispy_fish.filetype.staging.StagingFilenames;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class StagingFilenamesTest {
     @Test
     public void whenMatchOriginalFileDay1WithValidNameItShouldMatch() {
         String filenameOriginalDay1Valid = "foo.st1";
-        assertThat(StagingFilenames.ORIGINAL_FILE_DAY_1.matcher(filenameOriginalDay1Valid).matches()).isTrue();
+        assertThat(StagingFilenames.INSTANCE.getORIGINAL_FILE_DAY_1().matcher(filenameOriginalDay1Valid).matches()).isTrue();
     }
 
     @Test
@@ -24,7 +25,7 @@ public class StagingFilenamesTest {
         };
 
         for (String input : filenamesOriginalDay1Invalid) {
-            softly.assertThat(StagingFilenames.ORIGINAL_FILE_DAY_1.matcher(input).matches())
+            softly.assertThat(StagingFilenames.INSTANCE.getORIGINAL_FILE_DAY_1().matcher(input).matches())
                     .as("%s should not match ORIGINAL_FILE_DAY_1's matcher", input)
                     .isFalse();
         }
@@ -33,7 +34,7 @@ public class StagingFilenamesTest {
     @Test
     public void whenMatchOriginalFileDay2WithValidNameItShouldMatch() {
         String filenameOriginalDay2Valid = "foo.st2";
-        assertThat(StagingFilenames.ORIGINAL_FILE_DAY_2.matcher(filenameOriginalDay2Valid).matches()).isTrue();
+        assertThat(StagingFilenames.INSTANCE.getORIGINAL_FILE_DAY_2().matcher(filenameOriginalDay2Valid).matches()).isTrue();
     }
 
     @Test
@@ -43,7 +44,7 @@ public class StagingFilenamesTest {
         };
 
         for (String input : filenamesOriginalDay2Invalid) {
-            softly.assertThat(StagingFilenames.ORIGINAL_FILE_DAY_2.matcher(input).matches())
+            softly.assertThat(StagingFilenames.INSTANCE.getORIGINAL_FILE_DAY_2().matcher(input).matches())
                     .as("%s should not match ORIGINAL_FILE_DAY_2's matcher", input)
                     .isFalse();
         }

@@ -4,6 +4,10 @@ import org.assertj.core.api.Assertions;
 import org.coner.crispy_fish.domain.EventDay;
 import org.coner.crispy_fish.domain.PenaltyType;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
+import org.coner.crispy_fish.filetype.staging.StagingFileAssistant;
+import org.coner.crispy_fish.filetype.staging.StagingFilenameFilter;
+import org.coner.crispy_fish.filetype.staging.StagingFilenames;
+import org.coner.crispy_fish.filetype.staging.StagingLineException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,27 +27,6 @@ public class StagingFileAssistantTest {
         assistant = new StagingFileAssistant();
     }
 
-    @Test(expected = NullPointerException.class)
-    public void whenBuildStagingFilenameFilterWithNullEventControlFileItShouldThrow() {
-        assistant.buildStagingFilenameFilter(null, EventDay.ONE);
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void whenBuildStagingFilenameFilterNullEventDayItShouldThrow() {
-        assistant.buildStagingFilenameFilter(mock(EventControlFile.class), null);
-    }
-
-
-    @Test(expected = IllegalArgumentException.class)
-    public void whenBuildStagingFilenameFilterWithOneDayEventForDayTwoItShouldThrow() {
-        EventControlFile eventControlFile = mock(EventControlFile.class);
-        when(eventControlFile.isTwoDayEvent()).thenReturn(false);
-
-        assistant.buildStagingFilenameFilter(eventControlFile, EventDay.TWO);
-
-        verify(eventControlFile).isTwoDayEvent();
-    }
-
     @Test
     public void whenBuildStagingFilenameFilterForDayOneItShouldReturnIt() {
         Path eventControlFilePath = Paths.get("foo", "bar", "baz.ecf");
@@ -57,7 +40,7 @@ public class StagingFileAssistantTest {
                 .isNotNull()
                 .isInstanceOf(StagingFilenameFilter.class);
         assertThat(actual.getEventFileOriginalStagingBaseName()).isEqualTo("baz");
-        assertThat(actual.getOriginalFilePattern()).isSameAs(StagingFilenames.ORIGINAL_FILE_DAY_1);
+        assertThat(actual.getOriginalFilePattern()).isSameAs(StagingFilenames.INSTANCE.getORIGINAL_FILE_DAY_1());
     }
 
     @Test
@@ -73,7 +56,7 @@ public class StagingFileAssistantTest {
                 .isNotNull()
                 .isInstanceOf(StagingFilenameFilter.class);
         assertThat(actual.getEventFileOriginalStagingBaseName()).isEqualTo("baz");
-        assertThat(actual.getOriginalFilePattern()).isSameAs(StagingFilenames.ORIGINAL_FILE_DAY_2);
+        assertThat(actual.getOriginalFilePattern()).isSameAs(StagingFilenames.INSTANCE.getORIGINAL_FILE_DAY_2());
     }
 
     @Test

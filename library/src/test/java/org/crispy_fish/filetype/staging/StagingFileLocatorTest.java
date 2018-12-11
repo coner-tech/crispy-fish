@@ -3,6 +3,9 @@ package org.crispy_fish.filetype.staging;
 import org.coner.crispy_fish.domain.EventDay;
 import org.coner.crispy_fish.filetype.ecf.EventControlFile;
 
+import org.coner.crispy_fish.filetype.staging.StagingFileAssistant;
+import org.coner.crispy_fish.filetype.staging.StagingFileLocator;
+import org.coner.crispy_fish.filetype.staging.StagingFilenameFilter;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,23 +42,6 @@ public class StagingFileLocatorTest {
     public void setup() {
         stagingFileLocator = new StagingFileLocator(stagingFileAssistant);
         when(eventControlFile.getPath()).thenReturn(eventControlFilePath);
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void whenLocateWithNullEventControlFileItShouldThrow() throws Exception {
-        stagingFileLocator.locate(null, EventDay.ONE);
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void whenLocateWithEventButNullEventDayItShouldThrow() throws Exception {
-        stagingFileLocator.locate(eventControlFile, null);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void whenLocateWithOneDayEventForEventDayTwoItShouldThrow() throws Exception {
-        when(eventControlFile.isTwoDayEvent()).thenReturn(false);
-
-        stagingFileLocator.locate(eventControlFile, EventDay.TWO);
     }
 
     @Test
@@ -97,6 +83,23 @@ public class StagingFileLocatorTest {
         };
 
         File actual = stagingFileLocator.selectFile(files);
+
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenSelectFileWithDayTwoItShouldSelectIt() {
+        File expected = Paths.get("foo.st2").toFile();
+        File[] files = new File[]{
+                Paths.get("foo.txt").toFile(),
+                Paths.get("foo.html").toFile(),
+                Paths.get("foo.st1_log").toFile(),
+                Paths.get("foo.st1").toFile(),
+                expected,
+                Paths.get("foo.st2_log").toFile(),
+        };
+
+        File actual = stagingFileLocator.selectFile(files, EventDay.TWO);
 
         assertThat(actual).isEqualTo(expected);
     }

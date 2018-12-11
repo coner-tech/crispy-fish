@@ -2,8 +2,8 @@ package org.coner.crispy_fish.query
 
 import org.coner.crispy_fish.domain.*
 import org.coner.crispy_fish.filetype.ecf.EventControlFile
-import org.crispy_fish.filetype.staging.StagingLineDomainReader
-import org.crispy_fish.filetype.staging.StagingLineReader
+import org.coner.crispy_fish.filetype.staging.StagingLineDomainReader
+import org.coner.crispy_fish.filetype.staging.StagingLineReader
 
 import java.time.Duration
 import java.util.HashMap
