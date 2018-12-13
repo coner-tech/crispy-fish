@@ -7,7 +7,6 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.*
-import org.mockito.runners.MockitoJUnitRunner
 
 import java.io.File
 import java.nio.file.Path
@@ -16,6 +15,7 @@ import java.nio.file.Paths
 import org.assertj.core.api.Assertions.assertThat
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.`when`
+import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
 class StagingFileLocatorTest {

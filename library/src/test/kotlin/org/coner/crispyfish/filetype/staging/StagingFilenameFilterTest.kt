@@ -3,9 +3,9 @@ package org.coner.crispyfish.filetype.staging
 import org.junit.*
 import org.junit.rules.TemporaryFolder
 import org.junit.runner.RunWith
-import org.mockito.runners.MockitoJUnitRunner
 
 import org.assertj.core.api.Assertions.assertThat
+import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
 class StagingFilenameFilterTest {
