@@ -3,20 +3,18 @@ package org.coner.crispy_fish.query
 import org.assertj.core.api.SoftAssertions
 import org.coner.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReader
 import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader
-import org.coner.crispy_fish.query.QueryException
-import org.coner.crispy_fish.query.RawTimeResultsQuery
 import org.coner.crispy_fish.filetype.staging.SimpleStringStagingLineReader
 import org.coner.crispy_fish.filetype.staging.StagingFileAssistant
 import org.coner.crispy_fish.filetype.staging.StagingLineDomainReader
 import org.coner.crispy_fish.filetype.staging.StagingLineReader
-import org.crispy_fish.util.TestEvent
+import org.coner.crispy_fish.util.TestEvent
 import org.junit.Before
 import org.junit.Ignore
 import org.junit.Test
 
 import org.assertj.core.data.Index.atIndex
-import org.crispy_fish.util.ResultConditions.driverFinished
-import org.crispy_fish.util.ResultConditions.driverNameNotNullOrEmpty
+import org.coner.crispy_fish.util.ResultConditions.driverFinished
+import org.coner.crispy_fish.util.ResultConditions.driverNameNotNullOrEmpty
 
 class RawTimeResultsQueryTest {
 
