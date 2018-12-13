@@ -2,7 +2,6 @@ package org.coner.crispy_fish.util
 
 import org.assertj.core.api.Assertions
 import org.coner.crispy_fish.domain.Result
-import org.coner.crispy_fish.util.ResultConditions
 import org.junit.Test
 
 class ResultConditionsTest {
