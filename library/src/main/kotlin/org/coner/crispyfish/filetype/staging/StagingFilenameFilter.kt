@@ -9,12 +9,8 @@ class StagingFilenameFilter(
 ) : FilenameFilter {
 
     override fun accept(dir: File, name: String?): Boolean {
+        if (name == null) return false
         val baseName = File(dir, name).nameWithoutExtension
-
-        if (name == null || baseName == null) {
-            return false
-        }
-
         return if (originalFilePattern.matcher(name).matches()) {
             eventFileOriginalStagingBaseName.equals(baseName, ignoreCase = true)
         } else false
