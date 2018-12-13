@@ -1,54 +1,52 @@
-package org.crispy_fish.query;
+package org.coner.crispy_fish.query
 
-import org.assertj.core.api.SoftAssertions;
-import org.coner.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReader;
-import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
-import org.coner.crispy_fish.domain.Result;
-import org.coner.crispy_fish.query.QueryException;
-import org.coner.crispy_fish.query.RawTimeResultsQuery;
-import org.coner.crispy_fish.filetype.staging.SimpleStringStagingLineReader;
-import org.coner.crispy_fish.filetype.staging.StagingFileAssistant;
-import org.coner.crispy_fish.filetype.staging.StagingLineDomainReader;
-import org.coner.crispy_fish.filetype.staging.StagingLineReader;
-import org.crispy_fish.util.TestEvent;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.assertj.core.api.SoftAssertions
+import org.coner.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReader
+import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader
+import org.coner.crispy_fish.query.QueryException
+import org.coner.crispy_fish.query.RawTimeResultsQuery
+import org.coner.crispy_fish.filetype.staging.SimpleStringStagingLineReader
+import org.coner.crispy_fish.filetype.staging.StagingFileAssistant
+import org.coner.crispy_fish.filetype.staging.StagingLineDomainReader
+import org.coner.crispy_fish.filetype.staging.StagingLineReader
+import org.crispy_fish.util.TestEvent
+import org.junit.Before
+import org.junit.Ignore
+import org.junit.Test
 
-import java.util.List;
+import org.assertj.core.data.Index.atIndex
+import org.crispy_fish.util.ResultConditions.driverFinished
+import org.crispy_fish.util.ResultConditions.driverNameNotNullOrEmpty
 
-import static org.assertj.core.data.Index.atIndex;
-import static org.crispy_fish.util.ResultConditions.driverFinished;
-import static org.crispy_fish.util.ResultConditions.driverNameNotNullOrEmpty;
+class RawTimeResultsQueryTest {
 
-public class RawTimeResultsQueryTest {
+    private lateinit var rawTimeResultsQuery: RawTimeResultsQuery
 
-    private RawTimeResultsQuery rawTimeResultsQuery;
-
-    private UnderscorePairReader<String> underscorePairReader;
-    private StagingLineReader<String> stagingLineReader;
-    private StagingLineDomainReader<String> stagingLineDomainReader;
+    private lateinit var underscorePairReader: UnderscorePairReader<String>
+    private lateinit var stagingLineReader: StagingLineReader<String>
+    private lateinit var stagingLineDomainReader: StagingLineDomainReader<String>
 
     @Before
-    public void setup() {
-        underscorePairReader = new SimpleStringUnderscorePairReader();
-        stagingLineReader = new SimpleStringStagingLineReader(underscorePairReader);
-        stagingLineDomainReader = new StagingLineDomainReader<>(new StagingFileAssistant(), stagingLineReader);
+    fun setup() {
+        underscorePairReader = SimpleStringUnderscorePairReader()
+        stagingLineReader = SimpleStringStagingLineReader(underscorePairReader)
+        stagingLineDomainReader = StagingLineDomainReader(StagingFileAssistant(), stagingLineReader)
     }
 
     @Test
-    public void testWithThscc2016Points1() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_1;
-        List<String> lines = testEvent.getStagingFileLines();
-        rawTimeResultsQuery = new RawTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points1() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_1
+        val lines = testEvent.stagingFileLines
+        rawTimeResultsQuery = RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = rawTimeResultsQuery.query(lines);
+        val rawResults = rawTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(89)
                 .has(driverFinished(1, "STR", "127"), atIndex(0))
@@ -71,23 +69,24 @@ public class RawTimeResultsQueryTest {
                 .has(driverFinished(86, "GS", "12"), atIndex(85))
                 .has(driverFinished(87, "SMF", "76"), atIndex(86))
                 .has(driverFinished(88, "BSP", "28"), atIndex(87))
-                .has(driverFinished(89, "AS", "44"), atIndex(88));
-        softly.assertAll();
+                .has(driverFinished(89, "AS", "44"), atIndex(88))
+        softly.assertAll()
     }
 
     @Test
-    public void testWithThscc2016Points2() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_2;
-        List<String> lines = testEvent.getStagingFileLines();
-        rawTimeResultsQuery = new RawTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points2() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_2
+        val lines = testEvent.stagingFileLines
+        rawTimeResultsQuery = RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = rawTimeResultsQuery.query(lines);
+        val rawResults = rawTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(114)
                 .has(driverFinished(1, "STR", "8"), atIndex(0))
@@ -109,23 +108,24 @@ public class RawTimeResultsQueryTest {
                 .has(driverFinished(108, "NOVHS", "103"), atIndex(107))
                 .has(driverFinished(107, "NOVHS", "17"), atIndex(106))
                 .has(driverFinished(106, "DSP", "51"), atIndex(105))
-                .has(driverFinished(105, "SMF", "76"), atIndex(104));
-        softly.assertAll();
+                .has(driverFinished(105, "SMF", "76"), atIndex(104))
+        softly.assertAll()
     }
 
     @Test
-    public void testWithThscc2016Points3() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_3;
-        List<String> lines = testEvent.getStagingFileLines();
-        rawTimeResultsQuery = new RawTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points3() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_3
+        val lines = testEvent.stagingFileLines
+        rawTimeResultsQuery = RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = rawTimeResultsQuery.query(lines);
+        val rawResults = rawTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(100)
                 .has(driverFinished(1, "xbs", "804"), atIndex(0))
@@ -147,23 +147,24 @@ public class RawTimeResultsQueryTest {
                 .has(driverFinished(94, "novcam", "182"), atIndex(93))
                 .has(driverFinished(93, "hs", "93"), atIndex(92))
                 .has(driverFinished(92, "novhs", "44"), atIndex(91))
-                .has(driverFinished(91, "novcsp", "26"), atIndex(90));
-        softly.assertAll();
+                .has(driverFinished(91, "novcsp", "26"), atIndex(90))
+        softly.assertAll()
     }
 
     @Test
-    public void testWithThscc2016Points9() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_9;
-        List<String> lines = testEvent.getStagingFileLines();
-        rawTimeResultsQuery = new RawTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points9() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_9
+        val lines = testEvent.stagingFileLines
+        rawTimeResultsQuery = RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = rawTimeResultsQuery.query(lines);
+        val rawResults = rawTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(128)
                 .has(driverFinished(1, "XP", "58"), atIndex(0))
@@ -186,27 +187,28 @@ public class RawTimeResultsQueryTest {
                 .has(driverFinished(121, "NOVDS", "35"), atIndex(120))
                 .has(driverFinished(120, "NOVES", "21"), atIndex(119))
                 .has(driverFinished(119, "NOVSTR", "56"), atIndex(118))
-                .has(driverFinished(118, "NOVSTF", "98"), atIndex(117));
-        softly.assertAll();
+                .has(driverFinished(118, "NOVSTF", "98"), atIndex(117))
+        softly.assertAll()
     }
 
     @Test
     @Ignore(value = "Relatively minor issue, ignore until #23 is resolved")
-    public void testIssue23IsFixed() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_9;
-        List<String> lines = testEvent.getStagingFileLines();
-        rawTimeResultsQuery = new RawTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testIssue23IsFixed() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_9
+        val lines = testEvent.stagingFileLines
+        rawTimeResultsQuery = RawTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = rawTimeResultsQuery.query(lines);
+        val rawResults = rawTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .has(driverNameNotNullOrEmpty(), atIndex(7)) // position 8, CS 15
-                .has(driverNameNotNullOrEmpty(), atIndex(99)); // position 100, ES 11
-        softly.assertAll();
+                .has(driverNameNotNullOrEmpty(), atIndex(99)) // position 100, ES 11
+        softly.assertAll()
     }
 }

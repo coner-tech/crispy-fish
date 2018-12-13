@@ -1,54 +1,53 @@
-package org.crispy_fish.query;
+package org.coner.crispy_fish.query
 
-import org.assertj.core.api.SoftAssertions;
-import org.coner.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReader;
-import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader;
-import org.coner.crispy_fish.domain.Result;
-import org.coner.crispy_fish.query.PaxTimeResultsQuery;
-import org.coner.crispy_fish.query.QueryException;
-import org.coner.crispy_fish.filetype.staging.SimpleStringStagingLineReader;
-import org.coner.crispy_fish.filetype.staging.StagingFileAssistant;
-import org.coner.crispy_fish.filetype.staging.StagingLineDomainReader;
-import org.coner.crispy_fish.filetype.staging.StagingLineReader;
-import org.crispy_fish.util.TestEvent;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.assertj.core.api.SoftAssertions
+import org.coner.crispy_fish.datatype.underscore_pairs.SimpleStringUnderscorePairReader
+import org.coner.crispy_fish.datatype.underscore_pairs.UnderscorePairReader
+import org.coner.crispy_fish.domain.Result
+import org.coner.crispy_fish.query.PaxTimeResultsQuery
+import org.coner.crispy_fish.query.QueryException
+import org.coner.crispy_fish.filetype.staging.SimpleStringStagingLineReader
+import org.coner.crispy_fish.filetype.staging.StagingFileAssistant
+import org.coner.crispy_fish.filetype.staging.StagingLineDomainReader
+import org.coner.crispy_fish.filetype.staging.StagingLineReader
+import org.crispy_fish.util.TestEvent
+import org.junit.Before
+import org.junit.Ignore
+import org.junit.Test
 
-import java.util.List;
+import org.assertj.core.data.Index.atIndex
+import org.crispy_fish.util.ResultConditions.driverFinished
 
-import static org.assertj.core.data.Index.atIndex;
-import static org.crispy_fish.util.ResultConditions.driverFinished;
+class PaxTimeResultsQueryTest {
 
-public class PaxTimeResultsQueryTest {
+    private lateinit var paxTimeResultsQuery: PaxTimeResultsQuery
 
-    private PaxTimeResultsQuery paxTimeResultsQuery;
-
-    private UnderscorePairReader<String> underscorePairReader;
-    private StagingLineReader<String> stagingLineReader;
-    private StagingLineDomainReader<String> stagingLineDomainReader;
+    private lateinit var underscorePairReader: UnderscorePairReader<String>
+    private lateinit var stagingLineReader: StagingLineReader<String>
+    private lateinit var stagingLineDomainReader: StagingLineDomainReader<String>
 
     @Before
-    public void setup() {
-        underscorePairReader = new SimpleStringUnderscorePairReader();
-        stagingLineReader = new SimpleStringStagingLineReader(underscorePairReader);
-        stagingLineDomainReader = new StagingLineDomainReader<>(new StagingFileAssistant(), stagingLineReader);
+    fun setup() {
+        underscorePairReader = SimpleStringUnderscorePairReader()
+        stagingLineReader = SimpleStringStagingLineReader(underscorePairReader)
+        stagingLineDomainReader = StagingLineDomainReader(StagingFileAssistant(), stagingLineReader)
     }
 
     @Test
     @Ignore(value = "staging file contains multiple pax time anomalies preventing effective testing due to #25")
-    public void testWithThscc2016Points1() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_1;
-        List<String> lines = testEvent.getStagingFileLines();
-        paxTimeResultsQuery = new PaxTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points1() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_1
+        val lines = testEvent.stagingFileLines
+        paxTimeResultsQuery = PaxTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = paxTimeResultsQuery.query(lines);
+        val rawResults = paxTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(89)
                 .has(driverFinished(1, "XGS", "1"), atIndex(0))
@@ -71,43 +70,45 @@ public class PaxTimeResultsQueryTest {
                 .has(driverFinished(86, "GS", "12"), atIndex(85))
                 .has(driverFinished(87, "SMF", "76"), atIndex(86))
                 .has(driverFinished(88, "BSP", "28"), atIndex(87))
-                .has(driverFinished(89, "AS", "44"), atIndex(88));
-        softly.assertAll();
+                .has(driverFinished(89, "AS", "44"), atIndex(88))
+        softly.assertAll()
     }
 
     @Test
     @Ignore(value = "Exercises issue #25. Should be able to un-ignore once fixed")
-    public void testIssue25IsFixed() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_1;
-        List<String> lines = testEvent.getStagingFileLines();
-        paxTimeResultsQuery = new PaxTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testIssue25IsFixed() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_1
+        val lines = testEvent.stagingFileLines
+        paxTimeResultsQuery = PaxTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = paxTimeResultsQuery.query(lines);
+        val rawResults = paxTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
-            .has(driverFinished(37, "HS", "124"), atIndex(36))
-            .has(driverFinished(64, "NOVGS", "133"), atIndex(63));
-        softly.assertAll();
+                .has(driverFinished(37, "HS", "124"), atIndex(36))
+                .has(driverFinished(64, "NOVGS", "133"), atIndex(63))
+        softly.assertAll()
     }
 
     @Test
-    public void testWithThscc2016Points2() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_2;
-        List<String> lines = testEvent.getStagingFileLines();
-        paxTimeResultsQuery = new PaxTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points2() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_2
+        val lines = testEvent.stagingFileLines
+        paxTimeResultsQuery = PaxTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = paxTimeResultsQuery.query(lines);
+        val rawResults = paxTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(114)
                 .has(driverFinished(1, "XGS", "9"), atIndex(0))
@@ -129,23 +130,24 @@ public class PaxTimeResultsQueryTest {
                 .has(driverFinished(108, "NOVES", "45"), atIndex(107))
                 .has(driverFinished(107, "NOVHS", "35"), atIndex(106))
                 .has(driverFinished(106, "BSP", "28"), atIndex(105))
-                .has(driverFinished(105, "ASP", "4"), atIndex(104));
-        softly.assertAll();
+                .has(driverFinished(105, "ASP", "4"), atIndex(104))
+        softly.assertAll()
     }
 
     @Test
-    public void testWithThscc2016Points3() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_3;
-        List<String> lines = testEvent.getStagingFileLines();
-        paxTimeResultsQuery = new PaxTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points3() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_3
+        val lines = testEvent.stagingFileLines
+        paxTimeResultsQuery = PaxTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = paxTimeResultsQuery.query(lines);
+        val rawResults = paxTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(100)
                 .has(driverFinished(1, "xcs", "9"), atIndex(0))
@@ -167,23 +169,24 @@ public class PaxTimeResultsQueryTest {
                 .has(driverFinished(94, "cs", "19"), atIndex(93))
                 .has(driverFinished(93, "noves", "0"), atIndex(92))
                 .has(driverFinished(92, "am", "1"), atIndex(91))
-                .has(driverFinished(91, "csp", "3"), atIndex(90));
-        softly.assertAll();
+                .has(driverFinished(91, "csp", "3"), atIndex(90))
+        softly.assertAll()
     }
 
     @Test
-    public void testWithThscc2016Points9() throws QueryException {
-        final TestEvent testEvent = TestEvent.THSCC_2016_POINTS_9;
-        List<String> lines = testEvent.getStagingFileLines();
-        paxTimeResultsQuery = new PaxTimeResultsQuery(
+    @Throws(QueryException::class)
+    fun testWithThscc2016Points9() {
+        val testEvent = TestEvent.THSCC_2016_POINTS_9
+        val lines = testEvent.stagingFileLines
+        paxTimeResultsQuery = PaxTimeResultsQuery(
                 testEvent.buildEventControlFileMock(),
                 stagingLineReader,
                 stagingLineDomainReader
-        );
+        )
 
-        List<Result> rawResults = paxTimeResultsQuery.query(lines);
+        val rawResults = paxTimeResultsQuery.query(lines)
 
-        SoftAssertions softly = new SoftAssertions();
+        val softly = SoftAssertions()
         softly.assertThat(rawResults)
                 .hasSize(128)
                 .has(driverFinished(1, "GS", "78"), atIndex(0))
@@ -206,7 +209,7 @@ public class PaxTimeResultsQueryTest {
                 .has(driverFinished(121, "NOVGS", "347"), atIndex(120))
                 .has(driverFinished(120, "NOVSMF", "2"), atIndex(119))
                 .has(driverFinished(119, "OFES", "62"), atIndex(118))
-                .has(driverFinished(118, "NOVSTR", "56"), atIndex(117));
-        softly.assertAll();
+                .has(driverFinished(118, "NOVSTR", "56"), atIndex(117))
+        softly.assertAll()
     }
 }
