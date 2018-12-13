@@ -1,6 +1,5 @@
 package org.coner.crispy_fish.filetype.staging
 
-import com.google.common.base.Preconditions
 import org.apache.commons.io.FilenameUtils
 import org.coner.crispy_fish.domain.EventDay
 import org.coner.crispy_fish.domain.PenaltyType

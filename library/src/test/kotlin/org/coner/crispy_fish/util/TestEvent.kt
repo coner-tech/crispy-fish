@@ -1,6 +1,5 @@
 package org.coner.crispy_fish.util
 
-import com.google.common.io.Resources
 import org.apache.commons.io.FileUtils
 import org.coner.crispy_fish.filetype.ecf.EventControlFile
 
@@ -32,7 +31,7 @@ enum class TestEvent constructor(private val stagingFileName: String, private va
 
     val stagingFileLines: List<String>
         get() {
-            val url = Resources.getResource(RESOURCES_PREFIX + stagingFileName)
+            val url = javaClass.getResource("/$RESOURCES_PREFIX$stagingFileName")
             try {
                 return FileUtils.readLines(File(url.toURI()))
             } catch (e: Exception) {
