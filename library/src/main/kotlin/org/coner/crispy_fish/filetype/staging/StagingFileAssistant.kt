@@ -1,6 +1,5 @@
 package org.coner.crispy_fish.filetype.staging
 
-import org.apache.commons.io.FilenameUtils
 import org.coner.crispy_fish.domain.EventDay
 import org.coner.crispy_fish.domain.PenaltyType
 import org.coner.crispy_fish.filetype.ecf.EventControlFile
@@ -23,7 +22,7 @@ class StagingFileAssistant {
     }
 
     fun getOriginalFileBaseName(eventControlFile: EventControlFile): String {
-        return FilenameUtils.getBaseName(eventControlFile.path.toString())
+        return eventControlFile.path.toFile().nameWithoutExtension
     }
 
     @Throws(StagingLineException::class)

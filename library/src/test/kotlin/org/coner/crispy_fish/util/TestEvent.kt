@@ -1,6 +1,5 @@
 package org.coner.crispy_fish.util
 
-import org.apache.commons.io.FileUtils
 import org.coner.crispy_fish.filetype.ecf.EventControlFile
 
 import java.io.File
@@ -33,7 +32,7 @@ enum class TestEvent constructor(private val stagingFileName: String, private va
         get() {
             val url = javaClass.getResource("/$RESOURCES_PREFIX$stagingFileName")
             try {
-                return FileUtils.readLines(File(url.toURI()))
+                return File(url.toURI()).readLines()
             } catch (e: Exception) {
                 throw RuntimeException("Unable to get staging file line for " + this.toString(), e)
             }

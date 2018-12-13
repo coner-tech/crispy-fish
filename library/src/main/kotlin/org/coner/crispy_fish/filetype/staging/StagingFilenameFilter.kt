@@ -2,7 +2,6 @@ package org.coner.crispy_fish.filetype.staging
 
 import java.io.*
 import java.util.regex.Pattern
-import org.apache.commons.io.FilenameUtils
 
 class StagingFilenameFilter(
         val eventFileOriginalStagingBaseName: String,
@@ -10,7 +9,7 @@ class StagingFilenameFilter(
 ) : FilenameFilter {
 
     override fun accept(dir: File, name: String?): Boolean {
-        val baseName = FilenameUtils.getBaseName(name)
+        val baseName = File(dir, name).nameWithoutExtension
 
         if (name == null || baseName == null) {
             return false
