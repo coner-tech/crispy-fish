@@ -1,4 +1,4 @@
-package org.coner.crispyfish.domain
+package org.coner.crispyfish.model
 
 enum class PenaltyType(val shouldOmitRunFromResults: Boolean = false) {
     CONE,

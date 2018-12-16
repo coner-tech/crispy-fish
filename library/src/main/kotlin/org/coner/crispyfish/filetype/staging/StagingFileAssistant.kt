@@ -1,7 +1,7 @@
 package org.coner.crispyfish.filetype.staging
 
-import org.coner.crispyfish.domain.EventDay
-import org.coner.crispyfish.domain.PenaltyType
+import org.coner.crispyfish.model.EventDay
+import org.coner.crispyfish.model.PenaltyType
 import org.coner.crispyfish.filetype.ecf.EventControlFile
 import java.time.Duration
 import java.time.format.DateTimeParseException

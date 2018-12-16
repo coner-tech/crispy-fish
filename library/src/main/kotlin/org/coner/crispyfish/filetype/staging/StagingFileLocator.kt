@@ -1,6 +1,6 @@
 package org.coner.crispyfish.filetype.staging
 
-import org.coner.crispyfish.domain.EventDay
+import org.coner.crispyfish.model.EventDay
 import org.coner.crispyfish.filetype.ecf.EventControlFile
 import java.io.File
 import java.nio.file.Path

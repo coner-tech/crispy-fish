@@ -1,6 +1,6 @@
 package org.coner.crispyfish.filetype.staging
 
-import org.coner.crispyfish.domain.PenaltyType
+import org.coner.crispyfish.model.PenaltyType
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -44,7 +44,7 @@ class StagingLineDomainReaderTest {
 
         assertThat(actual).isNotNull()
         assertThat(actual.name).isSameAs(driverName)
-        assertThat(actual.car).isSameAs(driverCar)
+        assertThat(actual.carModel).isSameAs(driverCar)
         assertThat(actual.numbers?.classing).isSameAs(driverClassing)
         assertThat(actual.numbers?.number).isSameAs(driverNumber)
     }

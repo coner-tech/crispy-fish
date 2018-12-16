@@ -1,6 +1,6 @@
 package org.coner.crispyfish.query
 
-import org.coner.crispyfish.domain.*
+import org.coner.crispyfish.model.*
 import org.coner.crispyfish.filetype.ecf.EventControlFile
 import org.coner.crispyfish.filetype.staging.StagingLineDomainReader
 import org.coner.crispyfish.filetype.staging.StagingLineReader
