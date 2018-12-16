@@ -1,19 +1,19 @@
 package org.coner.crispyfish.filetype.staging
 
-import org.coner.crispyfish.domain.PenaltyType
-import org.coner.crispyfish.domain.Driver
-import org.coner.crispyfish.domain.Numbers
-import org.coner.crispyfish.domain.Run
+import org.coner.crispyfish.model.PenaltyType
+import org.coner.crispyfish.model.Registration
+import org.coner.crispyfish.model.Numbers
+import org.coner.crispyfish.model.Run
 
 class StagingLineDomainReader<L>(
         private val stagingFileAssistant: StagingFileAssistant,
         private val stagingLineReader: StagingLineReader<L>
 ) {
 
-    fun readDriver(stagingLine: L): Driver {
-        val driver = Driver()
+    fun readDriver(stagingLine: L): Registration {
+        val driver = Registration()
         driver.name = stagingLineReader.getRegisteredDriverName(stagingLine)
-        driver.car = stagingLineReader.getRegisteredDriverCar(stagingLine)
+        driver.carModel = stagingLineReader.getRegisteredDriverCar(stagingLine)
         val numbers = Numbers()
         numbers.classing = stagingLineReader.getRegisteredDriverClass(stagingLine)
         numbers.number = stagingLineReader.getRegisteredDriverNumber(stagingLine)

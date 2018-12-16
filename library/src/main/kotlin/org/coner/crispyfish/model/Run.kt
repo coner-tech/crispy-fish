@@ -1,4 +1,4 @@
-package org.coner.crispyfish.domain
+package org.coner.crispyfish.model
 
 import java.time.Duration
 

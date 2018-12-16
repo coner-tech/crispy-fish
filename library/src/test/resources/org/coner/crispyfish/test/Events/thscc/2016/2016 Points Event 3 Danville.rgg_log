@@ -1,0 +1,352 @@
+04/24/16 08:17:37 H:Class	Number	First Name	Last Name	Car Model	Car Color	Class 2	Grid #	Member	Member #	Expires	DOB	Age	Registered	Reg.CheckIn	OLR	Paid	Fee Type	Amnt.	Method	Annual Tech	Annual Waiver	Rookie	Run Heat	Work Heat	Work Assignment	Checkin	Sponsor	Tire Brand	Tire Size	Region	Club Cup	Raw Time	Raw Pos.	Prev. Pos.	Total	Diff.	From 1st	Pax Time	Pax Pos.	Best Run	Run 1	Pen 1	Run 2	Pen 2	Run 3	Pen 3	Run 4	Pen 4	Run 5	Pen 5	
+04/24/16 08:17:37 !:	DS	5	Mary	Johnson	2006 MINI Copper S JCW	Pepper White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:18:22 +:	CS	1	Brice	Johnson	2006 MINI Cooper S JCW	Pepper White			NO	12/30/2016	2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO	Yokohama	1667			
+04/24/16 08:18:32 R:	CS|DS	1|15	Brice	Johnson	2006 MINI Cooper S JCW	Pepper White			NO	12/30/2016	2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO	Yokohama	1667			
+04/24/16 08:35:49 R:	STR|NOVSTR	1|40	Joseph	Snyder	2010 Mazda Miata	Blue			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	2304			
+04/24/16 08:37:00 R:	NOVDS|NOVDS	4|71	Anthony	Faubus	2006 Subaru Legacy GT	White			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Continental	2348			
+04/24/16 08:37:05 +:	NOVDS	71	Anthony	Faubus	2006 Subaru Legacy GT	White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Continental	2348			
+04/24/16 08:37:18 +:	NOVSTR	40	Joseph	Snyder	2010 Mazda Miata	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2304			
+04/24/16 08:37:47 R:	NOVDS|NOVDS	5|81	Matthew	Ryan	2005 Mini S	Silver			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:37:50 +:	NOVDS	81	Matthew	Ryan	2005 Mini S	Silver			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:38:27 R:	STF|SMF	1|37	Chris	Williams	2004 Volkswagen GTI	Grey			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich	2250			
+04/24/16 08:38:58 +:	SMF	37	Chris	Williams	2004 Volkswagen GTI	Grey			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich	2250			
+04/24/16 08:39:20 +:	NOVSTS	13	Guangming	Cui	1993 Mazda MX-5 Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop				
+04/24/16 08:41:43 R:	NOVCAM|NOVCAM	11|68	Duane	Black	1968 Ford Torino	White			NO					YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 08:41:45 +:	NOVCAM	68	Duane	Black	1968 Ford Torino	White			NO					YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 08:42:29 +:	NOVCAM	68	Duane	Black	2013 Ford Mustang	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 08:43:28 +:	DSP	1	Eric	Beaulaurier	2007 Mini Cooper S	Pepper White			NO					NO	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:43:30 +:	DSP	1	Eric	Beaulaurier	2007 Mini Cooper S	Pepper White			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:45:20 !:	NOVAM	77	Berry	Glasscock	Atom	yellow			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:45:57 !:	AM	1	robert	collie	Atom	black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:47:17 R:	NOVCAM|NOVCAM	14|28	Aris	Mantalvanos	2001 Ford Mustang	White			NO					YES	NO		NO		0.00		NO	NO	NO				NO	Michelin	2373			
+04/24/16 08:47:20 +:	NOVCAM	28	Aris	Mantalvanos	2001 Ford Mustang	White			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Michelin	2373			
+04/24/16 08:48:23 !:	ES	301	Eric	Dick	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:49:06 R:	NOVSTX|NOVSTX	23|69	Joseph	Workman	2015 Subaru BRZ	White			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:49:09 +:	NOVSTX	69	Joseph	Workman	2015 Subaru BRZ	White			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:50:18 !:	NOVSTR	4	Justin	Singh	2009 Mazda Miata	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:51:07 R:	XCS|XCS	6|37	John	Wolf	2013 Scion FRS	blue			NO					YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	2295			
+04/24/16 08:51:15 +:	XCS	37	John	Wolf	2013 Scion FRS	blue			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone	2295			
+04/24/16 08:52:08 !:	NOVHS	226	Michael	Byrne	1972 MGB	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:53:14 +:	SS	1	Rob	Lupella	2015 Mazda 2	Black			NO	12/30/2016	2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO	Other	1052			
+04/24/16 08:53:24 R:	SS|HS	1|13	Rob	Lupella	2015 Mazda 2	Black			NO	12/30/2016	2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO	Other	1052			
+04/24/16 08:53:42 R:	HS|HS	1|31	Talya	Dressler	2014 Mazda Mazda2	Black			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2200			
+04/24/16 08:53:45 +:	HS	31	Talya	Dressler	2014 Mazda Mazda2	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2200			
+04/24/16 08:54:17 +:	STU	1	Jennifer	Vance	2016 Mazda MX5	grey			NO	12/30/2015	2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO		2068			
+04/24/16 08:54:27 R:	STU|CS	1|9	Jennifer	Vance	2016 Mazda MX5	grey			NO	12/30/2015	2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO		2068			
+04/24/16 08:54:29 +:	CS	9	Jennifer	Vance	2016 Mazda MX5	grey			NO	12/30/2015	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO		2068			
+04/24/16 08:56:30 !:	NOVHS	99	Hunter	Johnson	2012 Ford Focus	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:57:55 !:	STX	45	Leon	Lovelace	1998 BMW 328	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 08:58:24 !:	STX	54	Justin	Lovelace	1998 BMW 328	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:01:52 +:	OFSTR	2	Charles	Cox	2008 Corvette 	Red			NO		2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO	Falken				
+04/24/16 09:02:22 R:	OFSTR|OFCAM	2|2	Charles	Cox	2008 Corvette 	Red			NO		2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO	Falken				
+04/24/16 09:02:49 R:	OFCAM|CAM	2|182	Charles	Cox	2008 Corvette 	Red			NO		2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO	Falken				
+04/24/16 09:02:52 +:	CAM	182	Charles	Cox	2008 Corvette 	Red			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO	Falken				
+04/24/16 09:02:59 R:	CAM|NOVCAM	182|182	Charles	Cox	2008 Corvette 	Red			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO	Falken				
+04/24/16 09:03:09 +:	NOVSTR	18	Jonathan	Cox	2001 Mazda Miata	Hunter Green			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:04:07 !:	BS	311	Paul	Bixel	2012 370Z	Silver			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:05:51 !:	STX	92	Matt	Nicholson	2001 BMW 330	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:07:33 !:	STS	11	Paul	Spenser	1997 Mazda Miata	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:08:54 R:	NOVGS|GS	16|16	Luke	Wickelgren	2014 Ford Focus ST	White			NO					YES	NO		NO		0.00		NO	NO	NO				NO	Goodyear				
+04/24/16 09:08:56 +:	GS	16	Luke	Wickelgren	2014 Ford Focus ST	White			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Goodyear				
+04/24/16 09:09:49 R:	ES|ES	2|9	Benjamin	Guardiola	2003 Mazda Miata	Red			NO	12/30/2015				YES	NO		NO		0.00		NO	NO	NO				NO		2180			
+04/24/16 09:09:52 +:	ES	9	Benjamin	Guardiola	2003 Mazda Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO		2180			
+04/24/16 09:10:46 !:	SM	10	John	Huppert	1993 Honda Civic	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:13:02 !:	NOVHS	44	Warren	Henry	2002 Subaru Forester	Silver			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:14:02 +:	XGS	8	G H	Sharp	2016 Volkswagen GTI	Dark Blue			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone				
+04/24/16 09:14:32 R:	STX|STX	1|22	Bill	Aycock	2012 Volkswagen Golf R	Gray			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich	2114			
+04/24/16 09:14:39 R:	SSM|SSM	1|916	Dylan	Barrett	1995 Mazda Miata	Merlot Mica			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	2364			
+04/24/16 09:14:45 R:	DSP|DSP	1|17	Eric	Beaulaurier	2007 Mini Cooper S	Pepper White			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:14:50 R:	ES|ES	1|224	Mark	Beech	1992 Mazda Miata	White			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Falken	2283			
+04/24/16 09:15:19 R:	CSP|CSP	1|901	John	Beecher	1988 BMW M3	Red			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Falken	2194			
+04/24/16 09:15:22 +:	CSP	901	John	Beecher	1988 BMW M3	Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Falken	2194			
+04/24/16 09:15:24 +:	STX	22	Bill	Aycock	2012 Volkswagen Golf R	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich	2114			
+04/24/16 09:15:24 +:	SSM	916	Dylan	Barrett	1995 Mazda Miata	Merlot Mica			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2364			
+04/24/16 09:15:26 +:	ES	224	Mark	Beech	1992 Mazda Miata	White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Falken	2283			
+04/24/16 09:15:33 +:	ASP	3	Robert	Plank	1991 Porsche 911	Blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO		1037			
+04/24/16 09:16:05 R:	NOVSTF|NOVSTF	17|42	Brenden	Bottum	2005 Mini Cooper S Cabrio	Blue			NO					YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 09:17:14 R:	GS|GS	1|88	Kenneth	Butron	2015 Ford Focus St	White			NO					YES	NO		NO		0.00		NO	NO	NO				NO	Firestone				
+04/24/16 09:17:21 R:	STR|STR	2|86	Steven	Carter	2007 Honda S2000	GranPrix White			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	1942			
+04/24/16 09:17:41 R:	CSP|CSP	3|13	Francis	Chan	1999 Mazda Miata	Green			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	2289			
+04/24/16 09:17:45 R:	CSP|CSP	2|3	Elizabeth	Chan	1999 Mazda Miata	Green			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	2346			
+04/24/16 09:18:18 R:	HS|HS	4|93	Edmond	Steele	2012 Chevrolet Cruze	Silver			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:18:20 +:	HS	93	Edmond	Steele	2012 Chevrolet Cruze	Silver			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:18:30 +:	CSP	13	Francis	Chan	1999 Mazda Miata	Green			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2289			
+04/24/16 09:18:30 +:	CSP	3	Elizabeth	Chan	1999 Mazda Miata	Green			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2346			
+04/24/16 09:18:31 +:	NOVHS	226	Michael	Byrne	1972 MGB	Blue			NO		2016-04-24	0000-00-00		YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:18:31 +:	STR	86	Steven	Carter	2007 Honda S2000	GranPrix White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	1942			
+04/24/16 09:18:32 +:	NOVHS	226	Michael	Byrne	1972 MGB	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:18:38 R:	NOVCSP|NOVCSP	3|26	Austin	Clem	1999 Mazda Miata	Classic Red			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:18:45 +:	AS	1	Eric	Cohen	Chevrolet corvette	red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Goodyear	2272			
+04/24/16 09:18:46 +:	NOVCSP	26	Austin	Clem	1999 Mazda Miata	Classic Red			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:19:09 +:	GS	88	Kenneth	Butron	2015 Ford Focus St	White			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Firestone				
+04/24/16 09:19:09 +:	BS	1	Dennis	Burns	2003 BMW z4	Black			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:19:10 +:	NOVSTF	42	Brenden	Bottum	2005 Mini Cooper S Cabrio	Blue			NO					YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 09:19:32 R:	STR|STR	3|42	Bart	Craig	1998 BMW M Roadster	Imola Red			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	2024			
+04/24/16 09:19:34 +:	STR	42	Bart	Craig	1998 BMW M Roadster	Imola Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone	2024			
+04/24/16 09:19:41 R:	NOVSTS|NOVSTS	13|64	Guangming	Cui	1993 Mazda MX-5 Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop				
+04/24/16 09:19:46 R:	CSP|CSP	4|10	Chad	Culbertson	2000 Mazda MX-5 Miata	Black			NO	12/30/1999				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	LT-2266			
+04/24/16 09:19:47 +:	CSP	10	Chad	Culbertson	2000 Mazda MX-5 Miata	Black			NO	12/30/1999				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	LT-2266			
+04/24/16 09:19:50 +:	SMF	1	ronald	davis	1991 Honda civic	red			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Hoosier				
+04/24/16 09:19:55 R:	SMF|SMF	1|45	ronald	davis	1991 Honda civic	red			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Hoosier				
+04/24/16 09:19:59 R:	STS|STS	1|96	Justin	Deffenbaugh	1995 Acura Integra	Black			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:20:00 +:	STS	96	Justin	Deffenbaugh	1995 Acura Integra	Black			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:20:01 +:	STR	4	Derek	DeLong	2006 Honda S2000	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2150			
+04/24/16 09:20:40 R:	CAM|CAM	1|33	scott	feldon	1972 Chevrolet corvette	Black			NO					YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 09:20:41 +:	CAM	33	scott	feldon	1972 Chevrolet corvette	Black			NO					YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 09:21:08 R:	GS|GS	2|33	Joelle	Fernandez	2015 Ford Focus ST	Oxford White			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	2358			
+04/24/16 09:21:10 +:	GS	33	Joelle	Fernandez	2015 Ford Focus ST	Oxford White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone	2358			
+04/24/16 09:21:15 R:	NOVHS|NOVHS	10|128	Aaron	Finley	2014 Ford Fiesta ST	Black as night			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:21:17 +:	NOVHS	128	Aaron	Finley	2014 Ford Fiesta ST	Black as night			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:21:23 R:	STX|STX	2|44	Noah	Fleming	2015 Scion FR-S	Black			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	1970			
+04/24/16 09:21:33 R:	NOVGS|NOVGS	8|93	Paul	Fuller	2008 Saab 9-3	Blue			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Goodyear	2301			
+04/24/16 09:21:35 +:	NOVGS	93	Paul	Fuller	2008 Saab 9-3	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Goodyear	2301			
+04/24/16 09:21:45 R:	NOVSTX|NOVSTX	22|696	Fernando	Granados	2004 Mazda RX-8	Silver			NO					YES	NO		NO		0.00		NO	NO	NO				NO	Yokohama				
+04/24/16 09:21:47 +:	NOVSTX	696	Fernando	Granados	2004 Mazda RX-8	Silver			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Yokohama				
+04/24/16 09:22:46 !:	STX	178	Dominic	Germana	1988 BMW M3	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:23:11 +:	XHS	9	Gwen	Habenicht	2009 Mini Cooper	Blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Hoosier	3815			
+04/24/16 09:23:19 R:	XHS|XHS	9|97	Gwen	Habenicht	2009 Mini Cooper	Blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Hoosier	3815			
+04/24/16 09:23:30 R:	DS|DS	1|69	William	Hansley	2010 Mini Cooper S Conv	Red			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:23:31 +:	DS	69	William	Hansley	2010 Mini Cooper S Conv	Red			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:25:49 !:	XES	301	Jamie	Rupe	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:26:36 !:	NOVES	30	Rachel	Rupe	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:27:12 R:	OFBSP|OFBSP	1|8	Neal	Harrington	1988 Pontiac FIERO GT	WHITE			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		349			
+04/24/16 09:27:25 R:	NOVBS|NOVBS	1|43	Jason	Harris	2013 Audi RS5	Black			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:27:32 R:	HS|HS	5|80	David	Henry	2006 Mazda 3	Silver			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:27:37 +:	OFBSP	8	Neal	Harrington	1988 Pontiac FIERO GT	WHITE			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		349			
+04/24/16 09:27:37 +:	NOVBS	43	Jason	Harris	2013 Audi RS5	Black			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:27:38 +:	HS	80	David	Henry	2006 Mazda 3	Silver			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:29:42 !:	NOVSTR	17	Steven	Watson	2003 Mazda Miata	Red			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:30:26 +:	NOVSTR	19	Tyler	Holloway	2007 Mazda MX-5	Red mica			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2364			
+04/24/16 09:30:36 R:	ES|ES	3|17	Tyler	James	1997 Mazda Miata	Blue			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Falken	2389			
+04/24/16 09:30:43 +:	ES	17	Tyler	James	1997 Mazda Miata	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Falken	2389			
+04/24/16 09:30:46 +:	DS	15	Brice	Johnson	2006 MINI Cooper S JCW	Pepper White			NO	12/30/2016	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO	Yokohama	1667			
+04/24/16 09:30:56 R:	NOVSTU|NOVSTU	21|33	Nicholas	Jona	2013 Subaru BRZ Limited	Silver			NO					NO	NO		NO		0.00		NO	NO	NO				NO	Michelin				
+04/24/16 09:31:32 R:	NOVSTS|NOVSTS	64|13	Guangming	Cui	1993 Mazda MX-5 Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop				
+04/24/16 09:32:04 +:	CS	2	Andrew	Jonell	2016 Mazda MX-5	Black			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO		1946			
+04/24/16 09:32:10 R:	HS|HS	2|24	Rob	Keehner	2006 Honda Civic	Meatball Red			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	2136			
+04/24/16 09:32:11 +:	HS	24	Rob	Keehner	2006 Honda Civic	Meatball Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2136			
+04/24/16 09:32:16 R:	XBS|XBS	1|884	Langlee	King	2005 Honda S2000	Silver			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:32:18 +:	XBS	884	Langlee	King	2005 Honda S2000	Silver			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:32:24 R:	XBS|XBS	2|804	Will	King	2005 Honda S2000	Silver			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:32:27 +:	XBS	804	Will	King	2005 Honda S2000	Silver			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:32:33 R:	NOVGS|NOVGS	9|36	Lisa	Lauck	2011 Volkswagen GTI	white			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Continental	2368			
+04/24/16 09:32:34 +:	NOVGS	36	Lisa	Lauck	2011 Volkswagen GTI	white			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Continental	2368			
+04/24/16 09:32:41 R:	STX|STX	3|17	Austin	Leaming	BMW 330	silver			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:32:42 +:	STX	17	Austin	Leaming	BMW 330	silver			NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:32:42 +:	STX	4	Will	Leaming	BMW 330	silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2375			
+04/24/16 09:32:48 R:	STX|STX	4|7	Will	Leaming	BMW 330	silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2375			
+04/24/16 09:32:57 R:	GS|GS	3|46	Joe	Lohr	2013 Mazda mazdaspeed3	silver			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2276			
+04/24/16 09:33:04 +:	GS	46	Joe	Lohr	2013 Mazda mazdaspeed3	silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2276			
+04/24/16 09:33:31 +:	HS	13	Rob	Lupella	2015 Mazda 2	Black			NO	12/30/2016	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO	Other	1052			
+04/24/16 09:33:49 R:	CS|CS	3|19	Maria	Mayorga	2016 Mazda Miata	Grey			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2293			
+04/24/16 09:33:50 +:	CS	19	Maria	Mayorga	2016 Mazda Miata	Grey			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2293			
+04/24/16 09:34:12 R:	ASP|ASP	1|9	Mark	Mayorga	2006 Subaru Wrx STI	Gray			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2390			
+04/24/16 09:34:13 +:	ASP	9	Mark	Mayorga	2006 Subaru Wrx STI	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2390			
+04/24/16 09:34:22 R:	FS|FS	1|30	Arthur	McDonald	2007 Ford Mustang GT	Silver			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich	518			
+04/24/16 09:34:22 +:	FS	30	Arthur	McDonald	2007 Ford Mustang GT	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich	518			
+04/24/16 09:34:27 R:	XCS|XCS	3|78	Matt	McGrain	2013 Scion FR-S	Black			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		1435			
+04/24/16 09:34:28 +:	XCS	78	Matt	McGrain	2013 Scion FR-S	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		1435			
+04/24/16 09:34:38 R:	STX|STX	5|23	Jon	McLeod	2013 Scion FR-S				NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:34:44 R:	DSP|DSP	2|90	Adam	Menges	1991 BMW 318is	Red			NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:34:50 R:	FSP|FSP	1|79	Thomas	Middleton	1998 Dodge Neon	Red			NO	12/30/2015				YES	NO		NO		0.00		NO	NO	NO				NO	Hankook				
+04/24/16 09:34:53 +:	FSP	79	Thomas	Middleton	1998 Dodge Neon	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Hankook				
+04/24/16 09:34:54 +:	CS	4	Anders	Miller	2006 Mazda MX5 Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Hoosier	1382			
+04/24/16 09:34:58 R:	CS|CS	4|1	Anders	Miller	2006 Mazda MX5 Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Hoosier	1382			
+04/24/16 09:35:03 R:	CS|CS	5|14	Michael	Miller	2006 Mazda MX5 Miata	Red			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Hoosier	1382			
+04/24/16 09:35:04 +:	CS	14	Michael	Miller	2006 Mazda MX5 Miata	Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Hoosier	1382			
+04/24/16 09:35:29 R:	XES|XES	7|18	Sean	Minehart	2003 Toyota MR2 Spyder	Yellow			NO					YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone				
+04/24/16 09:35:30 +:	XES	18	Sean	Minehart	2003 Toyota MR2 Spyder	Yellow			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone				
+04/24/16 09:35:36 R:	NOVSTR|NOVSTR	20|21	Glenwood	Morris	2009 Mazda Miata	Silver			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Hankook	2369			
+04/24/16 09:35:37 +:	NOVSTR	21	Glenwood	Morris	2009 Mazda Miata	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Hankook	2369			
+04/24/16 09:35:45 R:	NOVFSP|NOVFSP	7|73	Robert	Morris	1973 MG midget	blue			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2370			
+04/24/16 09:35:46 +:	NOVFSP	73	Robert	Morris	1973 MG midget	blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2370			
+04/24/16 09:35:56 R:	NOVES|NOVES	6|0	Rene	Neron	1986 Toyota MR2	Blue			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2386			
+04/24/16 09:35:57 +:	NOVES	0	Rene	Neron	1986 Toyota MR2	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2386			
+04/24/16 09:36:15 R:	ES|ES	4|2	Turner	Oppy	1996 Mazda miata	blue			NO	12/30/2015				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	2158			
+04/24/16 09:36:16 +:	ES	2	Turner	Oppy	1996 Mazda miata	blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2158			
+04/24/16 09:36:36 R:	XCS|XCS	4|9	Andrew	Pallotta	2016 Mazda MX5	Gray			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	2360			
+04/24/16 09:37:01 R:	ASP|ASP	2|0	Jason	Panciera	1999 Porsche 996	Black			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		1234			
+04/24/16 09:37:02 +:	XCS	9	Andrew	Pallotta	2016 Mazda MX5	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone	2360			
+04/24/16 09:37:02 +:	ASP	0	Jason	Panciera	1999 Porsche 996	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		1234			
+04/24/16 09:37:08 R:	CAM|CAM	2|23	George	Paraskevas	2000 Ford Mustang GT	Black			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2204			
+04/24/16 09:37:09 +:	CAM	23	George	Paraskevas	2000 Ford Mustang GT	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		2204			
+04/24/16 09:37:09 +:	SS	2	Jennifer	Parks	2014 Porsche Cayman S	Guards Red			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Michelin	2281			
+04/24/16 09:37:14 R:	SS|SS	2|13	Jennifer	Parks	2014 Porsche Cayman S	Guards Red			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Michelin	2281			
+04/24/16 09:37:39 R:	AS|AS	2|86	David	Peters	2008 Saturn Sky Redline	Red			NO					YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	455882			
+04/24/16 09:37:40 +:	AS	86	David	Peters	2008 Saturn Sky Redline	Red			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone	455882			
+04/24/16 09:37:46 R:	ASP|ASP	3|2	Robert	Plank	1991 Porsche 911	Blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO				NO		1037			
+04/24/16 09:37:55 R:	ES|ES	5|11	Keith	Roberts	1991 Mazda Miata	brg			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	2146			
+04/24/16 09:37:58 +:	ES	11	Keith	Roberts	1991 Mazda Miata	brg			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2146			
+04/24/16 09:38:09 R:	NOVCS|NOVCS	2|37	Stephen	Saunders	2016 Subaru BRZ				NO					YES	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:38:11 +:	NOVCS	37	Stephen	Saunders	2016 Subaru BRZ				NO					YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:38:19 R:	XGS|XGS	8|64	G H	Sharp	2016 Volkswagen GTI	Dark Blue			NO					YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone				
+04/24/16 09:38:24 +:	HS	3	Steven	Spampinato	2006 Honda Civic SI Coupe	Tomato			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2067			
+04/24/16 09:38:31 R:	HS|HS	3|247	Steven	Spampinato	2006 Honda Civic SI Coupe	Tomato			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Dunlop	2067			
+04/24/16 09:38:39 R:	XCS|XCS	5|81	David	Spratte	2013 Scion FR-S	Black			NO					YES	NO		NO		0.00		NO	NO	NO				NO		1255			
+04/24/16 09:38:41 +:	XCS	81	David	Spratte	2013 Scion FR-S	Black			NO					YES	YES		NO		0.00		NO	NO	NO				NO		1255			
+04/24/16 09:39:08 R:	NOVES|NOVES	15|39	Joe	Talarico	2001 Mazda Miata MX-5 LS	Red			NO					YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 09:39:09 +:	NOVES	39	Joe	Talarico	2001 Mazda Miata MX-5 LS	Red			NO					YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich				
+04/24/16 09:39:24 R:	CS|CS	9|16	Jennifer	Vance	2016 Mazda MX5	grey			NO	12/30/2015	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO		2068			
+04/24/16 09:39:29 R:	CS|CS	7|9	Gordon	Taylor	2014 Subaru BRZ	Blue			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		998			
+04/24/16 09:39:30 +:	CS	6	Cathie	Taylor	2014 Subaru BRZ	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		1040			
+04/24/16 09:39:31 +:	CS	9	Gordon	Taylor	2014 Subaru BRZ	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		998			
+04/24/16 09:39:38 R:	STR|STR	5|32	Christopher	Vasques	2002 Mazda Miata	Gray			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	BFGoodrich	2065			
+04/24/16 09:39:40 +:	STR	32	Christopher	Vasques	2002 Mazda Miata	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich	2065			
+04/24/16 09:39:47 R:	STR|STR	6|8	Carlton	Whitehead	2002 Honda S2000	Silver			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	1807			
+04/24/16 09:39:49 +:	STR	8	Carlton	Whitehead	2002 Honda S2000	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	Bridgestone	1807			
+04/24/16 09:40:53 R:	AS|AS	3|69	Robert	Whyte	2005 Porsche Boxster S	Guards Red			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		2370			
+04/24/16 09:41:23 R:	SMF|STF	37|37	Chris	Williams	2004 Volkswagen GTI	Grey			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO	BFGoodrich	2250			
+04/24/16 09:41:54 +:	CS	8	Lee	Williams	2005 Nissan 350Z	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO				NO		1043			
+04/24/16 09:42:18 R:	CAM|CAM	3|0	Jordan	Wright	2008 Ford Mustang	Forest Green			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO		1880			
+04/24/16 09:42:24 R:	CAM|CAM	4|7	Rodney	Wright	2008 Ford mustang bullitt	green			NO	12/30/2016				YES	NO		NO		0.00		NO	NO	NO				NO	Dunlop	1093			
+04/24/16 09:43:41 !:	STR	14	Tristan	McBride	Honda s2000	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:44:10 +:	NOVSM	12	Casey	Cole	2014 Mitsubishi evolution x gsr	white			NO					NO	NO		NO		0.00		NO	NO	NO				NO	Nitto				
+04/24/16 09:44:11 +:	STX	44	Noah	Fleming	2015 Scion FR-S	Black			NO	12/30/2016				NO	NO		NO		0.00		NO	NO	NO				NO	Bridgestone	1970			
+04/24/16 09:44:12 +:	STX	23	Jon	McLeod	2013 Scion FR-S				NO					NO	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:44:13 +:	DSP	90	Adam	Menges	1991 BMW 318is	Red			NO					NO	NO		NO		0.00		NO	NO	NO				NO					
+04/24/16 09:44:14 +:	CAM	0	Jordan	Wright	2008 Ford Mustang	Forest Green			NO	12/30/2016				NO	NO		NO		0.00		NO	NO	NO				NO		1880			
+04/24/16 09:44:15 +:	CAM	7	Rodney	Wright	2008 Ford mustang bullitt	green			NO	12/30/2016				NO	NO		NO		0.00		NO	NO	NO				NO	Dunlop	1093			
+04/24/16 09:44:16 +:	AS	69	Robert	Whyte	2005 Porsche Boxster S	Guards Red			NO	12/30/2016				NO	NO		NO		0.00		NO	NO	NO				NO		2370			
+04/24/16 10:00:53 R:	SM|SMF	10|10	John	Huppert	1993 Honda Civic	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		NO					
+04/24/16 11:29:32 +:	SS	13	Jennifer	Parks	2014 Porsche Cayman S	Guards Red			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Michelin	2281			
+04/24/16 11:29:34 +:	AS	1	Eric	Cohen	Chevrolet corvette	red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Goodyear	2272			
+04/24/16 11:29:35 +:	AS	86	David	Peters	2008 Saturn Sky Redline	Red			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Bridgestone	455882			
+04/24/16 11:29:36 +:	AS	69	Robert	Whyte	2005 Porsche Boxster S	Guards Red			NO	12/30/2016				NO	NO		NO		0.00		NO	NO	NO	1	3		YES		2370			
+04/24/16 11:29:40 +:	AS	69	Robert	Whyte	2005 Porsche Boxster S	Guards Red			NO	12/30/2016				NO	NO		NO		0.00		NO	NO	NO	1	3		NO		2370			
+04/24/16 11:29:54 +:	BS	1	Dennis	Burns	2003 BMW z4	Black			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:29:55 +:	BS	311	Paul	Bixel	2012 370Z	Silver			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:29:57 +:	CS	2	Andrew	Jonell	2016 Mazda MX-5	Black			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		1946			
+04/24/16 11:29:57 +:	CS	19	Maria	Mayorga	2016 Mazda Miata	Grey			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		2293			
+04/24/16 11:29:58 +:	CS	1	Anders	Miller	2006 Mazda MX5 Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Hoosier	1382			
+04/24/16 11:29:59 +:	CS	14	Michael	Miller	2006 Mazda MX5 Miata	Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Hoosier	1382			
+04/24/16 11:30:00 +:	CS	6	Cathie	Taylor	2014 Subaru BRZ	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		1040			
+04/24/16 11:30:00 +:	CS	9	Gordon	Taylor	2014 Subaru BRZ	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		998			
+04/24/16 11:30:06 +:	CS	16	Jennifer	Vance	2016 Mazda MX5	grey			NO	12/30/2015	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES		2068			
+04/24/16 11:30:06 +:	CS	8	Lee	Williams	2005 Nissan 350Z	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		1043			
+04/24/16 11:30:06 +:	DS	15	Brice	Johnson	2006 MINI Cooper S JCW	Pepper White			NO	12/30/2016	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Yokohama	1667			
+04/24/16 11:30:06 +:	DS	5	Mary	Johnson	2006 MINI Copper S JCW	Pepper White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:30:06 +:	DS	69	William	Hansley	2010 Mini Cooper S Conv	Red			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:30:06 +:	ES	301	Eric	Dick	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:30:06 +:	ES	9	Benjamin	Guardiola	2003 Mazda Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	1	3		YES		2180			
+04/24/16 11:30:06 +:	ES	11	Keith	Roberts	1991 Mazda Miata	brg			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Dunlop	2146			
+04/24/16 11:30:06 +:	ES	17	Tyler	James	1997 Mazda Miata	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Falken	2389			
+04/24/16 11:30:06 +:	ES	2	Turner	Oppy	1996 Mazda miata	blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Dunlop	2158			
+04/24/16 11:30:06 +:	ES	224	Mark	Beech	1992 Mazda Miata	White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Falken	2283			
+04/24/16 11:30:06 +:	FS	30	Arthur	McDonald	2007 Ford Mustang GT	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	BFGoodrich	518			
+04/24/16 11:30:06 +:	GS	88	Kenneth	Butron	2015 Ford Focus St	White			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Firestone				
+04/24/16 11:30:06 +:	GS	46	Joe	Lohr	2013 Mazda mazdaspeed3	silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES		2276			
+04/24/16 11:30:06 +:	GS	16	Luke	Wickelgren	2014 Ford Focus ST	White			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Goodyear				
+04/24/16 11:30:08 +:	CS	16	Jennifer	Vance	2016 Mazda MX5	grey			NO	12/30/2015	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		NO		2068			
+04/24/16 11:30:08 +:	CS	8	Lee	Williams	2005 Nissan 350Z	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		NO		1043			
+04/24/16 11:30:08 +:	DS	15	Brice	Johnson	2006 MINI Cooper S JCW	Pepper White			NO	12/30/2016	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Yokohama	1667			
+04/24/16 11:30:08 +:	DS	5	Mary	Johnson	2006 MINI Copper S JCW	Pepper White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		NO					
+04/24/16 11:30:08 +:	DS	69	William	Hansley	2010 Mini Cooper S Conv	Red			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		NO					
+04/24/16 11:30:08 +:	ES	301	Eric	Dick	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		NO					
+04/24/16 11:30:08 +:	ES	9	Benjamin	Guardiola	2003 Mazda Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	1	3		NO		2180			
+04/24/16 11:30:08 +:	ES	11	Keith	Roberts	1991 Mazda Miata	brg			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Dunlop	2146			
+04/24/16 11:30:08 +:	ES	17	Tyler	James	1997 Mazda Miata	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Falken	2389			
+04/24/16 11:30:08 +:	ES	2	Turner	Oppy	1996 Mazda miata	blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Dunlop	2158			
+04/24/16 11:30:08 +:	ES	224	Mark	Beech	1992 Mazda Miata	White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Falken	2283			
+04/24/16 11:30:08 +:	FS	30	Arthur	McDonald	2007 Ford Mustang GT	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		NO	BFGoodrich	518			
+04/24/16 11:30:08 +:	GS	88	Kenneth	Butron	2015 Ford Focus St	White			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Firestone				
+04/24/16 11:30:08 +:	GS	46	Joe	Lohr	2013 Mazda mazdaspeed3	silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		NO		2276			
+04/24/16 11:30:08 +:	GS	16	Luke	Wickelgren	2014 Ford Focus ST	White			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Goodyear				
+04/24/16 11:30:43 +:	CS	16	Jennifer	Vance	2016 Mazda MX5	grey			NO	12/30/2015	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES		2068			
+04/24/16 11:30:45 +:	CS	8	Lee	Williams	2005 Nissan 350Z	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		1043			
+04/24/16 11:30:46 +:	DS	15	Brice	Johnson	2006 MINI Cooper S JCW	Pepper White			NO	12/30/2016	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Yokohama	1667			
+04/24/16 11:30:47 +:	DS	5	Mary	Johnson	2006 MINI Copper S JCW	Pepper White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:30:47 +:	DS	69	William	Hansley	2010 Mini Cooper S Conv	Red			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:30:48 +:	ES	301	Eric	Dick	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:30:49 +:	ES	9	Benjamin	Guardiola	2003 Mazda Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	1	3		YES		2180			
+04/24/16 11:30:50 +:	ES	11	Keith	Roberts	1991 Mazda Miata	brg			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Dunlop	2146			
+04/24/16 11:30:50 +:	ES	17	Tyler	James	1997 Mazda Miata	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Falken	2389			
+04/24/16 11:30:51 +:	ES	2	Turner	Oppy	1996 Mazda miata	blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Dunlop	2158			
+04/24/16 11:30:56 +:	ES	224	Mark	Beech	1992 Mazda Miata	White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Falken	2283			
+04/24/16 11:30:57 +:	FS	30	Arthur	McDonald	2007 Ford Mustang GT	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	BFGoodrich	518			
+04/24/16 11:30:58 +:	GS	88	Kenneth	Butron	2015 Ford Focus St	White			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Firestone				
+04/24/16 11:30:58 +:	GS	46	Joe	Lohr	2013 Mazda mazdaspeed3	silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES		2276			
+04/24/16 11:30:59 +:	GS	16	Luke	Wickelgren	2014 Ford Focus ST	White			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Goodyear				
+04/24/16 11:30:59 +:	GS	33	Joelle	Fernandez	2015 Ford Focus ST	Oxford White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Bridgestone	2358			
+04/24/16 11:31:00 +:	HS	31	Talya	Dressler	2014 Mazda Mazda2	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		2200			
+04/24/16 11:31:01 +:	HS	80	David	Henry	2006 Mazda 3	Silver			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:01 +:	HS	24	Rob	Keehner	2006 Honda Civic	Meatball Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Dunlop	2136			
+04/24/16 11:31:10 +:	HS	13	Rob	Lupella	2015 Mazda 2	Black			NO	12/30/2016	2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Other	1052			
+04/24/16 11:31:10 +:	HS	247	Steven	Spampinato	2006 Honda Civic SI Coupe	Tomato			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Dunlop	2067			
+04/24/16 11:31:11 +:	HS	93	Edmond	Steele	2012 Chevrolet Cruze	Silver			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:12 +:	STF	37	Chris	Williams	2004 Volkswagen GTI	Grey			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	BFGoodrich	2250			
+04/24/16 11:31:12 +:	STS	96	Justin	Deffenbaugh	1995 Acura Integra	Black			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:13 +:	STS	11	Paul	Spenser	1997 Mazda Miata	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:13 +:	STX	7	Will	Leaming	BMW 330	silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		2375			
+04/24/16 11:31:14 +:	STX	22	Bill	Aycock	2012 Volkswagen Golf R	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	BFGoodrich	2114			
+04/24/16 11:31:15 +:	STX	178	Dominic	Germana	1988 BMW M3	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:25 +:	STX	17	Austin	Leaming	BMW 330	silver			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:26 +:	STX	54	Justin	Lovelace	1998 BMW 328	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:26 +:	STX	45	Leon	Lovelace	1998 BMW 328	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:27 +:	STX	92	Matt	Nicholson	2001 BMW 330	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:31:31 +:	STR	86	Steven	Carter	2007 Honda S2000	GranPrix White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Dunlop	1942			
+04/24/16 11:31:32 +:	STR	42	Bart	Craig	1998 BMW M Roadster	Imola Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Bridgestone	2024			
+04/24/16 11:31:33 +:	STR	4	Derek	DeLong	2006 Honda S2000	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Dunlop	2150			
+04/24/16 11:31:34 +:	STR	14	Tristan	McBride	Honda s2000	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:31:48 +:	STR	32	Christopher	Vasques	2002 Mazda Miata	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	BFGoodrich	2065			
+04/24/16 11:31:49 +:	STR	8	Carlton	Whitehead	2002 Honda S2000	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Bridgestone	1807			
+04/24/16 11:31:57 +:	ASP	9	Mark	Mayorga	2006 Subaru Wrx STI	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES		2390			
+04/24/16 11:31:58 +:	ASP	0	Jason	Panciera	1999 Porsche 996	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES		1234			
+04/24/16 11:31:59 +:	ASP	2	Robert	Plank	1991 Porsche 911	Blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	3	2		YES		1037			
+04/24/16 11:32:00 +:	CSP	901	John	Beecher	1988 BMW M3	Red			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Falken	2194			
+04/24/16 11:32:00 +:	CSP	3	Elizabeth	Chan	1999 Mazda Miata	Green			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Dunlop	2346			
+04/24/16 11:32:01 +:	CSP	13	Francis	Chan	1999 Mazda Miata	Green			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Dunlop	2289			
+04/24/16 11:32:01 +:	CSP	10	Chad	Culbertson	2000 Mazda MX-5 Miata	Black			NO	12/30/1999				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Dunlop	LT-2266			
+04/24/16 11:32:02 +:	DSP	17	Eric	Beaulaurier	2007 Mini Cooper S	Pepper White			NO					YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:33:02 +:	FSP	79	Thomas	Middleton	1998 Dodge Neon	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Hankook				
+04/24/16 11:33:03 +:	CAM	33	scott	feldon	1972 Chevrolet corvette	Black			NO					YES	YES		NO		0.00		NO	NO	NO	3	2		YES	BFGoodrich				
+04/24/16 11:33:04 +:	CAM	23	George	Paraskevas	2000 Ford Mustang GT	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES		2204			
+04/24/16 11:33:05 +:	SMF	45	ronald	davis	1991 Honda civic	red			NO					YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Hoosier				
+04/24/16 11:33:06 +:	SMF	10	John	Huppert	1993 Honda Civic	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:33:07 +:	SSM	916	Dylan	Barrett	1995 Mazda Miata	Merlot Mica			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Dunlop	2364			
+04/24/16 11:33:08 +:	AM	1	robert	collie	Atom	black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:33:09 +:	XBS	804	Will	King	2005 Honda S2000	Silver			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:33:15 +:	XCS	9	Andrew	Pallotta	2016 Mazda MX5	Gray			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Bridgestone	2360			
+04/24/16 11:33:15 +:	XGS	64	G H	Sharp	2016 Volkswagen GTI	Dark Blue			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Bridgestone				
+04/24/16 11:33:16 +:	XCS	81	David	Spratte	2013 Scion FR-S	Black			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES		1255			
+04/24/16 11:33:17 +:	XES	18	Sean	Minehart	2003 Toyota MR2 Spyder	Yellow			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Bridgestone				
+04/24/16 11:33:17 +:	XES	18	Sean	Minehart	2003 Toyota MR2 Spyder	Yellow			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		NO	Bridgestone				
+04/24/16 11:33:18 +:	XES	18	Sean	Minehart	2003 Toyota MR2 Spyder	Yellow			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Bridgestone				
+04/24/16 11:33:19 +:	XHS	97	Gwen	Habenicht	2009 Mini Cooper	Blue			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Hoosier	3815			
+04/24/16 11:33:19 +:	XCS	78	Matt	McGrain	2013 Scion FR-S	Black			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES		1435			
+04/24/16 11:33:20 +:	XCS	37	John	Wolf	2013 Scion FRS	blue			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Bridgestone	2295			
+04/24/16 11:33:21 +:	XES	301	Jamie	Rupe	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:33:21 +:	XBS	884	Langlee	King	2005 Honda S2000	Silver			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:33:27 +:	NOVES	0	Rene	Neron	1986 Toyota MR2	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES		2386			
+04/24/16 11:33:28 +:	NOVDS	71	Anthony	Faubus	2006 Subaru Legacy GT	White			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Continental	2348			
+04/24/16 11:33:31 +:	NOVDS	81	Matthew	Ryan	2005 Mini S	Silver			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:33:32 +:	NOVGS	36	Lisa	Lauck	2011 Volkswagen GTI	white			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Continental	2368			
+04/24/16 11:33:33 +:	NOVGS	93	Paul	Fuller	2008 Saab 9-3	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	1	3		YES	Goodyear	2301			
+04/24/16 11:33:34 +:	NOVCAM	68	Duane	Black	2013 Ford Mustang	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES	BFGoodrich				
+04/24/16 11:33:35 +:	NOVSTF	42	Brenden	Bottum	2005 Mini Cooper S Cabrio	Blue			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES	BFGoodrich				
+04/24/16 11:33:35 +:	NOVHS	226	Michael	Byrne	1972 MGB	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:33:40 +:	NOVCSP	26	Austin	Clem	1999 Mazda Miata	Classic Red			NO					YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:33:42 +:	NOVCAM	182	Charles	Cox	2008 Corvette 	Red			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Falken				
+04/24/16 11:33:43 +:	NOVSTR	18	Jonathan	Cox	2001 Mazda Miata	Hunter Green			NO					YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:33:44 +:	NOVSTS	13	Guangming	Cui	1993 Mazda MX-5 Miata	Red			NO	12/30/2015				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Dunlop				
+04/24/16 11:33:45 +:	NOVHS	128	Aaron	Finley	2014 Ford Fiesta ST	Black as night			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:33:46 +:	NOVAM	77	Berry	Glasscock	Atom	yellow			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:33:46 +:	NOVSTX	696	Fernando	Granados	2004 Mazda RX-8	Silver			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES	Yokohama				
+04/24/16 11:33:47 +:	NOVBS	43	Jason	Harris	2013 Audi RS5	Black			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:33:48 +:	NOVHS	44	Warren	Henry	2002 Subaru Forester	Silver			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:34:57 +:	NOVSTR	19	Tyler	Holloway	2007 Mazda MX-5	Red mica			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES		2364			
+04/24/16 11:34:58 +:	NOVHS	99	Hunter	Johnson	2012 Ford Focus	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:34:59 +:	NOVCAM	28	Aris	Mantalvanos	2001 Ford Mustang	White			NO					YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Michelin	2373			
+04/24/16 11:35:00 +:	NOVSTR	21	Glenwood	Morris	2009 Mazda Miata	Silver			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Hankook	2369			
+04/24/16 11:35:00 +:	NOVFSP	73	Robert	Morris	1973 MG midget	blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES		2370			
+04/24/16 11:35:02 +:	NOVES	30	Rachel	Rupe	1994 Mazda Miata	Blue			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/24/16 11:35:02 +:	NOVCS	37	Stephen	Saunders	2016 Subaru BRZ				NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:35:03 +:	NOVSTR	4	Justin	Singh	2009 Mazda Miata	Black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:35:04 +:	NOVSTR	40	Joseph	Snyder	2010 Mazda Miata	Blue			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	3	2		YES	Dunlop	2304			
+04/24/16 11:35:04 +:	NOVES	39	Joe	Talarico	2001 Mazda Miata MX-5 LS	Red			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES	BFGoodrich				
+04/24/16 11:35:09 +:	NOVSTR	17	Steven	Watson	2003 Mazda Miata	Red			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES					
+04/24/16 11:35:10 +:	NOVSTX	69	Joseph	Workman	2015 Subaru BRZ	White			NO					YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 11:35:11 +:	OFBSP	8	Neal	Harrington	1988 Pontiac FIERO GT	WHITE			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES		349			
+04/24/16 12:37:06 R:	STX|STX	178|78	Dominic	Germana	1988 BMW M3	White			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	2	1		YES					
+04/24/16 14:22:03 R:	STF|SMF	37|37	Chris	Williams	2004 Volkswagen GTI	Grey			NO	12/30/2016				YES	YES		NO		0.00		NO	NO	NO	2	1		YES	BFGoodrich	2250			
+04/25/16 19:20:46 R:	xbs|novbs	884|884	Langlee	King	2005 Honda S2000	Silver			NO					YES	YES		NO		0.00		NO	NO	NO	1	3		YES					
+04/25/16 20:42:54 +:	am	1	Robert	Collie	Ariel Atom	black			NO		2016-04-24	0000-00-00		YES	YES		NO		0.00		NO	NO	NO	3	2		YES					

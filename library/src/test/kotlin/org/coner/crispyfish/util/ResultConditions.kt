@@ -3,8 +3,8 @@ package org.coner.crispyfish.util
 import org.assertj.core.api.Condition
 import org.assertj.core.condition.AllOf
 import org.assertj.core.util.Strings
-import org.coner.crispyfish.domain.Result
-import org.coner.crispyfish.domain.Numbers
+import org.coner.crispyfish.model.Result
+import org.coner.crispyfish.model.Numbers
 import java.util.function.Predicate
 
 object ResultConditions {
