@@ -5,10 +5,13 @@ import org.coner.crispyfish.filetype.ecf.EventControlFile
 import java.io.File
 import java.nio.file.Path
 
-class StagingFileLocator(private val stagingFileAssistant: StagingFileAssistant) {
+class StagingFileLocator(
+        private val eventControlFile: EventControlFile,
+        private val stagingFileAssistant: StagingFileAssistant = StagingFileAssistant()
+) {
 
-    fun locate(eventControlFile: EventControlFile, eventDay: EventDay): Path? {
-        val eventControlFileParent = eventControlFile.path.parent.toFile()
+    fun locate(eventDay: EventDay): Path? {
+        val eventControlFileParent = eventControlFile.file.parentFile
         val stagingFilenameFilter = stagingFileAssistant.buildStagingFilenameFilter(
                 eventControlFile,
                 eventDay

@@ -29,21 +29,24 @@ class StagingFileLocatorTest {
     @Mock
     lateinit var eventControlFilePath: Path
     @Mock
+    lateinit var eventControlFileFile: File
+    @Mock
     lateinit var eventControlFileParentAsFile: File
     @Mock
     lateinit var stagingFilenameFilter: StagingFilenameFilter
 
     @Before
     fun setup() {
-        stagingFileLocator = StagingFileLocator(stagingFileAssistant)
-        `when`(eventControlFile.path).thenReturn(eventControlFilePath)
+        stagingFileLocator = StagingFileLocator(
+                eventControlFile = eventControlFile,
+                stagingFileAssistant = stagingFileAssistant
+        )
     }
 
     @Test
     fun whenLocateWithSimpleStagingItShouldLocateStaging() {
-        val ecfParent = mock(Path::class.java)
-        `when`(eventControlFilePath.parent).thenReturn(ecfParent)
-        `when`(ecfParent.toFile()).thenReturn(eventControlFileParentAsFile)
+        `when`(eventControlFile.file).thenReturn(eventControlFileFile)
+        `when`(eventControlFileFile.parentFile).thenReturn(eventControlFileParentAsFile)
         `when`(stagingFileAssistant.buildStagingFilenameFilter(
                 Mockito.same(eventControlFile) ?: eventControlFile,
                 Mockito.any(EventDay::class.java) ?: EventDay.ONE
@@ -52,7 +55,7 @@ class StagingFileLocatorTest {
         val files = arrayOf(ecfPath.toFile())
         `when`(eventControlFileParentAsFile.listFiles(stagingFilenameFilter)).thenReturn(files)
 
-        val actual = stagingFileLocator.locate(eventControlFile, EventDay.ONE)
+        val actual = stagingFileLocator.locate(EventDay.ONE)
 
         assertThat(actual).isEqualTo(ecfPath)
     }
