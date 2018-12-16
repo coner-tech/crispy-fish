@@ -31,4 +31,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <scm>
+        <developerConnection>scm:git:git@github.com:caeos/crispy-fish.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-caeos-crispy-fish</id>
+            <name>caeos-crispy-fish</name>
+            <url>https://api.bintray.com/maven/caeos/crispy-fish/crispy-fish/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
 </project>
