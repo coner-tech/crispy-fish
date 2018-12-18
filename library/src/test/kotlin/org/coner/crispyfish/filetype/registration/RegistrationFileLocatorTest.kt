@@ -14,7 +14,7 @@ class RegistrationFileLocatorTest {
     fun itShouldLocateRegistrationFile() {
         val locator = Events.Thscc2016Points3Danville.eventControlFile.registrationFileLocator
 
-        val actual = locator.locate(EventDay.ONE)
+        val actual = locator.locate()
 
         assert(actual).isNotNull{ registrationFile ->
             registrationFile.prop(RegistrationFile::file).isNotNull { file ->

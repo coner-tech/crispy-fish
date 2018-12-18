@@ -39,15 +39,10 @@ enum class TestEvent constructor(
 
     private val conePenalty = 2
 
-    fun buildRegistrationFile(
-            registrations: MutableList<Registration>,
-            columnIndices: MutableMap<RegistrationColumns, Int>
-    ): RegistrationFile {
+    fun buildRegistrationFile(): RegistrationFile {
         val url = javaClass.getResource("/$RESOURCES_PREFIX$registrationFileName")
         return RegistrationFile(
-                file = File(url.toURI()),
-                registrations = registrations,
-                columnIndices = columnIndices
+                file = File(url.toURI())
         )
     }
 

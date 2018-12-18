@@ -1,10 +1,10 @@
 package org.coner.crispyfish.filetype.registration
 
-enum class RegistrationColumns(val heading: String) {
-    CLASS("Class"),
-    NUMBER("Number"),
-    FIRST_NAME("First Name"),
-    LAST_NAME("Last Name"),
-    CAR_MODEL("Car Model"),
-    CAR_COLOR("Car Color")
+sealed class RegistrationColumns(val heading: String, var index: Int? = null) {
+    class Class : RegistrationColumns("Class")
+    class Number : RegistrationColumns("Number")
+    class FirstName : RegistrationColumns("First Name")
+    class LastName : RegistrationColumns("Last Name")
+    class CarModel : RegistrationColumns("Car Model")
+    class CarColor : RegistrationColumns("Car Color")
 }

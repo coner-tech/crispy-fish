@@ -8,7 +8,7 @@ import java.util.regex.Pattern
 
 class RegistrationFileLocator(val eventControlFile: EventControlFile) {
 
-    fun locate(eventDay: EventDay): RegistrationFile {
+    fun locate(): RegistrationFile {
         val folder = eventControlFile.file.parentFile
         val file = folder.listFiles(filter)
                 .sortedByDescending(File::lastModified)
