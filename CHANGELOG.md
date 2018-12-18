@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.1.0-SNAPSHOT (YYYY-MM-DD)
+## 0.1.1
+
+- Clean up registrations file API and implementation
+
+## 0.1.0
 
 Initial release.
 
