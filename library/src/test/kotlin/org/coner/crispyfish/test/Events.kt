@@ -14,7 +14,6 @@ sealed class Events(ecfFile: String, conePenalty: Int = 2, twoDayEvent: Boolean 
     object Thscc2016Points3Danville : Events("thscc/2016/2016 Points Event 3 Danville.ecf")
 
     private fun resource(relativeFilePath: String): File {
-
         val file = File(javaClass.getResource("/org/coner/crispyfish/test/Events/$relativeFilePath").toURI())
         check(file.exists()) { "test event resource does not exist: $relativeFilePath" }
         return file

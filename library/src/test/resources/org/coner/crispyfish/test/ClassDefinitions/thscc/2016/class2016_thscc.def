@@ -1,0 +1,54 @@
+SS	0.835	2	Super Street				Street		
+AS	0.833	2	A Street				Street		
+BS	0.826	-1	B Street				Street		
+CS	0.819	2	C Street				Street		
+DS	0.811	2	D Street				Street		
+ES	0.807	2	E Street				Street		
+FS	0.814	2	F Street				Street		
+GS	0.806	2	G Street				Street		
+HS	0.798	2	H Street				Street		
+HCS	0.817	-1	Heritage Classic Street				Heritage Street		
+STF	0.809	2	Street Touring FWD				Touring		
+STS	0.832	1	Street Touring S				Touring		
+STX	0.836	1	Street Touring X				Touring		
+STR	0.841	1	Street Touring R				Touring		
+STU	0.845	-1	Street Touring U				Touring		
+STP	0.837	-1	Street Touring P				Touring		
+SSP	0.872	-1	S Street Prepared				Street Prepared		
+ASP	0.865	1	A Street Prepared				Street Prepared		
+BSP	0.863	1	B Street Prepared				Street Prepared		
+CSP	0.867	1	C Street Prepared				Street Prepared		
+DSP	0.855	1	D Street Prepared				Street Prepared		
+ESP	0.852	-1	E Street Prepared				Street Prepared		
+FSP	0.840	1	F Street Prepared				Street Prepared		
+SSR	0.860	-1	S Street R				Street R		
+CAM	0.839	1	Classic American				Classic American		
+CAMC	0.839	-1	Classic American C				Classic American		
+CAMT	0.834	-1	Classic American T				Classic American		
+CAMS	0.848	-1	Classic American S				Classic American		
+XP	0.907	-1	X Prepared				Prepared		
+BP	0.883	-1	B Prepared				Prepared		
+CP	0.864	-1	C Prepared				Prepared		
+DP	0.879	1	D Prepared				Prepared		
+EP	0.871	-1	E Prepared				Prepared		
+FP	0.880	-1	F Prepared				Prepared		
+HCR	0.838	-1	Heritage Classic Race				Heritage Race		
+SMF	0.861	-1	Street Modified F				Street Modified		
+SM	0.870	1	Street Modified				Street Modified		
+SSM	0.882	2	Super Street Modified				Street Modified		
+AM	1.000	-1	A Modified				Modified		
+BM	0.966	1	B Modified				Modified		
+CM	0.916	-1	C Modified				Modified		
+DM	0.919	-1	D Modified				Modified		
+EM	0.920	-1	E Modified				Modified		
+FM	0.926	-1	F Modified				Modified		
+FSAE	0.982	-1	Formula SAE				Formula		
+KM	0.954	-1	F125 Shifter Kart				Kart		
+JA	0.878	-1	Junior Kart A				Junior Kart		
+JB	0.842	-1	Junior Kart B				Junior Kart		
+JC	0.734	-1	Junior Kart C				Junior Kart		
+X	0.000	-1	X-Pro Pax	pax			X Pro Pax		
+NOV	0.000	-10	Novice	pax			Novice		
+OF	0.000	-10	Old Farts	pax			Old Farts		
+NONE	1.000	-1	None (Unknown)						
+<UNKNOWN>	1.000	-1							
