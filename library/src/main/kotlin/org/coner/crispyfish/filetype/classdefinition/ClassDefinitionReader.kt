@@ -11,7 +11,7 @@ class ClassDefinitionReader(private val classDefinitionFile: ClassDefinitionFile
                 .toList()
     }
 
-    private fun read(index: Int, column: ClassDefinitionColumns): String? {
+    private fun read(index: Int, column: ClassDefinitionColumns): String {
         return lines[index][column.index]
     }
 

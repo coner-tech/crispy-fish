@@ -6,4 +6,6 @@ class ClassDefinitionFile(
         val file: File
 ) {
     fun reader() = ClassDefinitionReader(this)
+
+    fun mapper() = ClassDefinitionMapper(reader())
 }
