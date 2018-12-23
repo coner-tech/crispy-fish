@@ -1,27 +1,41 @@
 package org.coner.crispyfish.query
 
+import org.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import org.coner.crispyfish.model.*
 import org.coner.crispyfish.filetype.ecf.EventControlFile
-import org.coner.crispyfish.filetype.staging.StagingLineDomainReader
-import org.coner.crispyfish.filetype.staging.StagingLineReader
 
 import java.time.Duration
 import java.util.HashMap
 import kotlin.streams.toList
 
-class RawTimeResultsQuery(private val eventControlFile: EventControlFile, private val stagingLineReader: StagingLineReader<String>, private val stagingLineDomainReader: StagingLineDomainReader<String>) {
+class RawTimeResultsQuery(
+        private val classDefinitionFile: ClassDefinitionFile,
+        private val eventControlFile: EventControlFile,
+        private val eventDay: EventDay = EventDay.ONE
+) {
 
     @Throws(QueryException::class)
-    fun query(stagingFileLines: List<String>): List<Result> {
-        val driverBestRawResults = HashMap<Numbers, Result>()
+    fun query(): List<Result> {
+        val driverBestRawResults = HashMap<String, Result>()
+        val stagingFile = eventControlFile.stagingFile(eventDay)
+        val stagingLineModelReader = stagingFile.modelReader()
+        val stagingFileLines = stagingFile.file.readLines()
+        val categories = CategoriesQuery(classDefinitionFile).query()
+        val handicaps = HandicapsQuery(classDefinitionFile).query()
+        val registrations = RegistrationsQuery(
+                eventControlFile = eventControlFile,
+                categories = categories,
+                handicaps = handicaps
+        ).query()
+        val registrationMapper = eventControlFile.registrationFile().mapper()
         for (stagingFileLine in stagingFileLines) {
-            val driver = stagingLineDomainReader.readDriver(stagingFileLine)
-            val run = stagingLineDomainReader.readRun(stagingFileLine)
-            if (driver == null || run == null) {
+            val registration = stagingLineModelReader.readRegistration(stagingFileLine)
+            val run = stagingLineModelReader.readRun(stagingFileLine)
+            if (registration == null || run == null) {
                 continue
             }
             if (run.penaltyType?.shouldOmitRunFromResults == true) continue
-            run.timeScratchAsString = stagingLineReader.getRunRawTime(stagingFileLine)
+            run.timeScratchAsString = stagingFile.reader.getRunRawTime(stagingFileLine)
             run.timeScratchAsDuration = run.rawTime
             var penaltyDuration = Duration.ZERO
             when (run.penaltyType) {
@@ -33,8 +47,8 @@ class RawTimeResultsQuery(private val eventControlFile: EventControlFile, privat
             }
             run.timeScored = run.rawTime!!.plus(penaltyDuration)
             val shouldPutResult: Boolean
-            shouldPutResult = if (driverBestRawResults.containsKey(driver.numbers)) {
-                val bestResult = driverBestRawResults[driver.numbers]
+            shouldPutResult = if (driverBestRawResults.containsKey(registration.driverIdentityKey)) {
+                val bestResult = driverBestRawResults[registration.driverIdentityKey]
                 run.timeScored?.compareTo(bestResult?.run?.timeScored!!) ?: 0 < 0
             } else {
                 true
@@ -43,12 +57,17 @@ class RawTimeResultsQuery(private val eventControlFile: EventControlFile, privat
                 continue
             }
             val result = Result()
-            result.driver = driver
+            result.driver = registrationMapper.toRegistration(
+                    stagingLineRegistration = registration,
+                    categories = categories,
+                    handicaps = handicaps,
+                    registrations = registrations
+            )
             result.run = run
-            driverBestRawResults[driver.numbers!!] = result
+            driverBestRawResults[registration.driverIdentityKey] = result
         }
-        val results = driverBestRawResults.values.stream()
-                .sorted(compareBy { it.run?.timeScored })
+        val results = driverBestRawResults.values
+                .sortedBy { it.run?.timeScored }
                 .toList()
         var position = 1
         for (result in results) {

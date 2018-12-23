@@ -22,7 +22,7 @@ class StagingFileAssistant {
     }
 
     fun getOriginalFileBaseName(eventControlFile: EventControlFile): String {
-        return eventControlFile.path.toFile().nameWithoutExtension
+        return eventControlFile.file.nameWithoutExtension
     }
 
     @Throws(StagingLineException::class)

@@ -7,7 +7,7 @@ class ClassDefinitionMapper(val reader: ClassDefinitionReader) {
     fun all() = reader.lines.indices.map { atIndex(it) }
 
     fun atIndex(index: Int) = ClassDefinition(
-            abbreviation = reader.readAbbreviation(index),
+            abbreviation = reader.readAbbreviation(index).toUpperCase(),
             name = reader.readName(index),
             groupName = reader.readGroupName(index),
             paxFactor = reader.readPaxFactor(index).toBigDecimal(),

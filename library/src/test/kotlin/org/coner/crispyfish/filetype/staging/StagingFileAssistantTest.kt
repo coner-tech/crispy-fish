@@ -11,6 +11,7 @@ import java.time.Duration
 
 import org.assertj.core.api.Assertions.assertThat
 import org.mockito.Mockito.*
+import java.io.File
 
 class StagingFileAssistantTest {
 
@@ -23,9 +24,9 @@ class StagingFileAssistantTest {
 
     @Test
     fun whenBuildStagingFilenameFilterForDayOneItShouldReturnIt() {
-        val eventControlFilePath = Paths.get("foo", "bar", "baz.ecf")
+        val eventControlFileFile = File("/foo/bar/baz.ecf")
         val eventControlFile = mock(EventControlFile::class.java)
-        `when`(eventControlFile.path).thenReturn(eventControlFilePath)
+        `when`(eventControlFile.file).thenReturn(eventControlFileFile)
         `when`(eventControlFile.isTwoDayEvent).thenReturn(false)
 
         val actual = assistant.buildStagingFilenameFilter(eventControlFile, EventDay.ONE)
@@ -39,9 +40,9 @@ class StagingFileAssistantTest {
 
     @Test
     fun whenBuildStagingFilenameFilterForDayTwoItShouldReturnIt() {
-        val eventControlFilePath = Paths.get("foo", "bar", "baz.ecf")
+        val eventControlFileFile = File("foo/bar/baz.ecf")
         val eventControlFile = mock(EventControlFile::class.java)
-        `when`(eventControlFile.path).thenReturn(eventControlFilePath)
+        `when`(eventControlFile.file).thenReturn(eventControlFileFile)
         `when`(eventControlFile.isTwoDayEvent).thenReturn(true)
 
         val actual = assistant.buildStagingFilenameFilter(eventControlFile, EventDay.TWO)

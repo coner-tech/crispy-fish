@@ -3,8 +3,8 @@ package org.coner.crispyfish.util
 import org.assertj.core.api.Condition
 import org.assertj.core.condition.AllOf
 import org.assertj.core.util.Strings
+import org.coner.crispyfish.model.Registration
 import org.coner.crispyfish.model.Result
-import org.coner.crispyfish.model.Numbers
 import java.util.function.Predicate
 
 object ResultConditions {
@@ -15,24 +15,27 @@ object ResultConditions {
                 position
     )
 
-    fun driverNumbersEqual(numbers: Numbers) = Condition<Result>(
-            Predicate{ result -> result.driver!!.numbers == numbers },
+    fun driverNumbersEqual(category: String?, handicap: String, number: String) = Condition<Result>(
+            Predicate { result ->
+                (result.driver?.category?.abbreviation ?: "").equals(category, ignoreCase = true)
+                && result.driver?.handicap?.abbreviation.equals(handicap, ignoreCase = true)
+                && result.driver?.number == number
+            },
             "result.driver == %s",
-            numbers.toString()
+            "${category ?: ""}$handicap $number"
     )
 
-    fun driverNumbersEqual(classing: String, number: String): Condition<Result> {
-        return driverNumbersEqual(Numbers(classing, number))
-    }
-
     fun driverNameNotNullOrEmpty(): Condition<Result> {
-        return Condition(Predicate{ result -> !Strings.isNullOrEmpty(result.driver!!.name) }, "result.driver is not null or empty")
+        return Condition(Predicate{ result ->
+            !result.driver?.firstName.isNullOrBlank()
+            && !result.driver?.lastName.isNullOrBlank()
+        }, "result.driver first and last last names are not null or blank")
     }
 
-    fun driverFinished(position: Int, classing: String, number: String): Condition<Result> {
+    fun driverFinished(position: Int, category: String?, handicap: String, number: String): Condition<Result> {
         return AllOf.allOf(
                 positionEquals(position),
-                driverNumbersEqual(classing, number)
+                driverNumbersEqual(category, handicap, number)
         )
     }
 }

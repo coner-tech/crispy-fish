@@ -51,8 +51,8 @@ class StagingFileLocatorTest {
                 Mockito.same(eventControlFile) ?: eventControlFile,
                 Mockito.any(EventDay::class.java) ?: EventDay.ONE
         )).thenReturn(stagingFilenameFilter)
-        val ecfPath = Paths.get("foo.ecf")
-        val files = arrayOf(ecfPath.toFile())
+        val ecfPath = File("foo.ecf")
+        val files = arrayOf(ecfPath)
         `when`(eventControlFileParentAsFile.listFiles(stagingFilenameFilter)).thenReturn(files)
 
         val actual = stagingFileLocator.locate(EventDay.ONE)

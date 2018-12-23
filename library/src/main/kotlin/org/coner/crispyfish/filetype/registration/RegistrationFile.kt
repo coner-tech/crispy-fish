@@ -7,4 +7,6 @@ class RegistrationFile(
 ) {
     fun columnReader() = RegistrationLineColumnReader(this)
 
+    fun mapper() = RegistrationMapper()
+
 }

@@ -12,7 +12,7 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
         headingLine.split("\t")
     }
     val registrationLines by lazy {
-        lines.subList(1, lines.lastIndex)
+        lines.subList(1, lines.size)
                 .parallelStream()
                 .map { it.split("\t") }
                 .toList()

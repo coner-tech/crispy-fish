@@ -13,9 +13,9 @@ import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class StagingLineDomainReaderTest {
+class StagingLineModelReaderTest {
 
-    private lateinit var stagingLineDomainReader: StagingLineDomainReader<String>
+    private lateinit var stagingLineModelReader: StagingLineModelReader<String>
 
     @Mock
     lateinit var stagingFileAssistant: StagingFileAssistant
@@ -26,27 +26,27 @@ class StagingLineDomainReaderTest {
 
     @Before
     fun setup() {
-        stagingLineDomainReader = StagingLineDomainReader(stagingFileAssistant, stagingLineReader)
+        stagingLineModelReader = StagingLineModelReader(stagingFileAssistant, stagingLineReader)
     }
 
     @Test
     fun whenReadDriver() {
         val driverName = "driver name"
         val driverCar = "driver car"
-        val driverClassing = "driver classing"
+        val driverClassing = "DRIVER CLASSING"
         val driverNumber = "driver number"
         `when`<String>(stagingLineReader.getRegisteredDriverName(STAGING_LINE_MOCK)).thenReturn(driverName)
         `when`<String>(stagingLineReader.getRegisteredDriverCar(STAGING_LINE_MOCK)).thenReturn(driverCar)
         `when`<String>(stagingLineReader.getRegisteredDriverClass(STAGING_LINE_MOCK)).thenReturn(driverClassing)
         `when`<String>(stagingLineReader.getRegisteredDriverNumber(STAGING_LINE_MOCK)).thenReturn(driverNumber)
 
-        val actual = stagingLineDomainReader.readDriver(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRegistration(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNotNull()
+        assertThat(actual!!).isNotNull()
         assertThat(actual.name).isSameAs(driverName)
-        assertThat(actual.carModel).isSameAs(driverCar)
-        assertThat(actual.numbers?.classing).isSameAs(driverClassing)
-        assertThat(actual.numbers?.number).isSameAs(driverNumber)
+        assertThat(actual.car).isSameAs(driverCar)
+        assertThat(actual.classing).isSameAs(driverClassing)
+        assertThat(actual.number).isSameAs(driverNumber)
     }
 
     @Test
@@ -65,7 +65,7 @@ class StagingLineDomainReaderTest {
         `when`(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenReturn(paxTime)
         `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(penaltyType)
 
-        val actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
         assertThat(actual).isNotNull()
         assertThat(actual?.rawTime).isSameAs(rawTime)
@@ -84,7 +84,7 @@ class StagingLineDomainReaderTest {
         `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(penaltyType)
         `when`(stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(penalty)).thenReturn(cones)
 
-        val actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
         assertThat(actual).isNotNull()
         assertThat(actual?.penaltyType).isSameAs(penaltyType)
@@ -99,7 +99,7 @@ class StagingLineDomainReaderTest {
         `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
         `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(penaltyType)
 
-        val actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
         assertThat(actual).isNotNull()
         assertThat(actual?.penaltyType).isSameAs(penaltyType)
@@ -113,7 +113,7 @@ class StagingLineDomainReaderTest {
         `when`<String>(stagingLineReader.getRunRawTime(STAGING_LINE_MOCK)).thenReturn(raw)
         `when`(stagingFileAssistant.convertStagingTimeStringToDuration(raw)).thenThrow(StagingLineException::class.java)
 
-        val actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
         assertThat(actual).isNull()
     }
@@ -128,7 +128,7 @@ class StagingLineDomainReaderTest {
         `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(PenaltyType.CLEAN)
         `when`(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenThrow(StagingLineException::class.java)
 
-        val actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
         assertThat(actual).isNull()
     }
@@ -143,7 +143,7 @@ class StagingLineDomainReaderTest {
         `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(PenaltyType.DID_NOT_FINISH)
         `when`(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenThrow(StagingLineException::class.java)
 
-        val actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
         assertThat(actual).isNotNull()
     }
@@ -155,7 +155,7 @@ class StagingLineDomainReaderTest {
         `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
         `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenThrow(StagingLineException::class.java)
 
-        val actual = stagingLineDomainReader.readRun(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
         assertThat(actual).isNull()
     }

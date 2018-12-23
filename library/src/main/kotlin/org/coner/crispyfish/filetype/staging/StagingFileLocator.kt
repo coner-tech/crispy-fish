@@ -9,8 +9,7 @@ class StagingFileLocator(
         private val eventControlFile: EventControlFile,
         private val stagingFileAssistant: StagingFileAssistant = StagingFileAssistant()
 ) {
-
-    fun locate(eventDay: EventDay): Path? {
+    fun locate(eventDay: EventDay): File? {
         val eventControlFileParent = eventControlFile.file.parentFile
         val stagingFilenameFilter = stagingFileAssistant.buildStagingFilenameFilter(
                 eventControlFile,
@@ -18,8 +17,7 @@ class StagingFileLocator(
         )
 
         val files = eventControlFileParent.listFiles(stagingFilenameFilter)
-        val selectedFile = selectFile(files)
-        return selectedFile?.toPath()
+        return selectFile(files)
     }
 
     @JvmOverloads

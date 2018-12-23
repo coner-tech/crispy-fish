@@ -1,24 +1,26 @@
 package org.coner.crispyfish.filetype.staging
 
 import org.coner.crispyfish.model.PenaltyType
-import org.coner.crispyfish.model.Registration
-import org.coner.crispyfish.model.Numbers
 import org.coner.crispyfish.model.Run
 
-class StagingLineDomainReader<L>(
+class StagingLineModelReader<L>(
         private val stagingFileAssistant: StagingFileAssistant,
         private val stagingLineReader: StagingLineReader<L>
 ) {
 
-    fun readDriver(stagingLine: L): Registration {
-        val driver = Registration()
-        driver.name = stagingLineReader.getRegisteredDriverName(stagingLine)
-        driver.carModel = stagingLineReader.getRegisteredDriverCar(stagingLine)
-        val numbers = Numbers()
-        numbers.classing = stagingLineReader.getRegisteredDriverClass(stagingLine)
-        numbers.number = stagingLineReader.getRegisteredDriverNumber(stagingLine)
-        driver.numbers = numbers
-        return driver
+    fun readRegistration(stagingLine: L): StagingLineRegistration? {
+        val registration = StagingLineRegistration(
+                number = stagingLineReader.getRegisteredDriverNumber(stagingLine),
+                classing = stagingLineReader.getRegisteredDriverClass(stagingLine)?.toUpperCase(),
+                name = stagingLineReader.getRegisteredDriverName(stagingLine),
+                car = stagingLineReader.getRegisteredDriverCar(stagingLine),
+                carColor = stagingLineReader.getRegisteredDriverCarColor(stagingLine)
+        )
+        return when {
+            registration.number.isNullOrBlank() -> null
+            registration.classing.isNullOrBlank() -> null
+            else -> registration
+        }
     }
 
     fun readRun(stagingFileLine: L): Run? {
