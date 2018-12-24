@@ -97,6 +97,65 @@ sealed class ClassDefinitions(val defFile: String) {
         )
     }
 
+    object Thscc2018 : ClassDefinitions("thscc/2018/class2018_thscc.def") {
+        val nov = ClassDefinition(
+                abbreviation = "NOV",
+                name = "Novice",
+                groupName = "Novice",
+                exclude = false,
+                paxed = true,
+                paxFactor = BigDecimal.valueOf(0, 3)
+        )
+        val x = ClassDefinition(
+                abbreviation = "X",
+                name = "Pro Class",
+                groupName = "Pro Class",
+                exclude = false,
+                paxed = true,
+                paxFactor = BigDecimal.valueOf(0, 3)
+        )
+        val mac = ClassDefinition(
+                abbreviation = "MAC",
+                name = "Classic American Muscle",
+                groupName = "CAM Class",
+                exclude = false,
+                paxed = true,
+                paxFactor = BigDecimal.valueOf(1000, 3)
+        )
+        val of = ClassDefinition(
+                abbreviation = "OF",
+                name = "Old Farts",
+                groupName = "Old Farts",
+                exclude = false,
+                paxed = true,
+                paxFactor = BigDecimal.valueOf(1000, 3)
+        )
+        val cs = ClassDefinition(
+                abbreviation = "CS",
+                name = "C Street",
+                groupName = "Street",
+                exclude = false,
+                paxed = false,
+                paxFactor = BigDecimal.valueOf(805, 3)
+        )
+        val str = ClassDefinition(
+                abbreviation = "STR",
+                name = "Street Touring R",
+                groupName = "Touring",
+                exclude = false,
+                paxed = false,
+                paxFactor = BigDecimal.valueOf(823, 3)
+        )
+        val camc = ClassDefinition(
+                abbreviation = "CAM-C",
+                name = "Classic American C",
+                groupName = "Classic American",
+                exclude = false,
+                paxed = false,
+                paxFactor = BigDecimal.valueOf(816, 3)
+        )
+    }
+
     private fun resource(relativeFilePath: String): File {
         val file = File(javaClass.getResource("/org/coner/crispyfish/test/ClassDefinitions/$relativeFilePath").toURI())
         check(file.exists()) { "test class definition file does not exist: $relativeFilePath" }

@@ -36,4 +36,19 @@ class CategoriesQueryTest {
             )
         }
     }
+
+    @Test
+    fun itShouldQueryCategoriesFromThscc2018ClassDefinitions() {
+        val actual = CategoriesQuery(ClassDefinitions.Thscc2018.file).query()
+
+        assert(actual).all {
+            hasSize(4)
+            containsExactly(
+                    ClassDefinitions.Thscc2018.nov,
+                    ClassDefinitions.Thscc2018.x,
+                    ClassDefinitions.Thscc2018.mac,
+                    ClassDefinitions.Thscc2018.of
+            )
+        }
+    }
 }
