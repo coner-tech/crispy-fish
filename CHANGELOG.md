@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0
+
+- New queries:
+  - Class definitions
+    - Categories
+    - Handicaps
+  - Registrations
+
 ## 0.1.1
 
 - Clean up registrations file API and implementation
