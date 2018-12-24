@@ -54,6 +54,49 @@ sealed class ClassDefinitions(val defFile: String) {
         )
     }
 
+    object Thscc2017 : ClassDefinitions("thscc/2017/class2017_thscc.def") {
+        val nov = ClassDefinition(
+                abbreviation = "NOV",
+                name = "Novice",
+                groupName = "Novice",
+                exclude = false,
+                paxed = true,
+                paxFactor = BigDecimal.valueOf(0, 3)
+        )
+        val x = ClassDefinition(
+                abbreviation = "X",
+                name = "Pro Class",
+                groupName = "",
+                exclude = false,
+                paxed = true,
+                paxFactor = BigDecimal.valueOf(0, 3)
+        )
+        val of = ClassDefinition(
+                abbreviation = "OF",
+                name = "Old Farts",
+                groupName = "Old Farts",
+                exclude = false,
+                paxed = true,
+                paxFactor = BigDecimal.valueOf(0, 3)
+        )
+        val cs = ClassDefinition(
+                abbreviation = "CS",
+                name = "C Street",
+                groupName = "Street",
+                exclude = false,
+                paxed = false,
+                paxFactor = BigDecimal.valueOf(810, 3)
+        )
+        val str = ClassDefinition(
+                abbreviation = "STR",
+                name = "Street Touring R",
+                groupName = "Touring",
+                exclude = false,
+                paxed = false,
+                paxFactor = BigDecimal.valueOf(830, 3)
+        )
+    }
+
     private fun resource(relativeFilePath: String): File {
         val file = File(javaClass.getResource("/org/coner/crispyfish/test/ClassDefinitions/$relativeFilePath").toURI())
         check(file.exists()) { "test class definition file does not exist: $relativeFilePath" }

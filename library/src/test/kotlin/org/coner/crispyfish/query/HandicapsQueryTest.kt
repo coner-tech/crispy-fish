@@ -25,4 +25,17 @@ class HandicapsQueryTest {
             doesNotContain(ClassDefinitions.Thscc2016.of)
         }
     }
+
+    @Test
+    fun itShouldQueryHandicapsFromThscc2017ClassDefinitions() {
+        val actual = HandicapsQuery(ClassDefinitions.Thscc2017.file).query()
+
+        assert(actual).all {
+            hasSize(51)
+            containsAll(
+                    ClassDefinitions.Thscc2017.cs,
+                    ClassDefinitions.Thscc2017.str
+            )
+        }
+    }
 }
