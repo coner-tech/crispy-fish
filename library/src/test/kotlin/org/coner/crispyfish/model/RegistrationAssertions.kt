@@ -10,11 +10,11 @@ fun Assert<Registration>.hasCategoryNull() {
 }
 
 fun Assert<Registration>.hasCategoryAbbreviation(expected: String) {
-    assert(actual).prop(Registration::category).prop(ClassDefinition::abbreviation).isEqualTo(expected)
+    assert(actual).prop(Registration::category).hasAbbreviation(expected)
 }
 
 fun Assert<Registration>.hasHandicapAbbreviation(expected: String) {
-    assert(actual).prop(Registration::handicap).prop(ClassDefinition::abbreviation).isEqualTo(expected)
+    assert(actual).prop(Registration::handicap).hasAbbreviation(expected)
 }
 
 fun Assert<Registration>.hasNumber(expected: String) {
