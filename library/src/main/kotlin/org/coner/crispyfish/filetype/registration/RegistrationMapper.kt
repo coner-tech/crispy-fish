@@ -30,7 +30,7 @@ class RegistrationMapper(
                 number: ${reader.readNumber(index)}
             """.trimIndent()
             )
-            handicapAbbreviation = lineClass.replace(category.abbreviation, "")
+            handicapAbbreviation = lineClass.replaceFirst(category.abbreviation, "")
             category
         } else null
 
@@ -83,7 +83,7 @@ class RegistrationMapper(
                 classing: ${stagingLineRegistration.classing}
             """.trimIndent()
             )
-            handicapAbbreviation = stagingLineRegistration.classing.replace(category.abbreviation, "")
+            handicapAbbreviation = stagingLineRegistration.classing.replaceFirst(category.abbreviation, "")
             category
         } else null
 

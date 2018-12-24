@@ -1,0 +1,130 @@
+Class	Number	First Name	Last Name	Car Model	Car Color	Class 2	Grid #	Member	Member #	Expires	DOB	Age	Registered	Reg.CheckIn	OLR	Paid	Fee Type	Method	Amnt.	Annual Tech	Annual Waiver	Rookie	Run Heat	Work Heat	Work Assignment	Checkin	Sponsor	Tire Brand	Tire Size	Region	Co-Drivers	Raw Time	Raw Pos.	Prev. Pos.	Total	Diff.	From 1st	Pax Time	Pax Pos.	Best Run	Run 1	Pen 1	Run 2	Pen 2	Run 3	Pen 3	Run 4	Pen 4	Run 5	Pen 5	
+NOVHS	27	Andrew	Ahr	2009 Acura TSX	Grey			No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						35.947	116	35	28.074	+0.540	+4.219	28.074	107	4	36.286		34.130	DNF	33.862	DNF	33.947	1	33.984	1	
+NOVAS	111	Sean	Ahr	2006 Porsche Carrera	Gray			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						30.418	54	9	24.760	+0.054	+0.905	24.760	56	4	999.000	DNF	33.500		31.403		30.418		30.738	1	
+NOVSTP	96	Joseph	Atwell	2014 Chevrolet camaro	grey			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						35.068	115	17	28.580	+0.199	+4.725	28.580	109	4	36.768	DNF	36.334		35.276		35.068		34.536	DNF	
+BSP	22	Bill	Aycock	2012 Volkswagen Golf R	Gray			Yes	2114	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No	Automotive Solutions	BFGoodrich				29.033	15	1	29.033	[-]0.098	-	24.561	48	5	29.582		30.052	1	29.240		29.108		29.033		
+NOVDS	14	Piotr	Barshcheuski	2008 Mini Cooper S	Yellow			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						31.117	73	7	24.706	+0.009	+0.851	24.706	54	3	31.682		32.069	1	31.117		31.646		31.319		
+STX	17	Eric	Beaulaurier	2008 Mini Cooper S	Pepper White			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		BFGoodrich				29.967	36	1	29.967	[-]0.010	-	24.363	40	1	29.967		123.817	DNF							
+STS	4	Mark	Beech	1992 Mazda Miata				Yes	2283	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						29.546	28	1	29.546	[-]4.077	-	23.932	25	5	30.335		30.657	1	30.548		30.655		29.546		
+MACCAM-C	68	Duane	Black	The Hertz Special	White			Yes	2447	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Bridgestone				28.951	13	1	23.624	[-]0.290	-	23.624	17	5	31.165	1	29.882		30.553		29.345	1	28.951		
+HS	5	Mike	Blank	2015 Ford Fiesta ST				Yes	2596	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						30.607	61	4	30.607	+0.827	+1.906	23.904	21	3	31.595		30.967		30.607		30.632		32.965		
+GS	78	Patrice	Bousquet	2016 Volkswagen GTI	Silver			Yes	943	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						28.790	12	1	28.790	[-]0.846	-	22.628	4	4	28.922		28.631	1	28.981		28.790		29.139		
+NOVFS	252	Kelly	Breedlove	2018 Chevrolet Camaro	Silver			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Goodyear				31.656	82	6	25.229	+0.112	+1.374	25.229	69	5	36.303		33.248		33.239		33.573		31.656		
+OFCS	21	David	Brown	2006 Mazda MX-5	Metallic Gray			Yes	1793	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Michelin				31.271	75	1	25.173	[-]0.482	-	25.173	68	5	33.740		31.760		31.312		31.783		31.271		
+NOVFS	18	Seth	Burkhalter	2016 Chevrolet Camaro SS				No					No	No	Yes	No			0.00	No	No	No	2	4		No							120		DNS				120												
+DS	41	Edward	Bush	2013 Subaru BRZ	Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						31.921	90	4	31.921	+0.606	+2.886	25.345	71	2	32.728		31.921		32.940		32.375		32.103		
+SM	8	Kenneth	Butron	2004 subaru STI	Gray			Yes	2481	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						28.500	8	2	28.500	+0.438	+0.438	24.310	38	3	29.735		29.047		28.500		28.653		28.657		
+HS	26	Michael	Byrne	1972 MG MGB	Teal Blue			Yes	2345	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Dunlop					121		DNS				121												
+NOVCAM-C	400	Rusty	Carter	2015 Ford Mustang	Red			No		2018-10-21	0000-00-00		Yes	Yes	Yes	No			0.00	No	No	No	1	3		No	none	Continental				30.210	46	1	24.651	+0.252	+0.796	24.651	50	3	32.146		31.308		30.210		30.777		31.316		
+STR	86	Steven	Carter	2007 Honda S2000	GranPrix White			Yes	1942	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Dunlop				28.310	5	2	28.310	+0.251	+0.583	23.299	14	2	28.552		28.310		28.641		28.852		28.600		
+SSC	3	Elizabeth	Chan	2013 Scion FR-S	Silver Ignition			Yes	LT-2346	12/31/99			Yes	Yes	Yes	Yes		PrePaid	0.00	No	No	No	3	1		No	Tarheel Sports Car Club	Falken				29.816	35	2	29.816	+1.434	+1.434	24.031	30	3	31.143	1	30.281	1	29.816		29.954		30.118		
+SSC	13	Francis	Chan	2013 Scion FR-S	Silver Ignition			Yes	LT-2289	12/31/99			Yes	Yes	Yes	Yes		PrePaid	0.00	No	No	No	3	1		No	Tarheel Sports Car Club	Falken				28.382	6	1	28.382	[-]1.434	-	22.875	7	4	29.333		28.886		28.586		28.382		29.193		
+NOVSTU	49	Eric	Clemente	2015 Nissan 370z	Black			No	2347	12/31/17			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						32.764	98	14	26.997	+0.235	+3.142	26.997	102	4	36.829	DNF	34.937		35.471		32.764		33.808	1	
+NOVCS	1	Nicholas	Clemente	2008 Mazda RX8	Blue			No		2018-10-21	0000-00-00		Yes	Yes		No			0.00	No	No	No	2	4		No						32.818	101	9	26.418	+0.009	+2.563	26.418	93	3	34.344		33.553		32.818		33.436				
+FS	62	Benny	Colantuono	2016 Chevrolet Camaro SS	Blue			Yes	2601	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No	Nabisco, Keebler, Pepperidge Farm	Bridgestone				28.149	4	1	28.149	[-]2.049	-	22.434	2	5	28.891	1	29.451	1	28.593		28.435		28.149		
+STX	36	Jacob	Combs	1992 BMW 325i	White			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No	The Junkyard					29.977	37	2	29.977	+0.010	+0.010	24.371	41	5	31.171		30.717		30.709		30.226		29.977		
+NOVES	0	Jonathan	Courson	1996 Mazda Miata	Blue-ish			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No	Turner					31.620	81	9	24.884	+0.043	+1.029	24.884	60	3	36.951		33.190		31.620		32.182	DNF	31.355	DNF	
+NOVCAM-T	341	Will	Cowart	1991 Ford Mustang	Black			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Nitto				31.901	89	19	25.744	+0.454	+1.889	25.744	81	5	33.319	DNF	34.687		32.508		32.312		31.901		
+STR	42	Bart	Craig	1998 BMW M Roadster	Imola Red			Yes	2024	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No	Torque Automotive www.torqueautomotive.net	Bridgestone				29.016	14	4	29.016	+0.706	+1.289	23.880	20	4	30.221	1	29.857		29.084		29.016		29.088		
+STR	12	Denise	Craig	1998 BMW M Roadster	Red			No	2495	12/31/18			Yes	Yes	Yes	Yes		PrePaid	0.00	No	No	No	4	2		No		Bridgestone				31.072	72	9	31.072	+1.594	+3.345	25.572	75	5	32.828		33.617		32.246	1	32.026		31.072		
+HS	99	Austin	Culbertson	2014 Ford Fiesta ST	Green			Yes	2270	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						28.701	10	1	28.701	[-]1.079	-	22.415	1	2	29.925		28.701		28.738		28.409	DNF	29.026		
+ES	10	Chad	Culbertson	2000 Mazda MX-5 Miata	Black			Yes	2266	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		Dunlop				28.739	11	1	28.739	[-]0.704	-	22.617	3	4	29.579		29.106		28.754	1	28.739		28.863		
+DSP	46	Michael	Darges	2003 BMW 330i	black			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						29.735	31	1	29.735	-	-	24.828	57	4	30.806		30.538		29.897		29.735		29.739		
+HS	317	Stephen	Davidson	1986 Toyota Celica	White			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No	None	Falken				32.813	100	5	32.813	+0.023	+4.112	25.627	77	5	35.727		34.440		33.350		32.837		32.813		
+HS	371	Tyler	Davidson	1986 Toyota Celica	White			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No	None	Falken				32.790	99	4	32.790	+2.183	+4.089	25.609	76	4	34.631		34.279		32.840		32.790		33.016		
+NOVSTH	21	James	DeZubay	2016 Volkswagen GTI	Gray			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		Bridgestone				29.484	27	1	23.911	+0.056	+0.056	23.911	22	4	30.111		29.648		29.516		29.484		29.649		
+NOVSTS	7	Martin	Diaz	1997 Mazda Miata	White			No		2018-10-21	0000-00-00		Yes	Yes		No			0.00	No	No	No	4	2		No						32.604	97	26	26.409	+0.252	+2.554	26.409	92	5	34.527		33.957		34.077		32.796		32.604		
+DS	7	Russ	Dubrucq	2004 BMW 330Ci	Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No	All Star Automotive	Other				30.901	67	2	30.901	+1.866	+1.866	24.535	45	5	31.580	DNF	32.089	1	31.281		31.262		30.901		
+NOVSTR	106	Benjamin	Ealy	2005 BMW Z4 3.0	Black			Yes	2531	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Continental				30.328	50	12	24.959	+0.047	+1.104	24.959	63	5	32.459		31.876		30.719		30.681		30.328		
+FS	4	Dan	Ecclestone	2018 Chevrolet Camaro SS	Black			No					No	No	Yes	No			0.00	No	No	No	2	4		No							122		DNS				122												
+BS	33	Joelle	Fernandez	2017 Ford Focus RS	Stealth Grey			Yes	2358	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						30.011	40	1	30.011	-	-	24.248	36	5	32.355		30.740		30.490		30.036		30.011		
+STH	7	Robert	Ferrian	2011 Volkswagen				No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						30.752	65	1	30.752	-	-	24.939	62	5	33.587		31.699		31.398		30.944		30.752		
+NOVES	76	David	Forvendel	1999 Mazda Miata	Silver			Yes	2575	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						36.063	118	24	28.381	+0.307	+4.526	28.381	108	5	38.906	DNF	36.624		35.524	1	37.460		36.063		
+GS	40	Josh	Fowler	2017 Ford Focus ST	White			Yes		12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No	CoolHwip	Toyo				29.981	38	3	29.981	+0.345	+1.191	23.565	15	5	30.410		30.283	1	30.676		30.873	1	29.981		
+STS	44	Joseph	Gavis	1990 Mazda Miata	White			Yes	2363	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Falken				33.623	107	2	33.623	+4.077	+4.077	27.234	105	5	42.979	DNF	38.975		35.598		34.177		33.623		
+STU	696	Fernando	Granados	2017 Subaru WRX STI	DMG			Yes	2540	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Bridgestone				29.759	32	1	29.759	-	-	24.521	44	5	30.492		32.077	DNF	30.265		30.166		29.759		
+NOVHS	54	Caeden	Greene	2016 Mazda Mazda 3	Red			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						32.987	104	18	25.762	+0.018	+1.907	25.762	82	3	35.740		34.297		32.987		34.074		33.248		
+STS	404	Hank	Grimmick	2014 Nissan Versa S	White			No					No	No	Yes	No			0.00	No	No	No	4	2		No		Other					123		DNS				123												
+NOVSTR	162	Miranda	Haberman	2015 Chevrolet Sonic RS	Black			No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No	AMSOIL, Inc.					35.003	114	41	28.807	+0.163	+4.952	28.807	112	3	46.157		38.370	1	35.003		35.281		36.432		
+NOVHS	6	Jon	Harbaugh	2008 Mazda 6	Gray			Yes	2608	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Michelin				32.382	94	18	25.290	+0.061	+1.435	25.290	70	5	33.714	1	32.929		33.191	DNF	32.588		32.382		
+OFBSP	8	Neal	Harrington	1988 Pontiac FIERO GT	WHITE			Yes	349	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	1	3		No	ANTIQUES EMPORIUM					34.857	113	3	29.489	+3.834	+4.316	29.489	116	3	36.316		69.956		34.857						
+SM	48	Ray	Hartney	2004 Subaru STI	Silver			Yes	PENDING	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						28.062	3	1	28.062	[-]0.438	-	23.936	26	4	32.635		28.981	1	29.104		28.062		28.506		
+NOVCAM-C	91	Todd	Helton	2016 Ford GT350	Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Michelin				31.842	88	5	25.983	+0.090	+2.128	25.983	85	5	35.320		33.184		33.110		33.276		31.842		
+NOVDP	44	David	Horton	Honda 2007 Civic	Grey			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						32.091	92	8	27.534	+0.487	+3.679	27.534	106	3	35.228		33.151		32.091		47.110	1	31.972	1	
+CSP	53	Nicolas	Huffman	1999 Mazda Miata	TBM dark blue			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		BFGoodrich				30.545	58	2	30.545	+0.829	+0.829	26.177	91	3	34.190		31.578		30.545		32.544		30.789		
+NOVAS	11	Echo	Idalski	2002 Porsche				Yes	PENDING	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						32.545	95	10	26.491	+0.073	+2.636	26.491	95	5	32.164	1	43.335		32.798		32.239	1	32.545		
+SMF	14	Andrew	Isaacs	1992 Honda Civic VX	Green			Yes	PENDING	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Dunlop				29.083	18	1	29.083	[-]0.354	-	24.400	43	4	31.081		29.735		29.639		29.083		29.165		
+NOVNONE	420	Dale	Jackson	2002 Volkswagen Jetta	Black			No					No	No	Yes	No			0.00	No	No	No	1	3		No		Hankook					124		DNS				124												
+XP	82	Brady	Jacoby	2002 Honda S2000	Silver			No					No	No	Yes	No			0.00	No	No	No	1	3		No		Falken					125		DNS				125												
+NOVSM	77	Eric	James	2018 Subaru WRX	WR Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Dunlop				33.786	108	10	28.819	+0.012	+4.964	28.819	113	5	38.296		33.959	DNF	34.696		42.901	2	33.786		
+CS	15	Brice	Johnson	2012 Mazda MX5	Red			No		2018-10-21	0000-00-00		Yes	Yes		No			0.00	No	No	No	2	4		No						29.799	34	3	29.799	+1.237	+1.400	23.988	29	3	30.362	1	30.111		29.799		31.508	1	30.364	1	
+STR	23	Steven	Johnson	1994 Mazda Miata	White			Yes	2476	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		BFGoodrich				29.137	21	7	29.137	+0.020	+1.410	23.979	28	2	30.997		29.137		29.653		30.923		29.601		
+FS	39	John	Joyner	2014 BMW 335i	Estoril Blue			Yes	2532	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Bridgestone				30.198	45	2	30.198	+2.049	+2.049	24.067	32	3	31.352		30.664		30.198		30.245		29.860	1	
+FS	7	Alexey	Kazmin	2014 Dodge Challenger	Black			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Michelin				32.285	93	4	32.285	+1.291	+4.136	25.731	80	4	33.282		33.071		33.036		32.285		32.530		
+DP	4	Rob	Keehner	2007 Honda Civic Si	Grey			Yes	2136	12/31/99			Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						30.382	53	1	30.382	-	-	26.067	86	2	30.846		30.382		30.800	1	30.511				
+NOVDS	416	Robert	Knott	2004 BMW 330ci	Green Gray Met			Yes	2615	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		Michelin				30.730	63	4	24.399	+0.253	+0.544	24.399	42	4	31.774		31.273	1	32.365		30.730		30.648	1	
+CSP	44	Barry	Knuth	1991 Honda CRX Si - CSP	White			Yes	LT-2357	12/31/99			Yes	Yes	Yes	Yes		PrePaid	35.00	No	No	No	2	4		No	Knuth Industries	Hankook				29.716	30	1	29.716	[-]0.829	-	25.466	73	2	32.327	DNF	29.716		30.661	2	29.988				
+HS	82	Thomas	Loeber	2018 Nissan Versa	Gray			No		2018-10-21	0000-00-00		Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						34.577	111	6	34.577	+1.764	+5.876	27.004	103	5	38.148		34.887		33.996	DNF	34.478	1	34.577		
+GS	46	Joe	Lohr	2013 Mazda mazdaspeed3	silver			Yes	2276	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						29.636	29	2	29.636	+0.846	+0.846	23.293	13	3	30.385		30.205		29.636		29.923		29.859		
+ES	74	William	Lumsden	1992 Mazda Miata				Yes	2586	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						30.685	62	3	30.685	+1.242	+1.946	24.149	34	3	32.176		31.051		30.685		31.434		30.807		
+HS	9	Rob	Lupella	2014 Ford Fiesta ST	Bright Green			Yes	1052	12/31/18			Yes	Yes	Yes	Yes		PrePaid	0.00	No	No	No	4	2		No	Scuderia Lupella					29.780	33	2	29.780	+1.079	+1.079	23.258	12	2	30.099		29.780		29.974		30.385	1	29.816		
+MACCAM-C	28	Aris	Mantalvanos	2001 Ford Mustang	White			Yes	2373	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No	Mantalvanos Motorsports	Falken				30.098	42	3	24.560	+0.646	+0.936	24.560	47	4	30.917		30.983		30.339		30.098		30.105		
+SSM	7	Stan	Marcewicz	1997 Mazda Miata	Black			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						30.380	52	1	30.380	[-]0.064	-	26.461	94	4	46.832	DNF	31.530		30.913		30.380		30.386		
+NOVSTX	52	Douglas	Martinez	2014 Lexus Is 350 F Sport	Red			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						35.982	117	21	29.253	+0.434	+5.398	29.253	115	5	43.337	DNF	39.627		38.968	DNF	36.297		35.982		
+FS	30	Arthur	McDonald	2007 Ford Mustang GT	Silver			Yes	518	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Dunlop				30.994	71	3	30.994	+0.796	+2.845	24.702	53	5	31.485		31.873		30.847	1	30.995		30.994		
+AM	69	Chris	Melton	1991 Mazda Miata	White			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Hankook				31.785	87	1	31.785	-	-	31.785	119	5	35.768		34.131		32.733		33.030		31.785		
+NOVSTR	2	Javier	Mendoza Diek	1999 Mazda Miata				No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		BFGoodrich				30.184	44	10	24.841	+0.081	+0.986	24.841	58	3	31.019		31.385	1	30.184		30.300		32.397	2	
+CS	1	Anders	Miller	2006 Mazda MX5 Miata	Red			Yes	1382	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Hoosier				28.399	7	1	28.399	[-]0.163	-	22.861	6	4	29.642		28.525		29.275		28.399		28.443		
+CS	14	Michael	Miller	2006 Mazda MX5 Miata	Red			Yes	1382	12/31/18			Yes	Yes	Yes	Yes		PrePaid	0.00	No	No	No	2	4		No		Hoosier				28.562	9	2	28.562	+0.163	+0.163	22.992	8	2	31.483	1	28.562		38.507	DNF	28.859		29.103		
+BSP	42	Nickolay	Milovanov	2001 BMW 330i	Blueish			Yes	LT-2426	12/31/99			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No	https://www.facebook.com/groups/trackratsnc/					29.253	22	2	29.253	+0.122	+0.220	24.748	55	4	31.072		30.094	1	29.518		29.253				
+DS	421	Olena	Milovanova	2006 BMW 328i	Grey			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No							126		DNS				126												
+NOVBSP	421	Gleb	Mityukhin	2001 BMW 330i	Blueish			No					No	No	Yes	No			0.00	No	No	No	2	4		No	https://www.facebook.com/groups/trackratsnc/						127		DNS				127												
+NOVGS	45	Kyle	Morris	2016 Ford Focus ST	White			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						30.601	60	2	24.052	+0.141	+0.197	24.052	31	4	31.910	1	31.845	1	31.163		30.601		31.306		
+BSP	69	James	Newman	2003 BMW Z4	silver			Yes	2428	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						31.578	80	4	31.578	+2.325	+2.545	26.715	99	3	32.226		32.505		31.578		32.328	1	32.136		
+MACCAM-S	722	Jake	Nicholas	2000 Corvette	Gray			No		2018-10-21	0000-00-00		Yes	Yes		No			0.00	No	No	No	1	3		No						30.529	57	1	25.369	-	-	25.369	72	4	33.139		31.773	DNF	32.022		30.529		30.758		
+XP	23	Bryan	Nichols	1989 Nissan Skyline GTR	Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Federal				30.135	43	1	30.135	-	-	26.639	97	2	31.648		30.135		30.511		30.486		31.173		
+ES	2	Turner	Oppy	1996 Mazda miata	blue			Yes	2158	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		Dunlop				29.443	25	2	29.443	+0.704	+0.704	23.171	11	5	29.829	1	30.207		30.655		29.772		29.443		
+MACCAM-C	23	George	Paraskevas	2000 Ford Mustang GT	Black			Yes	2204	12/31/18			Yes	Yes	Yes	Yes		PrePaid	0.00	No	No	No	4	2		No	Warhorse Racing					29.307	23	2	23.914	+0.290	+0.290	23.914	23	4	30.499		29.643		29.822		29.307		30.125		
+SSM	3	Matt	Pavliv	2007 Chevrolet Corvette Z06	Black			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Michelin				30.444	55	2	30.444	+0.064	+0.064	26.516	96	4	34.783		32.274		31.988		30.444		30.695		
+HS	711	Patrick	Perry	1999 Honda Civic	Red			No					No	No	Yes	No			0.00	No	No	No	4	2		No							128		DNS				128												
+CS	12	Robert	Plank	2004 BMW Z4	Red			Yes	1037	12/31/18			No	No	Yes	No			0.00	No	No	No	2	4		No							129		DNS	-	-		129												
+NOVSTR	150	Joshua	Pribis	1999 Mazda MX-5 Miata	Green			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Hankook				31.708	83	24	26.095	+0.026	+2.240	26.095	88	5	32.643		32.186		32.321		34.975	1	31.708		
+NOVSMF	34	Dominic	Proctor	2005 Mini Cooper S	Gray			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		General				34.094	110	15	28.604	+0.024	+4.749	28.604	110	4	40.986	DNF	37.492		35.329		34.094		34.219		
+ES	11	Keith	Roberts	1991 Mazda Miata	brg			Yes	2146	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		Dunlop				31.728	85	5	31.728	+0.815	+2.989	24.969	64	5	53.167	DNF	32.858	DNF	32.767		32.294		31.728		
+STR	140	Phil	Rowsell	2000 Honda S2000	Red			No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						29.478	26	8	29.478	+0.341	+1.751	24.260	37	5	30.953		30.846		30.324		29.830		29.478		
+NOVSM	90	Jeremiah	Rumball	2012 Mazda Miata	Green			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						33.581	106	40	28.644	+0.040	+4.789	28.644	111	4	49.831	DNF	45.173	DNF	37.008		33.581		33.659		
+NOVCAM-C	62	Michael	Russell	2016 Ford Shelby GT350	White/Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No	Kids College Fund	Michelin				30.266	47	2	24.697	+0.046	+0.842	24.697	51	5	32.420		32.313	DNF	31.416		30.869		30.266		
+SMF	78	Matthew	Ryan	2005 Mini S	Silver			Yes	2367	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						29.437	24	2	29.437	+0.354	+0.354	24.697	52	5	31.780		29.720		30.441		40.929		29.437		
+NOVDSP	32	Charles	Sanville	2004 Volkswagen R32	Deep Blue Pearl			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Firestone				30.081	41	2	25.117	+0.043	+1.262	25.117	67	4	34.029		31.660		31.254		30.081		30.758		
+ES	6	Robert	Schmedding	1999 Mazda Miata	Silver			Yes	2331	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		BFGoodrich				30.913	68	5	30.913	+0.167	+2.174	24.328	39	4	34.240		32.174		31.543		30.913		31.297		
+NOVHS	130	Taylor	Schumann	2015 Honda CR-Z	White			No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						30.917	69	4	24.146	+0.094	+0.291	24.146	33	4	31.932		31.804		31.224		30.917		31.561	1	
+NOVSTR	621	Anthony	Sevigny	2006 Mazda MX-5 Miata	Blue			No	PENDING	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No	AMSOIL, Inc.					30.467	56	15	25.074	+0.039	+1.219	25.074	66	3	32.312		31.271		30.467		32.100		30.601		
+NOVGS	69	Serhii	Shevchuk	2015 Volkswagen GTI	BLUE			No	2624	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		Pirelli				30.350	51	2	23.855	[-]0.056	-	23.855	19	5	31.717		30.629		30.847		31.579	4	30.350		
+NOVBS	199	Hampton	Short	2018 Subaru WRX	WorldRallyBlue			No					Yes	No	Yes	No			0.00	No	No	No	2	4		No		Pirelli				30.985	70	4	25.035	+0.076	+1.180	25.035	65	5	34.982		30.990	2	31.396	DNF	31.102		30.985		
+OFES	7	Dick	Sossomon	1997 Mazda Miata	Blue			Yes	2414	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						32.599	96	2	25.655	+0.482	+0.482	25.655	79	2	34.292		32.599		32.654		33.955		32.978		
+GS	67	Kevin	Spears	2017 Volkswagen GTI				Yes	2380	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						30.311	49	3	30.311	+0.326	+1.521	23.824	18	3	30.618	1	31.339		30.311		30.383		30.599		
+GS	52	Scott	Steagall	2017 Volkswagen GTI	White			Yes	2461	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						31.235	74	6	31.235	+0.924	+2.445	24.550	46	5	31.282		31.501		31.540		31.668		31.235		
+GS	25	Shannon	Steagall	2017 Volkswagen GTI	White			Yes	2461	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						32.956	103	7	32.956	+1.721	+4.166	25.903	84	5	33.577	DNF	33.194	3	32.842	1	33.597		32.956		
+NOVSM	13	Christopher	Stevens-Brown	1991 BMW 318is	Red			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Falken				31.300	77	30	26.698	+0.207	+2.843	26.698	98	5	33.922		31.891		31.749		43.099	1	31.300		
+STR	40	Nick	Strahan	2000 Honda S2000	New Formula Red			No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Bridgestone				29.065	17	5	29.065	+0.049	+1.338	23.920	24	3	32.547		30.201		29.065		29.213		29.174	1	
+DS	11	Ryan	Suydam	2004 BMW 330Ci	Blue			Yes	2507	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No	All Star Automotive	Other				31.315	78	3	31.315	+0.414	+2.280	24.864	59	4	33.313	1	30.787	2	31.575		31.315		31.924		
+NOVSM	87	Landon	Tallent	2009 BMW 335i	Le Mans Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						31.375	79	4	26.762	+0.002	+2.907	26.762	101	5							32.056		31.375		
+NOVGS	231	Bevan	Therien	2017 Volkswagen GTI	White			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						34.046	109	19	26.760	+0.062	+2.905	26.760	100	3	36.062	DNF	34.173		34.046		34.119		36.694	DNF	
+NOVSS	108	John	Therien	2014 Porsche Cayman S	Gray			Yes	PENDING	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No		Pirelli				32.017	91	7	26.157	+0.049	+2.302	26.157	90	5	33.231		33.820	1	32.870		32.114		32.017		
+NOVGS	230	Noel	Therien	2017 Volkswagen GTI	White			No					Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						33.167	105	15	26.069	+0.086	+2.214	26.069	87	4	36.474		34.602		33.553		33.167		33.207		
+ES	55	Gregg	Tutwiler	2002 Mazda MX-5	White			Yes	2387	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		BFGoodrich				30.746	64	3	30.746	+0.061	+2.007	24.197	35	5	32.029		31.761		31.086		30.868		30.746		
+NOVSTU	47	Andy	Udinsky	2018 Nissan 370Z	Black			No					Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						32.825	102	15	27.047	+0.050	+3.192	27.047	104	4	33.542		48.453	1	33.783		32.825		33.337		
+STR	32	Christopher	Vasques	2002 Mazda Miata	Gray			Yes	2065	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		BFGoodrich				29.117	19	6	29.117	+0.052	+1.390	23.963	27	5	30.662		30.207		29.941		43.601	DNF	29.117		
+NOVSM	35	Alex	Velez	2013 Ford Focus ST	Black			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No		Goodyear				34.718	112	11	29.614	+0.361	+5.759	29.614	117	5	57.925	DNF	42.108		36.207		36.034		34.718		
+STR	68	Ram	Vennam	2004 Honda S2000	Gray			No		12/31/14			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Bridgestone				28.059	2	2	28.059	+0.332	+0.332	23.092	10	5	28.928		28.389		28.754	1	28.310		28.059		
+BSP	40	Mark	Vorontsov	2001 BMW 330i	blue?			Yes	2595	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No	https://www.facebook.com/groups/trackratsnc/					29.131	20	1	29.131	+0.098	+0.098	24.644	49	2	30.033		29.131		30.973	2	29.164	1	28.979	2	
+GS	48	Eric	Ward	2010 Volkswagen CC	White			Yes	2610	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No		Bridgestone				29.985	39	4	29.985	+0.004	+1.195	23.568	16	5	34.219		31.998		31.151		30.598		29.985		
+NOVHS	28	Christine	Weber	2018 Subaru Impreza	Blue			No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No						37.982	119	45	29.663	+0.049	+5.808	29.663	118	5	42.384		39.940		37.480	DNF	36.530	5	35.982	1	
+SMF	8	Stephen	Westerfield	1992 Acura Integra	Red			Yes	1330	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	2	4		No						30.561	59	3	30.561	+1.124	+1.478	25.640	78	5	31.042		31.481		31.061		30.812		30.561		
+MACCAM-C	113	Oscar	White, III	2015 Ford Mustang GT	Ruby Red			No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Federal				31.296	76	4	25.537	+0.977	+1.913	25.537	74	4	32.743		31.322	DNF	31.587		31.296		31.873		
+STR	8	Carlton	Whitehead	2002 Honda S2000	Silver			Yes	1807	12/31/18			Yes	Yes	Yes	Yes		PrePaid	0.00	No	No	No	4	2		No		Bridgestone				27.727	1	1	27.727	[-]0.332	-	22.819	5	5	40.704		28.186		27.923		28.164		27.727		
+BM	2	Jim	Williams	1994 Chevrolet Vette-core				No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						30.283	48	1	30.283	-	-	28.950	114	4	32.011	1	31.177		30.862		30.283		33.711	DNF	
+DS	8	Lee	Williams	2016 Scion FR-S	Grey			Yes	1043	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	3	1		No						29.035	16	1	29.035	[-]1.866	-	23.053	9	5	29.709		29.250		29.371		29.338	DNF	29.035		
+NOVSTS	17	Luke	Woessner	1996 Volvo 850	Blue			Yes	2576	12/31/18			Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		Falken				30.756	66	12	24.912	+0.028	+1.057	24.912	61	5	30.769	1	30.922	1	30.193	1	31.172		30.756		
+NOVCAM-C	82	Kevin	Wofford	2019 Ford Mustang	Red			No					Yes	Yes	Yes	No			0.00	No	No	No	1	3		No						31.732	86	4	25.893	+0.131	+2.038	25.893	83	5	41.341		35.825		34.578		35.457		31.732		
+NOVSTR	5	Joseph	Zavala	1999 Mazda Miata				No					Yes	Yes	Yes	No			0.00	No	No	No	4	2		No		BFGoodrich				31.724	84	25	26.108	+0.013	+2.253	26.108	89	4	34.751	DNF	32.778		32.050		31.724				

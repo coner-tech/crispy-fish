@@ -52,6 +52,26 @@ sealed class Events(
             ecfFile = "thscc/2017/points9/20171021 Points Autocross 9 Danville.ecf"
     )
 
+    object Thscc2018Points1Danville : Events(
+            classDefinitions = ClassDefinitions.Thscc2018,
+            ecfFile = "thscc/2018/points1/2018-03-04 Points Autocross 1 Danville.ecf"
+    )
+
+    object Thscc2018JustForFunCary : Events(
+            classDefinitions = ClassDefinitions.Thscc2018,
+            ecfFile = "thscc/2018/justforfun/2018-08-25 Just for Fun Autocross Cary.ecf"
+    )
+
+    object Thscc2018WeddingcrossDanville : Events(
+            classDefinitions = ClassDefinitions.Thscc2018,
+            ecfFile = "thscc/2018/weddingcross/2018-09-30 Maylotta Weddingcross Danville.ecf"
+    )
+
+    object Thscc2018Points8Cary : Events(
+            classDefinitions = ClassDefinitions.Thscc2018,
+            ecfFile = "thscc/2018/points8/2018-10-21 Points Autocross 8 Rescheduled Cary.ecf"
+    )
+
     private fun resource(relativeFilePath: String): File {
         val absolutePath = "/org/coner/crispyfish/test/Events/$relativeFilePath"
         val resourceURL = javaClass.getResource(absolutePath)
