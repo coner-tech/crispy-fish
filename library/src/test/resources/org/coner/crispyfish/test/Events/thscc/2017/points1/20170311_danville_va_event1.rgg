@@ -1,0 +1,73 @@
+Class	Number	First Name	Last Name	Car Model	Car Color	Class 2	Grid #	Member	Member #	Expires	DOB	Age	Registered	Reg.CheckIn	OLR	Paid	Fee Type	Amnt.	Method	Annual Tech	Annual Waiver	Rookie	Run Heat	Work Heat	Work Assignment	Checkin	Sponsor	Tire Brand	Tire Size	Region	Club Cup	Raw Time	Raw Pos.	Prev. Pos.	Total	Diff.	From 1st	Pax Time	Pax Pos.	Best Run	Run 1	Pen 1	Run 2	Pen 2	Run 3	Pen 3	Run 4	Pen 4	Run 5	Pen 5	Run 6	Pen 6	Run 7	Pen 7	
+SS	350	Ted	Collier	Ford Mustang GT-350R	White			No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No	1	2		No						43.742	24	1	43.742	[-]0.686	-	36.130	25	6	47.843		45.127		44.833	1	44.828	1	43.841		43.742		43.773		
+SS	13	Jennifer	Parks	2014 Porsche Cayman S	Guards Red			No					Yes	Yes		No		0.00		No	No	No	1	2		No						44.428	28	2	44.428	+0.686	+0.686	36.697	33	6	49.134		46.314	1	44.994		46.117	2	45.455		44.428		44.834		
+BS	1	Dennis	Burns	2003 BMW z4	Black			No					Yes	Yes		No		0.00		No	No	No	1	2		No						43.879	25	1	43.879	[-]0.218	-	35.673	20	7	48.064	1	49.342		46.552		45.935	1	45.504		44.990		43.879		
+BS	696	Fernando	Granados	2017 Subaru WRX STI	Gray			No					Yes	Yes		No		0.00		No	No	No	1	2		No						44.097	27	2	44.097	+0.218	+0.218	35.850	21	6	45.277	DNF	44.932		45.604	2	44.900	1	44.875	1	44.097		43.325	2	
+BS	2	Anton	van Deth	2008 Porsche Cayman S	Black			No					No	No		No		0.00		No	No	No	1	2		No						DNS	66		DNS				66																
+CS	14	Michael	Miller	2006 Mazda MX5 Miata	Red			No					Yes	Yes		No		0.00		No	No	No	2	1		No						41.999	7	1	41.999	[-]0.358	-	34.019	6	5	42.552	4	42.598		42.519		41.971	1	41.999		42.348		42.024		
+CS	5	Andrew	Jonell	2016 Mazda MX-5	Black			No					Yes	No		No		0.00		No	No	No	2	1		No						42.357	10	2	42.357	+0.358	+0.358	34.309	8	7	44.670		44.631	DNF	44.218		43.940	DNF	42.871		42.476		42.357		
+CS	41	Anders	Miller	Mazda Miata	Red			No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No	2	1		No						42.622	11	3	42.622	+0.265	+0.623	34.523	11	4	44.078		43.014	DNF	43.501		42.622		42.353	1	42.357	1	42.849		
+CS	8	Lee	Williams	2005 Nissan 350Z	Black			No					Yes	Yes		No		0.00		No	No	No	2	1		No						43.689	23	4	43.689	+1.067	+1.690	35.388	17	7	46.382	DNF	45.607	DNF	44.218		44.761	1	43.881		43.869		43.689		
+CS	64	Bryan	Baker	2013 Subaru BRZ	WRB			No					Yes	Yes		No		0.00		No	No	No	2	1		No						44.636	32	5	44.636	+0.947	+2.637	36.155	27	7	49.258		47.944		46.106		46.530		46.191		45.950		44.636		
+CS	1	Piotr	Barshcheuski	2002 BMW 530i	Black			No					No	No		No		0.00		No	No	No	2	1		No						DNS	67		DNS				67																
+DS	13	Francis	Chan	2013 Scion FR-S	Silver Ignition			No					Yes	Yes		No		0.00		No	No	No	1	2		No						43.203	17	1	43.203	[-]1.943	-	34.605	12	6	46.034	1	45.201		44.092		45.084		44.470	1	43.203		43.513	1	
+DS	17	Eric	Beaulaurier	2008 Mini Cooper S	Pepper White			No					Yes	Yes		No		0.00		No	No	No	1	2		No						45.146	40	2	45.146	+1.943	+1.943	36.161	28	5	47.998		45.498		45.969		49.251	2	45.146		44.838	DNF	45.939		
+DS	3	Elizabeth	Chan	2013 Scion FR-S	Silver Ignition			No					Yes	Yes		No		0.00		No	No	No	1	2		No						46.636	53	3	46.636	+1.490	+3.433	37.355	45	6	48.751		48.873		49.027		47.617		47.117	3	46.636		46.028	1	
+DS	1	Maria	Winslow	2001 BMW 330i	black			No					No	No		No		0.00		No	No	No	1	2		No						DNS	68		DNS				68																
+ES	152	Timothy	Maxey	2000 Mazda Miata				No					Yes	Yes		No		0.00		No	No	No	1	2		No						42.191	8	1	42.191	[-]0.612	-	33.499	3	7	43.827	DNF	42.686	DNF	42.844		54.727	DNF	42.305	4	44.037	1	42.191		
+ES	10	Chad	Culbertson	2000 Mazda MX-5 Miata	Black			No					Yes	Yes		No		0.00		No	No	No	1	2		No						42.803	14	2	42.803	+0.612	+0.612	33.985	5	7	44.328		46.248		43.691		44.176		43.625		43.055		42.803		
+ES	31	Tim	Russell	2002 Mazda Miata	Red			No					Yes	Yes		No		0.00		No	No	No	1	2		No						44.500	29	3	44.500	+1.697	+2.309	35.333	16	7	46.460		45.463		45.610		45.399		44.813		44.595		44.500		
+ES	224	Mark	Beech	1992 Mazda Miata	White			No					Yes	Yes		No		0.00		No	No	No	1	2		No						44.814	34	4	44.814	+0.314	+2.623	35.582	19	7	47.037		46.488		45.664		45.273		45.441		45.170		44.814		
+ES	55	Gregg	Tutwiler	2002 Mazda MX-5	White			No					Yes	Yes		No		0.00		No	No	No	1	2		No						45.369	42	5	45.369	+0.555	+3.178	36.023	23	6	47.038	1	46.016		46.188		48.180	2	46.007		45.369		46.395		
+ES	11	Keith	Roberts	1991 Mazda Miata	brg			No					Yes	Yes		No		0.00		No	No	No	1	2		No						47.770	58	6	47.770	+2.401	+5.579	37.929	49	4	50.156		49.686		48.507		47.770		49.480		48.360	1	48.136	2	
+FS	30	Arthur	McDonald	2007 Ford Mustang GT	Silver			No					Yes	Yes		No		0.00		No	No	No	2	1		No						42.799	13	1	42.799	[-]2.839	-	34.410	10	7	45.344	DNF	44.727		43.501		44.293		43.887		43.445		42.799		
+FS	26	Michael	Byrne	2013 BMW 335is	Gray			No					Yes	Yes		No		0.00		No	No	No	2	1		No						45.638	44	2	45.638	+2.839	+2.839	36.693	32	6	49.498	DNF	49.633	DNF	48.585		50.073		48.590		45.638		46.218		
+FS	88	Justin	Howell	2012 Chevrolet Camaro	Black			No					Yes	Yes		No		0.00		No	No	No	2	1		No						45.840	46	3	45.840	+0.202	+3.041	36.855	36	7	48.850		47.147		47.285	1	46.592		46.797	1	46.519		45.840		
+GS	78	Patrice	Bousquet	2016 Volkswagen GTI	Silver			No					Yes	Yes		No		0.00		No	No	No	2	1		No						41.771	3	1	41.771	[-]2.226	-	33.124	1	7	43.562		42.941	1	42.409		42.318		42.148	1	42.436	1	41.771		
+GS	46	Joe	Lohr	2013 Mazda mazdaspeed3	silver			No					Yes	Yes		No		0.00		No	No	No	2	1		No						43.997	26	2	43.997	+2.226	+2.226	34.889	15	2	44.921	5	43.997		44.090	1	44.259		43.263	1	43.474	1	43.020	1	
+GS	93	Paul	Fuller	2008 Saab 9-3	Blue			No					Yes	Yes		No		0.00		No	No	No	2	1		No						46.717	54	3	46.717	+2.720	+4.946	37.046	41	5	48.988	DNF	47.511		47.809		47.596	1	46.717		46.564	1	47.340	2	
+HS	99	Austin	Culbertson	2014 Ford Fiesta ST	Green			No					Yes	Yes		No		0.00		No	No	No	2	1		No						42.340	9	1	42.340	[-]0.535	-	33.279	2	5	43.430		43.450		42.612	1	42.589		42.340		42.260	1	42.758	1	
+HS	24	Rob	Lupella					No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No				No						42.875	15	2	42.875	+0.535	+0.535	33.699	4	6	45.265		44.814		43.897		44.070		43.663		42.875				
+HS	247	Steven	Spampinato	2006 Honda Civic SI Coupe	Tomato			No					Yes	Yes		No		0.00		No	No	No	2	1		No						45.163	41	3	45.163	+2.288	+2.823	35.498	18	7	59.496	DNF	47.483	DNF	46.278	DNF	46.169	1	45.614		46.138		45.163		
+HS	67	Kevin	Spears	2009 Volkswagen Jetta	Silver			No					Yes	Yes		No		0.00		No	No	No	2	1		No						46.940	56	4	46.940	+1.777	+4.600	36.894	37	7	49.664		48.600		47.413		48.334		47.510		47.629		46.940		
+STX	78	Matthew	Ryan	2006 Mini JCW	Black			No					Yes	Yes		No		0.00		No	No	No	2	1		No						44.580	31	1	44.580	[-]0.475	-	36.644	31	6	47.849	DNF	46.633		45.047		45.038		44.720		44.580		44.892	1	
+STX	1	Joseph	Workman	2015 Subaru BRZ	White			No					Yes	Yes		No		0.00		No	No	No	2	1		No						45.055	39	2	45.055	+0.475	+0.475	37.035	40	7	49.537		46.066		46.784		46.714		45.866		45.307		45.055		
+STR	86	Steven	Carter	2007 Honda S2000	GranPrix White			No					Yes	No		No		0.00		No	No	No	2	1		No						41.012	1	1	41.012	[-]0.352	-	34.040	7	7	41.960	1	41.795	DNF	41.805		42.040		42.188		41.067		41.012		
+STR	19	Raymond	Schumin	2000 Honda S2000	Silver			No					Yes	Yes		No		0.00		No	No	No	2	1		No						41.364	2	2	41.364	+0.352	+0.352	34.332	9	7	42.898		41.852	1	41.570		42.324	1	41.739		42.448		41.364		
+STR	42	Bart	Craig	1998 BMW M Roadster	Imola Red			No					Yes	Yes		No		0.00		No	No	No	2	1		No						41.915	4	3	41.915	+0.551	+0.903	34.789	13	7	44.082	1	43.478	DNF	42.706	DNF	42.844		42.808		43.291		41.915		
+STR	8	Carlton	Whitehead	2002 Honda S2000	Silver			No					Yes	Yes		No		0.00		No	No	No	2	1		No						41.988	6	4	41.988	+0.073	+0.976	34.850	14	5	43.518		43.156		42.770		43.545		41.988		42.081		42.131		
+STR	71	Tyler	James	1977 Datsun 280z	Green			No					Yes	Yes		No		0.00		No	No	No	2	1		No						43.238	18	5	43.238	+1.250	+2.226	35.887	22	7	44.334		43.835		43.815		43.267		43.879		44.317	2	43.238		
+STR	73	Joseph	Snyder	2010 Mazda Miata	Blue			No					Yes	Yes		No		0.00		No	No	No	2	1		No						43.439	19	6	43.439	+0.201	+2.427	36.054	24	6	44.192		44.729	1	44.616		52.734	3	44.048		43.439		51.845		
+STR	16	Langlle	King	Honda S2000	Silver			No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No	2	1		No						43.624	21	7	43.624	+0.185	+2.612	36.207	29	6	44.853	6	43.735	2	43.352	2	43.048	2	49.258	DNF	41.624	1	41.772	2	
+STR	32	Christopher	Vasques	2002 Mazda Miata	Gray			No					No	No		No		0.00		No	No	No	2	1		No						DNS	69		DNS				69																
+STU	62	Randy	Howell	2007 Nissan 350Z	Black			No					Yes	Yes		No		0.00		No	No	No	2	1		No						44.553	30	1	44.553	-	-	37.023	39	2	49.641	DNF	44.553		44.412	DNF	45.356	2	43.838	2	44.696		46.428		
+ASP	0	Jason	Panciera	1999 Porsche 996	Black			No					Yes	Yes		No		0.00		No	No	No	1	2		No						43.469	20	1	43.469	[-]0.187	-	37.209	43	5	45.384	1	45.092		44.845		44.525		43.469		47.084		43.721		
+ASP	2	Robert	Plank	1991 Porsche 911	Blue			No					Yes	Yes		No		0.00		No	No	No	1	2		No						43.656	22	2	43.656	+0.187	+0.187	37.369	46	7	48.401	DNF	45.209	DNF	45.005	DNF	44.680		44.596		44.223		43.656		
+CSP	90	Barry	Knuth	1991 Honda CRX Si	White			No					Yes	Yes		No		0.00		No	No	No	2	1		No						49.052	61	1	49.052	-	-	42.184	64	7	56.496	DNF	56.084	DNF	51.361	1	51.182	1	50.504	1	49.935	1	49.052		
+DSP	7	Nickolay	Milovanov	2003 BMW M3	Grayish			No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No	1	2		No						44.949	37	1	44.949	-	-	37.847	48	5	45.913		46.321		46.214		48.449		44.949		45.145	1	45.257		
+ESP	68	Duane	Black	2013 Ford Mustang	White			No					Yes	Yes		No		0.00		No	No	No	1	2		No						46.371	50	1	46.371	-	-	38.812	57	7	53.221		49.883	1	48.052	1	47.065		47.844		46.806	2	46.371		
+FSP	79	Thomas	Middleton	1998 Dodge Neon	Red			No					Yes	Yes		No		0.00		No	No	No	1	2		No						45.051	38	1	45.051	-	-	37.347	44	2	44.389	DNF	45.051		46.603										
+CAM	28	Aris	Mantalvanos	2001 Ford Mustang	White			No					Yes	Yes		No		0.00		No	No	No	1	2		No						44.694	33	1	44.694	[-]0.193	-	36.783	35	7	46.048	DNF	44.834	DNF	45.495		45.525		45.059		44.825		44.694		
+CAM	23	George	Paraskevas	2000 Ford Mustang GT	Black			No					Yes	Yes		No		0.00		No	No	No	1	2		No						44.887	36	2	44.887	+0.193	+0.193	36.942	38	7	45.901		45.517		45.041	1	45.576	2	46.132	1	45.143		44.887		
+CAM	92	Gary	Perkins	1949 Chevrolet 3100	Champagne			No					Yes	Yes		No		0.00		No	No	No	1	2		No						45.431	43	3	45.431	+0.544	+0.737	37.389	47	7	52.920	DNF	48.703	1	47.669		48.556	DNF	48.579	1	49.152		45.431		
+DP	85	Steven	Johnson	1986 Toyota Corolla	Red			No					Yes	Yes		No		0.00		No	No	No	-1			No						42.962	16	1	42.962	-	-	37.162	42	3	44.481		44.003		42.962		43.117		43.063		43.071	1	44.029	1	
+SMF	71	Matt	Zizzi	2013 Mazda Mazdaspeed 3	Silver			No					Yes	Yes		No		0.00		No	No	No	1	2		No						42.631	12	1	42.631	[-]2.210	-	36.151	26	7	46.219	DNF	43.656		44.247		42.986	DNF	43.396		42.707		42.631		
+SMF	1	John	Huppert	1993 Honda Civic	Black			No					Yes	Yes		No		0.00		No	No	No	1	2		No						44.841	35	2	44.841	+2.210	+2.210	38.025	50	7	48.727	DNF	46.048	DNF	46.127	DNF	46.346		44.907		45.176	1	44.841		
+SMF	37	Chris	Williams	2004 Volkswagen GTI	Grey			No					Yes	Yes		No		0.00		No	No	No	1	2		No						45.866	47	3	45.866	+1.025	+3.235	38.894	58	6	50.784		48.263	DNF	47.656	DNF	47.558		46.708		45.866		46.135		
+SSM	916	Dylan	Barrett	1995 Mazda Miata	Merlot Mica			No					Yes	Yes		No		0.00		No	No	No	1	2		No						41.953	5	1	41.953	-	-	36.708	34	7	49.753	DNF	46.351		43.898		43.692		42.288		42.303		41.953		
+NOVHS	628	Alec	Frazier	2016 Ford Fiesta	Dark Grey			No					Yes	Yes		No		0.00		No	No	No	2	1		No						46.355	48	1	36.435	[-]1.732	-	36.435	30	7	61.531		50.852		48.080		48.509		46.515	1	46.462	1	46.355		
+NOVAS	299	Adam	Phillips	2008 Pontiac Solstice GXP				No					Yes	Yes		No		0.00		No	No	No	1	2		No						46.603	52	2	38.167	+1.732	+1.732	38.167	51	5	58.413	DNF	53.007	DNF	48.743		50.206	DNF	46.603		45.885	1	48.012	1	
+NOVSTR	44	Scott	McDaniel	2006 Mazda mx-5 nc	gray			No					Yes	Yes		No		0.00		No	No	No	1	2		No						46.359	49	3	38.478	+0.311	+2.043	38.478	52	4	51.930		46.147	1	56.982	2	46.359		45.352	1	45.431	DNF	51.032	DNF	
+NOVDSP	77	Patrick	McCray	2016 Ford Focus  ST	Blue			No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No	2	1		No						45.701	45	4	38.480	+0.002	+2.045	38.480	53	6	66.857		52.278	DNF	58.927	DNF	46.239		45.661	1	45.701		46.014		
+NOVGS	96	Corey	Davis	2004 Ford Mustang V6	Torch Red			No					Yes	Yes		No		0.00		No	No	No	2	1		No						48.564	59	5	38.511	+0.031	+2.076	38.511	54	6	55.805	1	56.821	DNF	51.155	1	48.986		49.648		48.564		53.041	DNF	
+NOVSTR	5	Caleb	Bullock	2004 Honda S2000	Silverstone			No					Yes	Yes		No		0.00		No	No	No	2	1		No						46.411	51	6	38.521	+0.010	+2.086	38.521	55	7	49.576	1	47.847	3	47.520		46.979		46.958		45.862	1	46.411		
+NOVSTR	43	Troy	McDaniel	2006 Mazda mx-5 nc	gray			No					Yes	Yes		No		0.00		No	No	No	1	2		No						46.727	55	7	38.783	+0.262	+2.348	38.783	56	7	57.760		50.813		50.868	DNF	51.166	DNF	47.885		47.212	DNF	46.727		
+NOVSTR	9	Shivan	Acharya	2001  Mazda Miata	Black			No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No	2	1		No						47.198	57	8	39.174	+0.391	+2.739	39.174	59	5	51.879	DNF	49.510	DNF	48.384	DNF	50.063	DNF	47.198		48.179	1			
+NOVDS	99	William	Mowery	2013 Subaru WRX	Grey			No		2017-03-11	0000-00-00		Yes	Yes		No		0.00		No	No	No	1	2		No						48.918	60	9	39.183	+0.009	+2.748	39.183	60	7	61.882	DNF	54.664	DNF	52.517		50.386		49.671	DNF	50.021	DNF	48.918		
+NOVES	81	Nathan	Waggoner	1988 Toyota MR2	Red			No					Yes	Yes		No		0.00		No	No	No	1	2		No						51.654	64	10	41.013	+1.830	+4.578	41.013	61	6	73.367	DNF	57.618	1	54.740		55.192	DNF	54.407		51.654		51.987	1	
+NOVSTR	2	Denise	Craig	1998 BMW M Roadster	Red			No					Yes	Yes		No		0.00		No	No	No	2	1		No						49.981	62	11	41.484	+0.471	+5.049	41.484	62	7	57.053		52.506		52.104		55.577		53.971		50.649		49.981		
+NOVAS	308	Thomas	Mielcarek	2008 Pontiac Solstice GXP				No					Yes	Yes		No		0.00		No	No	No	1	2		No						51.282	63	12	42.000	+0.516	+5.565	42.000	63	6	64.261	DNF	55.904	DNF	53.737	DNF	53.319	DNF	51.876	DNF	49.282	1	50.978	DNF	
+NOVFS	7	Jonathan	Graves	2016 Ford Mustang GT	Race Red			No					Yes	Yes		No		0.00		No	No	No	2	1		No						55.333	65	13	44.487	+2.487	+8.052	44.487	65	6	60.289	5	59.687	6	56.052	DNF	53.495	2	50.948	3	49.333	3	48.102	DNF	
+NOVSS	11	Harry	Johnson	2006 Lotus Elise	White			No					No	No		No		0.00		No	No	No	1	2		No						DNS	70		DNS				70																
+NOVBS	110	Michael	Hawthorne	2017 Volkswagen Golf R	Blue			No					No	No		No		0.00		No	No	No	1	2		No						DNS	71		DNS				71																
+NOVFS	177	Patrick	Hargett	2012 BMW 135i	Black			No					No	No		No		0.00		No	No	No	2	1		No						DNS	72		DNS				72																

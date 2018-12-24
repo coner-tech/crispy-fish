@@ -187,4 +187,157 @@ class RegistrationsQueryTest {
             }
         }
     }
+
+    @Test
+    fun itShouldQueryThscc2017Points1Registrations() {
+        val actual = Events.Thscc2017Points1Danville.eventControlFile.queryRegistrations()
+
+        assert(actual).all {
+            hasSize(72)
+            index(0) {
+                it.hasCategoryNull()
+                it.hasHandicapAbbreviation("SS")
+                it.hasNumber("350")
+                it.hasFirstName("Ted")
+                it.hasLastName("Collier")
+                it.hasCarModel("Ford Mustang GT-350R")
+                it.hasCarColor("White")
+            }
+            index(28) {
+                it.hasCategoryNull()
+                it.hasHandicapAbbreviation("HS")
+                it.hasNumber("24")
+                it.hasFirstName("Rob")
+                it.hasLastName("Lupella")
+                it.hasCarModel("")
+                it.hasCarColor("")
+            }
+            index(36) {
+                it.hasCategoryNull()
+                it.hasHandicapAbbreviation("STR")
+                it.hasNumber("8")
+                it.hasFirstName("Carlton")
+                it.hasLastName("Whitehead")
+                it.hasCarModel("2002 Honda S2000")
+                it.hasCarColor("Silver")
+            }
+            index(66) {
+                it.hasCategoryAbbreviation("NOV")
+                it.hasHandicapAbbreviation("STR")
+                it.hasNumber("2")
+                it.hasFirstName("Denise")
+                it.hasLastName("Craig")
+                it.hasCarModel("1998 BMW M Roadster")
+                it.hasCarColor("Red")
+            }
+            index(71) {
+                it.hasCategoryAbbreviation("NOV")
+                it.hasHandicapAbbreviation("FS")
+                it.hasNumber("177")
+                it.hasFirstName("Patrick")
+                it.hasLastName("Hargett")
+                it.hasCarModel("2012 BMW 135i")
+                it.hasCarColor("Black")
+            }
+        }
+    }
+
+    @Test
+    fun itShouldQueryThscc2017Points5Registrations() {
+        val actual = Events.Thscc2017Points5CaryTowneCenter.eventControlFile.queryRegistrations()
+
+        assert(actual).all {
+            hasSize(110)
+            index(0) {
+                it.hasCategoryNull()
+                it.hasHandicapAbbreviation("SS")
+                it.hasNumber("7")
+                it.hasFirstName("Jordan")
+                it.hasLastName("Normark")
+                it.hasCarModel("2005 Lotus Elise")
+                it.hasCarColor("Orange")
+            }
+            index(44) {
+                it.hasCategoryNull()
+                it.hasHandicapAbbreviation("STR")
+                it.hasNumber("8")
+                it.hasFirstName("Carlton")
+                it.hasLastName("Whitehead")
+                it.hasCarModel("2002 Honda S2000")
+                it.hasCarColor("Silver")
+            }
+            index(75) {
+                it.hasCategoryAbbreviation("NOV")
+                it.hasHandicapAbbreviation("DS")
+                it.hasNumber("62")
+                it.hasFirstName("Benny")
+                it.hasLastName("Colantuono")
+                it.hasCarModel("2015 Subaru WRX")
+                it.hasCarColor("Grey")
+            }
+            index(85) {
+                it.hasCategoryAbbreviation("NOV")
+                it.hasHandicapAbbreviation("CAMC")
+                it.hasNumber("823")
+                it.hasFirstName("Mark")
+                it.hasLastName("Goodwillie")
+                it.hasCarModel("1972 Mustang coupe")
+                it.hasCarColor("Blue")
+            }
+            index(109) {
+                it.hasCategoryAbbreviation("OF")
+                it.hasHandicapAbbreviation("SM")
+                it.hasNumber("27")
+                it.hasFirstName("Pitch")
+                it.hasLastName("Woolfolk")
+                it.hasCarModel("1972 Volkswagen Super Beetle")
+                it.hasCarColor("Yellow!")
+            }
+        }
+    }
+
+    @Test
+    fun itShouldQueryThscc2017Points9Registrations() {
+        val actual = Events.Thscc2017Points9Danville.eventControlFile.queryRegistrations()
+
+        assert(actual).all {
+            hasSize(116)
+            index(1) {
+                it.hasCategoryNull()
+                it.hasHandicapAbbreviation("DS")
+                it.hasNumber("278")
+                it.hasFirstName("Jack")
+                it.hasLastName("Alvrus")
+                it.hasCarModel("2015 Scion FRS")
+                it.hasCarColor("Black")
+            }
+            index(41) {
+                it.hasCategoryAbbreviation("NOV")
+                it.hasHandicapAbbreviation("ES")
+                it.hasNumber("93")
+                it.hasFirstName("Byron")
+                it.hasLastName("Goode")
+                it.hasCarModel("1993 Mazda Miata (LE)")
+                it.hasCarColor("Black")
+            }
+            index(111) {
+                it.hasCategoryNull()
+                it.hasHandicapAbbreviation("STR")
+                it.hasNumber("8")
+                it.hasFirstName("Carlton")
+                it.hasLastName("Whitehead")
+                it.hasCarModel("2002 Honda S2000")
+                it.hasCarColor("Silver")
+            }
+            index(115) {
+                it.hasCategoryAbbreviation("NOV")
+                it.hasHandicapAbbreviation("ES")
+                it.hasNumber("169")
+                it.hasFirstName("Chris")
+                it.hasLastName("Zaionz")
+                it.hasCarModel("2001 Mazda Miata LS")
+                it.hasCarColor("")
+            }
+        }
+    }
 }
