@@ -12,6 +12,7 @@ sealed class Events(
 
     val eventControlFile = EventControlFile(
             file = resource(ecfFile),
+            classDefinitionFile = classDefinitions.file,
             conePenalty = conePenalty,
             isTwoDayEvent = twoDayEvent
     )
