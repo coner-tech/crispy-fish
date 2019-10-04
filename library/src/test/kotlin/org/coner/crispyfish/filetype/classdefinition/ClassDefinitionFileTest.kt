@@ -1,6 +1,6 @@
 package org.coner.crispyfish.filetype.classdefinition
 
-import assertk.assert
+import assertk.assertThat
 import assertk.assertions.isNotNull
 import assertk.assertions.isNotSameAs
 import org.coner.crispyfish.test.ClassDefinitions
@@ -20,7 +20,7 @@ class ClassDefinitionFileTest {
     fun itShouldReturnReader() {
         val actual = file.reader()
 
-        assert(actual).isNotNull()
+        assertThat(actual).isNotNull()
     }
 
     @Test
@@ -28,6 +28,6 @@ class ClassDefinitionFileTest {
         val first = file.reader()
         val second = file.reader()
 
-        assert(first).isNotSameAs(second)
+        assertThat(first).isNotSameAs(second)
     }
 }

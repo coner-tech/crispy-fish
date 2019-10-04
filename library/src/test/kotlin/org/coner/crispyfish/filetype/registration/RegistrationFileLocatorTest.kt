@@ -1,12 +1,13 @@
 package org.coner.crispyfish.filetype.registration
 
-import assertk.assert
+import assertk.all
+import assertk.assertThat
 import assertk.assertions.hasExtension
 import assertk.assertions.isNotNull
 import assertk.assertions.prop
-import org.coner.crispyfish.model.EventDay
 import org.coner.crispyfish.test.Events
 import org.junit.Test
+import java.io.File
 
 class RegistrationFileLocatorTest {
 
@@ -16,10 +17,9 @@ class RegistrationFileLocatorTest {
 
         val actual = locator.locate()
 
-        assert(actual).isNotNull{ registrationFile ->
-            registrationFile.prop(RegistrationFile::file).isNotNull { file ->
-                file.hasExtension("rgg")
-            }
+        assertThat(actual).all {
+            isNotNull()
+            prop("file", RegistrationFile::file).hasExtension("rgg")
         }
     }
 }

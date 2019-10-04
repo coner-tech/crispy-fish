@@ -1,8 +1,8 @@
 package org.coner.crispyfish.datatype.underscorepairs
 
-import org.junit.*
-
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.Before
+import org.junit.Test
 
 class SimpleStringUnderscorePairWriterTest {
 

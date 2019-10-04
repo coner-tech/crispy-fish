@@ -1,10 +1,9 @@
 package org.coner.crispyfish.filetype.staging
 
+import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.JUnitSoftAssertions
 import org.junit.Rule
 import org.junit.Test
-
-import org.assertj.core.api.Assertions.assertThat
 
 class StagingFilenamesTest {
 

@@ -1,17 +1,15 @@
 package org.coner.crispyfish.filetype.staging
 
+import org.assertj.core.api.Assertions.assertThat
+import org.coner.crispyfish.filetype.ecf.EventControlFile
 import org.coner.crispyfish.model.EventDay
 import org.coner.crispyfish.model.PenaltyType
-import org.coner.crispyfish.filetype.ecf.EventControlFile
 import org.junit.Before
 import org.junit.Test
-
-import java.nio.file.Paths
-import java.time.Duration
-
-import org.assertj.core.api.Assertions.assertThat
-import org.mockito.Mockito.*
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.mock
 import java.io.File
+import java.time.Duration
 
 class StagingFileAssistantTest {
 

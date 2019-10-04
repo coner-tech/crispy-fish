@@ -1,11 +1,10 @@
 package org.coner.crispyfish.query
 
 import assertk.all
-import assertk.assert
+import assertk.assertThat
 import assertk.assertions.containsAll
 import assertk.assertions.doesNotContain
 import assertk.assertions.hasSize
-import org.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import org.coner.crispyfish.test.ClassDefinitions
 import org.junit.Test
 
@@ -15,7 +14,7 @@ class HandicapsQueryTest {
     fun itShouldQueryHandicapsFromThscc2016ClassDefinitions() {
         val actual = HandicapsQuery(ClassDefinitions.Thscc2016.file).query()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(51)
             containsAll(
                     ClassDefinitions.Thscc2016.cs,
@@ -31,7 +30,7 @@ class HandicapsQueryTest {
     fun itShouldQueryHandicapsFromThscc2017ClassDefinitions() {
         val actual = HandicapsQuery(ClassDefinitions.Thscc2017.file).query()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(51)
             containsAll(
                     ClassDefinitions.Thscc2017.cs,
@@ -45,7 +44,7 @@ class HandicapsQueryTest {
     fun itShouldQueryHandicapsFromThscc2018ClassDefinitions() {
         val actual = HandicapsQuery(ClassDefinitions.Thscc2018.file).query()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(51)
             containsAll(
                     ClassDefinitions.Thscc2018.cs,

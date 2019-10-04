@@ -1,21 +1,18 @@
 package org.coner.crispyfish.filetype.staging
 
-import org.coner.crispyfish.model.EventDay
+import org.assertj.core.api.Assertions.assertThat
 import org.coner.crispyfish.filetype.ecf.EventControlFile
-
+import org.coner.crispyfish.model.EventDay
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.*
-
+import org.mockito.Mock
+import org.mockito.Mockito
+import org.mockito.Mockito.`when`
+import org.mockito.junit.MockitoJUnitRunner
 import java.io.File
 import java.nio.file.Path
 import java.nio.file.Paths
-
-import org.assertj.core.api.Assertions.assertThat
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.`when`
-import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
 class StagingFileLocatorTest {
