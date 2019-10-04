@@ -1,8 +1,9 @@
 package org.coner.crispyfish.query
 
 import assertk.all
-import assertk.assert
-import assertk.assertions.*
+import assertk.assertThat
+import assertk.assertions.hasSize
+import assertk.assertions.index
 import org.coner.crispyfish.model.*
 import org.coner.crispyfish.test.Events
 import org.junit.Test
@@ -13,43 +14,43 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2016Points1Registrations() {
         val actual = Events.Thscc2016Points1Danville.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(90)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("AS")
-                it.hasNumber("86")
-                it.hasFirstName("David")
-                it.hasLastName("Peters")
-                it.hasCarModel("2008 Saturn Sky Redline")
-                it.hasCarColor("Red")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("AS")
+                hasNumber("86")
+                hasFirstName("David")
+                hasLastName("Peters")
+                hasCarModel("2008 Saturn Sky Redline")
+                hasCarColor("Red")
             }
-            index(37) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(37).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(65) {
-                it.hasCategoryAbbreviation("X")
-                it.hasHandicapAbbreviation("GS")
-                it.hasNumber("1")
-                it.hasFirstName("Andrew")
-                it.hasLastName("Pallotta")
-                it.hasCarModel("2013 Ford Focus ST")
-                it.hasCarColor("White")
+            index(65).all {
+                hasCategoryAbbreviation("X")
+                hasHandicapAbbreviation("GS")
+                hasNumber("1")
+                hasFirstName("Andrew")
+                hasLastName("Pallotta")
+                hasCarModel("2013 Ford Focus ST")
+                hasCarColor("White")
             }
-            index(89) {
-                it.hasCategoryAbbreviation("OF")
-                it.hasHandicapAbbreviation("BSP")
-                it.hasNumber("8")
-                it.hasFirstName("Neal")
-                it.hasLastName("Harrington")
-                it.hasCarModel("1988 Pontiac FIERO GT")
-                it.hasCarColor("WHITE")
+            index(89).all {
+                hasCategoryAbbreviation("OF")
+                hasHandicapAbbreviation("BSP")
+                hasNumber("8")
+                hasFirstName("Neal")
+                hasLastName("Harrington")
+                hasCarModel("1988 Pontiac FIERO GT")
+                hasCarColor("WHITE")
             }
         }
     }
@@ -58,42 +59,42 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2016Points2Registrations() {
         val actual = Events.Thscc2016Points2Cary.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(120)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("SS")
-                it.hasNumber("3")
-                it.hasFirstName("Rob")
-                it.hasLastName("Lupella")
-                it.hasCarModel("2002 Chevrolet Corvette Z06")
-                it.hasCarColor("Electron Blue")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("SS")
+                hasNumber("3")
+                hasFirstName("Rob")
+                hasLastName("Lupella")
+                hasCarModel("2002 Chevrolet Corvette Z06")
+                hasCarColor("Electron Blue")
             }
-            index(43) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(43).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(79) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("DS")
-                it.hasNumber("78")
-                it.hasFirstName("Matthew")
-                it.hasLastName("Ryan")
-                it.hasCarModel("2005 Mini S")
-                it.hasCarColor("Silver")
+            index(79).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("DS")
+                hasNumber("78")
+                hasFirstName("Matthew")
+                hasLastName("Ryan")
+                hasCarModel("2005 Mini S")
+                hasCarColor("Silver")
             }
-            index(119) {
-                it.hasCategoryAbbreviation("OF")
-                it.hasHandicapAbbreviation("BS")
-                it.hasNumber("12")
-                it.hasFirstName("Charles")
-                it.hasLastName("Lankford")
-                it.hasCarModel("2002 Maserati Spyder")
-                it.hasCarColor("Red")
+            index(119).all {
+                hasCategoryAbbreviation("OF")
+                hasHandicapAbbreviation("BS")
+                hasNumber("12")
+                hasFirstName("Charles")
+                hasLastName("Lankford")
+                hasCarModel("2002 Maserati Spyder")
+                hasCarColor("Red")
             }
         }
     }
@@ -102,43 +103,43 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2016Points3Registrations() {
         val actual = Events.Thscc2016Points3Danville.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(112)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STX")
-                it.hasNumber("22")
-                it.hasFirstName("Bill")
-                it.hasLastName("Aycock")
-                it.hasCarModel("2012 Volkswagen Golf R")
-                it.hasCarColor("Gray")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STX")
+                hasNumber("22")
+                hasFirstName("Bill")
+                hasLastName("Aycock")
+                hasCarModel("2012 Volkswagen Golf R")
+                hasCarColor("Gray")
             }
-            index(62) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("CAM")
-                it.hasNumber("28")
-                it.hasFirstName("Aris")
-                it.hasLastName("Mantalvanos")
-                it.hasCarModel("2001 Ford Mustang")
-                it.hasCarColor("White")
+            index(62).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("CAM")
+                hasNumber("28")
+                hasFirstName("Aris")
+                hasLastName("Mantalvanos")
+                hasCarModel("2001 Ford Mustang")
+                hasCarColor("White")
             }
-            index(103) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(103).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(111) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("CAM")
-                it.hasNumber("7")
-                it.hasFirstName("Rodney")
-                it.hasLastName("Wright")
-                it.hasCarModel("2008 Ford mustang bullitt")
-                it.hasCarColor("green")
+            index(111).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("CAM")
+                hasNumber("7")
+                hasFirstName("Rodney")
+                hasLastName("Wright")
+                hasCarModel("2008 Ford mustang bullitt")
+                hasCarColor("green")
             }
         }
     }
@@ -147,43 +148,43 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2016Points9Registration() {
         val actual = Events.Thscc2016Points9Cary.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(131)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("SS")
-                it.hasNumber("3")
-                it.hasFirstName("Rob")
-                it.hasLastName("Lupella")
-                it.hasCarModel("2015 Alfa Romeo 4C")
-                it.hasCarColor("Rosso")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("SS")
+                hasNumber("3")
+                hasFirstName("Rob")
+                hasLastName("Lupella")
+                hasCarModel("2015 Alfa Romeo 4C")
+                hasCarColor("Rosso")
             }
-            index(26) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("ES")
-                it.hasNumber("87")
-                it.hasFirstName("Blair")
-                it.hasLastName("Deffenbaugh")
-                it.hasCarModel("1996 Mazda Miata (WTF else?)")
-                it.hasCarColor("Blue")
+            index(26).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("ES")
+                hasNumber("87")
+                hasFirstName("Blair")
+                hasLastName("Deffenbaugh")
+                hasCarModel("1996 Mazda Miata (WTF else?)")
+                hasCarColor("Blue")
             }
-            index(50) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(50).all{
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(130) {
-                it.hasCategoryAbbreviation("OF")
-                it.hasHandicapAbbreviation("ES")
-                it.hasNumber("62")
-                it.hasFirstName("Dick")
-                it.hasLastName("Sossomon")
-                it.hasCarModel("1997 Mazda Miata")
-                it.hasCarColor("green")
+            index(130).all {
+                hasCategoryAbbreviation("OF")
+                hasHandicapAbbreviation("ES")
+                hasNumber("62")
+                hasFirstName("Dick")
+                hasLastName("Sossomon")
+                hasCarModel("1997 Mazda Miata")
+                hasCarColor("green")
             }
         }
     }
@@ -192,52 +193,52 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2017Points1Registrations() {
         val actual = Events.Thscc2017Points1Danville.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(72)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("SS")
-                it.hasNumber("350")
-                it.hasFirstName("Ted")
-                it.hasLastName("Collier")
-                it.hasCarModel("Ford Mustang GT-350R")
-                it.hasCarColor("White")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("SS")
+                hasNumber("350")
+                hasFirstName("Ted")
+                hasLastName("Collier")
+                hasCarModel("Ford Mustang GT-350R")
+                hasCarColor("White")
             }
-            index(28) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("HS")
-                it.hasNumber("24")
-                it.hasFirstName("Rob")
-                it.hasLastName("Lupella")
-                it.hasCarModel("")
-                it.hasCarColor("")
+            index(28).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("HS")
+                hasNumber("24")
+                hasFirstName("Rob")
+                hasLastName("Lupella")
+                hasCarModel("")
+                hasCarColor("")
             }
-            index(36) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(36).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(66) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("2")
-                it.hasFirstName("Denise")
-                it.hasLastName("Craig")
-                it.hasCarModel("1998 BMW M Roadster")
-                it.hasCarColor("Red")
+            index(66).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("STR")
+                hasNumber("2")
+                hasFirstName("Denise")
+                hasLastName("Craig")
+                hasCarModel("1998 BMW M Roadster")
+                hasCarColor("Red")
             }
-            index(71) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("FS")
-                it.hasNumber("177")
-                it.hasFirstName("Patrick")
-                it.hasLastName("Hargett")
-                it.hasCarModel("2012 BMW 135i")
-                it.hasCarColor("Black")
+            index(71).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("FS")
+                hasNumber("177")
+                hasFirstName("Patrick")
+                hasLastName("Hargett")
+                hasCarModel("2012 BMW 135i")
+                hasCarColor("Black")
             }
         }
     }
@@ -246,52 +247,52 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2017Points5Registrations() {
         val actual = Events.Thscc2017Points5CaryTowneCenter.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(110)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("SS")
-                it.hasNumber("7")
-                it.hasFirstName("Jordan")
-                it.hasLastName("Normark")
-                it.hasCarModel("2005 Lotus Elise")
-                it.hasCarColor("Orange")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("SS")
+                hasNumber("7")
+                hasFirstName("Jordan")
+                hasLastName("Normark")
+                hasCarModel("2005 Lotus Elise")
+                hasCarColor("Orange")
             }
-            index(44) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(44).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(75) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("DS")
-                it.hasNumber("62")
-                it.hasFirstName("Benny")
-                it.hasLastName("Colantuono")
-                it.hasCarModel("2015 Subaru WRX")
-                it.hasCarColor("Grey")
+            index(75).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("DS")
+                hasNumber("62")
+                hasFirstName("Benny")
+                hasLastName("Colantuono")
+                hasCarModel("2015 Subaru WRX")
+                hasCarColor("Grey")
             }
-            index(85) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("CAMC")
-                it.hasNumber("823")
-                it.hasFirstName("Mark")
-                it.hasLastName("Goodwillie")
-                it.hasCarModel("1972 Mustang coupe")
-                it.hasCarColor("Blue")
+            index(85).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("CAMC")
+                hasNumber("823")
+                hasFirstName("Mark")
+                hasLastName("Goodwillie")
+                hasCarModel("1972 Mustang coupe")
+                hasCarColor("Blue")
             }
-            index(109) {
-                it.hasCategoryAbbreviation("OF")
-                it.hasHandicapAbbreviation("SM")
-                it.hasNumber("27")
-                it.hasFirstName("Pitch")
-                it.hasLastName("Woolfolk")
-                it.hasCarModel("1972 Volkswagen Super Beetle")
-                it.hasCarColor("Yellow!")
+            index(109).all {
+                hasCategoryAbbreviation("OF")
+                hasHandicapAbbreviation("SM")
+                hasNumber("27")
+                hasFirstName("Pitch")
+                hasLastName("Woolfolk")
+                hasCarModel("1972 Volkswagen Super Beetle")
+                hasCarColor("Yellow!")
             }
         }
     }
@@ -300,43 +301,43 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2017Points9Registrations() {
         val actual = Events.Thscc2017Points9Danville.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(116)
-            index(1) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("DS")
-                it.hasNumber("278")
-                it.hasFirstName("Jack")
-                it.hasLastName("Alvrus")
-                it.hasCarModel("2015 Scion FRS")
-                it.hasCarColor("Black")
+            index(1).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("DS")
+                hasNumber("278")
+                hasFirstName("Jack")
+                hasLastName("Alvrus")
+                hasCarModel("2015 Scion FRS")
+                hasCarColor("Black")
             }
-            index(41) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("ES")
-                it.hasNumber("93")
-                it.hasFirstName("Byron")
-                it.hasLastName("Goode")
-                it.hasCarModel("1993 Mazda Miata (LE)")
-                it.hasCarColor("Black")
+            index(41).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("ES")
+                hasNumber("93")
+                hasFirstName("Byron")
+                hasLastName("Goode")
+                hasCarModel("1993 Mazda Miata (LE)")
+                hasCarColor("Black")
             }
-            index(111) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(111).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(115) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("ES")
-                it.hasNumber("169")
-                it.hasFirstName("Chris")
-                it.hasLastName("Zaionz")
-                it.hasCarModel("2001 Mazda Miata LS")
-                it.hasCarColor("")
+            index(115).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("ES")
+                hasNumber("169")
+                hasFirstName("Chris")
+                hasLastName("Zaionz")
+                hasCarModel("2001 Mazda Miata LS")
+                hasCarColor("")
             }
         }
     }
@@ -345,52 +346,52 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2018Points1Registrations() {
         val actual = Events.Thscc2018Points1Danville.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(129)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("SS")
-                it.hasNumber("11")
-                it.hasFirstName("Harry")
-                it.hasLastName("Johnson")
-                it.hasCarModel("2006 Lotus Elise")
-                it.hasCarColor("White")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("SS")
+                hasNumber("11")
+                hasFirstName("Harry")
+                hasLastName("Johnson")
+                hasCarModel("2006 Lotus Elise")
+                hasCarColor("White")
             }
-            index(45) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("HS")
-                it.hasNumber("17")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2017 Mazda 6")
-                it.hasCarColor("Soul Red")
+            index(45).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("HS")
+                hasNumber("17")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2017 Mazda 6")
+                hasCarColor("Soul Red")
             }
-            index(112) {
-                it.hasCategoryAbbreviation("X")
-                it.hasHandicapAbbreviation("STX")
-                it.hasNumber("97")
-                it.hasFirstName("David")
-                it.hasLastName("Spratte")
-                it.hasCarModel("2016 Scion FR-S")
-                it.hasCarColor("Asphalt")
+            index(112).all {
+                hasCategoryAbbreviation("X")
+                hasHandicapAbbreviation("STX")
+                hasNumber("97")
+                hasFirstName("David")
+                hasLastName("Spratte")
+                hasCarModel("2016 Scion FR-S")
+                hasCarColor("Asphalt")
             }
-            index(123) {
-                it.hasCategoryAbbreviation("MAC")
-                it.hasHandicapAbbreviation("CAM-C")
-                it.hasNumber("40")
-                it.hasFirstName("Josh")
-                it.hasLastName("Fowler")
-                it.hasCarModel("2011 Ford Mustang")
-                it.hasCarColor("White")
+            index(123).all {
+                hasCategoryAbbreviation("MAC")
+                hasHandicapAbbreviation("CAM-C")
+                hasNumber("40")
+                hasFirstName("Josh")
+                hasLastName("Fowler")
+                hasCarModel("2011 Ford Mustang")
+                hasCarColor("White")
             }
-            index(128) {
-                it.hasCategoryAbbreviation("OF")
-                it.hasHandicapAbbreviation("XP")
-                it.hasNumber("256")
-                it.hasFirstName("Paul")
-                it.hasLastName("Morro")
-                it.hasCarModel("1970 Triumph TR 6")
-                it.hasCarColor("Black")
+            index(128).all {
+                hasCategoryAbbreviation("OF")
+                hasHandicapAbbreviation("XP")
+                hasNumber("256")
+                hasFirstName("Paul")
+                hasLastName("Morro")
+                hasCarModel("1970 Triumph TR 6")
+                hasCarColor("Black")
             }
         }
     }
@@ -399,70 +400,70 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2018JustForFunRegistrations() {
         val actual = Events.Thscc2018JustForFunCary.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(130)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("AS")
-                it.hasNumber("111")
-                it.hasFirstName("Jason")
-                it.hasLastName("Tucker")
-                it.hasCarModel("2006 Lotus Elise")
-                it.hasCarColor("Laser Blue")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("AS")
+                hasNumber("111")
+                hasFirstName("Jason")
+                hasLastName("Tucker")
+                hasCarModel("2006 Lotus Elise")
+                hasCarColor("Laser Blue")
             }
-            index(19) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("ES")
-                it.hasNumber("17")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Mazda Miata")
-                it.hasCarColor("Green")
+            index(19).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("ES")
+                hasNumber("17")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Mazda Miata")
+                hasCarColor("Green")
             }
-            index(68) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("XP")
-                it.hasNumber("23")
-                it.hasFirstName("Bryan")
-                it.hasLastName("Nichols")
-                it.hasCarModel("1989 Nissan Skyline GTR")
-                it.hasCarColor("Blue")
+            index(68).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("XP")
+                hasNumber("23")
+                hasFirstName("Bryan")
+                hasLastName("Nichols")
+                hasCarModel("1989 Nissan Skyline GTR")
+                hasCarColor("Blue")
             }
-            index(96) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("SM")
-                it.hasNumber("19")
-                it.hasFirstName("Tim")
-                it.hasLastName("Matijow")
-                it.hasCarModel("2004 Audi A4")
-                it.hasCarColor("silver")
+            index(96).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("SM")
+                hasNumber("19")
+                hasFirstName("Tim")
+                hasLastName("Matijow")
+                hasCarModel("2004 Audi A4")
+                hasCarColor("silver")
             }
-            index(104) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("SMF")
-                it.hasNumber("3")
-                it.hasFirstName("Anthony")
-                it.hasLastName("Finochio")
-                it.hasCarModel("2005 Mini Cooper S")
-                it.hasCarColor("Blue")
+            index(104).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("SMF")
+                hasNumber("3")
+                hasFirstName("Anthony")
+                hasLastName("Finochio")
+                hasCarModel("2005 Mini Cooper S")
+                hasCarColor("Blue")
             }
-            index(117) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("DSP")
-                it.hasNumber("298")
-                it.hasFirstName("Roy")
-                it.hasLastName("Skiles")
-                it.hasCarModel("2006 Mazda RX-8")
-                it.hasCarColor("Galaxy Grey")
+            index(117).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("DSP")
+                hasNumber("298")
+                hasFirstName("Roy")
+                hasLastName("Skiles")
+                hasCarModel("2006 Mazda RX-8")
+                hasCarColor("Galaxy Grey")
             }
-            index(129) {
-                it.hasCategoryAbbreviation("OF")
-                it.hasHandicapAbbreviation("BSP")
-                it.hasNumber("8")
-                it.hasFirstName("Neal")
-                it.hasLastName("Harrington")
-                it.hasCarModel("1988 Pontiac FIERO GT")
-                it.hasCarColor("WHITE")
+            index(129).all {
+                hasCategoryAbbreviation("OF")
+                hasHandicapAbbreviation("BSP")
+                hasNumber("8")
+                hasFirstName("Neal")
+                hasLastName("Harrington")
+                hasCarModel("1988 Pontiac FIERO GT")
+                hasCarColor("WHITE")
             }
         }
     }
@@ -471,70 +472,70 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2018WeddingcrossRegistrations() {
         val actual = Events.Thscc2018WeddingcrossDanville.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(83)
-            index(0) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("41")
-                it.hasFirstName("Nick")
-                it.hasLastName("Babin")
-                it.hasCarModel("2016 Mazda Miata")
-                it.hasCarColor("Red")
+            index(0).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("41")
+                hasFirstName("Nick")
+                hasLastName("Babin")
+                hasCarModel("2016 Mazda Miata")
+                hasCarColor("Red")
             }
-            index(31) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("CS")
-                it.hasNumber("39")
-                it.hasFirstName("John")
-                it.hasLastName("Joyner")
-                it.hasCarModel("2014 BMW 335i")
-                it.hasCarColor("Estoril Blue")
+            index(31).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("CS")
+                hasNumber("39")
+                hasFirstName("John")
+                hasLastName("Joyner")
+                hasCarModel("2014 BMW 335i")
+                hasCarColor("Estoril Blue")
             }
-            index(43) {
-                it.hasCategoryAbbreviation("X")
-                it.hasHandicapAbbreviation("CAM-C")
-                it.hasNumber("57")
-                it.hasFirstName("Gordon")
-                it.hasLastName("Maciulewicz")
-                it.hasCarModel("2018 Nissan Rental Maxima")
-                it.hasCarColor("TBD")
+            index(43).all {
+                hasCategoryAbbreviation("X")
+                hasHandicapAbbreviation("CAM-C")
+                hasNumber("57")
+                hasFirstName("Gordon")
+                hasLastName("Maciulewicz")
+                hasCarModel("2018 Nissan Rental Maxima")
+                hasCarColor("TBD")
             }
-            index(47) {
-                it.hasCategoryAbbreviation("X")
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("196")
-                it.hasFirstName("Maria")
-                it.hasLastName("Pallotta")
-                it.hasCarModel("2016 Mazda Miata")
-                it.hasCarColor("Grey")
+            index(47).all {
+                hasCategoryAbbreviation("X")
+                hasHandicapAbbreviation("STR")
+                hasNumber("196")
+                hasFirstName("Maria")
+                hasLastName("Pallotta")
+                hasCarModel("2016 Mazda Miata")
+                hasCarColor("Grey")
             }
-            index(60) {
-                it.hasCategoryAbbreviation("X")
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("96")
-                it.hasFirstName("Andrew")
-                it.hasLastName("Pallotta")
-                it.hasCarModel("2016 Mazda MX5")
-                it.hasCarColor("White")
+            index(60).all {
+                hasCategoryAbbreviation("X")
+                hasHandicapAbbreviation("STR")
+                hasNumber("96")
+                hasFirstName("Andrew")
+                hasLastName("Pallotta")
+                hasCarModel("2016 Mazda MX5")
+                hasCarColor("White")
             }
-            index(79) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(79).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(82) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("5")
-                it.hasFirstName("Joseph")
-                it.hasLastName("Zavala")
-                it.hasCarModel("2003 Toyota Mr2 spyder")
-                it.hasCarColor("Silver")
+            index(82).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("STR")
+                hasNumber("5")
+                hasFirstName("Joseph")
+                hasLastName("Zavala")
+                hasCarModel("2003 Toyota Mr2 spyder")
+                hasCarColor("Silver")
             }
         }
     }
@@ -543,51 +544,51 @@ class RegistrationsQueryTest {
     fun itShouldQueryThscc2018Points8Registrations() {
         val actual = Events.Thscc2018Points8Cary.eventControlFile.queryRegistrations()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(129)
-            index(0) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("HS")
-                it.hasNumber("27")
-                it.hasFirstName("Andrew")
-                it.hasLastName("Ahr")
-                it.hasCarModel("2009 Acura TSX")
+            index(0).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("HS")
+                hasNumber("27")
+                hasFirstName("Andrew")
+                hasLastName("Ahr")
+                hasCarModel("2009 Acura TSX")
             }
-            index(28) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("HS")
-                it.hasNumber("99")
-                it.hasFirstName("Austin")
-                it.hasLastName("Culbertson")
-                it.hasCarModel("2014 Ford Fiesta ST")
-                it.hasCarColor("Green")
+            index(28).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("HS")
+                hasNumber("99")
+                hasFirstName("Austin")
+                hasLastName("Culbertson")
+                hasCarModel("2014 Ford Fiesta ST")
+                hasCarColor("Green")
             }
-            index(82) {
-                it.hasCategoryAbbreviation("MAC")
-                it.hasHandicapAbbreviation("CAM-S")
-                it.hasNumber("722")
-                it.hasFirstName("Jake")
-                it.hasLastName("Nicholas")
-                it.hasCarModel("2000 Corvette")
-                it.hasCarColor("Gray")
+            index(82).all {
+                hasCategoryAbbreviation("MAC")
+                hasHandicapAbbreviation("CAM-S")
+                hasNumber("722")
+                hasFirstName("Jake")
+                hasLastName("Nicholas")
+                hasCarModel("2000 Corvette")
+                hasCarColor("Gray")
             }
-            index(123) {
-                it.hasCategoryNull()
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("8")
-                it.hasFirstName("Carlton")
-                it.hasLastName("Whitehead")
-                it.hasCarModel("2002 Honda S2000")
-                it.hasCarColor("Silver")
+            index(123).all {
+                hasCategoryNull()
+                hasHandicapAbbreviation("STR")
+                hasNumber("8")
+                hasFirstName("Carlton")
+                hasLastName("Whitehead")
+                hasCarModel("2002 Honda S2000")
+                hasCarColor("Silver")
             }
-            index(128) {
-                it.hasCategoryAbbreviation("NOV")
-                it.hasHandicapAbbreviation("STR")
-                it.hasNumber("5")
-                it.hasFirstName("Joseph")
-                it.hasLastName("Zavala")
-                it.hasCarModel("1999 Mazda Miata")
-                it.hasCarColor("")
+            index(128).all {
+                hasCategoryAbbreviation("NOV")
+                hasHandicapAbbreviation("STR")
+                hasNumber("5")
+                hasFirstName("Joseph")
+                hasLastName("Zavala")
+                hasCarModel("1999 Mazda Miata")
+                hasCarColor("")
             }
         }
     }

@@ -2,6 +2,7 @@ package org.coner.crispyfish.query
 
 import assertk.all
 import assertk.assert
+import assertk.assertThat
 import assertk.assertions.containsExactly
 import assertk.assertions.hasSize
 import org.coner.crispyfish.test.ClassDefinitions
@@ -13,7 +14,7 @@ class CategoriesQueryTest {
     fun itShouldQueryCategoriesFromThscc2016ClassDefinitions() {
         val actual = CategoriesQuery(ClassDefinitions.Thscc2016.file).query()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(3)
             containsExactly(
                     ClassDefinitions.Thscc2016.x,
@@ -27,7 +28,7 @@ class CategoriesQueryTest {
     fun itShouldQueryCategoriesFromThscc2017ClassDefinitions() {
         val actual = CategoriesQuery(ClassDefinitions.Thscc2017.file).query()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(3)
             containsExactly(
                     ClassDefinitions.Thscc2017.nov,
@@ -41,7 +42,7 @@ class CategoriesQueryTest {
     fun itShouldQueryCategoriesFromThscc2018ClassDefinitions() {
         val actual = CategoriesQuery(ClassDefinitions.Thscc2018.file).query()
 
-        assert(actual).all {
+        assertThat(actual).all {
             hasSize(4)
             containsExactly(
                     ClassDefinitions.Thscc2018.nov,

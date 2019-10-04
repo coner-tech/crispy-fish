@@ -1,14 +1,13 @@
 package org.coner.crispyfish.filetype.staging
 
+import org.assertj.core.api.Assertions.assertThat
 import org.coner.crispyfish.datatype.underscorepairs.UnderscorePairReader
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-
-import org.assertj.core.api.Assertions.assertThat
-import org.mockito.Mockito.verify
 import org.mockito.Mockito.`when`
+import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)

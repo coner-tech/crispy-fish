@@ -1,6 +1,6 @@
 package org.coner.crispyfish.filetype.registration
 
-import assertk.assert
+import assertk.assertThat
 import assertk.assertions.isNotNull
 import assertk.assertions.isNotSameAs
 import org.coner.crispyfish.test.Events
@@ -14,7 +14,7 @@ class RegistrationFileTest {
 
         val actual = registrationFile.columnReader()
 
-        assert(actual).isNotNull()
+        assertThat(actual).isNotNull()
     }
 
     @Test
@@ -24,6 +24,6 @@ class RegistrationFileTest {
         val first = registrationFile.columnReader()
         val second = registrationFile.columnReader()
 
-        assert(first).isNotSameAs(second)
+        assertThat(first).isNotSameAs(second)
     }
 }

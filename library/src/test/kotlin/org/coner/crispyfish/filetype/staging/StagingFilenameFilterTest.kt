@@ -1,10 +1,11 @@
 package org.coner.crispyfish.filetype.staging
 
-import org.junit.*
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 import org.junit.rules.TemporaryFolder
 import org.junit.runner.RunWith
-
-import org.assertj.core.api.Assertions.assertThat
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
