@@ -104,6 +104,7 @@ class ClassResultsQueryTest {
                 // DFL with a DNF
                 .has(driverFinished(28, "NOV", "AM", "77"), atIndex(27))
                 // all of the below with a total time of "DNS"
+                // TODO: find out if "check-in" status influences "DNS" drivers' presence/absence in class results
                 .has(driverFinished(29, "NOV", "SM", "12"), atIndex(28))
                 .has(driverFinished(30, "NOV", "BS", "43"), atIndex(29))
                 .has(driverFinished(31, "NOV", "STU", "33"), atIndex(30))
