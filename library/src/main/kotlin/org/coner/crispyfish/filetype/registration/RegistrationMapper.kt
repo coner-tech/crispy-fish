@@ -4,6 +4,7 @@ import org.coner.crispyfish.filetype.staging.StagingLineException
 import org.coner.crispyfish.filetype.staging.StagingLineRegistration
 import org.coner.crispyfish.model.ClassDefinition
 import org.coner.crispyfish.model.Registration
+import org.coner.crispyfish.model.RegistrationResult
 
 class RegistrationMapper(
 ) {
@@ -58,6 +59,28 @@ class RegistrationMapper(
                 ),
                 carColor = reader.readCarColor(index) ?: throw RegistrationFileException(
                         "Index $index lacks car color"
+                ),
+                rawResult = RegistrationResult(
+                        time = reader.readRawResultTime(index) ?: throw RegistrationFileException(
+                                "Index $index lacks raw result time"
+                        ),
+                        position = reader.readRawResultPosition(index)?.toInt() ?: throw RegistrationFileException(
+                                "Index $index lacks raw result position"
+                        )
+                ),
+                paxResult = RegistrationResult(
+                        time = reader.readPaxResultTime(index) ?: throw RegistrationFileException(
+                                "Index $index lacks pax result time"
+                        ),
+                        position = reader.readPaxResultPosition(index)?.toInt() ?: throw RegistrationFileException(
+                                "Index $index lacks pax result position"
+                        )
+                ),
+                classResult = RegistrationResult(
+                        time = reader.readClassResultTime(index) ?: throw RegistrationFileException(
+                                "Index $index lacks class result time"
+                        ),
+                        position = reader.readClassResultPosition(index)?.toInt()
                 )
         )
     }
