@@ -33,6 +33,7 @@ class ClassResultsQuery(
                             time = it.classResult.time
                     )
                 }
+                .sortedBy { it.position }
                 .groupBy { it.driver.classDefinitionForClassResults }
     }
 
