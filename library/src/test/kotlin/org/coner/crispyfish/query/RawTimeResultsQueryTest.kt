@@ -1,20 +1,17 @@
 package org.coner.crispyfish.query
 
 import org.assertj.core.api.SoftAssertions
-import org.coner.crispyfish.test.Events
-import org.junit.Ignore
-import org.junit.Test
-
 import org.assertj.core.data.Index.atIndex
+import org.coner.crispyfish.test.Events
 import org.coner.crispyfish.util.ResultConditions.driverFinished
 import org.coner.crispyfish.util.ResultConditions.driverNameNotNullOrEmpty
+import org.junit.Test
 
 class RawTimeResultsQueryTest {
 
     private lateinit var rawTimeResultsQuery: RawTimeResultsQuery
 
     @Test
-    @Throws(QueryException::class)
     fun testWithThscc2016Points1() {
         val testEvent = Events.Thscc2016Points1Danville
         rawTimeResultsQuery = RawTimeResultsQuery(
@@ -26,7 +23,7 @@ class RawTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(89)
+                .hasSize(90)
                 .has(driverFinished(1, "", "STR", "127"), atIndex(0))
                 .has(driverFinished(2, "X", "CSP", "162"), atIndex(1))
                 .has(driverFinished(3, "X", "GS", "1"), atIndex(2))
@@ -45,14 +42,13 @@ class RawTimeResultsQueryTest {
                 .has(driverFinished(84, "NOV", "HCS", "73"), atIndex(83))
                 .has(driverFinished(85, "NOV", "HCS", "226"), atIndex(84))
                 .has(driverFinished(86, "", "GS", "12"), atIndex(85))
-                .has(driverFinished(87, "", "SMF", "76"), atIndex(86))
+                .has(driverFinished(87, "", "AS", "44"), atIndex(86))
                 .has(driverFinished(88, "", "BSP", "28"), atIndex(87))
-                .has(driverFinished(89, "", "AS", "44"), atIndex(88))
+                .has(driverFinished(89, "", "SMF", "76"), atIndex(88))
         softly.assertAll()
     }
 
     @Test
-    @Throws(QueryException::class)
     fun testWithThscc2016Points2() {
         val testEvent = Events.Thscc2016Points2Cary
         rawTimeResultsQuery = RawTimeResultsQuery(
@@ -64,7 +60,7 @@ class RawTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(114)
+                .hasSize(120)
                 .has(driverFinished(1, "", "STR", "8"), atIndex(0))
                 .has(driverFinished(2, "", "STR", "86"), atIndex(1))
                 .has(driverFinished(3, "X", "GS", "9"), atIndex(2))
@@ -89,7 +85,6 @@ class RawTimeResultsQueryTest {
     }
 
     @Test
-    @Throws(QueryException::class)
     fun testWithThscc2016Points3() {
         val testEvent = Events.Thscc2016Points3Danville
         rawTimeResultsQuery = RawTimeResultsQuery(
@@ -101,7 +96,7 @@ class RawTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(100)
+                .hasSize(112)
                 .has(driverFinished(1, "X", "bs", "804"), atIndex(0))
                 .has(driverFinished(2, "X", "cs", "9"), atIndex(1))
                 .has(driverFinished(3, "", "asp", "9"), atIndex(2))
@@ -126,7 +121,6 @@ class RawTimeResultsQueryTest {
     }
 
     @Test
-    @Throws(QueryException::class)
     fun testWithThscc2016Points9() {
         val testEvent = Events.Thscc2016Points9Cary
         rawTimeResultsQuery = RawTimeResultsQuery(
@@ -138,7 +132,7 @@ class RawTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(128)
+                .hasSize(131)
                 .has(driverFinished(1, "", "XP", "58"), atIndex(0))
                 .has(driverFinished(2, "", "ASP", "41"), atIndex(1))
                 .has(driverFinished(3, "", "STR", "8"), atIndex(2))
@@ -164,8 +158,6 @@ class RawTimeResultsQueryTest {
     }
 
     @Test
-    @Ignore(value = "Relatively minor issue, ignore until #23 is resolved")
-    @Throws(QueryException::class)
     fun testIssue23IsFixed() {
         val testEvent = Events.Thscc2016Points9Cary
         rawTimeResultsQuery = RawTimeResultsQuery(
