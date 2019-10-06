@@ -1,10 +1,8 @@
 package org.coner.crispyfish.model
 
 import assertk.Assert
-import assertk.assertions.isEqualTo
-import assertk.assertions.isNotNull
-import assertk.assertions.isNull
-import assertk.assertions.prop
+import assertk.all
+import assertk.assertions.*
 
 fun Assert<Registration>.hasCategoryNull() {
     prop("category", Registration::category).isNull()
@@ -36,4 +34,18 @@ fun Assert<Registration>.hasCarModel(expected: String) {
 
 fun Assert<Registration>.hasCarColor(expected: String) {
     prop("carColor", Registration::carColor).isEqualTo(expected)
+}
+
+fun Assert<Registration>.rawResult(body: Assert<RegistrationResult>.() -> Unit) {
+    prop("rawResult", Registration::rawResult).all(body)
+}
+
+fun Assert<Registration>.paxResult(body: Assert<RegistrationResult>.() -> Unit) {
+    prop("paxResult", Registration::paxResult).all(body)
+}
+
+fun Assert<Registration>.runNumber(runNumber: Int, body: Assert<RegistrationRun>.() -> Unit) {
+    prop("runs", Registration::runs)
+            .index(runNumber - 1)
+            .all(body)
 }

@@ -10,5 +10,6 @@ data class Registration(
         val carColor: String,
         val rawResult: RegistrationResult,
         val paxResult: RegistrationResult,
-        val classResult: RegistrationResult
+        val classResult: RegistrationResult,
+        val runs: List<RegistrationRun>
 )

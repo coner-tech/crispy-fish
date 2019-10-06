@@ -1,5 +1,7 @@
 package org.coner.crispyfish.filetype.registration
 
+import org.coner.crispyfish.model.RegistrationRun
+import java.util.regex.Pattern
 import kotlin.streams.toList
 
 class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
@@ -38,6 +40,21 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
     private val paxResultPosition by lazy { column(RegistrationColumns.PaxResultPosition()) }
     private val classResultTime by lazy { column(RegistrationColumns.ClassResultTime()) }
     private val classResultPosition by lazy { column(RegistrationColumns.ClassResultPosition()) }
+    private val runTimes by lazy {
+        val timesPattern = Pattern.compile("^Run (\\d*)$")
+        headings.map { heading -> timesPattern.matcher(heading) }
+                .filter { matcher -> matcher.matches() }
+                .map { matcher -> matcher.group(1).toInt() }
+                .map { runNumber -> column(RegistrationColumns.RunTime(runNumber)) }
+
+    }
+    private val runPenalties by lazy {
+        val penaltiesPattern = Pattern.compile("^Pen (\\d*)$")
+        headings.map { heading -> penaltiesPattern.matcher(heading) }
+                .filter { matcher -> matcher.matches() }
+                .map { matcher -> matcher.group(1).toInt() }
+                .map { runNumber -> column(RegistrationColumns.RunPenalty(runNumber)) }
+    }
 
     fun readClass(index: Int): String? {
         return registrationLines[index][classColumn.index!!]
@@ -90,6 +107,18 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
             } else {
                 null
             }
+        }
+    }
+
+    fun readRunTimes(index: Int): List<String> {
+        return runTimes.map {
+            registrationLines[index][it.index!!]
+        }
+    }
+
+    fun readRunPenalties(index: Int): List<String> {
+        return runPenalties.map {
+            registrationLines[index][it.index!!]
         }
     }
 
