@@ -112,4 +112,32 @@ class ClassResultsQueryTest {
 
         softly.assertAll()
     }
+
+    @Test
+    fun testWithThscc2016Points9() {
+        val testEvent = Events.Thscc2016Points9Cary
+        query = ClassResultsQuery(
+                classDefinitionFile = testEvent.classDefinitions.file,
+                eventControlFile = testEvent.eventControlFile
+        )
+
+        val classResults = query.query()
+
+        val softly = SoftAssertions()
+        softly.assertThat(classResults).hasSize(29)
+
+        val str = classResults.filter { it.key.abbreviation == "STR" }.values.single()
+        softly.assertThat(str)
+                .hasSize(6)
+                .has(driverFinished(1, "", "STR", "8"), atIndex(0))
+                .has(driverFinished(6, "", "STR", "35"), atIndex(5))
+
+        val nov = classResults.filter { it.key.abbreviation == "NOV" }.values.single()
+        softly.assertThat(nov)
+                .hasSize(38)
+                .has(driverFinished(1, "NOV", "DS", "11"), atIndex(0))
+                .has(driverFinished(38, "NOV", "SM", "333"), atIndex(37))
+
+        softly.assertAll()
+    }
 }
