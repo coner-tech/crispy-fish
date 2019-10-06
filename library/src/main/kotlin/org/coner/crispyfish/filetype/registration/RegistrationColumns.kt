@@ -7,4 +7,12 @@ sealed class RegistrationColumns(val heading: String, var index: Int? = null) {
     class LastName : RegistrationColumns("Last Name")
     class CarModel : RegistrationColumns("Car Model")
     class CarColor : RegistrationColumns("Car Color")
+    class RawResultTime : RegistrationColumns("Raw Time")
+    class RawResultPosition : RegistrationColumns("Raw Pos.")
+    class PaxResultTime : RegistrationColumns("Pax Time")
+    class PaxResultPosition : RegistrationColumns("Pax Pos.")
+    class ClassResultTime : RegistrationColumns("Total")
+    class ClassResultPosition : RegistrationColumns("Prev. Pos.")
+    class RunTime(runNumber: Int) : RegistrationColumns("Run $runNumber")
+    class RunPenalty(runNumber: Int) : RegistrationColumns("Pen $runNumber")
 }

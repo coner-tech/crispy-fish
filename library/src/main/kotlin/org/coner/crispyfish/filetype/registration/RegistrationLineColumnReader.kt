@@ -1,5 +1,7 @@
 package org.coner.crispyfish.filetype.registration
 
+import org.coner.crispyfish.model.RegistrationRun
+import java.util.regex.Pattern
 import kotlin.streams.toList
 
 class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
@@ -32,6 +34,27 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
     private val lastNameColumn by lazy { column(RegistrationColumns.LastName()) }
     private val carModelColumn by lazy { column(RegistrationColumns.CarModel()) }
     private val carColorColumn by lazy { column(RegistrationColumns.CarColor()) }
+    private val rawResultTime by lazy { column(RegistrationColumns.RawResultTime()) }
+    private val rawResultPosition by lazy { column(RegistrationColumns.RawResultPosition()) }
+    private val paxResultTime by lazy { column(RegistrationColumns.PaxResultTime()) }
+    private val paxResultPosition by lazy { column(RegistrationColumns.PaxResultPosition()) }
+    private val classResultTime by lazy { column(RegistrationColumns.ClassResultTime()) }
+    private val classResultPosition by lazy { column(RegistrationColumns.ClassResultPosition()) }
+    private val runTimes by lazy {
+        val timesPattern = Pattern.compile("^Run (\\d*)$")
+        headings.map { heading -> timesPattern.matcher(heading) }
+                .filter { matcher -> matcher.matches() }
+                .map { matcher -> matcher.group(1).toInt() }
+                .map { runNumber -> column(RegistrationColumns.RunTime(runNumber)) }
+
+    }
+    private val runPenalties by lazy {
+        val penaltiesPattern = Pattern.compile("^Pen (\\d*)$")
+        headings.map { heading -> penaltiesPattern.matcher(heading) }
+                .filter { matcher -> matcher.matches() }
+                .map { matcher -> matcher.group(1).toInt() }
+                .map { runNumber -> column(RegistrationColumns.RunPenalty(runNumber)) }
+    }
 
     fun readClass(index: Int): String? {
         return registrationLines[index][classColumn.index!!]
@@ -56,4 +79,47 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
     fun readCarColor(index: Int): String? {
         return registrationLines[index][carColorColumn.index!!]
     }
+
+    fun readRawResultTime(index: Int): String? {
+        return registrationLines[index][rawResultTime.index!!]
+    }
+
+    fun readRawResultPosition(index: Int): String? {
+        return registrationLines[index][rawResultPosition.index!!]
+    }
+
+    fun readPaxResultTime(index: Int): String? {
+        return registrationLines[index][paxResultTime.index!!]
+    }
+
+    fun readPaxResultPosition(index: Int): String? {
+        return registrationLines[index][paxResultPosition.index!!]
+    }
+
+    fun readClassResultTime(index: Int): String? {
+        return registrationLines[index][classResultTime.index!!]
+    }
+
+    fun readClassResultPosition(index: Int): String? {
+        return registrationLines[index][classResultPosition.index!!].let {
+            if (!it.isEmpty()) {
+                it
+            } else {
+                null
+            }
+        }
+    }
+
+    fun readRunTimes(index: Int): List<String> {
+        return runTimes.map {
+            registrationLines[index][it.index!!]
+        }
+    }
+
+    fun readRunPenalties(index: Int): List<String> {
+        return runPenalties.map {
+            registrationLines[index][it.index!!]
+        }
+    }
+
 }

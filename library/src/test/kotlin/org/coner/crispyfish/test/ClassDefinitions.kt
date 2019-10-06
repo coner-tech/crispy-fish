@@ -156,6 +156,8 @@ sealed class ClassDefinitions(val defFile: String) {
         )
     }
 
+    object Thscc2019 : ClassDefinitions("thscc/2019/class2019_thscc.def")
+
     private fun resource(relativeFilePath: String): File {
         val file = File(javaClass.getResource("/org/coner/crispyfish/test/ClassDefinitions/$relativeFilePath").toURI())
         check(file.exists()) { "test class definition file does not exist: $relativeFilePath" }

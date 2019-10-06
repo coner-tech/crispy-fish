@@ -2,8 +2,6 @@ package org.coner.crispyfish.util
 
 import org.assertj.core.api.Condition
 import org.assertj.core.condition.AllOf
-import org.assertj.core.util.Strings
-import org.coner.crispyfish.model.Registration
 import org.coner.crispyfish.model.Result
 import java.util.function.Predicate
 

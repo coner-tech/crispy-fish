@@ -509,6 +509,10 @@ class RegistrationsQueryTest {
                 hasLastName("Pallotta")
                 hasCarModel("2016 Mazda Miata")
                 hasCarColor("Grey")
+                runNumber(1) {
+                    hasTime("43.666")
+                    isDidNotFinish()
+                }
             }
             index(60).all {
                 hasCategoryAbbreviation("X")
@@ -527,6 +531,22 @@ class RegistrationsQueryTest {
                 hasLastName("Whitehead")
                 hasCarModel("2002 Honda S2000")
                 hasCarColor("Silver")
+                rawResult {
+                    hasPosition(11)
+                    hasTime("42.335")
+                }
+                paxResult {
+                    hasPosition(17)
+                    hasTime("34.841")
+                }
+                runNumber(1) {
+                    hasTime("44.134")
+                    isClean()
+                }
+                runNumber(2) {
+                    hasTime("42.838")
+                    hasConeCount(1)
+                }
             }
             index(82).all {
                 hasCategoryAbbreviation("NOV")

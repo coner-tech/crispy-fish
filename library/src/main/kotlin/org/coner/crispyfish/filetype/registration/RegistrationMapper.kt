@@ -4,6 +4,9 @@ import org.coner.crispyfish.filetype.staging.StagingLineException
 import org.coner.crispyfish.filetype.staging.StagingLineRegistration
 import org.coner.crispyfish.model.ClassDefinition
 import org.coner.crispyfish.model.Registration
+import org.coner.crispyfish.model.RegistrationResult
+import org.coner.crispyfish.model.RegistrationRun
+import java.util.regex.Pattern
 
 class RegistrationMapper(
 ) {
@@ -58,8 +61,52 @@ class RegistrationMapper(
                 ),
                 carColor = reader.readCarColor(index) ?: throw RegistrationFileException(
                         "Index $index lacks car color"
-                )
+                ),
+                rawResult = RegistrationResult(
+                        time = reader.readRawResultTime(index) ?: throw RegistrationFileException(
+                                "Index $index lacks raw result time"
+                        ),
+                        position = reader.readRawResultPosition(index)?.toInt() ?: throw RegistrationFileException(
+                                "Index $index lacks raw result position"
+                        )
+                ),
+                paxResult = RegistrationResult(
+                        time = reader.readPaxResultTime(index) ?: throw RegistrationFileException(
+                                "Index $index lacks pax result time"
+                        ),
+                        position = reader.readPaxResultPosition(index)?.toInt() ?: throw RegistrationFileException(
+                                "Index $index lacks pax result position"
+                        )
+                ),
+                classResult = RegistrationResult(
+                        time = reader.readClassResultTime(index) ?: throw RegistrationFileException(
+                                "Index $index lacks class result time"
+                        ),
+                        position = reader.readClassResultPosition(index)?.toInt()
+                ),
+                runs = reader.readRunTimes(index)
+                        .zip(reader.readRunPenalties(index))
+                        .map { (time, penalty) -> RegistrationRun(
+                                    time = time,
+                                    penalty = toPenalty(penalty)
+                            )
+                        }
         )
+    }
+
+    private fun toPenalty(penalty: String): RegistrationRun.Penalty? {
+        if (penalty.isEmpty()) {
+            return null
+        }
+        val coneMatcher = PATTERN_PENALTY_CONE.matcher(penalty)
+        return when {
+            coneMatcher.matches() -> RegistrationRun.Penalty.Cone(
+                    count = coneMatcher.group(1).toInt()
+            )
+            PATTERN_PENALTY_DID_NOT_FINISH.matcher(penalty).matches() -> RegistrationRun.Penalty.DidNotFinish
+            PATTERN_PENALTY_DISQUALIFIED.matcher(penalty).matches() -> RegistrationRun.Penalty.Disqualified
+            else -> RegistrationRun.Penalty.Unknown
+        }
     }
 
     fun toRegistration(
@@ -104,5 +151,11 @@ class RegistrationMapper(
             classing: ${stagingLineRegistration.classing}
             number: ${stagingLineRegistration.number}
         """.trimIndent())
+    }
+
+    companion object {
+        private val PATTERN_PENALTY_CONE = Pattern.compile("^(\\d*)$")
+        private val PATTERN_PENALTY_DID_NOT_FINISH = Pattern.compile("^DNF$", Pattern.CASE_INSENSITIVE)
+        private val PATTERN_PENALTY_DISQUALIFIED = Pattern.compile("^DSQ$", Pattern.CASE_INSENSITIVE)
     }
 }
