@@ -140,4 +140,45 @@ class ClassResultsQueryTest {
 
         softly.assertAll()
     }
+
+    @Test
+    fun testWithThscc2019Points8() {
+        val testEvent = Events.Thscc2019Points8Nccar
+        query = ClassResultsQuery(
+                classDefinitionFile = testEvent.classDefinitions.file,
+                eventControlFile = testEvent.eventControlFile
+        )
+
+        val classResults = query.query()
+
+        val softly = SoftAssertions()
+        softly.assertThat(classResults).hasSize(30)
+
+        val str = classResults.filter { it.key.abbreviation == "STR" }.values.single()
+        softly.assertThat(str)
+                .hasSize(8)
+                .has(driverFinished(1, "", "STR", "41"), atIndex(0))
+                .has(driverFinished(8, "", "STR", "24"), atIndex(7))
+
+        val nov = classResults.filter { it.key.abbreviation == "NOV" }.values.single()
+        softly.assertThat(nov)
+                .hasSize(35)
+                // boundaries of results with times
+                .has(driverFinished(1, "NOV", "HS", "18"), atIndex(0))
+                .has(driverFinished(28, "NOV", "GS", "024"), atIndex(27))
+                // boundaries of "DNF" results
+                .has(driverFinished(29, "NOV", "AS", "007"), atIndex(28))
+                .has(driverFinished(30, "NOV", "AS", "77"), atIndex(29))
+                // boundaries of "DNS" results
+                .has(driverFinished(31, "NOV", "CAM-C", "197"), atIndex(30))
+                .has(driverFinished(35, "NOV", "STU", "555"), atIndex(34))
+
+        val cam = classResults.filter { it.key.abbreviation == "MAC" }.values.single()
+        softly.assertThat(cam)
+                .hasSize(6)
+                .has(driverFinished(1, "MAC", "CAM-C", "72"), atIndex(0))
+                .has(driverFinished(6, "MAC", "CAM-S", "6"), atIndex(5))
+
+        softly.assertAll()
+    }
 }
