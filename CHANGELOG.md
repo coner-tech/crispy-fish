@@ -1,5 +1,12 @@
 # Changelog
 
+## Pending
+
+- Expanded Registration reading to include:
+    - Individual run times/penalties
+    - Overall raw/pax times and standings
+- Changed queries to source data cached in registration file
+
 ## 0.2.0
 
 - New queries:
