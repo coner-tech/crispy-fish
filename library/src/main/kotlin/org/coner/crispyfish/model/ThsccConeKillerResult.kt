@@ -1,6 +1,6 @@
 package org.coner.crispyfish.model
 
-class ThsccConerKillerResult(
+class ThsccConeKillerResult(
         val position: Int,
         val registration: Registration,
         val conedRuns: List<RegistrationRun>
