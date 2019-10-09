@@ -8,6 +8,7 @@ data class Registration(
         val lastName: String,
         val carModel: String,
         val carColor: String,
+        val memberNumber: String?,
         val rawResult: RegistrationResult,
         val paxResult: RegistrationResult,
         val classResult: RegistrationResult,

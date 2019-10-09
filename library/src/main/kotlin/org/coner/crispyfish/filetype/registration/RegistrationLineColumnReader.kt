@@ -34,6 +34,7 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
     private val lastNameColumn by lazy { column(RegistrationColumns.LastName()) }
     private val carModelColumn by lazy { column(RegistrationColumns.CarModel()) }
     private val carColorColumn by lazy { column(RegistrationColumns.CarColor()) }
+    private val memberNumber by lazy { column(RegistrationColumns.MemberNumber()) }
     private val rawResultTime by lazy { column(RegistrationColumns.RawResultTime()) }
     private val rawResultPosition by lazy { column(RegistrationColumns.RawResultPosition()) }
     private val paxResultTime by lazy { column(RegistrationColumns.PaxResultTime()) }
@@ -78,6 +79,10 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
 
     fun readCarColor(index: Int): String? {
         return registrationLines[index][carColorColumn.index!!]
+    }
+
+    fun readMemberNumber(index: Int): String? {
+        return registrationLines[index][memberNumber.index!!]
     }
 
     fun readRawResultTime(index: Int): String? {

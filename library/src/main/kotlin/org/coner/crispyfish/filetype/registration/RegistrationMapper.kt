@@ -62,6 +62,9 @@ class RegistrationMapper(
                 carColor = reader.readCarColor(index) ?: throw RegistrationFileException(
                         "Index $index lacks car color"
                 ),
+                memberNumber = reader.readMemberNumber(index)?.let {
+                    if (it.isEmpty()) null else it
+                },
                 rawResult = RegistrationResult(
                         time = reader.readRawResultTime(index) ?: throw RegistrationFileException(
                                 "Index $index lacks raw result time"

@@ -36,6 +36,14 @@ fun Assert<Registration>.hasCarColor(expected: String) {
     prop("carColor", Registration::carColor).isEqualTo(expected)
 }
 
+fun Assert<Registration>.hasMemberNumber(expected: String) {
+    prop("memberNumber", Registration::memberNumber).isEqualTo(expected)
+}
+
+fun Assert<Registration>.doesNotHaveMemberNumber() {
+    prop("memberNumber", Registration::memberNumber).isNull()
+}
+
 fun Assert<Registration>.rawResult(body: Assert<RegistrationResult>.() -> Unit) {
     prop("rawResult", Registration::rawResult).all(body)
 }

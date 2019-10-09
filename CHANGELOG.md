@@ -3,6 +3,7 @@
 ## Pending
 
 - Expanded Registration reading to include:
+    - Member Number
     - Individual run times/penalties
     - Overall raw/pax times and standings
 - Changed queries to source data cached in registration file

@@ -2,7 +2,6 @@ package org.coner.crispyfish.query
 
 import assertk.all
 import assertk.assertThat
-import assertk.assertions.contains
 import assertk.assertions.hasSize
 import assertk.assertions.index
 import org.coner.crispyfish.model.*
@@ -26,6 +25,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryAbbreviation("MAC")
                     hasHandicapAbbreviation("CAM-C")
                     hasNumber("63")
+                    hasMemberNumber("000355")
                 }
                 conedRuns {
                     hasSize(4)
@@ -41,6 +41,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryAbbreviation("NOV")
                     hasHandicapAbbreviation("STH")
                     hasNumber("19")
+                    hasMemberNumber("2019-00535")
                 }
                 conedRuns {
                     hasSize(3)
@@ -55,6 +56,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryAbbreviation("NOV")
                     hasHandicapAbbreviation("STR")
                     hasNumber("99")
+                    hasMemberNumber("2019-00533")
                 }
                 conedRuns {
                     hasSize(5)
@@ -72,6 +74,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryNull()
                     hasHandicapAbbreviation("AS")
                     hasNumber("91")
+                    hasMemberNumber("TBD")
                 }
                 conedRuns {
                     hasSize(4)
@@ -87,6 +90,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryNull()
                     hasHandicapAbbreviation("ASP")
                     hasNumber("11")
+                    hasMemberNumber("2019-00087")
                 }
                 conedRuns {
                     hasSize(2)
@@ -100,6 +104,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryAbbreviation("NOV")
                     hasHandicapAbbreviation("CAM-T")
                     hasNumber("9")
+                    hasMemberNumber("2019-00179")
                 }
                 conedRuns {
                     hasSize(5)
@@ -116,6 +121,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryAbbreviation("MAC")
                     hasHandicapAbbreviation("CAM-C")
                     hasNumber("23")
+                    hasMemberNumber("2204")
                 }
                 conedRuns {
                     hasSize(4)
@@ -131,6 +137,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryAbbreviation("MAC")
                     hasHandicapAbbreviation("CAM-S")
                     hasNumber("6")
+                    hasMemberNumber("2019-00248")
                 }
                 conedRuns {
                     hasSize(4)
@@ -146,6 +153,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryAbbreviation("NOV")
                     hasHandicapAbbreviation("STH")
                     hasNumber("2")
+                    hasMemberNumber("2019-00361")
                 }
                 conedRuns {
                     hasSize(3)
@@ -160,6 +168,7 @@ class ThsccConeKillerQueryTest {
                     hasCategoryNull()
                     hasHandicapAbbreviation("STR")
                     hasNumber("14")
+                    hasMemberNumber("1382")
                 }
                 conedRuns {
                     hasSize(5)
