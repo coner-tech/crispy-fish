@@ -41,6 +41,7 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
     private val paxResultPosition by lazy { column(RegistrationColumns.PaxResultPosition()) }
     private val classResultTime by lazy { column(RegistrationColumns.ClassResultTime()) }
     private val classResultPosition by lazy { column(RegistrationColumns.ClassResultPosition()) }
+    private val bestRun by lazy { column(RegistrationColumns.BestRun()) }
     private val runTimes by lazy {
         val timesPattern = Pattern.compile("^Run (\\d*)$")
         headings.map { heading -> timesPattern.matcher(heading) }
@@ -113,6 +114,10 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
                 null
             }
         }
+    }
+
+    fun readBestRun(index: Int): String? {
+        return registrationLines[index][bestRun.index!!]
     }
 
     fun readRunTimes(index: Int): List<String> {

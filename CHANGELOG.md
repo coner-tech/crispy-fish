@@ -1,6 +1,11 @@
 # Changelog
 
-## Pending
+## 0.2.2
+
+- Expanded Registration reading to include:
+    - Best Run 
+
+## 0.2.1
 
 - Expanded Registration reading to include:
     - Member Number

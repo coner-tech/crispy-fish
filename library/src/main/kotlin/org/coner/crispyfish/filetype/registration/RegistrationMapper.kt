@@ -87,6 +87,11 @@ class RegistrationMapper(
                         ),
                         position = reader.readClassResultPosition(index)?.toInt()
                 ),
+                bestRun = try {
+                    reader.readBestRun(index)?.toInt()
+                } catch (nfe: NumberFormatException) {
+                    null
+                },
                 runs = reader.readRunTimes(index)
                         .zip(reader.readRunPenalties(index))
                         .map { (time, penalty) -> RegistrationRun(

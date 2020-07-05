@@ -14,6 +14,7 @@ sealed class RegistrationColumns(val heading: String, var index: Int? = null) {
     class PaxResultPosition : RegistrationColumns("Pax Pos.")
     class ClassResultTime : RegistrationColumns("Total")
     class ClassResultPosition : RegistrationColumns("Prev. Pos.")
+    class BestRun : RegistrationColumns("Best Run")
     class RunTime(runNumber: Int) : RegistrationColumns("Run $runNumber")
     class RunPenalty(runNumber: Int) : RegistrationColumns("Pen $runNumber")
 }

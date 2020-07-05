@@ -12,5 +12,6 @@ data class Registration(
         val rawResult: RegistrationResult,
         val paxResult: RegistrationResult,
         val classResult: RegistrationResult,
+        val bestRun: Int?,
         val runs: List<RegistrationRun>
 )
