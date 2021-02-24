@@ -34,13 +34,38 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
     private val lastNameColumn by lazy { column(RegistrationColumns.LastName()) }
     private val carModelColumn by lazy { column(RegistrationColumns.CarModel()) }
     private val carColorColumn by lazy { column(RegistrationColumns.CarColor()) }
-    private val memberNumber by lazy { column(RegistrationColumns.MemberNumber()) }
+    private val gridNumberColumn by lazy { column(RegistrationColumns.GridNumber()) }
+    private val memberNumberColumn by lazy { column(RegistrationColumns.MemberNumber()) }
+    private val membershipExpiresColumn by lazy { column(RegistrationColumns.MembershipExpires()) }
+    private val dateOfBirthColumn by lazy { column(RegistrationColumns.DateOfBirth()) }
+    private val ageColumn by lazy { column(RegistrationColumns.Age()) }
+    private val registeredColumn by lazy { column(RegistrationColumns.Registered()) }
+    private val registeredCheckedInColumn by lazy { column(RegistrationColumns.RegisteredCheckedIn()) }
+    private val onlineRegistrationColumn by lazy { column(RegistrationColumns.OnlineRegistration()) }
+    private val paidColumn by lazy { column(RegistrationColumns.Paid()) }
+    private val feeTypeColumn by lazy { column(RegistrationColumns.FeeType()) }
+    private val paymentMethodColumn by lazy { column(RegistrationColumns.PaymentMethod()) }
+    private val paymentAmountColumn by lazy { column(RegistrationColumns.PaymentAmount()) }
+    private val annualTechColumn by lazy { column(RegistrationColumns.AnnualTech()) }
+    private val annualWaiverColumn by lazy { column(RegistrationColumns.AnnualWaiver()) }
+    private val rookieColumn by lazy { column(RegistrationColumns.Rookie()) }
+    private val runHeatColumn by lazy { column(RegistrationColumns.RunHeat()) }
+    private val workHeatColumn by lazy { column(RegistrationColumns.WorkHeat()) }
+    private val workAssignmentColumn by lazy { column(RegistrationColumns.WorkAssignment()) }
+    private val checkInColumn by lazy { column(RegistrationColumns.CheckIn()) }
+    private val sponsorColumn by lazy { column(RegistrationColumns.Sponsor()) }
+    private val tireBrandColumn by lazy { column(RegistrationColumns.TireBrand()) }
+    private val tireSizeColumn by lazy { column(RegistrationColumns.TireSize()) }
+    private val regionColumn by lazy { column(RegistrationColumns.Region()) }
+    private val coDriversColumn by lazy { column(RegistrationColumns.CoDrivers()) }
     private val rawResultTime by lazy { column(RegistrationColumns.RawResultTime()) }
     private val rawResultPosition by lazy { column(RegistrationColumns.RawResultPosition()) }
     private val paxResultTime by lazy { column(RegistrationColumns.PaxResultTime()) }
     private val paxResultPosition by lazy { column(RegistrationColumns.PaxResultPosition()) }
     private val classResultTime by lazy { column(RegistrationColumns.ClassResultTime()) }
     private val classResultPosition by lazy { column(RegistrationColumns.ClassResultPosition()) }
+    private val classResultDiffColumn by lazy { column(RegistrationColumns.ClassResultDiff()) }
+    private val classResultFromFirstColumn by lazy { column(RegistrationColumns.ClassResultFromFirst()) }
     private val bestRun by lazy { column(RegistrationColumns.BestRun()) }
     private val runTimes by lazy {
         val timesPattern = Pattern.compile("^Run (\\d*)$")
@@ -83,7 +108,7 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
     }
 
     fun readMemberNumber(index: Int): String? {
-        return registrationLines[index][memberNumber.index!!]
+        return registrationLines[index][memberNumberColumn.index!!]
     }
 
     fun readRawResultTime(index: Int): String? {
