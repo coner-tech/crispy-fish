@@ -1,6 +1,5 @@
 package org.coner.crispyfish.filetype.classdefinition
 
-import assertk.assert
 import assertk.assertAll
 import assertk.assertThat
 import assertk.assertions.isEqualTo

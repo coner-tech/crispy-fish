@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.3
+
+- Upgraded dependencies
+  - Kotlin 1.4
+  - JVM Target 11
+
 ## 0.2.2
 
 - Expanded Registration reading to include:

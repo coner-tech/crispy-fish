@@ -1,7 +1,6 @@
 package org.coner.crispyfish.query
 
 import assertk.all
-import assertk.assert
 import assertk.assertThat
 import assertk.assertions.containsExactly
 import assertk.assertions.hasSize
