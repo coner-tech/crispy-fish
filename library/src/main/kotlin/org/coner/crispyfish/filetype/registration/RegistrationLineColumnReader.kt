@@ -103,6 +103,10 @@ class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
         return registrationLines[index][carModelColumn.index!!]
     }
 
+    fun readGridNumber(index: Int): String? {
+        return registrationLines[index][gridNumberColumn.index!!]
+    }
+
     fun readCarColor(index: Int): String? {
         return registrationLines[index][carColorColumn.index!!]
     }
