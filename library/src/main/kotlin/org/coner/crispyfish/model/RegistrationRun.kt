@@ -1,7 +1,7 @@
 package org.coner.crispyfish.model
 
 data class RegistrationRun(
-        val time: String,
+        val time: String?,
         val penalty: Penalty?
 ) {
     sealed class Penalty {

@@ -13,7 +13,7 @@ class ClassResultsQuery(
         private val eventDay: EventDay = EventDay.ONE
 ) {
 
-    fun query(): Map<ClassDefinition, List<Result>> {
+    fun query(): Map<ClassDefinition?, List<Result>> {
         val categories = CategoriesQuery(classDefinitionFile).query()
         val handicaps = HandicapsQuery(classDefinitionFile).query()
         val registrations = RegistrationsQuery(
@@ -22,22 +22,24 @@ class ClassResultsQuery(
                 handicaps = handicaps
         ).query()
         val registrationsByResultGrouping = registrations
-                .sortedBy { it.classResult.time }
+                .sortedBy { it.classResult?.time ?: Int.MAX_VALUE.toString() }
                 .groupBy { it.classDefinitionForClassResults }
         return registrations
-                .map {
+            .mapNotNull { registration ->
+                registration.classResult?.let { classResult ->
                     Result(
-                            driver = it,
-                            position = registrationsByResultGrouping[it.classDefinitionForClassResults]!!
-                                    .indexOf(it) + 1,
-                            time = it.classResult.time
+                        driver = registration,
+                        position = registrationsByResultGrouping.getValue(registration.classDefinitionForClassResults)
+                            .indexOf(registration) + 1,
+                        time = classResult.time
                     )
                 }
-                .sortedBy { it.position }
-                .groupBy { it.driver.classDefinitionForClassResults }
+            }
+            .sortedBy { it.position }
+            .groupBy { it.driver.classDefinitionForClassResults }
     }
 
-    private val Registration.classDefinitionForClassResults: ClassDefinition
+    private val Registration.classDefinitionForClassResults: ClassDefinition?
         get() = if (category?.paxed == true) {
             category
         } else {

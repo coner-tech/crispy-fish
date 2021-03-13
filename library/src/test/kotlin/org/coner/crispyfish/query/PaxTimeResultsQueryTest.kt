@@ -22,7 +22,7 @@ class PaxTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(90)
+                .hasSize(89)
                 .has(driverFinished(1, "X", "GS", "1"), atIndex(0))
                 .has(driverFinished(2, "X", "GS", "46"), atIndex(1))
                 .has(driverFinished(3, "X", "CS", "37"), atIndex(2))
@@ -44,7 +44,6 @@ class PaxTimeResultsQueryTest {
                 .has(driverFinished(87, "", "AS", "44"), atIndex(86))
                 .has(driverFinished(88, "", "BSP", "28"), atIndex(87))
                 .has(driverFinished(89, "", "SMF", "76"), atIndex(88))
-                .has(driverFinished(90, "", "STX", "95"), atIndex(89))
         softly.assertAll()
     }
 
@@ -77,7 +76,7 @@ class PaxTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(120)
+                .hasSize(114)
                 .has(driverFinished(1, "X", "GS", "9"), atIndex(0))
                 .has(driverFinished(2, "", "HS", "24"), atIndex(1))
                 .has(driverFinished(3, "X", "GS", "19"), atIndex(2))
@@ -113,7 +112,7 @@ class PaxTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(112)
+                .hasSize(101)
                 .has(driverFinished(1, "X", "cs", "9"), atIndex(0))
                 .has(driverFinished(2, "X", "bs", "804"), atIndex(1))
                 .has(driverFinished(3, "X", "gs", "64"), atIndex(2))
@@ -149,7 +148,7 @@ class PaxTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(131)
+                .hasSize(128)
                 .has(driverFinished(1, "", "GS", "78"), atIndex(0))
                 .has(driverFinished(2, "", "HS", "24"), atIndex(1))
                 .has(driverFinished(3, "", "CS", "78"), atIndex(2))

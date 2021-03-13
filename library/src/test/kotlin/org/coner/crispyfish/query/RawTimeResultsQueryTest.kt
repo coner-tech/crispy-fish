@@ -23,7 +23,7 @@ class RawTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(90)
+                .hasSize(89)
                 .has(driverFinished(1, "", "STR", "127"), atIndex(0))
                 .has(driverFinished(2, "X", "CSP", "162"), atIndex(1))
                 .has(driverFinished(3, "X", "GS", "1"), atIndex(2))
@@ -60,7 +60,7 @@ class RawTimeResultsQueryTest {
 
         val softly = SoftAssertions()
         softly.assertThat(rawResults)
-                .hasSize(120)
+                .hasSize(114)
                 .has(driverFinished(1, "", "STR", "8"), atIndex(0))
                 .has(driverFinished(2, "", "STR", "86"), atIndex(1))
                 .has(driverFinished(3, "X", "GS", "9"), atIndex(2))

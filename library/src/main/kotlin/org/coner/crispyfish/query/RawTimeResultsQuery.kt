@@ -22,12 +22,15 @@ class RawTimeResultsQuery(
                 categories = categories,
                 handicaps = handicaps
         ).query()
-        return registrations.map {
-            Result(
-                    driver = it,
-                    position = it.rawResult.position!!,
-                    time = it.rawResult.time
-            )
+        return registrations.mapNotNull { registration ->
+            registration.rawResult?.let { rawResult ->
+                Result(
+                    driver = registration,
+                    position = rawResult.position,
+                    time = rawResult.time
+                )
+            }
+
         }.sortedBy(Result::position)
     }
 

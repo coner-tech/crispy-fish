@@ -23,14 +23,14 @@ class ClassResultsQueryTest {
         val softly = SoftAssertions()
         softly.assertThat(classResults).hasSize(22)
 
-        val str = classResults.filter { it.key.abbreviation == "STR" }.values.single()
+        val str = classResults.filter { it.key?.abbreviation == "STR" }.values.single()
         softly.assertThat(str)
                 .has(driverFinished(1, "", "STR", "127"), atIndex(0))
                 .has(driverFinished(2, "", "STR", "8"), atIndex(1))
                 .has(driverFinished(9, "", "STR", "2"), atIndex(8))
                 .has(driverFinished(10, "", "STR", "10"), atIndex(9))
 
-        val `as` = classResults.filter { it.key.abbreviation == "AS" }.values.single()
+        val `as` = classResults.filter { it.key?.abbreviation == "AS" }.values.single()
         softly.assertThat(`as`)
                 .has(driverFinished(1, "", "AS", "86"), atIndex(0))
                 .has(driverFinished(2, "", "AS", "3"), atIndex(1))
@@ -53,7 +53,7 @@ class ClassResultsQueryTest {
         val softly = SoftAssertions()
         softly.assertThat(classResults).hasSize(25)
 
-        val str = classResults.filter { it.key.abbreviation == "STR" }.values.single()
+        val str = classResults.filter { it.key?.abbreviation == "STR" }.values.single()
         softly.assertThat(str)
                 .has(driverFinished(1, "", "STR", "8"), atIndex(0))
                 .has(driverFinished(2, "", "STR", "86"), atIndex(1))
@@ -62,7 +62,7 @@ class ClassResultsQueryTest {
                 .has(driverFinished(5, "", "STR", "43"), atIndex(4))
                 .has(driverFinished(6, "", "STR", "20"), atIndex(5))
 
-        val nov = classResults.filter { it.key.abbreviation == "NOV" }.values.single()
+        val nov = classResults.filter { it.key?.abbreviation == "NOV" }.values.single()
         softly.assertThat(nov)
                 .has(driverFinished(1, "NOV", "DS", "78"), atIndex(0))
                 .has(driverFinished(2, "NOV", "STF", "18"), atIndex(1))
@@ -84,7 +84,7 @@ class ClassResultsQueryTest {
         val softly = SoftAssertions()
         softly.assertThat(classResults).hasSize(23)
 
-        val str = classResults.filter { it.key.abbreviation == "STR" }.values.single()
+        val str = classResults.filter { it.key?.abbreviation == "STR" }.values.single()
         softly.assertThat(str)
                 .hasSize(6)
                 .has(driverFinished(1, "", "STR", "8"), atIndex(0))
@@ -94,7 +94,7 @@ class ClassResultsQueryTest {
                 .has(driverFinished(5, "", "STR", "4"), atIndex(4))
                 .has(driverFinished(6, "", "STR", "32"), atIndex(5))
 
-        val nov = classResults.filter { it.key.abbreviation == "NOV" }.values.single()
+        val nov = classResults.filter { it.key?.abbreviation == "NOV" }.values.single()
         softly.assertThat(nov)
                 .hasSize(32)
                 // first place
@@ -126,13 +126,13 @@ class ClassResultsQueryTest {
         val softly = SoftAssertions()
         softly.assertThat(classResults).hasSize(29)
 
-        val str = classResults.filter { it.key.abbreviation == "STR" }.values.single()
+        val str = classResults.filter { it.key?.abbreviation == "STR" }.values.single()
         softly.assertThat(str)
                 .hasSize(6)
                 .has(driverFinished(1, "", "STR", "8"), atIndex(0))
                 .has(driverFinished(6, "", "STR", "35"), atIndex(5))
 
-        val nov = classResults.filter { it.key.abbreviation == "NOV" }.values.single()
+        val nov = classResults.filter { it.key?.abbreviation == "NOV" }.values.single()
         softly.assertThat(nov)
                 .hasSize(38)
                 .has(driverFinished(1, "NOV", "DS", "11"), atIndex(0))
@@ -154,13 +154,13 @@ class ClassResultsQueryTest {
         val softly = SoftAssertions()
         softly.assertThat(classResults).hasSize(30)
 
-        val str = classResults.filter { it.key.abbreviation == "STR" }.values.single()
+        val str = classResults.filter { it.key?.abbreviation == "STR" }.values.single()
         softly.assertThat(str)
                 .hasSize(8)
                 .has(driverFinished(1, "", "STR", "41"), atIndex(0))
                 .has(driverFinished(8, "", "STR", "24"), atIndex(7))
 
-        val nov = classResults.filter { it.key.abbreviation == "NOV" }.values.single()
+        val nov = classResults.filter { it.key?.abbreviation == "NOV" }.values.single()
         softly.assertThat(nov)
                 .hasSize(35)
                 // boundaries of results with times
@@ -173,7 +173,7 @@ class ClassResultsQueryTest {
                 .has(driverFinished(31, "NOV", "CAM-C", "197"), atIndex(30))
                 .has(driverFinished(35, "NOV", "STU", "555"), atIndex(34))
 
-        val cam = classResults.filter { it.key.abbreviation == "MAC" }.values.single()
+        val cam = classResults.filter { it.key?.abbreviation == "MAC" }.values.single()
         softly.assertThat(cam)
                 .hasSize(6)
                 .has(driverFinished(1, "MAC", "CAM-C", "72"), atIndex(0))

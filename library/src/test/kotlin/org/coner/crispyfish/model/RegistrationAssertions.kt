@@ -13,7 +13,7 @@ fun Assert<Registration>.hasCategoryAbbreviation(expected: String) {
 }
 
 fun Assert<Registration>.hasHandicapAbbreviation(expected: String) {
-    prop("handicap", Registration::handicap).hasAbbreviation(expected)
+    prop("handicap", Registration::handicap).isNotNull().hasAbbreviation(expected)
 }
 
 fun Assert<Registration>.hasNumber(expected: String) {
@@ -28,10 +28,12 @@ fun Assert<Registration>.hasLastName(expected: String) {
     prop("lastName", Registration::lastName).isEqualTo(expected)
 }
 
+fun Assert<Registration>.carModel() = prop("carModel", Registration::carModel)
 fun Assert<Registration>.hasCarModel(expected: String) {
-    prop("carModel", Registration::carModel).isEqualTo(expected)
+    carModel().isEqualTo(expected)
 }
 
+fun Assert<Registration>.carColor() = prop("carColor", Registration::carColor)
 fun Assert<Registration>.hasCarColor(expected: String) {
     prop("carColor", Registration::carColor).isEqualTo(expected)
 }
@@ -45,11 +47,11 @@ fun Assert<Registration>.doesNotHaveMemberNumber() {
 }
 
 fun Assert<Registration>.rawResult(body: Assert<RegistrationResult>.() -> Unit) {
-    prop("rawResult", Registration::rawResult).all(body)
+    prop("rawResult", Registration::rawResult).isNotNull().all(body)
 }
 
 fun Assert<Registration>.paxResult(body: Assert<RegistrationResult>.() -> Unit) {
-    prop("paxResult", Registration::paxResult).all(body)
+    prop("paxResult", Registration::paxResult).isNotNull().all(body)
 }
 
 fun Assert<Registration>.runNumber(runNumber: Int, body: Assert<RegistrationRun>.() -> Unit) {

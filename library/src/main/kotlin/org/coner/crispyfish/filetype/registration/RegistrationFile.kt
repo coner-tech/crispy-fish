@@ -5,8 +5,8 @@ import java.io.File
 class RegistrationFile(
         val file: File
 ) {
-    fun columnReader() = RegistrationLineColumnReader(this)
+    internal fun columnReader() = RegistrationLineColumnReader(this)
 
-    fun mapper() = RegistrationMapper()
+    internal fun mapper() = RegistrationMapper()
 
 }
