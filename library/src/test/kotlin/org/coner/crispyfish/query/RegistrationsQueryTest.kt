@@ -4,6 +4,7 @@ import assertk.all
 import assertk.assertThat
 import assertk.assertions.hasSize
 import assertk.assertions.index
+import assertk.assertions.isNull
 import org.coner.crispyfish.model.*
 import org.coner.crispyfish.test.Events
 import org.junit.Test
@@ -210,8 +211,8 @@ class RegistrationsQueryTest {
                 hasNumber("24")
                 hasFirstName("Rob")
                 hasLastName("Lupella")
-                hasCarModel("")
-                hasCarColor("")
+                carModel().isNull()
+                carColor().isNull()
             }
             index(36).all {
                 hasCategoryNull()
@@ -337,7 +338,7 @@ class RegistrationsQueryTest {
                 hasFirstName("Chris")
                 hasLastName("Zaionz")
                 hasCarModel("2001 Mazda Miata LS")
-                hasCarColor("")
+                carColor().isNull()
             }
         }
     }
@@ -608,7 +609,7 @@ class RegistrationsQueryTest {
                 hasFirstName("Joseph")
                 hasLastName("Zavala")
                 hasCarModel("1999 Mazda Miata")
-                hasCarColor("")
+                carColor().isNull()
             }
         }
     }

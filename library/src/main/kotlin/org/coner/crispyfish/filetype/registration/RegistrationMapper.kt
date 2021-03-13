@@ -1,5 +1,6 @@
 package org.coner.crispyfish.filetype.registration
 
+import org.coner.crispyfish.filetype.registration.RegistrationColumn.*
 import org.coner.crispyfish.filetype.staging.StagingLineException
 import org.coner.crispyfish.filetype.staging.StagingLineRegistration
 import org.coner.crispyfish.model.ClassDefinition
@@ -8,17 +9,17 @@ import org.coner.crispyfish.model.RegistrationResult
 import org.coner.crispyfish.model.RegistrationRun
 import java.util.regex.Pattern
 
-class RegistrationMapper(
+internal class RegistrationMapper(
 ) {
 
     fun toRegistration(
-            categories: List<ClassDefinition>,
-            handicaps: List<ClassDefinition>,
-            reader: RegistrationLineColumnReader,
-            index: Int
+        categories: List<ClassDefinition>,
+        handicaps: List<ClassDefinition>,
+        reader: RegistrationLineColumnReader,
+        index: Int
     ): Registration {
-        val lineClass = reader.readClass(index)?.toUpperCase()
-                ?: throw RegistrationFileException("Index $index lacks class")
+        val lineClass = reader.get(index, Class)?.toUpperCase()
+            ?: throw RegistrationFileException("Index $index lacks class")
         var handicapAbbreviation = handicaps.firstOrNull {
             it.abbreviation == lineClass
         }?.abbreviation
@@ -30,7 +31,7 @@ class RegistrationMapper(
                 Failed to resolve category and handicap for registration line.
                 index: $index
                 classing: $lineClass
-                number: ${reader.readNumber(index)}
+                number: ${reader.get(index, Number)}
             """.trimIndent()
             )
             handicapAbbreviation = lineClass.replaceFirst(category.abbreviation, "")
@@ -45,71 +46,86 @@ class RegistrationMapper(
         """.trimIndent())
 
         return Registration(
-                category = category,
-                handicap = handicap,
-                number = reader.readNumber(index) ?: throw RegistrationFileException(
-                        "Index $index lacks number"
-                ),
-                firstName = reader.readFirstName(index) ?: throw RegistrationFileException(
-                        "Index $index lacks firstName"
-                ),
-                lastName = reader.readLastName(index) ?: throw RegistrationFileException(
-                        "Index $index lacks lastName"
-                ),
-                carModel = reader.readCarModel(index) ?: throw RegistrationFileException(
-                        "Index $index lacks car model"
-                ),
-                carColor = reader.readCarColor(index) ?: throw RegistrationFileException(
-                        "Index $index lacks car color"
-                ),
-                memberNumber = reader.readMemberNumber(index)?.let {
-                    if (it.isEmpty()) null else it
-                },
-                rawResult = RegistrationResult(
-                        time = reader.readRawResultTime(index) ?: throw RegistrationFileException(
-                                "Index $index lacks raw result time"
-                        ),
-                        position = reader.readRawResultPosition(index)?.toInt() ?: throw RegistrationFileException(
-                                "Index $index lacks raw result position"
-                        )
-                ),
-                paxResult = RegistrationResult(
-                        time = reader.readPaxResultTime(index) ?: throw RegistrationFileException(
-                                "Index $index lacks pax result time"
-                        ),
-                        position = reader.readPaxResultPosition(index)?.toInt() ?: throw RegistrationFileException(
-                                "Index $index lacks pax result position"
-                        )
-                ),
-                classResult = RegistrationResult(
-                        time = reader.readClassResultTime(index) ?: throw RegistrationFileException(
-                                "Index $index lacks class result time"
-                        ),
-                        position = reader.readClassResultPosition(index)?.toInt()
-                ),
-                bestRun = try {
-                    reader.readBestRun(index)?.toInt()
-                } catch (nfe: NumberFormatException) {
-                    null
-                },
-                runs = reader.readRunTimes(index)
-                        .zip(reader.readRunPenalties(index))
-                        .map { (time, penalty) -> RegistrationRun(
-                                    time = time,
-                                    penalty = toPenalty(penalty)
-                            )
-                        }
+            category = category,
+            handicap = handicap,
+            number = reader.get(index, Number),
+            firstName = reader.get(index, FirstName),
+            lastName = reader.get(index, LastName),
+            carModel = reader.get(index, CarModel),
+            carColor = reader.get(index, CarColor),
+            sponsor = reader.get(index, Sponsor),
+            tireBrand = reader.get(index, TireBrand),
+            tireSize = reader.get(index, TireSize),
+            region = reader.get(index, Region),
+            gridNumber = reader.get(index, GridNumber),
+            memberNumber = reader.get(index, MemberNumber),
+            membershipExpires = reader.get(index, MembershipExpires),
+            dateOfBirth = reader.get(index, DateOfBirth),
+            age = reader.get(index, Age),
+            registered = reader.get(index, Registered).toBoolean(),
+            registeredCheckedIn = reader.get(index, RegisteredCheckedIn).toBoolean(),
+            checkIn = reader.get(index, CheckIn).toBoolean(),
+            onlineRegistration = reader.get(index, OnlineRegistration).toBoolean(),
+            paid = reader.get(index, Paid).toBoolean(),
+            feeType = reader.get(index, FeeType),
+            paymentMethod = reader.get(index, PaymentMethod),
+            paymentAmount = reader.get(index, PaymentAmount),
+            annualTech = reader.get(index, AnnualTech).toBoolean(),
+            annualWaiver = reader.get(index, AnnualWaiver).toBoolean(),
+            rookie = reader.get(index, Rookie).toBoolean(),
+            runHeat = reader.get(index, RunHeat)?.toIntOrNull(),
+            workHeat = reader.get(index, WorkHeat)?.toIntOrNull(),
+            workAssignment = reader.get(index, WorkAssignment),
+            rawResult = reader.get(index, RawResultTime)?.let { rawTime ->
+                RegistrationResult(
+                    time = rawTime,
+                    position = reader.get(index, RawResultPosition)?.toInt() ?: throw RegistrationFileException(
+                        "Index $index has raw time but lacks raw position"
+                    )
+                )
+            },
+            paxResult = reader.get(index, PaxResultTime)?.let { paxTime ->
+                RegistrationResult(
+                    time =  paxTime,
+                    position = reader.get(index, PaxResultPosition)?.toInt() ?: throw RegistrationFileException(
+                        "Index $index has pax time but lacks pax position"
+                    )
+                )
+            },
+            classResult = reader.get(index, ClassResultTime)?.let { classTime ->
+                RegistrationResult(
+                    time = classTime,
+                    position = reader.get(index, ClassResultPosition)?.toInt() ?: Int.MAX_VALUE
+                )
+            },
+            classResultDiff = reader.get(index, ClassResultDiff),
+            classResultFromFirst = reader.get(index, ClassResultFromFirst),
+            bestRun = try {
+                reader.get(index, BestRun)?.toInt()
+            } catch (nfe: NumberFormatException) {
+                null
+            },
+            runs = reader.runTimeColumns
+                .map { reader.get(index, it) }
+                .zip(reader.runPenaltyColumns.map { reader.get(index, it) })
+                .map { (time, penalty) -> RegistrationRun(
+                    time = time ?: "",
+                    penalty = toPenalty(penalty)
+                ) },
+            custom = reader.customColumns
+                .map { it.literalHeading to reader.get(index, it) }
+                .toMap()
         )
     }
 
-    private fun toPenalty(penalty: String): RegistrationRun.Penalty? {
-        if (penalty.isEmpty()) {
+    private fun toPenalty(penalty: String?): RegistrationRun.Penalty? {
+        if (penalty.isNullOrEmpty()) {
             return null
         }
         val coneMatcher = PATTERN_PENALTY_CONE.matcher(penalty)
         return when {
             coneMatcher.matches() -> RegistrationRun.Penalty.Cone(
-                    count = coneMatcher.group(1).toInt()
+                count = coneMatcher.group(1).toInt()
             )
             PATTERN_PENALTY_DID_NOT_FINISH.matcher(penalty).matches() -> RegistrationRun.Penalty.DidNotFinish
             PATTERN_PENALTY_DISQUALIFIED.matcher(penalty).matches() -> RegistrationRun.Penalty.Disqualified
@@ -117,11 +133,15 @@ class RegistrationMapper(
         }
     }
 
+    private fun String?.toBoolean(): Boolean {
+        return this?.startsWith('Y') == true
+    }
+
     fun toRegistration(
-            stagingLineRegistration: StagingLineRegistration,
-            registrations: List<Registration>,
-            categories: List<ClassDefinition>,
-            handicaps: List<ClassDefinition>
+        stagingLineRegistration: StagingLineRegistration,
+        registrations: List<Registration>,
+        categories: List<ClassDefinition>,
+        handicaps: List<ClassDefinition>
     ): Registration {
         if (stagingLineRegistration.classing == null) throw IllegalArgumentException()
         if (stagingLineRegistration.number == null) throw IllegalArgumentException()
@@ -152,8 +172,8 @@ class RegistrationMapper(
         )
         return registrations.firstOrNull {
             it.category == category
-            && it.handicap == handicap
-            && it.number == stagingLineRegistration.number
+                    && it.handicap == handicap
+                    && it.number == stagingLineRegistration.number
         } ?: throw StagingLineException("""
             No registration found matching staging line identity.
             classing: ${stagingLineRegistration.classing}

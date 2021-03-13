@@ -22,12 +22,14 @@ class PaxTimeResultsQuery(
                 categories = categories,
                 handicaps = handicaps
         ).query()
-        return registrations.map {
-            Result(
-                    driver = it,
-                    position = it.paxResult.position!!,
-                    time = it.paxResult.time
-            )
+        return registrations.mapNotNull { registration ->
+            registration.paxResult?.let { paxResult ->
+                Result(
+                    driver = registration,
+                    position = paxResult.position,
+                    time = paxResult.time
+                )
+            }
         }.sortedBy(Result::position)
     }
 

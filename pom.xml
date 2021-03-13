@@ -4,7 +4,7 @@
 
     <groupId>org.coner</groupId>
     <artifactId>crispy-fish</artifactId>
-    <version>0.2.3-SNAPSHOT</version>
+    <version>0.3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -12,7 +12,7 @@
     </modules>
 
     <properties>
-        <kotlin.version>1.4.30</kotlin.version>
+        <kotlin.version>1.4.31</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <apache-maven-compiler-plugin.version>3.8.0</apache-maven-compiler-plugin.version>
     </properties>

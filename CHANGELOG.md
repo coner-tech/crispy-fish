@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0 (unreleased)
+
+- Overhauled Registration handling
+  - All columns in .rgg file are now available in Registration models
+  - Most Registration model properties are now nullable
+    - Previously empty strings will now be null
+    - Improves reliability of reading registration for starting and running events
+  - Custom property map
+  - Removed `RegistrationMapper` and other internal classes from the public API
+    - Use `EventControlFile.query*()` methods to query registrations, results, etc
+  - Registrations will not have results if they lack a position, such as DNS
+
 ## 0.2.3
 
 - Upgraded dependencies

@@ -2,10 +2,11 @@ package org.coner.crispyfish.filetype.registration
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
+import org.coner.crispyfish.filetype.registration.RegistrationColumn.*
 import org.coner.crispyfish.test.Events
 import org.junit.Test
 
-class RegistrationLineColumnReaderTest {
+internal class RegistrationLineColumnReaderTest {
 
     lateinit var reader: RegistrationLineColumnReader
 
@@ -16,12 +17,12 @@ class RegistrationLineColumnReaderTest {
         reader = RegistrationLineColumnReader(registrationFile)
         val index = 103
 
-        assertThat(reader.readNumber(index)).isEqualTo("8")
-        assertThat(reader.readClass(index)).isEqualTo("str")
-        assertThat(reader.readFirstName(index)).isEqualTo("Carlton")
-        assertThat(reader.readLastName(index)).isEqualTo("Whitehead")
-        assertThat(reader.readCarModel(index)).isEqualTo("2002 Honda S2000")
-        assertThat(reader.readCarColor(index)).isEqualTo("Silver")
+        assertThat(reader.get(index, Number)).isEqualTo("8")
+        assertThat(reader.get(index, Class)).isEqualTo("str")
+        assertThat(reader.get(index, FirstName)).isEqualTo("Carlton")
+        assertThat(reader.get(index, LastName)).isEqualTo("Whitehead")
+        assertThat(reader.get(index, CarModel)).isEqualTo("2002 Honda S2000")
+        assertThat(reader.get(index, CarColor)).isEqualTo("Silver")
     }
 
 }
