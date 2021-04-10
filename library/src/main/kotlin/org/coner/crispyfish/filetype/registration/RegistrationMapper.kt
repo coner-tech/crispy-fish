@@ -109,7 +109,7 @@ internal class RegistrationMapper(
                 .map { reader.get(index, it) }
                 .zip(reader.runPenaltyColumns.map { reader.get(index, it) })
                 .map { (time, penalty) -> RegistrationRun(
-                    time = time ?: "",
+                    time = time,
                     penalty = toPenalty(penalty)
                 ) },
             custom = reader.customColumns
