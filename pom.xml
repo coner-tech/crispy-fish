@@ -53,14 +53,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>bintray-caeos-crispy-fish</id>
-            <name>caeos-crispy-fish</name>
-            <url>https://api.bintray.com/maven/caeos/crispy-fish/crispy-fish/;publish=1</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
