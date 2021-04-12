@@ -49,7 +49,9 @@
     </dependencyManagement>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:caeos/crispy-fish.git</developerConnection>
+        <connection>scm:git:git@github.com:coner-tech/crispy-fish.git</connection>
+        <developerConnection>scm:git:git@github.com:coner-tech/crispy-fish.git</developerConnection>
+        <url>https://github.com/coner-tech/crispy-fish</url>
         <tag>HEAD</tag>
     </scm>
 
