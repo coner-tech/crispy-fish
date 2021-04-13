@@ -42,9 +42,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Maven Verify
-        run: ./mvnw -P ci-cd verify
-        env:
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
+        run: ./mvnw -P ci-cd verify -Dgpg.passphrase=${{ secrets.CONER_CI_CD_PASSPHRASE }}
 
       - name: Code Coverage
         run: bash <(curl -s https://codecov.io/bash)
