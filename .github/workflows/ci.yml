@@ -31,7 +31,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
           gpg-private-key: ${{ secrets.CONER_CI_CD_PRIVATE_KEY }}
-          gpg-passphrase: CONER_CI_CD_PASSPHRASE
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: Cache Maven dependencies
         uses: actions/cache@v2
@@ -42,7 +42,9 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Maven Verify
-        run: ./mvnw -P ci-cd verify -Dgpg.passphrase="${{ secrets.CONER_CI_CD_PASSPHRASE }}"
+        run: ./mvnw -P ci-cd verify
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
 
       - name: Code Coverage
         run: bash <(curl -s https://codecov.io/bash)
