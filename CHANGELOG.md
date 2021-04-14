@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0
+
+- Migrate to Maven Central
+  - New Maven coordinates:
+    - Group ID: tech.coner.crispyfish
+    - Artifact ID: crispyfish-library
+- Package renamed from org.coner.crispyfish to tech.coner.crispyfish
+
 ## 0.3.1
 
 - RegistrationResult without time will have null instead of empty string
