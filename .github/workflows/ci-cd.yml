@@ -1,13 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI/CD
 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -30,6 +28,9 @@ jobs:
         uses: actions/setup-java@v1.4.3
         with:
           java-version: ${{ matrix.java }}
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.CONER_CI_CD_PRIVATE_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
@@ -42,8 +43,10 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Maven Verify
-        run: ./mvnw -P ci-cd verify
+        run: ./mvnw -B -P ci-cd clean deploy
         env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
 
       - name: Code Coverage
