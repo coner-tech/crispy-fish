@@ -42,6 +42,8 @@ jobs:
 
       - name: Prepare Release
         run: ./mvnw -B -P ci-cd,release release:clean release:prepare
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
 
       - name: Perform Release
         run: ./mvnw -B -P ci-cd,release release:perform
