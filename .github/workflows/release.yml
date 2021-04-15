@@ -29,7 +29,7 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: Setup SSH
-        run: echo "$CONER_CI_CD_SSH_PRIVATE_KEY" > coner_ci_cd_rsa && ssh-add coner_ci_cd_rsa
+        run: ssh-agent -s && echo "$CONER_CI_CD_SSH_PRIVATE_KEY" > coner_ci_cd_rsa && ssh-add coner_ci_cd_rsa
 
       - name: Setup Git
         run: git config --global user.name "Coner CI/CD" && git config --global user.email "ci-cd@coner.tech"
