@@ -1,12 +1,17 @@
 # Changelog
 
-## 0.4.0
+## 0.5.0
 
 - Migrate to Maven Central
   - New Maven coordinates:
     - Group ID: tech.coner.crispyfish
     - Artifact ID: crispyfish-library
 - Package renamed from org.coner.crispyfish to tech.coner.crispyfish
+
+## 0.4.x
+
+- Thrashing progress towards 0.5 series.
+- Don't use versions in 0.4.x series.
 
 ## 0.3.1
 
