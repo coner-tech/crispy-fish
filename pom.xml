@@ -149,8 +149,6 @@
                         <version>2.5.3</version>
                         <configuration>
                             <autoVersionSubmodules>true</autoVersionSubmodules>
-                            <useReleaseProfile>false</useReleaseProfile>
-                            <releaseProfiles>false</releaseProfiles>
                         </configuration>
                     </plugin>
                 </plugins>
