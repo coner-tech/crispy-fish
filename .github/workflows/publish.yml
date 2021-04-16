@@ -1,11 +1,11 @@
-name: Release
+name: Publish to Maven Central
 
 on:
   release:
     types: [created]
 
 jobs:
-  release:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Release
-        run: ./mvnw -B -P ci-cd,release deploy
+        run: ./mvnw -B -P ci-cd deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
