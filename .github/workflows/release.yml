@@ -1,7 +1,8 @@
 name: Release
 
 on:
-  workflow_dispatch:
+  release:
+    types: [created]
 
 jobs:
   release:
@@ -20,11 +21,6 @@ jobs:
           gpg-private-key: ${{ secrets.CONER_CI_CD_PRIVATE_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
-      - name: Setup Git
-        run: |
-          git config --global user.name "Coner CI/CD"
-          git config --global user.email "ci-cd@coner.tech"
-
       - name: Cache Maven dependencies
         uses: actions/cache@v2
         with:
@@ -34,7 +30,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Release
-        run: ./mvnw -B -P ci-cd,release release:clean release:prepare release:perform
+        run: ./mvnw -B -P ci-cd,release deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
