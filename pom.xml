@@ -7,6 +7,10 @@
     <version>0.5.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>Crispy Fish</name>
+    <description>Crispy Fish is a JVM library for consuming the data of a popular autocross timing application which shall not be named</description>
+    <url>https://github.com/coner-tech/crispy-fish</url>
+
     <licenses>
         <license>
             <name>gpl_v2</name>
