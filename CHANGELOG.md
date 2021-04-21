@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1
+
+- Adopt Nexus Staging Plugin
+
 ## 0.5.0
 
 - Migrate to Maven Central

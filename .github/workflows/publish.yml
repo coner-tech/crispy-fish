@@ -29,8 +29,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Release
-        run: ./mvnw -B -P ci-cd deploy
+      - name: Deploy Release
+        run: ./mvnw -B -P ci-cd clean deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
