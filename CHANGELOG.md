@@ -1,9 +1,5 @@
 # Changelog
 
-## 0.5.1
-
-- Adopt Nexus Staging Plugin
-
 ## 0.5.0
 
 - Migrate to Maven Central
@@ -11,6 +7,7 @@
     - Group ID: tech.coner.crispyfish
     - Artifact ID: crispyfish-library
 - Package renamed from org.coner.crispyfish to tech.coner.crispyfish
+- Adopt Nexus Staging Plugin
 
 ## 0.4.x
 
