@@ -8,6 +8,7 @@
     - Artifact ID: crispyfish-library
 - Package renamed from org.coner.crispyfish to tech.coner.crispyfish
 - Adopt Nexus Staging Plugin
+- Adopt Dokka
 
 ## 0.4.x
 

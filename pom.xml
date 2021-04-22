@@ -35,6 +35,7 @@
         <kotlin.version>1.4.31</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <apache-maven-compiler-plugin.version>3.8.0</apache-maven-compiler-plugin.version>
+        <dokka.version>1.4.30</dokka.version>
     </properties>
 
     <dependencyManagement>
@@ -95,17 +96,33 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <groupId>org.jetbrains.dokka</groupId>
+                <artifactId>dokka-maven-plugin</artifactId>
+                <version>${dokka.version}</version>
                 <executions>
                     <execution>
-                        <id>attach-javadocs</id>
+                        <id>dokka-javadoc-jar</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>javadocJar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>dokka</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <dokkaPlugins>
+                        <plugin>
+                            <groupId>org.jetbrains.dokka</groupId>
+                            <artifactId>kotlin-as-java-plugin</artifactId>
+                            <version>${dokka.version}</version>
+                        </plugin>
+                    </dokkaPlugins>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -114,6 +131,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <pluginRepositories>
+        <!-- https://github.com/Kotlin/kotlinx.html/issues/173  -->
+        <pluginRepository>
+            <id>kotlinx-html-jetbrains-space</id>
+            <name>kotlinx-html JetBrains Space</name>
+            <url>https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <profiles>
         <profile>
