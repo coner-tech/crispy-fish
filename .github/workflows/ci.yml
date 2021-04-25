@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ '!main' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 11
+          server-id: ossrh
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Verify
+        run: ./mvnw -B -P ci-cd clean verify
+
+      - name: Code Coverage
+        run: bash <(curl -s https://codecov.io/bash)
