@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Verify
-        run: ./mvnw -B -P ci-cd clean verify
+        run: ./mvnw -B -P ci clean verify
 
       - name: Code Coverage
         run: bash <(curl -s https://codecov.io/bash)
