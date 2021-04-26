@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.4
+
+- CD job should sign github release versions with gpg
+
 ## 0.5.3
 
 - CD job won't try to publish release versions
