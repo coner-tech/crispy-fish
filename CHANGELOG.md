@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.5
+
+- Separate deployment configurations per target
+
 ## 0.5.4
 
 - CD job should sign github release versions with gpg

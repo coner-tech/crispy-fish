@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Publish to Maven Central
-        run: ./mvnw -B -P cd deploy
+        run: ./mvnw -B -P cd,deploy-sonatype deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
@@ -44,7 +44,7 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: Publish to GitHub Packages
-        run: ./mvnw -B -P cd deploy
+        run: ./mvnw -B -P cd,deploy-github deploy
         env:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
