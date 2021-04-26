@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.1
+
+- Refine CI/CD/Release processes
+  - CI builds on main and PRs
+  - CD publishes snapshots on main
+  - Publish releases on Maven Central and GitHub Packages
+
 ## 0.5.0
 
 - Migrate to Maven Central
