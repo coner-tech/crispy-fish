@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.6
+
+- Don't duplicate the gpg configuration
+
 ## 0.5.5
 
 - Separate deployment configurations per target
