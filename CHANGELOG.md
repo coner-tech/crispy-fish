@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.3
+
+- CD job won't try to publish release versions
+
 ## 0.5.2
 
 - CD job shouldn't try to publish release versions
