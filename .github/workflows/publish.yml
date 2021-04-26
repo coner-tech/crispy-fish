@@ -1,4 +1,4 @@
-name: Publish to Maven Central
+name: Publish to Maven Central and GitHub Packages
 
 on:
   release:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup JDK for release:prepare
+      - name: Setup JDK for Maven Central
         uses: actions/setup-java@v1.4.3
         with:
           java-version: 11
@@ -29,9 +29,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Deploy Release
-        run: ./mvnw -B -P cd clean deploy
+      - name: Publish to Maven Central
+        run: ./mvnw -B -P cd deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
+
+      - name: Setup JDK for GitHub Packages
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 11
+          gpg-private-key: ${{ secrets.CONER_CI_CD_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+      - name: Publish to GitHub Packages
+        run: ./mvnw -B -P cd deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
