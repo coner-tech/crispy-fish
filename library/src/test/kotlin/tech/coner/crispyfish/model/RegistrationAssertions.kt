@@ -49,10 +49,12 @@ fun Assert<Registration>.doesNotHaveMemberNumber() {
 fun Assert<Registration>.rawResult(body: Assert<RegistrationResult>.() -> Unit) {
     prop("rawResult", Registration::rawResult).isNotNull().all(body)
 }
+fun Assert<Registration>.rawResult() = prop("rawResult", Registration::rawResult)
 
 fun Assert<Registration>.paxResult(body: Assert<RegistrationResult>.() -> Unit) {
     prop("paxResult", Registration::paxResult).isNotNull().all(body)
 }
+fun Assert<Registration>.paxResult() = prop("paxResult", Registration::paxResult)
 
 fun Assert<Registration>.runNumber(runNumber: Int, body: Assert<RegistrationRun>.() -> Unit) {
     prop("runs", Registration::runs)

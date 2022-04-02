@@ -19,12 +19,6 @@ internal class RegistrationLineColumnReader(registrationFile: RegistrationFile) 
                 .toList()
     }
 
-    private fun <C : RegistrationColumn> indexOf(column: C): Int {
-        val index = headings.indexOf(column.heading)
-        if (index < 0) throw ArrayIndexOutOfBoundsException()
-        return index
-    }
-
     private val columnIndices = mutableMapOf<RegistrationColumn, Int>()
     val runTimeColumns: List<RegistrationColumn.RunTime> by lazy {
         val timesPattern = Pattern.compile("^Run (\\d*)$")

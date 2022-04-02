@@ -75,20 +75,20 @@ internal class RegistrationMapper(
             workHeat = reader.get(index, WorkHeat)?.toIntOrNull(),
             workAssignment = reader.get(index, WorkAssignment),
             rawResult = reader.get(index, RawResultTime)?.let { rawTime ->
-                RegistrationResult(
-                    time = rawTime,
-                    position = reader.get(index, RawResultPosition)?.toInt() ?: throw RegistrationFileException(
-                        "Index $index has raw time but lacks raw position"
+                reader.get(index, RawResultPosition)?.toInt()?.let { rawPosition ->
+                    RegistrationResult(
+                        time = rawTime,
+                        position = rawPosition
                     )
-                )
+                }
             },
             paxResult = reader.get(index, PaxResultTime)?.let { paxTime ->
-                RegistrationResult(
-                    time =  paxTime,
-                    position = reader.get(index, PaxResultPosition)?.toInt() ?: throw RegistrationFileException(
-                        "Index $index has pax time but lacks pax position"
+                reader.get(index, PaxResultPosition)?.toInt()?.let { paxPosition ->
+                    RegistrationResult(
+                        time =  paxTime,
+                        position = paxPosition
                     )
-                )
+                }
             },
             classResult = reader.get(index, ClassResultTime)?.let { classTime ->
                 RegistrationResult(
