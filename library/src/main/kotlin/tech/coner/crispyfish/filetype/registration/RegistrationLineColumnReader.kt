@@ -91,11 +91,6 @@ internal class RegistrationLineColumnReader(registrationFile: RegistrationFile) 
 
     fun get(row: Int, column: RegistrationColumn): String? {
         val columnIndex: Int = columnIndices.getValue(column)
-        return registrationLines[row][columnIndex].ifEmptyNull()
+        return registrationLines[row][columnIndex].ifEmpty { null }
     }
-
-    private fun String.ifEmptyNull(): String? {
-        return if (isNotEmpty()) this else null
-    }
-
 }

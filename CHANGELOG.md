@@ -2,7 +2,9 @@
 
 ## 0.5.8
 
-- Registration query includes registrations with incoherent raw/pax results if they are present on disk
+- Registration query
+  - Includes registrations with incoherent raw/pax results if they are present on disk
+  - Includes registrations without category, handicap, or number
 
 ## 0.5.7
 

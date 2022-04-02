@@ -5,6 +5,7 @@ import tech.coner.crispyfish.model.ClassDefinition
 import tech.coner.crispyfish.model.Registration
 import tech.coner.crispyfish.model.RegistrationResult
 import tech.coner.crispyfish.model.RegistrationRun
+import java.util.*
 import java.util.regex.Pattern
 
 internal class RegistrationMapper(
@@ -16,32 +17,18 @@ internal class RegistrationMapper(
         reader: RegistrationLineColumnReader,
         index: Int
     ): Registration {
-        val lineClass = reader.get(index, Class)?.toUpperCase()
-            ?: throw RegistrationFileException("Index $index lacks class")
-        var handicapAbbreviation = handicaps.firstOrNull {
-            it.abbreviation == lineClass
-        }?.abbreviation
+        val lineClass = reader.get(index, Class)?.uppercase(Locale.getDefault())
 
-        val category = if (handicapAbbreviation == null) {
-            val category = categories.firstOrNull {
-                lineClass.startsWith(it.abbreviation)
-            } ?: throw RegistrationFileException("""
-                Failed to resolve category and handicap for registration line.
-                index: $index
-                classing: $lineClass
-                number: ${reader.get(index, Number)}
-            """.trimIndent()
-            )
-            handicapAbbreviation = lineClass.replaceFirst(category.abbreviation, "")
-            category
-        } else null
+        var handicapAbbreviation = handicaps.firstOrNull { it.abbreviation == lineClass }?.abbreviation
+        val category = if (lineClass != null && handicapAbbreviation == null) {
+            categories
+                .firstOrNull { lineClass.startsWith(it.abbreviation) }
+                ?.also { handicapAbbreviation = lineClass.replaceFirst(it.abbreviation, "") }
+        } else {
+            null
+        }
 
-        val handicap = handicaps.firstOrNull {
-            it.abbreviation == handicapAbbreviation
-        } ?: throw RegistrationFileException("""
-            No handicap found matching registration line.
-            classing: $lineClass
-        """.trimIndent())
+        val handicap = handicaps.firstOrNull { it.abbreviation == handicapAbbreviation }
 
         return Registration(
             category = category,
