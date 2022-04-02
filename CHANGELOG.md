@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.8
+
+- Registration query includes registrations with incoherent raw/pax results if they are present on disk
+
 ## 0.5.7
 
 - Query staging runs
