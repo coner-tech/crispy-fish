@@ -17,17 +17,12 @@ class RegistrationsQuery(
         val mapper = registrationFile.mapper()
         val registrations = mutableListOf<Registration>()
         for (i in reader.registrationLines.indices) {
-            try {
-                registrations += mapper.toRegistration(
-                        categories = categories,
-                        handicaps = handicaps,
-                        reader = reader,
-                        index = i
-                )
-            } catch (rfe: RegistrationFileException) {
-                rfe.printStackTrace()
-                continue
-            }
+            registrations += mapper.toRegistration(
+                categories = categories,
+                handicaps = handicaps,
+                reader = reader,
+                index = i
+            )
         }
         return registrations
     }
