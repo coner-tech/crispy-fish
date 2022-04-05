@@ -5,5 +5,6 @@ enum class PenaltyType(val shouldOmitRunFromResults: Boolean = false) {
     DID_NOT_FINISH,
     DISQUALIFIED,
     RERUN(shouldOmitRunFromResults = true),
-    CLEAN
+    CLEAN,
+    UNKNOWN(shouldOmitRunFromResults = true)
 }

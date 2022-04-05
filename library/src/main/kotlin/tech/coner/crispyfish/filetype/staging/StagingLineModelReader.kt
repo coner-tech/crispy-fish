@@ -25,43 +25,26 @@ class StagingLineModelReader<L>(
         }
     }
 
-    fun readRun(stagingFileLine: L): Run? {
+    fun readRun(stagingFileLine: L): Run {
         val raw = stagingLineReader.getRunRawTime(stagingFileLine)
         val pax = stagingLineReader.getRunPaxTime(stagingFileLine)
         val penalty = stagingLineReader.getRunPenalty(stagingFileLine)
-        try {
-            val runRawTime = stagingFileAssistant.convertStagingTimeStringToDuration(raw)
-            val runPenaltyType = stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
-            val runPaxTime = try {
-                stagingFileAssistant.convertStagingTimeStringToDuration(pax)
-            } catch (e: StagingLineException) {
-                when (runPenaltyType) {
-                    PenaltyType.CONE -> throw StagingLineException("Unable to parse pax time from coned run", e)
-                    PenaltyType.DID_NOT_FINISH,
-                    PenaltyType.DISQUALIFIED,
-                    PenaltyType.RERUN -> { /* no-op */ }
-                    PenaltyType.CLEAN -> throw StagingLineException("Unable to parse pax time from clean run", e)
+        val runPenaltyType = stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty).getOrElse { PenaltyType.UNKNOWN }
+        return Run(
+            number = stagingLineReader.getRunNumber(stagingFileLine)?.toIntOrNull(),
+            rawTime = stagingFileAssistant.convertStagingTimeStringToDuration(raw).getOrNull(),
+            paxTime = stagingFileAssistant.convertStagingTimeStringToDuration(pax).getOrNull(),
+            penaltyType = runPenaltyType,
+            cones = when {
+                runPenaltyType === PenaltyType.CONE -> {
+                    penalty
+                        ?.let { stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(it).getOrNull() }
                 }
-                null
-            }
-            val runCones = when {
-                runPenaltyType === PenaltyType.CONE -> stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(penalty!!)
-                runPenaltyType === PenaltyType.CLEAN -> 0
                 else -> null
-            }
-            return Run(
-                number = stagingLineReader.getRunNumber(stagingFileLine)?.toIntOrNull(),
-                rawTime = runRawTime,
-                paxTime = runPaxTime,
-                penaltyType = runPenaltyType,
-                cones = runCones,
-                timeScored = null,
-                timeScratchAsString = raw,
-                timeScratchAsDuration = stagingFileAssistant.convertStagingTimeStringToDuration(raw)
-            )
-        } catch (e: StagingLineException) {
-            return null
-        }
-
+            },
+            timeScored = null,
+            timeScratchAsString = raw,
+            timeScratchAsDuration = stagingFileAssistant.convertStagingTimeStringToDuration(raw).getOrNull()
+        )
     }
 }

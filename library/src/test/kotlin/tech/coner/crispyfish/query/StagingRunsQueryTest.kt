@@ -2,10 +2,13 @@ package tech.coner.crispyfish.query
 
 import assertk.all
 import assertk.assertThat
-import assertk.assertions.hasSize
+import assertk.assertions.*
 import org.junit.Test
-import tech.coner.crispyfish.model.EventDay
+import tech.coner.crispyfish.filetype.ecf.EventControlFile
+import tech.coner.crispyfish.model.*
 import tech.coner.crispyfish.test.Events
+import tech.coner.crispyfish.test.Issue42
+import kotlin.run
 
 class StagingRunsQueryTest {
 
@@ -22,6 +25,17 @@ class StagingRunsQueryTest {
 
         assertThat(actual).all {
             hasSize(456)
+            index(0).all {
+                stagingLineRegistration().isNull()
+                run().isNotNull()
+            }
         }
+    }
+
+    @Test
+    fun `It should not omit runs from lines which fail to parse correctly`() {
+        val actual = Issue42.eventControlFile.queryStagingRuns()
+
+        assertThat(actual).hasSize(8)
     }
 }

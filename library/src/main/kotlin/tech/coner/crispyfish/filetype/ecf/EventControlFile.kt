@@ -1,5 +1,6 @@
 package tech.coner.crispyfish.filetype.ecf
 
+import tech.coner.crispyfish.StagingRun
 import tech.coner.crispyfish.datatype.underscorepairs.SimpleStringUnderscorePairReader
 import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import tech.coner.crispyfish.filetype.registration.RegistrationFileLocator
@@ -60,7 +61,7 @@ class EventControlFile(
 
     fun queryStagingRuns(
         eventDay: EventDay = EventDay.ONE
-    ): List<Pair<StagingLineRegistration?, Run?>> {
+    ): List<StagingRun> {
         return StagingRunsQuery(stagingFile = stagingFile(eventDay = eventDay))
             .query()
     }

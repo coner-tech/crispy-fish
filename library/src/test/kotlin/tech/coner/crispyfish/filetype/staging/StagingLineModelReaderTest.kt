@@ -1,29 +1,44 @@
 package tech.coner.crispyfish.filetype.staging
 
-import org.assertj.core.api.Assertions.assertThat
-import tech.coner.crispyfish.model.PenaltyType
+import assertk.all
+import assertk.assertThat
+import assertk.assertions.isEqualTo
+import assertk.assertions.isNotNull
+import assertk.assertions.isNull
+import assertk.assertions.isSameAs
+import io.mockk.MockKAnnotations
+import io.mockk.every
+import io.mockk.impl.annotations.MockK
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.junit.MockitoJUnitRunner
+import tech.coner.crispyfish.model.*
 import java.time.Duration
+import kotlin.Result as KotlinResult
 
-@RunWith(MockitoJUnitRunner::class)
 class StagingLineModelReaderTest {
 
     private lateinit var stagingLineModelReader: StagingLineModelReader<String>
 
-    @Mock
-    lateinit var stagingFileAssistant: StagingFileAssistant
-    @Mock
-    lateinit var stagingLineReader: StagingLineReader<String>
+    @MockK lateinit var stagingFileAssistant: StagingFileAssistant
+    @MockK lateinit var stagingLineReader: StagingLineReader<String>
 
     private val STAGING_LINE_MOCK = "mock staging line (content not representative)"
 
     @Before
     fun setup() {
+        MockKAnnotations.init(this)
+        every { stagingLineReader.getRegisteredDriverName(any()) } returns "driverName"
+        every { stagingLineReader.getRegisteredDriverCar(any()) } returns "driverCar"
+        every { stagingLineReader.getRegisteredDriverCarColor(any()) } returns "driverCarColor"
+        every { stagingLineReader.getRegisteredDriverClass(any()) } returns "driverClassing"
+        every { stagingLineReader.getRegisteredDriverNumber(any()) } returns "driverNumber"
+        every { stagingLineReader.getRunNumber(any()) } returns "1"
+        every { stagingLineReader.getRunRawTime(any()) } returns "raw"
+        every { stagingLineReader.getRunPaxTime(any() )} returns "pax"
+        every { stagingLineReader.getRunPenalty(any()) } returns "penalty"
+        every { stagingFileAssistant.convertStagingTimeStringToDuration(any()) } returns KotlinResult.success(Duration.ZERO)
+        every { stagingFileAssistant.convertStagingTimeStringToDuration(any()) } returns KotlinResult.success(Duration.ZERO)
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(any()) } returns KotlinResult.success(PenaltyType.CLEAN)
         stagingLineModelReader = StagingLineModelReader(stagingFileAssistant, stagingLineReader)
     }
 
@@ -33,22 +48,22 @@ class StagingLineModelReaderTest {
         val driverCar = "driver car"
         val driverClassing = "DRIVER CLASSING"
         val driverNumber = "driver number"
-        `when`<String>(stagingLineReader.getRegisteredDriverName(STAGING_LINE_MOCK)).thenReturn(driverName)
-        `when`<String>(stagingLineReader.getRegisteredDriverCar(STAGING_LINE_MOCK)).thenReturn(driverCar)
-        `when`<String>(stagingLineReader.getRegisteredDriverClass(STAGING_LINE_MOCK)).thenReturn(driverClassing)
-        `when`<String>(stagingLineReader.getRegisteredDriverNumber(STAGING_LINE_MOCK)).thenReturn(driverNumber)
+        every { stagingLineReader.getRegisteredDriverName(STAGING_LINE_MOCK) } returns driverName 
+        every { stagingLineReader.getRegisteredDriverCar(STAGING_LINE_MOCK) } returns driverCar
+        every { stagingLineReader.getRegisteredDriverClass(STAGING_LINE_MOCK) } returns driverClassing
+        every { stagingLineReader.getRegisteredDriverNumber(STAGING_LINE_MOCK) } returns driverNumber
 
         val actual = stagingLineModelReader.readRegistration(STAGING_LINE_MOCK)
 
-        assertThat(actual!!).isNotNull()
-        assertThat(actual.name).isSameAs(driverName)
-        assertThat(actual.car).isSameAs(driverCar)
-        assertThat(actual.classing).isSameAs(driverClassing)
-        assertThat(actual.number).isSameAs(driverNumber)
+        assertThat(actual).isNotNull().all {
+            name().isSameAs(driverName)
+            car().isSameAs(driverCar)
+            classing().isSameAs(driverClassing)
+            number().isSameAs(driverNumber)
+        }
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenReadRunNormalClean() {
         val raw = "raw"
         val pax = "pax"
@@ -56,105 +71,105 @@ class StagingLineModelReaderTest {
         val rawTime = Duration.ofSeconds(56).plusMillis(789)
         val paxTime = Duration.ofSeconds(45).plusMillis(678)
         val penaltyType = PenaltyType.CLEAN
-        `when`<String>(stagingLineReader.getRunRawTime(STAGING_LINE_MOCK)).thenReturn(raw)
-        `when`<String>(stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK)).thenReturn(pax)
-        `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
-        `when`(stagingFileAssistant.convertStagingTimeStringToDuration(raw)).thenReturn(rawTime)
-        `when`(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenReturn(paxTime)
-        `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(penaltyType)
+        every { stagingLineReader.getRunRawTime(STAGING_LINE_MOCK) } returns raw
+        every { stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK) } returns pax
+        every { stagingLineReader.getRunPenalty(STAGING_LINE_MOCK) } returns penalty
+        every { stagingFileAssistant.convertStagingTimeStringToDuration(raw) } returns KotlinResult.success(rawTime)
+        every { stagingFileAssistant.convertStagingTimeStringToDuration(pax) } returns KotlinResult.success(paxTime)
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty) } returns KotlinResult.success(penaltyType)
 
         val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNotNull()
-        assertThat(actual?.rawTime).isSameAs(rawTime)
-        assertThat(actual?.paxTime).isSameAs(paxTime)
-        assertThat(actual?.penaltyType).isSameAs(penaltyType)
-        assertThat(actual?.cones).isEqualTo(0)
+        assertThat(actual).isNotNull().all {
+            rawTime().isSameAs(rawTime)
+            paxTime().isSameAs(paxTime)
+            penaltyType().isSameAs(penaltyType)
+            cones().isNull()
+        }
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenReadRunNormalCone() {
         val penalty = "2"
         val cones = 2
         val penaltyType = PenaltyType.CONE
-        `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
-        `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(penaltyType)
-        `when`(stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(penalty)).thenReturn(cones)
+        every { stagingLineReader.getRunPenalty(STAGING_LINE_MOCK) } returns penalty
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty) } returns KotlinResult.success(penaltyType)
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToConeCount(penalty) } returns KotlinResult.success(cones)
 
         val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNotNull()
-        assertThat(actual?.penaltyType).isSameAs(penaltyType)
-        assertThat(actual?.cones).isEqualTo(cones)
+        assertThat(actual).isNotNull().all {
+            penaltyType().isSameAs(penaltyType)
+            cones().isEqualTo(cones)
+        }
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenReadRunNormalOtherPenaltyUnknownCones() {
         val penalty = "DNF"
         val penaltyType = PenaltyType.DID_NOT_FINISH
-        `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
-        `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(penaltyType)
+        every { stagingLineReader.getRunPenalty(STAGING_LINE_MOCK) } returns penalty
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty) } returns KotlinResult.success(penaltyType)
 
         val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNotNull()
-        assertThat(actual?.penaltyType).isSameAs(penaltyType)
-        assertThat(actual?.cones).isEqualTo(null)
+        assertThat(actual).isNotNull().all {
+            penaltyType().isSameAs(penaltyType)
+            cones().isEqualTo(null)
+        }
     }
 
     @Test
-    @Throws(Exception::class)
-    fun whenReadRunConvertRawTimeThrowsItShouldReturnNull() {
+    fun whenReadRunConvertRawTimeFailsItShouldReturnRunWithoutRawTime() {
         val raw = "raw"
-        `when`<String>(stagingLineReader.getRunRawTime(STAGING_LINE_MOCK)).thenReturn(raw)
-        `when`(stagingFileAssistant.convertStagingTimeStringToDuration(raw)).thenThrow(StagingLineException::class.java)
+        every { stagingLineReader.getRunRawTime(STAGING_LINE_MOCK) } returns raw
+        every { stagingFileAssistant.convertStagingTimeStringToDuration(raw) } returns KotlinResult.failure(StagingLineException(""))
 
         val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNull()
+        assertThat(actual).rawTime().isNull()
     }
 
     @Test
-    @Throws(Exception::class)
-    fun whenReadRunConvertPaxTimeThrowsOnCleanRunItShouldReturnNull() {
+    fun whenReadRunConvertPaxTimeThrowsOnCleanRunItShouldReturnRunWithoutPaxTime() {
         val pax = "pax"
         val penalty = "penalty"
-        `when`<String>(stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK)).thenReturn(pax)
-        `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
-        `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(PenaltyType.CLEAN)
-        `when`(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenThrow(StagingLineException::class.java)
+        every { stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK) } returns pax
+        every { stagingLineReader.getRunPenalty(STAGING_LINE_MOCK) } returns penalty
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty) } returns KotlinResult.success(PenaltyType.CLEAN)
+        every { stagingFileAssistant.convertStagingTimeStringToDuration(pax) } returns KotlinResult.failure(StagingLineException(""))
 
         val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNull()
+        assertThat(actual).paxTime().isNull()
     }
 
     @Test
-    @Throws(Exception::class)
-    fun whenReadRunConvertPaxTimeThrowsOnDnfRunItShouldReturnRun() {
+    fun whenReadRunConvertPaxTimeThrowsOnDnfRunItShouldReturnRunWithout() {
         val pax = "pax"
         val penalty = "penalty"
-        `when`<String>(stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK)).thenReturn(pax)
-        `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
-        `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenReturn(PenaltyType.DID_NOT_FINISH)
-        `when`(stagingFileAssistant.convertStagingTimeStringToDuration(pax)).thenThrow(StagingLineException::class.java)
+        every { stagingLineReader.getRunPaxTime(STAGING_LINE_MOCK) } returns pax
+        every { stagingLineReader.getRunPenalty(STAGING_LINE_MOCK) } returns penalty
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty) } returns KotlinResult.success(PenaltyType.DID_NOT_FINISH)
+        every { stagingFileAssistant.convertStagingTimeStringToDuration(pax) } returns KotlinResult.failure(StagingLineException(""))
 
         val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNotNull()
+        assertThat(actual).all {
+            penaltyType().isSameAs(PenaltyType.DID_NOT_FINISH)
+            paxTime().isNull()
+        }
     }
 
     @Test
-    @Throws(Exception::class)
-    fun whenReadRunConvertPenaltyToPenaltyTypeThrowsItShouldReturnNull() {
+    fun whenReadRunConvertPenaltyToPenaltyTypeThrowsItShouldReturnRunWithUnknownPenalty() {
         val penalty = "eleventy"
-        `when`<String>(stagingLineReader.getRunPenalty(STAGING_LINE_MOCK)).thenReturn(penalty)
-        `when`(stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty)).thenThrow(StagingLineException::class.java)
+        every { stagingLineReader.getRunPenalty(STAGING_LINE_MOCK) } returns penalty
+        every { stagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty) } returns KotlinResult.failure(StagingLineException(""))
 
         val actual = stagingLineModelReader.readRun(STAGING_LINE_MOCK)
 
-        assertThat(actual).isNull()
+        assertThat(actual).penaltyType().isSameAs(PenaltyType.UNKNOWN)
     }
 }
