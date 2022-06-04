@@ -15,7 +15,7 @@ import tech.coner.crispyfish.model.*
 import java.time.Duration
 import kotlin.Result as KotlinResult
 
-class StagingLineModelReaderTest {
+class StagingRunModelReaderTest {
 
     private lateinit var stagingLineModelReader: StagingLineModelReader<String>
 
@@ -53,7 +53,7 @@ class StagingLineModelReaderTest {
         every { stagingLineReader.getRegisteredDriverClass(STAGING_LINE_MOCK) } returns driverClassing
         every { stagingLineReader.getRegisteredDriverNumber(STAGING_LINE_MOCK) } returns driverNumber
 
-        val actual = stagingLineModelReader.readRegistration(STAGING_LINE_MOCK)
+        val actual = stagingLineModelReader.readStagingLineRegistration(STAGING_LINE_MOCK)
 
         assertThat(actual).isNotNull().all {
             name().isSameAs(driverName)

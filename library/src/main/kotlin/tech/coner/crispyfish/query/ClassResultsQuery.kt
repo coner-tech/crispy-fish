@@ -40,9 +40,13 @@ class ClassResultsQuery(
     }
 
     private val Registration.classDefinitionForClassResults: ClassDefinition?
-        get() = if (category?.paxed == true) {
-            category
-        } else {
-            handicap
+        get() {
+            val classing = signage.classing
+            val category = classing?.category
+            return if (category?.paxed == true) {
+                category
+            } else {
+                classing?.handicap
+            }
         }
 }

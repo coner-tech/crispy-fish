@@ -11,7 +11,7 @@ import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class SimpleStringStagingLineReaderTest {
+class SimpleStringStagingRunReaderTest {
 
     private lateinit var simpleStringStagingLineReader: SimpleStringStagingLineReader
 

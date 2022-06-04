@@ -4,6 +4,8 @@ import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import tech.coner.crispyfish.filetype.registration.RegistrationFileException
 import tech.coner.crispyfish.model.ClassDefinition
 import tech.coner.crispyfish.model.Registration
+import tech.coner.crispyfish.model.Signage
+import java.util.SortedMap
 
 class RegistrationsQuery(
         private val eventControlFile: EventControlFile,

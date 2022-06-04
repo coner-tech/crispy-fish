@@ -1,6 +1,5 @@
 package tech.coner.crispyfish.filetype.ecf
 
-import tech.coner.crispyfish.StagingRun
 import tech.coner.crispyfish.datatype.underscorepairs.SimpleStringUnderscorePairReader
 import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import tech.coner.crispyfish.filetype.registration.RegistrationFileLocator
@@ -8,10 +7,11 @@ import tech.coner.crispyfish.filetype.staging.SimpleStringStagingLineReader
 import tech.coner.crispyfish.filetype.staging.StagingFile
 import tech.coner.crispyfish.filetype.staging.StagingFileAssistant
 import tech.coner.crispyfish.filetype.staging.StagingFileLocator
+import tech.coner.crispyfish.mapper.StagingRunMapper
 import tech.coner.crispyfish.model.ClassDefinition
 import tech.coner.crispyfish.model.EventDay
-import tech.coner.crispyfish.model.Run
-import tech.coner.crispyfish.model.StagingLineRegistration
+import tech.coner.crispyfish.model.Registration
+import tech.coner.crispyfish.model.StagingRun
 import tech.coner.crispyfish.query.CategoriesQuery
 import tech.coner.crispyfish.query.HandicapsQuery
 import tech.coner.crispyfish.query.RegistrationsQuery
@@ -60,9 +60,17 @@ class EventControlFile(
     ).query()
 
     fun queryStagingRuns(
-        eventDay: EventDay = EventDay.ONE
+        eventDay: EventDay = EventDay.ONE,
+        registrations: List<Registration>
     ): List<StagingRun> {
-        return StagingRunsQuery(stagingFile = stagingFile(eventDay = eventDay))
+        val stagingFile = stagingFile(eventDay = eventDay)
+        return StagingRunsQuery(
+            stagingFile = stagingFile,
+            stagingRunMapper = StagingRunMapper(
+                stagingFile = stagingFile,
+                registrations = registrations,
+            )
+        )
             .query()
     }
 
