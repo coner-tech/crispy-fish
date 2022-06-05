@@ -2,10 +2,7 @@ package tech.coner.crispyfish.query
 
 import assertk.all
 import assertk.assertThat
-import assertk.assertions.hasSize
-import assertk.assertions.index
-import assertk.assertions.isNotNull
-import assertk.assertions.isNull
+import assertk.assertions.*
 import tech.coner.crispyfish.model.*
 import tech.coner.crispyfish.test.Events
 import org.junit.Test
@@ -625,12 +622,7 @@ class RegistrationsQueryTest {
      */
     @Test
     fun `It should query all registrations even those having raw time but lacking raw position`() {
-        val actual = RegistrationsQuery(
-            eventControlFile = Issue42.eventControlFile,
-            categories = CategoriesQuery(Issue42.classDefinitionFile).query(),
-            handicaps = HandicapsQuery(Issue42.classDefinitionFile).query()
-        )
-            .query()
+        val actual = Issue42.eventControlFile.queryRegistrations()
 
         assertThat(actual).all {
             hasSize(3)

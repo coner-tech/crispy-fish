@@ -1,6 +1,5 @@
 package tech.coner.crispyfish.query
 
-import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import tech.coner.crispyfish.model.ClassDefinition
 import tech.coner.crispyfish.model.EventDay
@@ -8,19 +7,12 @@ import tech.coner.crispyfish.model.Registration
 import tech.coner.crispyfish.model.Result
 
 class ClassResultsQuery(
-        private val classDefinitionFile: ClassDefinitionFile,
-        private val eventControlFile: EventControlFile,
-        private val eventDay: EventDay = EventDay.ONE
+    private val eventControlFile: EventControlFile,
+    private val eventDay: EventDay = EventDay.ONE
 ) {
 
     fun query(): Map<ClassDefinition?, List<Result>> {
-        val categories = CategoriesQuery(classDefinitionFile).query()
-        val handicaps = HandicapsQuery(classDefinitionFile).query()
-        val registrations = RegistrationsQuery(
-                eventControlFile = eventControlFile,
-                categories = categories,
-                handicaps = handicaps
-        ).query()
+        val registrations = eventControlFile.queryRegistrations()
         val registrationsByResultGrouping = registrations
                 .sortedBy { it.classResult?.time ?: Int.MAX_VALUE.toString() }
                 .groupBy { it.classDefinitionForClassResults }

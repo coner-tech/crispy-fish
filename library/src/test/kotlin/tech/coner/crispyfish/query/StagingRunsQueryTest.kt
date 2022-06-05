@@ -4,29 +4,20 @@ import assertk.all
 import assertk.assertThat
 import assertk.assertions.*
 import org.junit.Test
-import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import tech.coner.crispyfish.model.*
 import tech.coner.crispyfish.test.Events
 import tech.coner.crispyfish.test.Issue42
-import kotlin.run
 
 class StagingRunsQueryTest {
 
-    lateinit var query: StagingRunsQuery
-
     @Test
     fun testWithThscc2016Points1() {
-        val testEvent = Events.Thscc2016Points1Danville
-        query = StagingRunsQuery(
-            stagingFile = testEvent.eventControlFile.stagingFile(eventDay = EventDay.ONE)
-        )
-
-        val actual = query.query()
+        val actual = Events.Thscc2016Points1Danville.eventControlFile.queryStagingRuns(eventDay = EventDay.ONE)
 
         assertThat(actual).all {
             hasSize(456)
             index(0).all {
-                stagingLineRegistration().isNull()
+                stagingRegistration().isNull()
                 run().isNotNull()
             }
         }

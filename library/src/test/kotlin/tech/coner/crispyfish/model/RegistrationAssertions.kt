@@ -4,20 +4,26 @@ import assertk.Assert
 import assertk.all
 import assertk.assertions.*
 
+fun Assert<Registration>.signage() = prop(Registration::signage)
+// Signage conveniences
 fun Assert<Registration>.hasCategoryNull() {
-    prop("category", Registration::category).isNull()
+    signage().isNotNull()
+        .classing().isNotNull()
+        .category().isNull()
 }
-
 fun Assert<Registration>.hasCategoryAbbreviation(expected: String) {
-    prop("category", Registration::category).isNotNull().hasAbbreviation(expected)
+    signage().isNotNull()
+        .classing().isNotNull()
+        .category().hasAbbreviation(expected)
 }
-
 fun Assert<Registration>.hasHandicapAbbreviation(expected: String) {
-    prop("handicap", Registration::handicap).isNotNull().hasAbbreviation(expected)
+    signage().isNotNull()
+        .classing().isNotNull()
+        .handicap().hasAbbreviation(expected)
 }
-
 fun Assert<Registration>.hasNumber(expected: String) {
-    prop("number", Registration::number).isEqualTo(expected)
+    signage().isNotNull()
+        .number().isEqualTo(expected)
 }
 
 fun Assert<Registration>.hasFirstName(expected: String) {

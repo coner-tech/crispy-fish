@@ -15,8 +15,7 @@ class RawTimeResultsQueryTest {
     fun testWithThscc2016Points1() {
         val testEvent = Events.Thscc2016Points1Danville
         rawTimeResultsQuery = RawTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = rawTimeResultsQuery.query()
@@ -52,8 +51,7 @@ class RawTimeResultsQueryTest {
     fun testWithThscc2016Points2() {
         val testEvent = Events.Thscc2016Points2Cary
         rawTimeResultsQuery = RawTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = rawTimeResultsQuery.query()
@@ -88,8 +86,7 @@ class RawTimeResultsQueryTest {
     fun testWithThscc2016Points3() {
         val testEvent = Events.Thscc2016Points3Danville
         rawTimeResultsQuery = RawTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = rawTimeResultsQuery.query()
@@ -124,8 +121,7 @@ class RawTimeResultsQueryTest {
     fun testWithThscc2016Points9() {
         val testEvent = Events.Thscc2016Points9Cary
         rawTimeResultsQuery = RawTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = rawTimeResultsQuery.query()
@@ -161,8 +157,7 @@ class RawTimeResultsQueryTest {
     fun testIssue23IsFixed() {
         val testEvent = Events.Thscc2016Points9Cary
         rawTimeResultsQuery = RawTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = rawTimeResultsQuery.query()

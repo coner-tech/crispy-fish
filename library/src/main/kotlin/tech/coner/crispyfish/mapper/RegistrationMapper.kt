@@ -1,7 +1,6 @@
 package tech.coner.crispyfish.mapper
 
 import tech.coner.crispyfish.filetype.registration.RegistrationColumn.*
-import tech.coner.crispyfish.filetype.registration.RegistrationColumn.Number
 import tech.coner.crispyfish.filetype.registration.RegistrationLineColumnReader
 import tech.coner.crispyfish.model.Registration
 import tech.coner.crispyfish.model.RegistrationResult
@@ -11,13 +10,11 @@ import java.util.*
 import java.util.regex.Pattern
 
 internal class RegistrationMapper(
-    private val classingMapper: ClassingMapper
+    private val classingMapper: ClassingMapper,
+    private val reader: RegistrationLineColumnReader
 ) {
 
-    fun toRegistration(
-        reader: RegistrationLineColumnReader,
-        index: Int
-    ): Registration {
+    fun toRegistration(index: Int): Registration {
         val lineClass = reader.get(index, Class)?.uppercase(Locale.getDefault())
         val classing = classingMapper.toClassing(
             compositeClassField = lineClass
