@@ -75,6 +75,8 @@ class EventControlFile(
 
     fun queryStagingRuns(
         eventDay: EventDay = EventDay.ONE,
+        categories: List<ClassDefinition> = queryCategories(),
+        handicaps: List<ClassDefinition> = queryHandicaps(),
         registrations: List<Registration> = queryRegistrations()
     ): List<StagingRun> {
         val stagingFile = stagingFile(eventDay = eventDay)
@@ -84,6 +86,10 @@ class EventControlFile(
                 assistant = stagingFileAssistant,
                 reader = SimpleStringStagingLineReader(
                     underscorePairReader = SimpleStringUnderscorePairReader()
+                ),
+                classingMapper = ClassingMapper(
+                    categories = categories,
+                    handicaps = handicaps
                 ),
                 registrations = registrations,
             )

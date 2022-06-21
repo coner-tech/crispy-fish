@@ -7,6 +7,7 @@ import tech.coner.crispyfish.model.*
 internal class StagingRunMapper(
     private val assistant: StagingFileAssistant,
     private val reader: StagingLineReader<String>,
+    private val classingMapper: ClassingMapper,
     registrations: List<Registration>,
 ) {
 
@@ -26,6 +27,10 @@ internal class StagingRunMapper(
         val driverNumber = reader.getRegisteredDriverNumber(stagingLine)
         return if (driverClass != null || driverNumber != null) {
             StagingRegistration(
+                signage = Signage(
+                    classing = classingMapper.toClassing(driverClass),
+                    number = driverNumber
+                ),
                 classing = driverClass,
                 number = driverNumber,
                 name = reader.getRegisteredDriverName(stagingLine),
