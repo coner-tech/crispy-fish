@@ -14,8 +14,7 @@ class PaxTimeResultsQueryTest {
     fun testWithThscc2016Points1() {
         val testEvent = Events.Thscc2016Points1Danville
         paxTimeResultsQuery = PaxTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = paxTimeResultsQuery.query()
@@ -51,8 +50,7 @@ class PaxTimeResultsQueryTest {
     fun testIssue25IsFixed() {
         val testEvent = Events.Thscc2016Points1Danville
         paxTimeResultsQuery = PaxTimeResultsQuery(
-                eventControlFile = testEvent.eventControlFile,
-                classDefinitionFile = testEvent.classDefinitions.file
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = paxTimeResultsQuery.query()
@@ -68,8 +66,7 @@ class PaxTimeResultsQueryTest {
     fun testWithThscc2016Points2() {
         val testEvent = Events.Thscc2016Points2Cary
         paxTimeResultsQuery = PaxTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = paxTimeResultsQuery.query()
@@ -104,8 +101,7 @@ class PaxTimeResultsQueryTest {
     fun testWithThscc2016Points3() {
         val testEvent = Events.Thscc2016Points3Danville
         paxTimeResultsQuery = PaxTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = paxTimeResultsQuery.query()
@@ -140,8 +136,7 @@ class PaxTimeResultsQueryTest {
     fun testWithThscc2016Points9() {
         val testEvent = Events.Thscc2016Points9Cary
         paxTimeResultsQuery = PaxTimeResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val rawResults = paxTimeResultsQuery.query()

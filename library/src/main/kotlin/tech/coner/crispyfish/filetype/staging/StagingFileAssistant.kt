@@ -16,8 +16,8 @@ class StagingFileAssistant {
         }
         val originalFileBaseName = getOriginalFileBaseName(eventControlFile)
         return StagingFilenameFilter(
-                originalFileBaseName,
-                originalFilePattern
+            originalFileBaseName,
+            originalFilePattern
         )
     }
 
@@ -26,44 +26,44 @@ class StagingFileAssistant {
     }
 
     @Throws(StagingLineException::class)
-    fun convertStagingTimeStringToDuration(stagingTime: String?): Duration {
-        try {
-            return Duration.parse("PT${stagingTime}S")
+    fun convertStagingTimeStringToDuration(stagingTime: String?): Result<Duration> {
+        return try {
+            Result.success(Duration.parse("PT${stagingTime}S"))
         } catch (e: DateTimeParseException) {
-            throw StagingLineException(
-                    "Staging time $stagingTime cannot be parsed to Duration",
-                    e
+            Result.failure(
+                StagingLineException("Staging time $stagingTime cannot be parsed to Duration", e)
             )
         }
 
     }
 
-    @Throws(StagingLineException::class)
-    fun convertStagingRunPenaltyStringToPenaltyType(penalty: String?): PenaltyType {
-        if (penalty?.isNotEmpty() == true) {
-            when (penalty.toUpperCase()) {
-                "DNF" -> return PenaltyType.DID_NOT_FINISH
-                "DSQ" -> return PenaltyType.DISQUALIFIED
-                "RRN" -> return PenaltyType.RERUN
+    fun convertStagingRunPenaltyStringToPenaltyType(penalty: String?): Result<PenaltyType> {
+        return Result.success(
+            if (penalty?.isNotEmpty() == true) {
+                when (penalty.toUpperCase()) {
+                    "DNF" -> PenaltyType.DID_NOT_FINISH
+                    "DSQ" -> PenaltyType.DISQUALIFIED
+                    "RRN" -> PenaltyType.RERUN
+                    else -> convertStagingRunPenaltyStringToConeCount(penalty)
+                        .map { PenaltyType.CONE }
+                        .getOrElse { PenaltyType.UNKNOWN }
+                }
+            } else {
+                PenaltyType.CLEAN
             }
-            val cones = convertStagingRunPenaltyStringToConeCount(penalty)
-            if (cones > 0) {
-                return PenaltyType.CONE
-            }
-        }
-        return PenaltyType.CLEAN
+        )
     }
 
-    @Throws(StagingLineException::class)
-    fun convertStagingRunPenaltyStringToConeCount(penalty: String): Int {
-        try {
-            return Integer.parseUnsignedInt(penalty)
+    fun convertStagingRunPenaltyStringToConeCount(penalty: String): Result<Int> {
+        return try {
+            Result.success(Integer.parseUnsignedInt(penalty))
         } catch (e: NumberFormatException) {
-            throw StagingLineException(
+            Result.failure(
+                StagingLineException(
                     "Unable to convert staging penalty cones $penalty to cone count",
                     e
+                )
             )
         }
-
     }
 }

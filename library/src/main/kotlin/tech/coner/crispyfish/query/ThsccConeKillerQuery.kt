@@ -1,23 +1,18 @@
 package tech.coner.crispyfish.query
 
-import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import tech.coner.crispyfish.filetype.ecf.EventControlFile
-import tech.coner.crispyfish.model.*
+import tech.coner.crispyfish.model.EventDay
+import tech.coner.crispyfish.model.Registration
+import tech.coner.crispyfish.model.RegistrationRun
+import tech.coner.crispyfish.model.ThsccConeKillerResult
 
 class ThsccConeKillerQuery(
-        private val classDefinitionFile: ClassDefinitionFile,
-        private val eventControlFile: EventControlFile,
-        private val eventDay: EventDay = EventDay.ONE
+    private val eventControlFile: EventControlFile,
+    private val eventDay: EventDay = EventDay.ONE
 ) {
 
     fun query(): List<ThsccConeKillerResult> {
-        val categories = CategoriesQuery(classDefinitionFile).query()
-        val handicaps = HandicapsQuery(classDefinitionFile).query()
-        val registrations = RegistrationsQuery(
-                eventControlFile = eventControlFile,
-                categories = categories,
-                handicaps = handicaps
-        ).query()
+        val registrations = eventControlFile.queryRegistrations()
         val registrationsAndConedRuns = registrations
                 .map { registration ->
                     registration to registration.runs.filter { run ->

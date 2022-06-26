@@ -1,39 +1,31 @@
-package tech.coner.crispyfish.filetype.registration
+package tech.coner.crispyfish.mapper
 
 import tech.coner.crispyfish.filetype.registration.RegistrationColumn.*
-import tech.coner.crispyfish.model.ClassDefinition
+import tech.coner.crispyfish.filetype.registration.RegistrationLineColumnReader
 import tech.coner.crispyfish.model.Registration
 import tech.coner.crispyfish.model.RegistrationResult
 import tech.coner.crispyfish.model.RegistrationRun
+import tech.coner.crispyfish.model.Signage
 import java.util.*
 import java.util.regex.Pattern
 
 internal class RegistrationMapper(
+    private val classingMapper: ClassingMapper,
+    private val reader: RegistrationLineColumnReader
 ) {
 
-    fun toRegistration(
-        categories: List<ClassDefinition>,
-        handicaps: List<ClassDefinition>,
-        reader: RegistrationLineColumnReader,
-        index: Int
-    ): Registration {
+    fun toRegistration(index: Int): Registration {
         val lineClass = reader.get(index, Class)?.uppercase(Locale.getDefault())
-
-        var handicapAbbreviation = handicaps.firstOrNull { it.abbreviation == lineClass }?.abbreviation
-        val category = if (lineClass != null && handicapAbbreviation == null) {
-            categories
-                .firstOrNull { lineClass.startsWith(it.abbreviation) }
-                ?.also { handicapAbbreviation = lineClass.replaceFirst(it.abbreviation, "") }
-        } else {
-            null
-        }
-
-        val handicap = handicaps.firstOrNull { it.abbreviation == handicapAbbreviation }
+        val classing = classingMapper.toClassing(
+            compositeClassField = lineClass
+        )
 
         return Registration(
-            category = category,
-            handicap = handicap,
-            number = reader.get(index, Number),
+            index = index,
+            signage = Signage(
+                classing = classing,
+                number = reader.get(index, Number)
+            ),
             firstName = reader.get(index, FirstName),
             lastName = reader.get(index, LastName),
             carModel = reader.get(index, CarModel),

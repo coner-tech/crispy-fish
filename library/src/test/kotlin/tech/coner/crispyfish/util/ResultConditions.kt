@@ -15,9 +15,9 @@ object ResultConditions {
 
     fun driverNumbersEqual(category: String?, handicap: String, number: String) = Condition<Result>(
             Predicate { result ->
-                (result.driver?.category?.abbreviation ?: "").equals(category, ignoreCase = true)
-                && result.driver?.handicap?.abbreviation.equals(handicap, ignoreCase = true)
-                && result.driver?.number == number
+                (result.driver.signage.classing?.category?.abbreviation ?: "").equals(category, ignoreCase = true)
+                && result.driver.signage.classing?.handicap?.abbreviation.equals(handicap, ignoreCase = true)
+                && result.driver.signage.number == number
             },
             "result.driver == %s",
             "${category ?: ""}$handicap $number"
@@ -25,8 +25,8 @@ object ResultConditions {
 
     fun driverNameNotNullOrEmpty(): Condition<Result> {
         return Condition(Predicate{ result ->
-            !result.driver?.firstName.isNullOrBlank()
-            && !result.driver?.lastName.isNullOrBlank()
+            !result.driver.firstName.isNullOrBlank()
+            && !result.driver.lastName.isNullOrBlank()
         }, "result.driver first and last last names are not null or blank")
     }
 

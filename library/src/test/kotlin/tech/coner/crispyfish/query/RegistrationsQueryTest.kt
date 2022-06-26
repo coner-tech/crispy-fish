@@ -2,12 +2,14 @@ package tech.coner.crispyfish.query
 
 import assertk.all
 import assertk.assertThat
-import assertk.assertions.hasSize
-import assertk.assertions.index
-import assertk.assertions.isNull
+import assertk.assertions.*
 import tech.coner.crispyfish.model.*
 import tech.coner.crispyfish.test.Events
 import org.junit.Test
+import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
+import tech.coner.crispyfish.filetype.ecf.EventControlFile
+import tech.coner.crispyfish.test.Issue42
+import java.io.File
 
 class RegistrationsQueryTest {
 
@@ -610,6 +612,31 @@ class RegistrationsQueryTest {
                 hasLastName("Zavala")
                 hasCarModel("1999 Mazda Miata")
                 carColor().isNull()
+            }
+        }
+    }
+
+    /**
+     * https://github.com/coner-tech/crispy-fish/issues/42
+     * https://github.com/coner-tech/coner-trailer/issues/64
+     */
+    @Test
+    fun `It should query all registrations even those having raw time but lacking raw position`() {
+        val actual = Issue42.eventControlFile.queryRegistrations()
+
+        assertThat(actual).all {
+            hasSize(3)
+            index(0).all {
+                rawResult().isNull()
+                paxResult().isNull()
+            }
+            index(1).all {
+                rawResult().isNotNull()
+                paxResult().isNotNull()
+            }
+            index(2).all {
+                rawResult().isNull()
+                paxResult().isNull()
             }
         }
     }

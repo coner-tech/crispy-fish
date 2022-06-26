@@ -14,8 +14,7 @@ class ClassResultsQueryTest {
     fun testWithThscc2016Points1() {
         val testEvent = Events.Thscc2016Points1Danville
         query = ClassResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val classResults = query.query()
@@ -44,8 +43,7 @@ class ClassResultsQueryTest {
     fun testWithThscc2016Points2() {
         val testEvent = Events.Thscc2016Points2Cary
         query = ClassResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val classResults = query.query()
@@ -75,8 +73,7 @@ class ClassResultsQueryTest {
     fun testWithThscc2016Points3() {
         val testEvent = Events.Thscc2016Points3Danville
         query = ClassResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val classResults = query.query()
@@ -117,8 +114,7 @@ class ClassResultsQueryTest {
     fun testWithThscc2016Points9() {
         val testEvent = Events.Thscc2016Points9Cary
         query = ClassResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val classResults = query.query()
@@ -145,8 +141,7 @@ class ClassResultsQueryTest {
     fun testWithThscc2019Points8() {
         val testEvent = Events.Thscc2019Points8Nccar
         query = ClassResultsQuery(
-                classDefinitionFile = testEvent.classDefinitions.file,
-                eventControlFile = testEvent.eventControlFile
+            eventControlFile = testEvent.eventControlFile
         )
 
         val classResults = query.query()

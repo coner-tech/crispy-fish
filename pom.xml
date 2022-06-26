@@ -5,7 +5,7 @@
 
     <groupId>tech.coner.crispyfish</groupId>
     <artifactId>crispyfish</artifactId>
-    <version>0.5.8-SNAPSHOT</version>
+    <version>0.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Crispy Fish</name>

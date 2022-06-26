@@ -14,8 +14,7 @@ class ThsccConeKillerQueryTest {
     fun itShouldQueryThscc2019Points8ConeKiller() {
         val event = Events.Thscc2019Points8Nccar
         val actual = ThsccConeKillerQuery(
-                classDefinitionFile = event.classDefinitions.file,
-                eventControlFile = event.eventControlFile
+            eventControlFile = event.eventControlFile
         ).query()
 
         assertThat(actual).all {

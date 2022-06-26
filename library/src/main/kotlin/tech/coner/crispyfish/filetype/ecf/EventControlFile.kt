@@ -3,14 +3,18 @@ package tech.coner.crispyfish.filetype.ecf
 import tech.coner.crispyfish.datatype.underscorepairs.SimpleStringUnderscorePairReader
 import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import tech.coner.crispyfish.filetype.registration.RegistrationFileLocator
+import tech.coner.crispyfish.filetype.registration.RegistrationLineColumnReader
 import tech.coner.crispyfish.filetype.staging.SimpleStringStagingLineReader
 import tech.coner.crispyfish.filetype.staging.StagingFile
 import tech.coner.crispyfish.filetype.staging.StagingFileAssistant
 import tech.coner.crispyfish.filetype.staging.StagingFileLocator
+import tech.coner.crispyfish.mapper.ClassingMapper
+import tech.coner.crispyfish.mapper.RegistrationMapper
+import tech.coner.crispyfish.mapper.StagingRunMapper
 import tech.coner.crispyfish.model.ClassDefinition
 import tech.coner.crispyfish.model.EventDay
-import tech.coner.crispyfish.model.Run
-import tech.coner.crispyfish.model.StagingLineRegistration
+import tech.coner.crispyfish.model.Registration
+import tech.coner.crispyfish.model.StagingRun
 import tech.coner.crispyfish.query.CategoriesQuery
 import tech.coner.crispyfish.query.HandicapsQuery
 import tech.coner.crispyfish.query.RegistrationsQuery
@@ -50,18 +54,46 @@ class EventControlFile(
     fun queryHandicaps() = HandicapsQuery(classDefinitionFile).query()
 
     fun queryRegistrations(
-        categories: List<ClassDefinition>? = null,
-        handicaps: List<ClassDefinition>? = null
-    ) = RegistrationsQuery(
-            eventControlFile = this,
-            categories = categories ?: queryCategories(),
-            handicaps = handicaps ?: queryHandicaps()
-    ).query()
+        categories: List<ClassDefinition> = queryCategories(),
+        handicaps: List<ClassDefinition> = queryHandicaps()
+    ): List<Registration> {
+        val reader = RegistrationLineColumnReader(registrationFile())
+        return RegistrationsQuery(
+            reader = reader,
+            mapper = RegistrationMapper(
+                classingMapper = ClassingMapper(
+                    categories = categories,
+                    handicaps = handicaps
+                ),
+                reader = reader
+            ),
+            categories = categories,
+            handicaps = handicaps
+        )
+            .query()
+    }
 
     fun queryStagingRuns(
-        eventDay: EventDay = EventDay.ONE
-    ): List<Pair<StagingLineRegistration?, Run?>> {
-        return StagingRunsQuery(stagingFile = stagingFile(eventDay = eventDay))
+        eventDay: EventDay = EventDay.ONE,
+        categories: List<ClassDefinition> = queryCategories(),
+        handicaps: List<ClassDefinition> = queryHandicaps(),
+        registrations: List<Registration> = queryRegistrations()
+    ): List<StagingRun> {
+        val stagingFile = stagingFile(eventDay = eventDay)
+        return StagingRunsQuery(
+            stagingFile = stagingFile,
+            stagingRunMapper = StagingRunMapper(
+                assistant = stagingFileAssistant,
+                reader = SimpleStringStagingLineReader(
+                    underscorePairReader = SimpleStringUnderscorePairReader()
+                ),
+                classingMapper = ClassingMapper(
+                    categories = categories,
+                    handicaps = handicaps
+                ),
+                registrations = registrations,
+            )
+        )
             .query()
     }
 

@@ -1,6 +1,7 @@
 package tech.coner.crispyfish.filetype.staging
 
-import org.assertj.core.api.Assertions.assertThat
+import assertk.assertThat
+import assertk.assertions.*
 import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import tech.coner.crispyfish.model.EventDay
 import tech.coner.crispyfish.model.PenaltyType
@@ -31,7 +32,7 @@ class StagingFileAssistantTest {
 
         assertThat(actual)
                 .isNotNull()
-                .isInstanceOf(StagingFilenameFilter::class.java)
+                .isInstanceOf(StagingFilenameFilter::class)
         assertThat(actual.eventFileOriginalStagingBaseName).isEqualTo("baz")
         assertThat(actual.originalFilePattern).isSameAs(StagingFilenames.ORIGINAL_FILE_DAY_1)
     }
@@ -53,100 +54,89 @@ class StagingFileAssistantTest {
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenConvertStagingTimeStringToDurationNormalItShouldWorkLol() {
-        val expected = Duration.ofSeconds(45).plusMillis(678)
-
         val actual = assistant.convertStagingTimeStringToDuration("45.678")
 
-        assertThat(actual).isEqualByComparingTo(expected)
-    }
-
-    @Test(expected = StagingLineException::class)
-    @Throws(Exception::class)
-    fun whenConvertStagingTimeStringToDurationInvalidItShouldThrow() {
-        assistant.convertStagingTimeStringToDuration("invalid")
+        assertThat(actual).isSuccess().isEqualTo(Duration.ofSeconds(45).plusMillis(678))
     }
 
     @Test
-    @Throws(Exception::class)
+    fun whenConvertStagingTimeStringToDurationInvalidItShouldThrow() {
+        val actual = assistant.convertStagingTimeStringToDuration("invalid")
+
+        assertThat(actual).isFailure().isInstanceOf(StagingLineException::class)
+    }
+
+    @Test
     fun whenConvertStagingRunPenaltyStringToPenaltyTypeEmptyItShouldReturnClean() {
         val penalty = ""
-        val expected = PenaltyType.CLEAN
 
         val actual = assistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
 
-        assertThat(actual).isSameAs(expected)
+        assertThat(actual).isSuccess().isEqualTo(PenaltyType.CLEAN)
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenConvertStagingRunPenaltyStringToPenaltyTypeDidNotFinish() {
         val penalty = "dnf"
-        val expected = PenaltyType.DID_NOT_FINISH
 
         val actual = assistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
 
-        assertThat(actual).isSameAs(expected)
+        assertThat(actual).isSuccess().isEqualTo(PenaltyType.DID_NOT_FINISH)
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenConvertStagingRunPenaltyStringToPenaltyTypeDisqualified() {
         val penalty = "dsq"
-        val expected = PenaltyType.DISQUALIFIED
 
         val actual = assistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
 
-        assertThat(actual).isSameAs(expected)
+        assertThat(actual).isSuccess().isEqualTo(PenaltyType.DISQUALIFIED)
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenConvertStagingRunPenaltyStringToPenaltyTypeRerun() {
         val penalty = "rrn"
-        val expected = PenaltyType.RERUN
 
         val actual = assistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
 
-        assertThat(actual).isSameAs(expected)
+        assertThat(actual).isSuccess().isEqualTo(PenaltyType.RERUN)
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenConvertStagingRunPenaltyStringToPenaltyTypeCone() {
         val penalty = "2"
-        val expected = PenaltyType.CONE
 
         val actual = assistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
 
-        assertThat(actual).isSameAs(expected)
+        assertThat(actual).isSuccess().isEqualTo(PenaltyType.CONE)
     }
 
-    @Test(expected = StagingLineException::class)
-    @Throws(Exception::class)
+    @Test
     fun whenConvertStagingRunPenaltyStringToPenaltyTypeUnrecognized() {
         val penalty = "*unrecognized*"
 
-        assistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
+        val actual = assistant.convertStagingRunPenaltyStringToPenaltyType(penalty)
+
+        assertThat(actual).isSuccess().isSameAs(PenaltyType.UNKNOWN)
     }
 
     @Test
-    @Throws(Exception::class)
     fun whenConvertStagingRunPenaltyToConeCountNormal() {
         val penalty = "8"
-        val expected = 8
 
         val actual = assistant.convertStagingRunPenaltyStringToConeCount(penalty)
 
-        assertThat(actual).isEqualTo(expected)
+        assertThat(actual).isSuccess().isEqualTo(8)
     }
 
-    @Test(expected = StagingLineException::class)
-    @Throws(Exception::class)
+    @Test
     fun whenConvertStagingRunPenaltyToConeCountInvalid() {
         val penalty = "-1"
 
-        assistant.convertStagingRunPenaltyStringToConeCount(penalty)
+        val actual = assistant.convertStagingRunPenaltyStringToConeCount(penalty)
+
+        assertThat(actual).isFailure()
+            .isInstanceOf(StagingLineException::class.java)
     }
 }

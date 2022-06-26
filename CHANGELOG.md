@@ -1,10 +1,14 @@
 # Changelog
 
-## 0.5.8
+## 0.6.0
 
 - Registration query
   - Includes registrations with incoherent raw/pax results if they are present on disk
   - Includes registrations without category, handicap, or number
+- Staging Runs query
+  - Returns list of StagingRun objects, which additionally includes the arbitrary registration data included on the staging line, which might not match the proper registration data.
+  - Includes items for every line, including those with fields which couldn't be parsed fully
+  - This is allows users to detect and be warned about problems in the crispy fish data related to staging/registration mismatches
 
 ## 0.5.7
 

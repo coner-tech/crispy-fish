@@ -6,9 +6,4 @@ class StagingFile(
         val file: File,
         private val assistant: StagingFileAssistant,
         val reader: StagingLineReader<String>
-) {
-    fun modelReader() = StagingLineModelReader(
-            stagingFileAssistant = assistant,
-            stagingLineReader = reader
-    )
-}
+)
