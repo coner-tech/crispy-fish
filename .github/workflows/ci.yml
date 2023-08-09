@@ -18,15 +18,8 @@ jobs:
         with:
           distribution: temurin
           java-version-file: .github/workflows/java-version
+          cache: 'maven'
           server-id: ossrh
-
-      - name: Cache Maven dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
 
       - name: Verify
         run: ./mvnw -B -P ci clean verify
