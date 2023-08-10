@@ -1,8 +1,8 @@
 package tech.coner.crispyfish.filetype.staging
 
+import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import tech.coner.crispyfish.model.EventDay
 import tech.coner.crispyfish.model.PenaltyType
-import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import java.time.Duration
 import java.time.format.DateTimeParseException
 import java.util.regex.Pattern
@@ -40,7 +40,7 @@ class StagingFileAssistant {
     fun convertStagingRunPenaltyStringToPenaltyType(penalty: String?): Result<PenaltyType> {
         return Result.success(
             if (penalty?.isNotEmpty() == true) {
-                when (penalty.toUpperCase()) {
+                when (penalty.uppercase()) {
                     "DNF" -> PenaltyType.DID_NOT_FINISH
                     "DSQ" -> PenaltyType.DISQUALIFIED
                     "RRN" -> PenaltyType.RERUN
