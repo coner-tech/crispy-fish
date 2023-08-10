@@ -1,7 +1,6 @@
 package tech.coner.crispyfish.filetype.registration
 
 import java.util.regex.Pattern
-import kotlin.streams.toList
 
 internal class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
 
@@ -14,9 +13,9 @@ internal class RegistrationLineColumnReader(registrationFile: RegistrationFile) 
     }
     val registrationLines by lazy {
         lines.subList(1, lines.size)
-                .parallelStream()
-                .map { it.split("\t") }
-                .toList()
+            .asSequence()
+            .map { it.split("\t") }
+            .toList()
     }
 
     private val columnIndices = mutableMapOf<RegistrationColumn, Int>()
