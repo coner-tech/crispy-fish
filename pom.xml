@@ -61,6 +61,14 @@
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+    </dependencies>
+
     <scm>
         <connection>scm:git:git@github.com:coner-tech/crispy-fish.git</connection>
         <developerConnection>scm:git:git@github.com:coner-tech/crispy-fish.git</developerConnection>
