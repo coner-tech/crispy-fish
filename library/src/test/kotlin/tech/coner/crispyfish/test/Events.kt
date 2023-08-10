@@ -11,10 +11,9 @@ sealed class Events(
 ) {
 
     val eventControlFile = EventControlFile(
-            file = resource(ecfFile),
-            classDefinitionFile = classDefinitions.file,
-            conePenalty = conePenalty,
-            isTwoDayEvent = twoDayEvent
+        file = resource(ecfFile),
+        classDefinitionFile = classDefinitions.file,
+        isTwoDayEvent = twoDayEvent
     )
 
     object Thscc2016Points1Danville : Events(

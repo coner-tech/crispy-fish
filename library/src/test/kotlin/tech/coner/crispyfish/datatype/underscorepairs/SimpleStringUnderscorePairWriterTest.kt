@@ -1,14 +1,14 @@
 package tech.coner.crispyfish.datatype.underscorepairs
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 
 class SimpleStringUnderscorePairWriterTest {
 
     private lateinit var writer: SimpleStringUnderscorePairWriter
 
-    @Before
+    @BeforeEach
     fun setup() {
         writer = SimpleStringUnderscorePairWriter()
     }

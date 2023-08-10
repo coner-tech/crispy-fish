@@ -4,8 +4,8 @@ import assertk.assertAll
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isNullOrEmpty
+import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.test.ClassDefinitions
-import org.junit.Test
 
 class ClassDefinitionReaderTest {
 

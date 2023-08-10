@@ -3,15 +3,15 @@ package tech.coner.crispyfish.filetype.classdefinition
 import assertk.assertThat
 import assertk.assertions.isNotNull
 import assertk.assertions.isNotSameAs
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.test.ClassDefinitions
-import org.junit.Before
-import org.junit.Test
 
 class ClassDefinitionFileTest {
 
     lateinit var file: ClassDefinitionFile
 
-    @Before
+    @BeforeEach
     fun before() {
         file = ClassDefinitions.Thscc2016.file
     }

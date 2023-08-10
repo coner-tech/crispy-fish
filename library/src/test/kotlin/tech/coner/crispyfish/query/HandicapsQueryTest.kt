@@ -5,8 +5,8 @@ import assertk.assertThat
 import assertk.assertions.containsAll
 import assertk.assertions.doesNotContain
 import assertk.assertions.hasSize
+import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.test.ClassDefinitions
-import org.junit.Test
 
 class HandicapsQueryTest {
 

@@ -2,14 +2,14 @@ package tech.coner.crispyfish.query
 
 import assertk.all
 import assertk.assertThat
-import assertk.assertions.*
+import assertk.assertions.hasSize
+import assertk.assertions.index
+import assertk.assertions.isNotNull
+import assertk.assertions.isNull
+import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.model.*
 import tech.coner.crispyfish.test.Events
-import org.junit.Test
-import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
-import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import tech.coner.crispyfish.test.Issue42
-import java.io.File
 
 class RegistrationsQueryTest {
 

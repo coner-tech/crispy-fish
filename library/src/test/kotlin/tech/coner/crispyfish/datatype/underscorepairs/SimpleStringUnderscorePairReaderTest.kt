@@ -1,8 +1,8 @@
 package tech.coner.crispyfish.datatype.underscorepairs
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 
 class SimpleStringUnderscorePairReaderTest {
 
@@ -10,7 +10,7 @@ class SimpleStringUnderscorePairReaderTest {
 
     private val PAIRS_EXAMPLE_BASIC = "key1_value1_key2_value2_key3_value3"
 
-    @Before
+    @BeforeEach
     fun setup() {
         reader = SimpleStringUnderscorePairReader()
     }

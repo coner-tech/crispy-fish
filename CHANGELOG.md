@@ -8,7 +8,9 @@
 - Staging Runs query
   - Returns list of StagingRun objects, which additionally includes the arbitrary registration data included on the staging line, which might not match the proper registration data.
   - Includes items for every line, including those with fields which couldn't be parsed fully
-  - This is allows users to detect and be warned about problems in the crispy fish data related to staging/registration mismatches
+  - This allows users to detect and be warned about problems in the crispy fish data related to staging/registration mismatches
+- Remove the Results queries
+  - These wrongfully trusted the metadata contained in the Registration and Staging files, which can make for wildly inaccurate results sometimes
 
 ## 0.5.7
 
