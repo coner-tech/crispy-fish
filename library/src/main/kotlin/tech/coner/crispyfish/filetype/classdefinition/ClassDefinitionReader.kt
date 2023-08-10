@@ -1,14 +1,12 @@
 package tech.coner.crispyfish.filetype.classdefinition
 
-import kotlin.streams.toList
-
 class ClassDefinitionReader(private val classDefinitionFile: ClassDefinitionFile) {
 
     val lines by lazy {
         classDefinitionFile.file.readLines()
-                .parallelStream()
-                .map { it.split("\t") }
-                .toList()
+            .asSequence()
+            .map { it.split("\t") }
+            .toList()
     }
 
     private fun read(index: Int, column: ClassDefinitionColumns): String {

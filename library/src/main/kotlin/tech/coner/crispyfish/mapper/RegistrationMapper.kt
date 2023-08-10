@@ -89,9 +89,7 @@ internal class RegistrationMapper(
                     time = time,
                     penalty = toPenalty(penalty)
                 ) },
-            custom = reader.customColumns
-                .map { it.literalHeading to reader.get(index, it) }
-                .toMap()
+            custom = reader.customColumns.associate { it.literalHeading to reader.get(index, it) }
         )
     }
 
