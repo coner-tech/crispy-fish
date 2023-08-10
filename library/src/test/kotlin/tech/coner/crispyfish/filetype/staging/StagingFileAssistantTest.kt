@@ -2,55 +2,18 @@ package tech.coner.crispyfish.filetype.staging
 
 import assertk.assertThat
 import assertk.assertions.*
-import tech.coner.crispyfish.filetype.ecf.EventControlFile
-import tech.coner.crispyfish.model.EventDay
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.model.PenaltyType
-import org.junit.Before
-import org.junit.Test
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
-import java.io.File
 import java.time.Duration
 
 class StagingFileAssistantTest {
 
     private lateinit var assistant: StagingFileAssistant
 
-    @Before
+    @BeforeEach
     fun setup() {
         assistant = StagingFileAssistant()
-    }
-
-    @Test
-    fun whenBuildStagingFilenameFilterForDayOneItShouldReturnIt() {
-        val eventControlFileFile = File("/foo/bar/baz.ecf")
-        val eventControlFile = mock(EventControlFile::class.java)
-        `when`(eventControlFile.file).thenReturn(eventControlFileFile)
-        `when`(eventControlFile.isTwoDayEvent).thenReturn(false)
-
-        val actual = assistant.buildStagingFilenameFilter(eventControlFile, EventDay.ONE)
-
-        assertThat(actual)
-                .isNotNull()
-                .isInstanceOf(StagingFilenameFilter::class)
-        assertThat(actual.eventFileOriginalStagingBaseName).isEqualTo("baz")
-        assertThat(actual.originalFilePattern).isSameAs(StagingFilenames.ORIGINAL_FILE_DAY_1)
-    }
-
-    @Test
-    fun whenBuildStagingFilenameFilterForDayTwoItShouldReturnIt() {
-        val eventControlFileFile = File("foo/bar/baz.ecf")
-        val eventControlFile = mock(EventControlFile::class.java)
-        `when`(eventControlFile.file).thenReturn(eventControlFileFile)
-        `when`(eventControlFile.isTwoDayEvent).thenReturn(true)
-
-        val actual = assistant.buildStagingFilenameFilter(eventControlFile, EventDay.TWO)
-
-        assertThat(actual)
-                .isNotNull()
-                .isInstanceOf(StagingFilenameFilter::class.java)
-        assertThat(actual.eventFileOriginalStagingBaseName).isEqualTo("baz")
-        assertThat(actual.originalFilePattern).isSameAs(StagingFilenames.ORIGINAL_FILE_DAY_2)
     }
 
     @Test

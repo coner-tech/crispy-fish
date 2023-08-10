@@ -2,8 +2,6 @@ package tech.coner.crispyfish.filetype.registration
 
 import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import java.io.File
-import java.io.FileFilter
-import java.util.regex.Pattern
 
 class RegistrationFileLocator(val eventControlFile: EventControlFile) {
 

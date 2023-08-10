@@ -2,9 +2,14 @@ package tech.coner.crispyfish.query
 
 import assertk.all
 import assertk.assertThat
-import assertk.assertions.*
-import org.junit.Test
-import tech.coner.crispyfish.model.*
+import assertk.assertions.hasSize
+import assertk.assertions.index
+import assertk.assertions.isNotNull
+import assertk.assertions.isNull
+import org.junit.jupiter.api.Test
+import tech.coner.crispyfish.model.EventDay
+import tech.coner.crispyfish.model.run
+import tech.coner.crispyfish.model.stagingRegistration
 import tech.coner.crispyfish.test.Events
 import tech.coner.crispyfish.test.Issue42
 

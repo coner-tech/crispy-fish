@@ -1,15 +1,15 @@
 package tech.coner.crispyfish.filetype.ecf
 
 import org.assertj.core.api.Assertions
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import java.io.File
 
 class EventControlFileAssistantTest {
 
     private lateinit var eventControlFileAssistant: EventControlFileAssistant
 
-    @Before
+    @BeforeEach
     fun setup() {
         eventControlFileAssistant = EventControlFileAssistant()
     }

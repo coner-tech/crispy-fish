@@ -2,9 +2,10 @@ package tech.coner.crispyfish.filetype.registration
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
+import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.filetype.registration.RegistrationColumn.*
+import tech.coner.crispyfish.filetype.registration.RegistrationColumn.Number
 import tech.coner.crispyfish.test.Events
-import org.junit.Test
 
 internal class RegistrationLineColumnReaderTest {
 

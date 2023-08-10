@@ -20,15 +20,13 @@ import tech.coner.crispyfish.query.HandicapsQuery
 import tech.coner.crispyfish.query.RegistrationsQuery
 import tech.coner.crispyfish.query.StagingRunsQuery
 import java.io.File
-import java.io.FileNotFoundException
 
 class EventControlFile(
-        val file: File,
-        val classDefinitionFile: ClassDefinitionFile,
-        val isTwoDayEvent: Boolean,
-        val conePenalty: Int,
-        private val ecfAssistant: EventControlFileAssistant = EventControlFileAssistant(),
-        private val stagingFileAssistant: StagingFileAssistant = StagingFileAssistant()
+    val file: File,
+    val classDefinitionFile: ClassDefinitionFile,
+    val isTwoDayEvent: Boolean,
+    private val stagingFileAssistant: StagingFileAssistant = StagingFileAssistant(),
+    ecfAssistant: EventControlFileAssistant = EventControlFileAssistant()
 ) {
 
     init {
@@ -44,9 +42,7 @@ class EventControlFile(
     val stagingFileLocator by lazy { StagingFileLocator(this) }
 
     fun stagingFile(eventDay: EventDay = EventDay.ONE) = StagingFile(
-            file = stagingFileLocator.locate(eventDay) ?: throw FileNotFoundException(),
-            reader = SimpleStringStagingLineReader(SimpleStringUnderscorePairReader()),
-            assistant = stagingFileAssistant
+            file = stagingFileLocator.locate(eventDay),
     )
 
     fun queryCategories() = CategoriesQuery(classDefinitionFile).query()

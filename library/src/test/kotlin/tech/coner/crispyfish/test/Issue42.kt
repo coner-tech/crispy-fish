@@ -19,8 +19,7 @@ object Issue42 {
         EventControlFile(
             file = resource("64-crispy-fish-staging-lines-invalid-signage.ecf"),
             classDefinitionFile = classDefinitionFile,
-            isTwoDayEvent = false,
-            conePenalty = 2
+            isTwoDayEvent = false
         )
     }
 }

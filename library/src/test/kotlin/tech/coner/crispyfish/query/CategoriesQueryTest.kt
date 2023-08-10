@@ -4,8 +4,8 @@ import assertk.all
 import assertk.assertThat
 import assertk.assertions.containsExactly
 import assertk.assertions.hasSize
+import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.test.ClassDefinitions
-import org.junit.Test
 
 class CategoriesQueryTest {
 
