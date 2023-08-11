@@ -8,17 +8,15 @@ import tech.coner.crispyfish.filetype.staging.SimpleStringStagingLineReader
 import tech.coner.crispyfish.filetype.staging.StagingFile
 import tech.coner.crispyfish.filetype.staging.StagingFileAssistant
 import tech.coner.crispyfish.filetype.staging.StagingFileLocator
+import tech.coner.crispyfish.filetype.staginglog.StagingLogFile
+import tech.coner.crispyfish.filetype.staginglog.StagingLogFileLocator
+import tech.coner.crispyfish.filetype.staginglog.StagingLogLineReader
 import tech.coner.crispyfish.mapper.ClassingMapper
 import tech.coner.crispyfish.mapper.RegistrationMapper
+import tech.coner.crispyfish.mapper.StagingLogRowMapper
 import tech.coner.crispyfish.mapper.StagingRunMapper
-import tech.coner.crispyfish.model.ClassDefinition
-import tech.coner.crispyfish.model.EventDay
-import tech.coner.crispyfish.model.Registration
-import tech.coner.crispyfish.model.StagingRun
-import tech.coner.crispyfish.query.CategoriesQuery
-import tech.coner.crispyfish.query.HandicapsQuery
-import tech.coner.crispyfish.query.RegistrationsQuery
-import tech.coner.crispyfish.query.StagingRunsQuery
+import tech.coner.crispyfish.model.*
+import tech.coner.crispyfish.query.*
 import java.nio.file.Path
 
 class EventControlFile(
@@ -45,6 +43,12 @@ class EventControlFile(
             file = stagingFileLocator.locate(eventDay),
     )
 
+    private val stagingLogFileLocator by lazy { StagingLogFileLocator(this) }
+
+    fun stagingLogFile(eventDay: EventDay = EventDay.ONE) = StagingLogFile(
+        file = stagingLogFileLocator(eventDay)
+    )
+
     fun queryCategories() = CategoriesQuery(classDefinitionFile).query()
 
     fun queryHandicaps() = HandicapsQuery(classDefinitionFile).query()
@@ -69,6 +73,22 @@ class EventControlFile(
             .query()
     }
 
+    private fun stagingRunMapperFactory(
+        categories: List<ClassDefinition> = queryCategories(),
+        handicaps: List<ClassDefinition> = queryHandicaps(),
+        registrations: List<Registration> = queryRegistrations()
+    ) = StagingRunMapper(
+        assistant = stagingFileAssistant,
+        reader = SimpleStringStagingLineReader(
+            underscorePairReader = SimpleStringUnderscorePairReader()
+        ),
+        classingMapper = ClassingMapper(
+            categories = categories,
+            handicaps = handicaps
+        ),
+        registrations = registrations,
+    )
+
     fun queryStagingRuns(
         eventDay: EventDay = EventDay.ONE,
         categories: List<ClassDefinition> = queryCategories(),
@@ -78,19 +98,35 @@ class EventControlFile(
         val stagingFile = stagingFile(eventDay = eventDay)
         return StagingRunsQuery(
             stagingFile = stagingFile,
-            stagingRunMapper = StagingRunMapper(
-                assistant = stagingFileAssistant,
-                reader = SimpleStringStagingLineReader(
-                    underscorePairReader = SimpleStringUnderscorePairReader()
-                ),
-                classingMapper = ClassingMapper(
-                    categories = categories,
-                    handicaps = handicaps
-                ),
-                registrations = registrations,
+            stagingRunMapper = stagingRunMapperFactory(
+                categories = categories,
+                handicaps = handicaps,
+                registrations = registrations
             )
         )
             .query()
+    }
+
+    fun queryStagingLogRows(
+        eventDay: EventDay = EventDay.ONE,
+        categories: List<ClassDefinition> = queryCategories(),
+        handicaps: List<ClassDefinition> = queryHandicaps(),
+        registrations: List<Registration> = queryRegistrations()
+    ) : List<StagingLogRow> {
+        return StagingLogRowsQueryImpl(
+            file = stagingLogFile(eventDay),
+            mapper = StagingLogRowMapper(
+                stagingRunMapper = stagingRunMapperFactory(
+                    categories = categories,
+                    handicaps = handicaps,
+                    registrations = registrations
+                ),
+                reader = StagingLogLineReader(
+                    underscorePairReader = SimpleStringUnderscorePairReader()
+                )
+            )
+        )
+            .invoke()
     }
 
 }
