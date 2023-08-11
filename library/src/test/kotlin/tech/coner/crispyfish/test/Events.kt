@@ -1,7 +1,9 @@
 package tech.coner.crispyfish.test
 
 import tech.coner.crispyfish.filetype.ecf.EventControlFile
-import java.io.File
+import java.nio.file.Path
+import kotlin.io.path.exists
+import kotlin.io.path.toPath
 
 sealed class Events(
         val classDefinitions: ClassDefinitions,
@@ -76,11 +78,11 @@ sealed class Events(
             ecfFile = "thscc/2019/points8/2019-08-31 points 8 nccar.ecf"
     )
 
-    private fun resource(relativeFilePath: String): File {
+    private fun resource(relativeFilePath: String): Path {
         val absolutePath = "/tech/coner/crispyfish/test/Events/$relativeFilePath"
         val resourceURL = javaClass.getResource(absolutePath)
-        val file = File(resourceURL.toURI())
-        check(file.exists()) { "test event resource does not exist: $relativeFilePath" }
-        return file
+        val file = resourceURL?.toURI()?.toPath()
+        check(file?.exists() == true) { "test event resource does not exist: $relativeFilePath, likely error in test arrangement or tools" }
+        return file!!
     }
 }

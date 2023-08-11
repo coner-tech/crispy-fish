@@ -2,10 +2,12 @@ package tech.coner.crispyfish.test
 
 import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
 import tech.coner.crispyfish.model.ClassDefinition
-import java.io.File
 import java.math.BigDecimal
+import java.nio.file.Path
+import kotlin.io.path.exists
+import kotlin.io.path.toPath
 
-sealed class ClassDefinitions(val defFile: String) {
+sealed class ClassDefinitions(defFile: String) {
 
     val file = ClassDefinitionFile(
             file = resource(defFile)
@@ -158,9 +160,9 @@ sealed class ClassDefinitions(val defFile: String) {
 
     object Thscc2019 : ClassDefinitions("thscc/2019/class2019_thscc.def")
 
-    private fun resource(relativeFilePath: String): File {
-        val file = File(javaClass.getResource("/tech/coner/crispyfish/test/ClassDefinitions/$relativeFilePath").toURI())
-        check(file.exists()) { "test class definition file does not exist: $relativeFilePath" }
-        return file
+    private fun resource(relativeFilePath: String): Path {
+        val file = javaClass.getResource("/tech/coner/crispyfish/test/ClassDefinitions/$relativeFilePath")?.toURI()?.toPath()
+        check(file?.exists() == true) { "test class definition file does not exist: $relativeFilePath, error likely in test arrangement or tools" }
+        return file!!
     }
 }

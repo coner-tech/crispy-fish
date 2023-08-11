@@ -19,10 +19,10 @@ import tech.coner.crispyfish.query.CategoriesQuery
 import tech.coner.crispyfish.query.HandicapsQuery
 import tech.coner.crispyfish.query.RegistrationsQuery
 import tech.coner.crispyfish.query.StagingRunsQuery
-import java.io.File
+import java.nio.file.Path
 
 class EventControlFile(
-    val file: File,
+    val file: Path,
     val classDefinitionFile: ClassDefinitionFile,
     val isTwoDayEvent: Boolean,
     private val stagingFileAssistant: StagingFileAssistant = StagingFileAssistant(),

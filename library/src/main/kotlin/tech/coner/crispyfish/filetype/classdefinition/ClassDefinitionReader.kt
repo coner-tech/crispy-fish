@@ -1,5 +1,7 @@
 package tech.coner.crispyfish.filetype.classdefinition
 
+import kotlin.io.path.readLines
+
 class ClassDefinitionReader(private val classDefinitionFile: ClassDefinitionFile) {
 
     val lines by lazy {
