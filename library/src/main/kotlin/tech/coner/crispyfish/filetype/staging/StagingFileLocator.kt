@@ -2,12 +2,13 @@ package tech.coner.crispyfish.filetype.staging
 
 import tech.coner.crispyfish.filetype.ecf.EventControlFile
 import tech.coner.crispyfish.model.EventDay
-import java.io.File
+import java.nio.file.Path
+import kotlin.io.path.nameWithoutExtension
 
 class StagingFileLocator(
         private val eventControlFile: EventControlFile,
 ) {
-    fun locate(eventDay: EventDay): File {
+    fun locate(eventDay: EventDay): Path {
         return eventControlFile.file.resolveSibling("${eventControlFile.file.nameWithoutExtension}.${eventDay.stagingFileExtension}")
     }
 

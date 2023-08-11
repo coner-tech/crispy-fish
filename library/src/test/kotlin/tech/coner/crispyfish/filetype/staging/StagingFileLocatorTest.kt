@@ -20,8 +20,8 @@ class StagingFileLocatorTest {
     @BeforeEach
     fun setup() {
         eventControlFile = EventControlFile(
-            file = temp.resolve("test.ecf").toFile(),
-            classDefinitionFile = ClassDefinitionFile(temp.resolve("test.def").toFile()),
+            file = temp.resolve("test.ecf"),
+            classDefinitionFile = ClassDefinitionFile(temp.resolve("test.def")),
             isTwoDayEvent = false,
         )
         stagingFileLocator = StagingFileLocator(
@@ -33,14 +33,14 @@ class StagingFileLocatorTest {
     fun itShouldLocateWithDayOne() {
         val actual = stagingFileLocator.locate(EventDay.ONE)
 
-        assertThat(actual).isEqualTo(temp.resolve("test.st1").toFile())
+        assertThat(actual).isEqualTo(temp.resolve("test.st1"))
     }
 
     @Test
     fun itShouldLocateWithDayTwo() {
         val actual = stagingFileLocator.locate(EventDay.TWO)
 
-        assertThat(actual).isEqualTo(temp.resolve("test.st2").toFile())
+        assertThat(actual).isEqualTo(temp.resolve("test.st2"))
     }
 
 }

@@ -1,9 +1,9 @@
 package tech.coner.crispyfish.filetype.classdefinition
 
-import java.io.File
+import java.nio.file.Path
 
 class ClassDefinitionFile(
-        val file: File
+        val file: Path
 ) {
     fun reader() = ClassDefinitionReader(this)
 

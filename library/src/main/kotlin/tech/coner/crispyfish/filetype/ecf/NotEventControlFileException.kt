@@ -1,7 +1,7 @@
 package tech.coner.crispyfish.filetype.ecf
 
-import java.io.File
+import java.nio.file.Path
 
-class NotEventControlFileException(file: File) : IllegalArgumentException(
+class NotEventControlFileException(file: Path) : IllegalArgumentException(
         "File is not an ecf file: $file"
 )

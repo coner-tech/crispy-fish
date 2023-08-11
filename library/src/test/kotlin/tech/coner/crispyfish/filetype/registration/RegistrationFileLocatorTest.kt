@@ -1,10 +1,7 @@
 package tech.coner.crispyfish.filetype.registration
 
-import assertk.all
 import assertk.assertThat
-import assertk.assertions.hasExtension
-import assertk.assertions.isNotNull
-import assertk.assertions.prop
+import assertk.assertions.isSameFileAs
 import org.junit.jupiter.api.Test
 import tech.coner.crispyfish.test.Events
 
@@ -16,9 +13,7 @@ class RegistrationFileLocatorTest {
 
         val actual = locator.locate()
 
-        assertThat(actual).all {
-            isNotNull()
-            prop("file", RegistrationFile::file).hasExtension("rgg")
-        }
+        val expected = locator.eventControlFile.file.resolveSibling("2016 Points Event 3 Danville.rgg")
+        assertThat(actual).file().isSameFileAs(expected)
     }
 }

@@ -1,6 +1,7 @@
 package tech.coner.crispyfish.filetype.registration
 
 import java.util.regex.Pattern
+import kotlin.io.path.readLines
 
 internal class RegistrationLineColumnReader(registrationFile: RegistrationFile) {
 

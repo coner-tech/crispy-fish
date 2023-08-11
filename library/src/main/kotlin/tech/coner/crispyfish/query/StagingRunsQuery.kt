@@ -3,6 +3,7 @@ package tech.coner.crispyfish.query
 import tech.coner.crispyfish.filetype.staging.StagingFile
 import tech.coner.crispyfish.mapper.StagingRunMapper
 import tech.coner.crispyfish.model.StagingRun
+import kotlin.io.path.readLines
 
 internal class StagingRunsQuery(
     private val stagingFile: StagingFile,

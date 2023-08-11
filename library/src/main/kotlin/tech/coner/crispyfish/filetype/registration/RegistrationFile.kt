@@ -1,9 +1,9 @@
 package tech.coner.crispyfish.filetype.registration
 
-import java.io.File
+import java.nio.file.Path
 
 class RegistrationFile(
-        val file: File
+        val file: Path
 ) {
     internal fun columnReader() = RegistrationLineColumnReader(this)
 }
