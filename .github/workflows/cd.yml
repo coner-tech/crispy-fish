@@ -23,10 +23,11 @@ jobs:
           server-username: OSSRH_TOKEN_USERNAME
           server-password: OSSRH_TOKEN_PASSWORD
           gpg-private-key: ${{ secrets.CONER_CI_CD_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: Deploy Snapshot
         run: mvn -B -P ci,cd,deploy-sonatype clean deploy
         env:
           OSSRH_TOKEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
           OSSRH_TOKEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
-          GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
