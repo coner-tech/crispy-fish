@@ -9,10 +9,6 @@ on:
 jobs:
   cd:
     runs-on: ubuntu-latest
-    env:
-      OSSRH_TOKEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
-      OSSRH_TOKEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
-      MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
 
     steps:
       - uses: actions/checkout@v3
@@ -31,4 +27,7 @@ jobs:
 
       - name: Deploy Snapshot
         run: mvn -B -P ci,cd,deploy-sonatype clean deploy
-
+        env:
+          OSSRH_TOKEN_USERNAME: ${{ secrets.OSSRH_TOKEN_USERNAME }}
+          OSSRH_TOKEN_PASSWORD: ${{ secrets.OSSRH_TOKEN_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.CONER_CI_CD_PASSPHRASE }}
