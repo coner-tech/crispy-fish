@@ -1,8 +1,8 @@
 package tech.coner.crispyfish.mapper
 
-import tech.coner.crispyfish.filetype.registration.RegistrationColumn.*
-import tech.coner.crispyfish.filetype.registration.RegistrationColumn.Number
-import tech.coner.crispyfish.filetype.registration.RegistrationLineColumnReader
+import tech.coner.crispyfish.internal.filetype.registration.RegistrationColumn.*
+import tech.coner.crispyfish.internal.filetype.registration.RegistrationColumn.Number
+import tech.coner.crispyfish.internal.filetype.registration.RegistrationLineColumnReader
 import tech.coner.crispyfish.model.Registration
 import tech.coner.crispyfish.model.RegistrationResult
 import tech.coner.crispyfish.model.RegistrationRun

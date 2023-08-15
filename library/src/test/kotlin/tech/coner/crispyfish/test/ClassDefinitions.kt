@@ -1,6 +1,8 @@
 package tech.coner.crispyfish.test
 
-import tech.coner.crispyfish.filetype.classdefinition.ClassDefinitionFile
+import tech.coner.crispyfish.CrispyFishClassDefinitions
+import tech.coner.crispyfish.filetype.ClassDefinitionFile
+import tech.coner.crispyfish.internal.CrispyFishClassDefinitionsImpl
 import tech.coner.crispyfish.model.ClassDefinition
 import java.math.BigDecimal
 import java.nio.file.Path
@@ -10,8 +12,12 @@ import kotlin.io.path.toPath
 sealed class ClassDefinitions(defFile: String) {
 
     val file = ClassDefinitionFile(
-            file = resource(defFile)
+        file = resource(defFile)
     )
+
+    fun factory(): CrispyFishClassDefinitions {
+        return CrispyFishClassDefinitionsImpl(file)
+    }
 
     object Thscc2016 : ClassDefinitions("thscc/2016/class2016_thscc.def") {
         val cs = ClassDefinition(
@@ -159,6 +165,8 @@ sealed class ClassDefinitions(defFile: String) {
     }
 
     object Thscc2019 : ClassDefinitions("thscc/2019/class2019_thscc.def")
+
+    object Issue42 : ClassDefinitions("Issue42Test/class2022_lscc.def")
 
     private fun resource(relativeFilePath: String): Path {
         val file = javaClass.getResource("/tech/coner/crispyfish/test/ClassDefinitions/$relativeFilePath")?.toURI()?.toPath()

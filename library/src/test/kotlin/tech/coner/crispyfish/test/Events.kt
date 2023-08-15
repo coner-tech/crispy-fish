@@ -1,6 +1,7 @@
 package tech.coner.crispyfish.test
 
-import tech.coner.crispyfish.filetype.ecf.EventControlFile
+import tech.coner.crispyfish.CrispyFishEvent
+import tech.coner.crispyfish.filetype.EventControlFile
 import java.nio.file.Path
 import kotlin.io.path.exists
 import kotlin.io.path.toPath
@@ -8,15 +9,13 @@ import kotlin.io.path.toPath
 sealed class Events(
         val classDefinitions: ClassDefinitions,
         ecfFile: String,
-        conePenalty: Int = 2,
-        twoDayEvent: Boolean = false
 ) {
 
     val eventControlFile = EventControlFile(
         file = resource(ecfFile),
-        classDefinitionFile = classDefinitions.file,
-        isTwoDayEvent = twoDayEvent
     )
+
+    fun factory(): CrispyFishEvent = CrispyFishEvent.factory(eventControlFile)
 
     object Thscc2016Points1Danville : Events(
             classDefinitions = ClassDefinitions.Thscc2016,
@@ -76,6 +75,11 @@ sealed class Events(
     object Thscc2019Points8Nccar : Events(
             classDefinitions = ClassDefinitions.Thscc2019,
             ecfFile = "thscc/2019/points8/2019-08-31 points 8 nccar.ecf"
+    )
+
+    object Issue42 : Events(
+        classDefinitions = ClassDefinitions.Issue42,
+        ecfFile = "Issue42Test/64-crispy-fish-staging-lines-invalid-signage.ecf"
     )
 
     private fun resource(relativeFilePath: String): Path {

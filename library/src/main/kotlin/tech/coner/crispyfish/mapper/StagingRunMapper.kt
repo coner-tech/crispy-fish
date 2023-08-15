@@ -1,23 +1,19 @@
 package tech.coner.crispyfish.mapper
 
-import tech.coner.crispyfish.filetype.staging.StagingFileAssistant
-import tech.coner.crispyfish.filetype.staging.StagingLineReader
+import tech.coner.crispyfish.internal.filetype.staging.StagingFileAssistant
+import tech.coner.crispyfish.internal.filetype.staging.StagingLineReader
 import tech.coner.crispyfish.model.*
 
 internal class StagingRunMapper(
-    private val assistant: StagingFileAssistant,
     private val reader: StagingLineReader<String>,
     private val classingMapper: ClassingMapper,
-    registrations: List<Registration>,
 ) {
 
-    private val registrationsBySignage by lazy { registrations.associateBy { it.signage } }
-
-    fun toStagingRun(stagingLine: String): StagingRun {
+    fun toStagingRun(stagingLine: String, registrationsBySignage: RegistrationsBySignage): StagingRun {
         val stagingLineRegistration = toStagingLineRegistration(stagingLine)
         return StagingRun(
             stagingRegistration = stagingLineRegistration,
-            registration = stagingLineRegistration?.signage?.let { registrationsBySignage[it] },
+            registration = stagingLineRegistration?.signage?.let { registrationsBySignage.value[it] },
             run = toRun(stagingLine)
         )
     }
@@ -46,22 +42,22 @@ internal class StagingRunMapper(
         val raw = reader.getRunRawTime(stagingFileLine)
         val pax = reader.getRunPaxTime(stagingFileLine)
         val penalty = reader.getRunPenalty(stagingFileLine)
-        val runPenaltyType = assistant.convertStagingRunPenaltyStringToPenaltyType(penalty).getOrElse { PenaltyType.UNKNOWN }
+        val runPenaltyType = StagingFileAssistant.convertStagingRunPenaltyStringToPenaltyType(penalty).getOrElse { PenaltyType.UNKNOWN }
         return Run(
             number = reader.getRunNumber(stagingFileLine)?.toIntOrNull(),
-            rawTime = assistant.convertStagingTimeStringToDuration(raw).getOrNull(),
-            paxTime = assistant.convertStagingTimeStringToDuration(pax).getOrNull(),
+            rawTime = StagingFileAssistant.convertStagingTimeStringToDuration(raw).getOrNull(),
+            paxTime = StagingFileAssistant.convertStagingTimeStringToDuration(pax).getOrNull(),
             penaltyType = runPenaltyType,
             cones = when {
                 runPenaltyType === PenaltyType.CONE -> {
                     penalty
-                        ?.let { assistant.convertStagingRunPenaltyStringToConeCount(it).getOrNull() }
+                        ?.let { StagingFileAssistant.convertStagingRunPenaltyStringToConeCount(it).getOrNull() }
                 }
                 else -> null
             },
             timeScored = null,
             timeScratchAsString = raw,
-            timeScratchAsDuration = assistant.convertStagingTimeStringToDuration(raw).getOrNull()
+            timeScratchAsDuration = StagingFileAssistant.convertStagingTimeStringToDuration(raw).getOrNull()
         )
     }
 }

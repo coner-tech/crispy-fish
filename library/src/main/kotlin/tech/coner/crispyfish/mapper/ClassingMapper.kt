@@ -1,11 +1,11 @@
 package tech.coner.crispyfish.mapper
 
+import tech.coner.crispyfish.model.AllClassDefinitions
 import tech.coner.crispyfish.model.ClassDefinition
 import tech.coner.crispyfish.model.Classing
 
 internal class ClassingMapper(
-    private val categories: List<ClassDefinition>,
-    private val handicaps: List<ClassDefinition>
+    private val allClassDefinitions: AllClassDefinitions
 ) {
 
     fun toClassing(
@@ -27,4 +27,10 @@ internal class ClassingMapper(
             handicap = handicap
         )
     }
+
+    private val categories: List<ClassDefinition>
+        get() = allClassDefinitions.categories
+
+    private val handicaps: List<ClassDefinition>
+        get() = allClassDefinitions.handicaps
 }
