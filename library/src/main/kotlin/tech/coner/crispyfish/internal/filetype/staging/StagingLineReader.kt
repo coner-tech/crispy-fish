@@ -1,6 +1,6 @@
 package tech.coner.crispyfish.internal.filetype.staging
 
-interface StagingLineReader<L> {
+internal interface StagingLineReader<L> {
 
     fun getRegisteredDriverClass(line: L): String?
 

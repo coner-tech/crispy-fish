@@ -4,8 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
-import tech.coner.crispyfish.filetype.ClassDefinitionFile
-import tech.coner.crispyfish.filetype.EventControlFile
+import tech.coner.crispyfish.internal.filetype.eventcontrolfile.EventControlFile
 import tech.coner.crispyfish.model.EventDay
 import java.nio.file.Path
 

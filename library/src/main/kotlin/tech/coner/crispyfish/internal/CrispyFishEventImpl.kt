@@ -1,7 +1,7 @@
 package tech.coner.crispyfish.internal
 
 import tech.coner.crispyfish.CrispyFishEvent
-import tech.coner.crispyfish.filetype.EventControlFile
+import tech.coner.crispyfish.internal.filetype.eventcontrolfile.EventControlFile
 import tech.coner.crispyfish.internal.datatype.underscorepairs.SimpleStringUnderscorePairReader
 import tech.coner.crispyfish.internal.filetype.registration.RegistrationFileLocator
 import tech.coner.crispyfish.internal.filetype.registration.RegistrationLineColumnReader
@@ -12,10 +12,10 @@ import tech.coner.crispyfish.internal.filetype.staginglog.StagingLogLineReader
 import tech.coner.crispyfish.internal.repository.RegistrationRepository
 import tech.coner.crispyfish.internal.repository.StagingLogRepository
 import tech.coner.crispyfish.internal.repository.StagingRepository
-import tech.coner.crispyfish.mapper.ClassingMapper
-import tech.coner.crispyfish.mapper.RegistrationMapper
-import tech.coner.crispyfish.mapper.StagingLogRowMapper
-import tech.coner.crispyfish.mapper.StagingRunMapper
+import tech.coner.crispyfish.internal.mapper.ClassingMapper
+import tech.coner.crispyfish.internal.mapper.RegistrationMapper
+import tech.coner.crispyfish.internal.mapper.StagingLogRowMapper
+import tech.coner.crispyfish.internal.mapper.StagingRunMapper
 import tech.coner.crispyfish.model.*
 
 internal class CrispyFishEventImpl(

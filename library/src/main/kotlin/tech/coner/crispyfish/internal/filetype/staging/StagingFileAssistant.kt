@@ -4,7 +4,6 @@ import tech.coner.crispyfish.model.PenaltyType
 import java.time.Duration
 import java.time.format.DateTimeParseException
 
-
 internal object StagingFileAssistant {
 
     fun convertStagingTimeStringToDuration(stagingTime: String?): Result<Duration> {

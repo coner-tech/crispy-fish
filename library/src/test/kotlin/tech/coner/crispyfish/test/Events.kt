@@ -1,12 +1,13 @@
 package tech.coner.crispyfish.test
 
+import tech.coner.crispyfish.CrispyFish
 import tech.coner.crispyfish.CrispyFishEvent
-import tech.coner.crispyfish.filetype.EventControlFile
+import tech.coner.crispyfish.internal.filetype.eventcontrolfile.EventControlFile
 import java.nio.file.Path
 import kotlin.io.path.exists
 import kotlin.io.path.toPath
 
-sealed class Events(
+internal sealed class Events(
         val classDefinitions: ClassDefinitions,
         ecfFile: String,
 ) {
@@ -15,7 +16,7 @@ sealed class Events(
         file = resource(ecfFile),
     )
 
-    fun factory(): CrispyFishEvent = CrispyFishEvent.factory(eventControlFile)
+    fun factory(): CrispyFishEvent = CrispyFish.event(eventControlFile.file)
 
     object Thscc2016Points1Danville : Events(
             classDefinitions = ClassDefinitions.Thscc2016,

@@ -2,7 +2,7 @@ package tech.coner.crispyfish.internal.filetype.staging
 
 import tech.coner.crispyfish.internal.datatype.underscorepairs.UnderscorePairReader
 
-class SimpleStringStagingLineReader(
+internal class SimpleStringStagingLineReader(
         private val underscorePairReader: UnderscorePairReader<String>
 ) : StagingLineReader<String> {
 

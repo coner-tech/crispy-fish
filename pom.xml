@@ -209,11 +209,6 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <includes>
-                            <include>**/*IT*.java</include>
-                        </includes>
-                        <excludes>
-                        </excludes>
                         <properties>
                             <configurationParameters>
                                 junit.jupiter.execution.parallel.enabled = true

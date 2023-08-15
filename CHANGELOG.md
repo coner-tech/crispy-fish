@@ -11,10 +11,10 @@
   - This allows users to detect and be warned about problems in the crispy fish data related to staging/registration mismatches
 - Remove the Results queries
   - These wrongfully trusted the metadata contained in the Registration and Staging files, which can make for wildly inaccurate results sometimes
-- Remove unnecessary clutter from the API (breaking changes, trivial removals)
 - Convert java.io.File to java.nio.file.Path (breaking change)
 - ClassDefinitionFile, RegistrationFile, StagingFile, and StagingLogFile are JVM inlined value classes
 - Cleaned up the ClassDefinitionFile implementation
+- Massively reduced the surface area of the API
 
 ## 0.5.7
 

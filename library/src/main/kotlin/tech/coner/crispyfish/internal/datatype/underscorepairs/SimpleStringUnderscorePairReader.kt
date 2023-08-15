@@ -1,6 +1,6 @@
 package tech.coner.crispyfish.internal.datatype.underscorepairs
 
-class SimpleStringUnderscorePairReader : UnderscorePairReader<String> {
+internal class SimpleStringUnderscorePairReader : UnderscorePairReader<String> {
 
     override fun get(pairs: String, key: String): String? {
         val keyStartPosition = pairs.indexOf(key)

@@ -1,8 +1,8 @@
 package tech.coner.crispyfish.internal.filetype.staginglog
 
-import tech.coner.crispyfish.filetype.EventControlFile
+import tech.coner.crispyfish.internal.filetype.eventcontrolfile.EventControlFile
 import tech.coner.crispyfish.model.EventDay
-import tech.coner.crispyfish.util.orCaseInsensitiveMatch
+import tech.coner.crispyfish.internal.util.orCaseInsensitiveMatch
 import kotlin.io.path.nameWithoutExtension
 
 internal class StagingLogFileLocator(

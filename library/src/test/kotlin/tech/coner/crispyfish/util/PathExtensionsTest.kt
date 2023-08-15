@@ -6,6 +6,7 @@ import assertk.assertions.isSameAs
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
+import tech.coner.crispyfish.internal.util.orCaseInsensitiveMatch
 import java.nio.file.Path
 import kotlin.io.path.createFile
 

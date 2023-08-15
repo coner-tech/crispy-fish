@@ -1,11 +1,8 @@
 package tech.coner.crispyfish
 
-import tech.coner.crispyfish.filetype.EventControlFile
-import tech.coner.crispyfish.internal.CrispyFishEventImpl
 import tech.coner.crispyfish.model.*
 
 interface CrispyFishEvent {
-
 
     fun queryAllRegistrations(
         allClassDefinitions: AllClassDefinitions
@@ -27,10 +24,4 @@ interface CrispyFishEvent {
         allClassDefinitions: AllClassDefinitions,
         registrationsBySignage: RegistrationsBySignage
     ): AllStagingLogRows
-
-    companion object {
-        fun factory(eventControlFile: EventControlFile): CrispyFishEvent {
-            return CrispyFishEventImpl(eventControlFile)
-        }
-    }
 }

@@ -1,6 +1,5 @@
 package tech.coner.crispyfish.internal.filetype.classdefinition
 
-import tech.coner.crispyfish.filetype.ClassDefinitionFile
 import tech.coner.crispyfish.internal.filetype.classdefinition.ClassDefinitionColumns.*
 import kotlin.io.path.readLines
 

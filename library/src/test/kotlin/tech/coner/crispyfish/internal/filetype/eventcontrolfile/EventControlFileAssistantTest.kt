@@ -1,8 +1,7 @@
-package tech.coner.crispyfish.filetype.ecf
+package tech.coner.crispyfish.internal.filetype.eventcontrolfile
 
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
-import tech.coner.crispyfish.internal.filetype.ecf.EventControlFileAssistant
 import java.nio.file.Paths
 
 class EventControlFileAssistantTest {

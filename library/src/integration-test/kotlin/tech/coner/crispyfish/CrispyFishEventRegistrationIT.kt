@@ -641,8 +641,8 @@ class CrispyFishEventRegistrationIT {
     }
 
     private fun Events.queryAllRegistrations(): AllRegistrations {
-        val crispyFishClassDefinitions = CrispyFishClassDefinitions.factory(classDefinitions.file)
-        val crispyFishEvent = CrispyFishEvent.factory(eventControlFile)
+        val crispyFishClassDefinitions = CrispyFish.classDefinitions(classDefinitions.file.file)
+        val crispyFishEvent = CrispyFish.event(eventControlFile.file)
         val allClassDefinitions = crispyFishClassDefinitions.queryAllClassDefinitions()
         return crispyFishEvent.queryAllRegistrations(allClassDefinitions)
     }

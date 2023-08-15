@@ -1,11 +1,11 @@
 package tech.coner.crispyfish.internal.filetype.registration
 
-import tech.coner.crispyfish.filetype.EventControlFile
-import tech.coner.crispyfish.util.orCaseInsensitiveMatch
+import tech.coner.crispyfish.internal.filetype.eventcontrolfile.EventControlFile
+import tech.coner.crispyfish.internal.util.orCaseInsensitiveMatch
 import kotlin.io.path.nameWithoutExtension
 
 @JvmInline
-value class RegistrationFileLocator(
+internal value class RegistrationFileLocator(
     private val eventControlFile: EventControlFile
 ) {
 

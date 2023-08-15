@@ -91,7 +91,7 @@ class CrispyFishClassDefinitionsIT {
     }
 
     private fun ClassDefinitions.queryAllClassDefinitions(): AllClassDefinitions {
-        val crispyFish = CrispyFishClassDefinitions.factory(file)
+        val crispyFish = CrispyFish.classDefinitions(file.file)
         return crispyFish.queryAllClassDefinitions()
     }
 }

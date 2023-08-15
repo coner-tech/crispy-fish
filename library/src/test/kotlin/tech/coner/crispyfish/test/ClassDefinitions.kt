@@ -1,7 +1,7 @@
 package tech.coner.crispyfish.test
 
 import tech.coner.crispyfish.CrispyFishClassDefinitions
-import tech.coner.crispyfish.filetype.ClassDefinitionFile
+import tech.coner.crispyfish.internal.filetype.classdefinition.ClassDefinitionFile
 import tech.coner.crispyfish.internal.CrispyFishClassDefinitionsImpl
 import tech.coner.crispyfish.model.ClassDefinition
 import java.math.BigDecimal
@@ -9,7 +9,7 @@ import java.nio.file.Path
 import kotlin.io.path.exists
 import kotlin.io.path.toPath
 
-sealed class ClassDefinitions(defFile: String) {
+internal sealed class ClassDefinitions(defFile: String) {
 
     val file = ClassDefinitionFile(
         file = resource(defFile)

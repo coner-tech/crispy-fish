@@ -1,7 +1,7 @@
 package tech.coner.crispyfish.internal.repository
 
 import tech.coner.crispyfish.internal.filetype.staging.StagingFileLocator
-import tech.coner.crispyfish.mapper.StagingRunMapper
+import tech.coner.crispyfish.internal.mapper.StagingRunMapper
 import tech.coner.crispyfish.model.AllStagingRuns
 import tech.coner.crispyfish.model.EventDay
 import tech.coner.crispyfish.model.RegistrationsBySignage

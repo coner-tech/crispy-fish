@@ -35,8 +35,8 @@ class CrispyFishEventStagingIT {
     private fun Events.queryAllStagingRuns(
         eventDay: EventDay
     ): AllStagingRuns {
-        val crispyFishClassDefinitions = CrispyFishClassDefinitions.factory(classDefinitions.file)
-        val crispyFishEvents = CrispyFishEvent.factory(eventControlFile)
+        val crispyFishClassDefinitions = CrispyFish.classDefinitions(classDefinitions.file.file)
+        val crispyFishEvents = CrispyFish.event(eventControlFile.file)
         val allClassDefinitions = crispyFishClassDefinitions.queryAllClassDefinitions()
         return crispyFishEvents.queryAllStagingRuns(
             eventDay = eventDay,

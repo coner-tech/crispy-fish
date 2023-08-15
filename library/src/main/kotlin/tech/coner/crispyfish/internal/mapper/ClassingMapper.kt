@@ -1,4 +1,4 @@
-package tech.coner.crispyfish.mapper
+package tech.coner.crispyfish.internal.mapper
 
 import tech.coner.crispyfish.model.AllClassDefinitions
 import tech.coner.crispyfish.model.ClassDefinition

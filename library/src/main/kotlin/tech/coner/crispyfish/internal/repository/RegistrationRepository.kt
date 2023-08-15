@@ -1,7 +1,7 @@
 package tech.coner.crispyfish.internal.repository
 
 import tech.coner.crispyfish.internal.filetype.registration.RegistrationLineColumnReader
-import tech.coner.crispyfish.mapper.RegistrationMapper
+import tech.coner.crispyfish.internal.mapper.RegistrationMapper
 import tech.coner.crispyfish.model.AllRegistrations
 import tech.coner.crispyfish.model.Registration
 import tech.coner.crispyfish.model.RegistrationsBySignage

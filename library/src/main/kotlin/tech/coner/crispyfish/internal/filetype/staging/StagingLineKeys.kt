@@ -1,6 +1,6 @@
 package tech.coner.crispyfish.internal.filetype.staging
 
-object StagingLineKeys {
+internal object StagingLineKeys {
 
     const val RUN = "run"
     const val CLASS = "class"

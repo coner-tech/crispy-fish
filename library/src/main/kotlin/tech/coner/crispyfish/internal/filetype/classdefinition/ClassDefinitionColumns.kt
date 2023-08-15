@@ -1,6 +1,6 @@
 package tech.coner.crispyfish.internal.filetype.classdefinition
 
-enum class ClassDefinitionColumns(val index: Int) {
+internal enum class ClassDefinitionColumns(val index: Int) {
     ABBREVIATION(0),
     PAX_FACTOR(1),
     NAME(3),

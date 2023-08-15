@@ -1,4 +1,4 @@
-package tech.coner.crispyfish.internal.filetype.ecf
+package tech.coner.crispyfish.internal.filetype.eventcontrolfile
 
 import java.nio.file.Path
 
