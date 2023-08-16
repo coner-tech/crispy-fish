@@ -11,6 +11,7 @@ internal class ClassDefinitionRepository(
     fun getAllClassDefinitions(): AllClassDefinitions {
         val everyClassDefinition = mapper.all()
         return AllClassDefinitions(
+            combined = everyClassDefinition,
             categories = getCategories(everyClassDefinition),
             handicaps = getHandicaps(everyClassDefinition)
         )
