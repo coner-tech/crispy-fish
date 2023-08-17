@@ -31,7 +31,7 @@ internal class CrispyFishEventStagingLogIT {
             case.rowsWithNoRegistrationOrRun.forEach { rowWithNoRegistrationOrRun ->
                 index(rowWithNoRegistrationOrRun.index).all {
                     timestamp().isEqualTo(rowWithNoRegistrationOrRun.expectedTimestamp)
-                    sequenceRow().isEqualTo(rowWithNoRegistrationOrRun.expectedSequenceRow)
+                    sequenceRow().isEqualTo(rowWithNoRegistrationOrRun.expectedStagingRunIndex)
                     stagingRun().all {
                         stagingRegistration().isNull()
                         registration().isNull()
@@ -42,7 +42,7 @@ internal class CrispyFishEventStagingLogIT {
             case.rowsWithJunkRegistrationWithoutRun.forEach { rowWithJunkRegistrationWithoutRun ->
                 index(rowWithJunkRegistrationWithoutRun.index).all {
                     timestamp().isEqualTo(rowWithJunkRegistrationWithoutRun.expectedTimestamp)
-                    sequenceRow().isEqualTo(rowWithJunkRegistrationWithoutRun.expectedSequenceRow)
+                    sequenceRow().isEqualTo(rowWithJunkRegistrationWithoutRun.expectedStagingRunIndex)
                     stagingRun().all {
                         stagingRegistration().isNotNull()
                         registration().isNull()
@@ -53,7 +53,7 @@ internal class CrispyFishEventStagingLogIT {
             case.rowsWithRegistrationAndRun.forEach { rowWithRegistrationAndRun ->
                 index(rowWithRegistrationAndRun.index).all {
                     timestamp().isEqualTo(rowWithRegistrationAndRun.expectedTimestamp)
-                    sequenceRow().isEqualTo(rowWithRegistrationAndRun.expectedSequenceRow)
+                    sequenceRow().isEqualTo(rowWithRegistrationAndRun.expectedStagingRunIndex)
                     stagingRun().all {
                         stagingRegistration().isNotNull()
                         registration().isNotNull()
@@ -176,7 +176,7 @@ internal class CrispyFishEventStagingLogIT {
         data class IndexOfInterest(
             val index: Int,
             val expectedTimestamp: String,
-            val expectedSequenceRow: Int
+            val expectedStagingRunIndex: Int
         )
     }
 }

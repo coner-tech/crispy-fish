@@ -14,7 +14,7 @@ internal class StagingLogRowMapper(
         val sequenceRow = reader.getSequenceRow(line)?.toIntOrNull() ?: return null
         return StagingLogRow(
             timestamp = timestamp,
-            sequenceRow = sequenceRow,
+            stagingRunIndex = sequenceRow,
             stagingRun = stagingRunMapper.toStagingRun(line, registrationsBySignage)
         )
     }
