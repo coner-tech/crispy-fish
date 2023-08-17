@@ -140,74 +140,37 @@ internal class CrispyFishEventStagingLogIT {
         THSCC_2016_POINTS_9(
             event = Events.Thscc2016Points9Cary,
             expectedSize = 1444,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2017_POINTS_1(
-            event = Events.Thscc2017Points1Danville,
-            expectedSize = 1290,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2017_POINTS_5(
-            event = Events.Thscc2017Points5CaryTowneCenter,
-            expectedSize = 1237,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2017_POINTS_9(
-            event = Events.Thscc2017Points9Danville,
-            expectedSize = 884,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2018_JUST_FOR_FUN(
-            event = Events.Thscc2018JustForFunCary,
-            expectedSize = 1043,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2018_POINTS_1(
-            event = Events.Thscc2018Points1Danville,
-            expectedSize = 1791,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2018_POINTS_8(
-            event = Events.Thscc2018Points8Cary,
-            expectedSize = 1038,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2018_WEDDINGCROSS(
-            event = Events.Thscc2018WeddingcrossDanville,
-            expectedSize = 517,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
-        ),
-        THSCC_2019_POINTS_9(
-            event = Events.Thscc2019Points8Nccar,
-            expectedSize = 2758,
-            rowsWithNoRegistrationOrRun = emptyList(), //TODO
-            rowsWithJunkRegistrationWithoutRun = emptyList(), // TODO
-            rowsWithRegistrationAndRun = emptyList(), // TODO
-            rowsWithoutRegistrationButWithRun = emptyList(), // TODO
+            rowsWithNoRegistrationOrRun = listOf(
+                IndexOfInterest(48, "09/17/16 10:13:53", 0),
+                IndexOfInterest(49, "09/17/16 10:13:57", 1),
+                IndexOfInterest(747, "09/17/16 15:44:24", 463)
+            ),
+            rowsWithJunkRegistrationWithoutRun = listOf(
+                IndexOfInterest(58, "09/17/16 10:37:11", 2),
+                IndexOfInterest(450, "09/17/16 13:33:06", 271),
+                IndexOfInterest(461, "09/17/16 13:39:40", 280),
+                IndexOfInterest(627, "09/17/16 15:05:29", 409),
+            ),
+            rowsWithRegistrationAndRun = listOf(
+                IndexOfInterest(1, "03/22/16 19:09:36", 1),
+                IndexOfInterest(2, "03/22/16 19:09:41", 2),
+                IndexOfInterest(3, "03/22/16 19:09:45", 3),
+                IndexOfInterest(4, "03/22/16 19:09:48", 4),
+                IndexOfInterest(5, "03/22/16 19:09:50", 5),
+                IndexOfInterest(138, "09/17/16 11:11:21", 54),
+                IndexOfInterest(262, "09/17/16 12:06:24", 139),
+                IndexOfInterest(371, "09/17/16 12:54:12", 208),
+                IndexOfInterest(445, "09/17/16 13:29:12", 264),
+                IndexOfInterest(942, "09/17/16 16:54:00", 19),
+                IndexOfInterest(1441, "09/17/16 16:54:42", 518)
+            ),
+            rowsWithoutRegistrationButWithRun = listOf(
+                IndexOfInterest(6, "04/23/16 08:54:00", 0),
+                IndexOfInterest(7, "04/23/16 08:54:37", 1),
+                IndexOfInterest(8, "04/23/16 08:55:39", 2),
+                IndexOfInterest(9, "04/23/16 08:56:43", 3),
+                IndexOfInterest(10, "04/23/16 08:57:14", 4)
+            )
         );
 
         data class IndexOfInterest(
